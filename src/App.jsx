@@ -71,7 +71,7 @@ function Home() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/silvergenie-website-original">
 
       <Routes>
 
@@ -81,13 +81,11 @@ function App() {
           element={<Home />}
         />
 
-
         {/* ABOUT */}
         <Route
           path="/about"
           element={<About />}
         />
-
 
         {/* HEALTHCARE CONVENIENCE */}
         <Route
@@ -95,20 +93,17 @@ function App() {
           element={<HealthcareConvenience />}
         />
 
-
         {/* CARE MANAGEMENT */}
         <Route
           path="/care-management"
           element={<CareManagement />}
         />
 
-
         {/* SUBSCRIPTION PLANS */}
         <Route
           path="/subscription-plans"
           element={<SubscriptionPlans />}
         />
-
 
         {/* TRAVEL WITH CARE */}
         <Route
