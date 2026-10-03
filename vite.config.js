@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   base: "/silvergenie-website-original/",
-  
   plugins: [react()],
 
   server: {
