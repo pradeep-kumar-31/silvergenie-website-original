@@ -2,8 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/silvergenie-website-original/",
   plugins: [react()],
+
+  base: "/silvergenie-website-original/",
 
   server: {
     host: "0.0.0.0",
