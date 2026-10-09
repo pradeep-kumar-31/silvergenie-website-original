@@ -1,0 +1,1065 @@
+/* =========================================================
+   SILVERGENIE WANDERLUST DIARIES
+   Premium Travel Memories & Storytelling Design
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   GLOBAL STYLES
+========================================================= */
+
+.wanderlust-diaries-page {
+  --wd-green: #176b57;
+  --wd-green-dark: #123d34;
+  --wd-green-light: #e7f1eb;
+  --wd-cream: #faf8f2;
+  --wd-cream-dark: #f1ecdf;
+  --wd-gold: #c4a46b;
+  --wd-text: #233b33;
+  --wd-muted: #738079;
+  --wd-border: #e8e5db;
+  --wd-white: #ffffff;
+
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--wd-white);
+  color: var(--wd-text);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wanderlust-diaries-page *,
+.wanderlust-diaries-page *::before,
+.wanderlust-diaries-page *::after {
+  box-sizing: border-box;
+}
+
+.wanderlust-diaries-page img {
+  max-width: 100%;
+}
+
+.wanderlust-diaries-page a {
+  text-decoration: none;
+}
+
+.wanderlust-diaries-page button {
+  font-family: inherit;
+}
+
+.wanderlust-diaries-page section {
+  scroll-margin-top: 100px;
+}
+
+.wanderlust-diaries-page h1,
+.wanderlust-diaries-page h2,
+.wanderlust-diaries-page h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* =========================================================
+   SHARED EYEBROW LABEL
+========================================================= */
+
+.wanderlust-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--wd-green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.wanderlust-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--wd-gold);
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.wanderlust-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 660px;
+  padding: 100px 8%;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13, 43, 35, 0.88) 0%,
+      rgba(13, 43, 35, 0.70) 42%,
+      rgba(13, 43, 35, 0.18) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(13, 43, 35, 0.22),
+      rgba(13, 43, 35, 0.04)
+    ),
+    url('/image/blog/japan.jpg');
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+.wanderlust-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 35, 28, 0.08),
+    rgba(9, 35, 28, 0.30)
+  );
+  pointer-events: none;
+}
+
+.wanderlust-hero::after {
+  content: "";
+  position: absolute;
+  right: -110px;
+  bottom: -220px;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.wanderlust-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 780px;
+  animation: wdHeroReveal 0.9s ease both;
+}
+
+.wanderlust-hero .wanderlust-eyebrow {
+  color: #f0d7a4;
+}
+
+.wanderlust-hero h1 {
+  margin: 0 0 25px;
+  color: #ffffff;
+  font-size: clamp(55px, 7.5vw, 94px);
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1.08;
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+}
+
+.wanderlust-hero-content > p {
+  max-width: 560px;
+  margin: 0 0 34px;
+  color: rgba(255, 255, 255, 0.91);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+/* HERO BUTTON */
+
+.wanderlust-hero .wanderlust-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 54px;
+  padding: 15px 24px;
+  border: 1px solid #f1dfba;
+  border-radius: 3px;
+  background: #f1dfba;
+  color: var(--wd-green-dark);
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.wanderlust-hero .wanderlust-button:hover {
+  background: transparent;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.wanderlust-intro {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 100px 30px 95px;
+  text-align: center;
+}
+
+.wanderlust-intro::before {
+  content: "✦";
+  display: block;
+  margin-bottom: 22px;
+  color: var(--wd-gold);
+  font-size: 24px;
+}
+
+.wanderlust-intro h2 {
+  max-width: 800px;
+  margin: 0 auto 25px;
+  color: var(--wd-green-dark);
+  font-size: clamp(32px, 4.5vw, 49px);
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  line-height: 1.3;
+}
+
+.wanderlust-intro p {
+  max-width: 800px;
+  margin: 0 auto 18px;
+  color: var(--wd-muted);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.wanderlust-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   TRAVEL WITH CARE PROMOTION
+========================================================= */
+
+.wanderlust-promo {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto 110px;
+  padding: 76px 50px;
+  overflow: hidden;
+  border: 1px solid #e7e1d1;
+  background:
+    radial-gradient(
+      circle at 95% 10%,
+      rgba(196, 164, 107, 0.15),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #f7f3e8, #f0f4ec);
+}
+
+.wanderlust-promo::before {
+  content: "W";
+  position: absolute;
+  top: -100px;
+  right: 55px;
+  color: rgba(23, 107, 87, 0.045);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 390px;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.wanderlust-promo > div {
+  position: relative;
+  z-index: 1;
+  max-width: 790px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wanderlust-promo h2 {
+  margin: 0 0 22px;
+  color: var(--wd-green-dark);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.wanderlust-promo p {
+  max-width: 720px;
+  margin: 0 auto 30px;
+  color: #64746a;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.wanderlust-promo .wanderlust-eyebrow {
+  justify-content: center;
+}
+
+/* SHARED STANDARD BUTTON */
+
+.wanderlust-diaries-page .wanderlust-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 14px 24px;
+  border: 1px solid var(--wd-green);
+  border-radius: 3px;
+  background: var(--wd-green);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.wanderlust-diaries-page .wanderlust-button:hover {
+  border-color: var(--wd-green-dark);
+  background: var(--wd-green-dark);
+  box-shadow: 0 8px 20px rgba(18, 61, 52, 0.12);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   DIARY COLLECTION SECTION
+========================================================= */
+
+.wanderlust-diary-section {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px 45px 115px;
+}
+
+.wanderlust-diary-heading {
+  max-width: 800px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.wanderlust-diary-heading .wanderlust-eyebrow {
+  justify-content: center;
+}
+
+.wanderlust-diary-heading h2 {
+  margin: 0 0 20px;
+  color: var(--wd-green-dark);
+  font-size: clamp(35px, 4.5vw, 53px);
+  font-weight: 500;
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+}
+
+.wanderlust-diary-heading p {
+  max-width: 740px;
+  margin: 0 auto;
+  color: var(--wd-muted);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+/* =========================================================
+   CATEGORY FILTERS
+========================================================= */
+
+.wanderlust-categories {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 25px;
+}
+
+.wanderlust-categories button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 43px;
+  padding: 11px 19px;
+  border: 1px solid #e4e6dd;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #67746c;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.wanderlust-categories button:hover {
+  border-color: var(--wd-green);
+  background: #f1f6f0;
+  color: var(--wd-green);
+  transform: translateY(-1px);
+}
+
+.wanderlust-categories button.active,
+.wanderlust-categories button[aria-pressed="true"] {
+  border-color: var(--wd-green);
+  background: var(--wd-green);
+  color: #ffffff;
+  box-shadow: 0 5px 14px rgba(23, 107, 87, 0.12);
+}
+
+/* RESULTS COUNT */
+
+.wanderlust-results-count {
+  margin: 0 0 30px;
+  color: #8a938a;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+/* =========================================================
+   DIARY CARDS GRID
+========================================================= */
+
+.wanderlust-diaries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 34px 26px;
+}
+
+/* =========================================================
+   DIARY CARD
+========================================================= */
+
+.wanderlust-diary-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #ebe9e1;
+  background: #ffffff;
+  box-shadow: 0 5px 22px rgba(35, 59, 51, 0.035);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.wanderlust-diary-card:hover {
+  transform: translateY(-6px);
+  border-color: #d7e3d8;
+  box-shadow: 0 17px 38px rgba(35, 59, 51, 0.10);
+}
+
+/* =========================================================
+   DIARY IMAGE
+========================================================= */
+
+.wanderlust-diary-image {
+  position: relative;
+  width: 100%;
+  height: 255px;
+  overflow: hidden;
+  background: #e8eee7;
+}
+
+.wanderlust-diary-image::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(13, 43, 35, 0.16) 100%
+  );
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.wanderlust-diary-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition:
+    transform 0.65s cubic-bezier(0.2, 0.7, 0.3, 1),
+    filter 0.45s ease;
+}
+
+.wanderlust-diary-card:hover .wanderlust-diary-image img {
+  transform: scale(1.055);
+  filter: saturate(1.08);
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.wanderlust-diary-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 26px 25px 27px;
+}
+
+.wanderlust-diary-category {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  margin-bottom: 17px;
+  padding: 6px 10px;
+  border: 1px solid #e1e9dd;
+  border-radius: 2px;
+  background: #f2f6ef;
+  color: var(--wd-green);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.wanderlust-diary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+  color: #8a938b;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.wanderlust-diary-content h3 {
+  margin: 0 0 14px;
+  color: var(--wd-green-dark);
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  transition: color 0.25s ease;
+}
+
+.wanderlust-diary-card:hover .wanderlust-diary-content h3 {
+  color: var(--wd-green);
+}
+
+.wanderlust-diary-content p {
+  margin: 0 0 24px;
+  color: #788179;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+/* READ STORY LINK */
+
+.wanderlust-diary-content > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 5px;
+  color: var(--wd-green);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition:
+    gap 0.25s ease,
+    color 0.25s ease;
+}
+
+.wanderlust-diary-content > a span {
+  display: inline-block;
+  font-size: 17px;
+  transition: transform 0.25s ease;
+}
+
+.wanderlust-diary-content > a:hover {
+  gap: 15px;
+  color: #b08c50;
+}
+
+.wanderlust-diary-content > a:hover span {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.wanderlust-empty-state {
+  grid-column: 1 / -1;
+  padding: 65px 25px;
+  border: 1px solid var(--wd-border);
+  background: var(--wd-cream);
+  text-align: center;
+}
+
+.wanderlust-empty-state h3 {
+  margin: 0 0 14px;
+  color: var(--wd-green-dark);
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.wanderlust-empty-state p {
+  margin: 0 auto 25px;
+  color: var(--wd-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BOTTOM CALL TO ACTION
+========================================================= */
+
+.wanderlust-bottom-cta {
+  position: relative;
+  margin: 0 45px 90px;
+  padding: 80px 30px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(196, 164, 107, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #173f34, #102f28);
+  text-align: center;
+  isolation: isolate;
+}
+
+.wanderlust-bottom-cta::before,
+.wanderlust-bottom-cta::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 290px;
+  height: 290px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.wanderlust-bottom-cta::before {
+  top: -170px;
+  left: -90px;
+}
+
+.wanderlust-bottom-cta::after {
+  right: -100px;
+  bottom: -190px;
+  width: 390px;
+  height: 390px;
+}
+
+.wanderlust-bottom-cta h2 {
+  max-width: 750px;
+  margin: 0 auto 20px;
+  color: #ffffff;
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  line-height: 1.3;
+}
+
+.wanderlust-bottom-cta p {
+  max-width: 720px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.77);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.wanderlust-bottom-cta > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 14px 24px;
+  border: 1px solid #e9d6ae;
+  background: #e9d6ae;
+  color: var(--wd-green-dark);
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.wanderlust-bottom-cta > a:hover {
+  border-color: #ffffff;
+  background: transparent;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.wanderlust-bottom-cta > a span {
+  font-size: 17px;
+}
+
+/* =========================================================
+   HERO ANIMATION
+========================================================= */
+
+@keyframes wdHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   LARGE TABLETS
+========================================================= */
+
+@media (max-width: 1100px) {
+  .wanderlust-hero {
+    min-height: 590px;
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .wanderlust-promo {
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+
+  .wanderlust-diary-section {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .wanderlust-diaries-grid {
+    gap: 26px 20px;
+  }
+
+  .wanderlust-diary-image {
+    height: 220px;
+  }
+
+  .wanderlust-diary-content {
+    padding: 22px 20px 24px;
+  }
+
+  .wanderlust-diary-content h3 {
+    font-size: 21px;
+  }
+
+  .wanderlust-bottom-cta {
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .wanderlust-hero {
+    min-height: 540px;
+    padding: 85px 6%;
+    background-position: 58% center;
+  }
+
+  .wanderlust-hero h1 {
+    font-size: clamp(53px, 8vw, 75px);
+  }
+
+  .wanderlust-intro {
+    padding: 75px 28px;
+  }
+
+  .wanderlust-promo {
+    margin-bottom: 80px;
+    padding: 60px 35px;
+  }
+
+  .wanderlust-diary-section {
+    padding-bottom: 85px;
+  }
+
+  .wanderlust-diaries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 20px;
+  }
+
+  .wanderlust-diary-image {
+    height: 225px;
+  }
+
+  .wanderlust-bottom-cta {
+    padding: 65px 28px;
+    margin-bottom: 65px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .wanderlust-hero {
+    min-height: 520px;
+    padding: 80px 23px;
+    background-position: 62% center;
+  }
+
+  .wanderlust-hero h1 {
+    margin-bottom: 22px;
+    font-size: clamp(49px, 12vw, 66px);
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+  }
+
+  .wanderlust-hero-content > p {
+    max-width: 420px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .wanderlust-hero .wanderlust-button {
+    min-height: 49px;
+    padding: 13px 17px;
+    font-size: 12px;
+  }
+
+  .wanderlust-eyebrow {
+    gap: 8px;
+    margin-bottom: 17px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .wanderlust-eyebrow::before {
+    width: 19px;
+  }
+
+  .wanderlust-intro {
+    padding: 60px 22px;
+  }
+
+  .wanderlust-intro::before {
+    margin-bottom: 16px;
+    font-size: 21px;
+  }
+
+  .wanderlust-intro h2 {
+    margin-bottom: 19px;
+    font-size: 32px;
+  }
+
+  .wanderlust-intro p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .wanderlust-promo {
+    margin: 0 16px 65px;
+    padding: 43px 22px;
+  }
+
+  .wanderlust-promo::before {
+    top: -20px;
+    right: -30px;
+    font-size: 230px;
+  }
+
+  .wanderlust-promo h2 {
+    font-size: 33px;
+  }
+
+  .wanderlust-promo p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .wanderlust-diaries-page .wanderlust-button {
+    min-height: 47px;
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .wanderlust-diary-section {
+    padding: 5px 17px 65px;
+  }
+
+  .wanderlust-diary-heading {
+    margin-bottom: 30px;
+  }
+
+  .wanderlust-diary-heading h2 {
+    font-size: 35px;
+    letter-spacing: -0.5px;
+  }
+
+  .wanderlust-diary-heading p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .wanderlust-categories {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .wanderlust-categories button {
+    min-height: 38px;
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+
+  .wanderlust-results-count {
+    margin-bottom: 24px;
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .wanderlust-diaries-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .wanderlust-diary-image {
+    height: 245px;
+  }
+
+  .wanderlust-diary-content {
+    padding: 24px 22px 25px;
+  }
+
+  .wanderlust-diary-category {
+    margin-bottom: 14px;
+    font-size: 9px;
+  }
+
+  .wanderlust-diary-meta {
+    font-size: 10px;
+  }
+
+  .wanderlust-diary-content h3 {
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .wanderlust-diary-content p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .wanderlust-bottom-cta {
+    margin: 0 16px 45px;
+    padding: 48px 21px;
+  }
+
+  .wanderlust-bottom-cta h2 {
+    font-size: 34px;
+  }
+
+  .wanderlust-bottom-cta p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .wanderlust-bottom-cta > a {
+    min-height: 48px;
+    padding: 12px 17px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .wanderlust-hero {
+    min-height: 470px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .wanderlust-hero h1 {
+    font-size: 46px;
+  }
+
+  .wanderlust-intro h2,
+  .wanderlust-promo h2,
+  .wanderlust-diary-heading h2,
+  .wanderlust-bottom-cta h2 {
+    font-size: 29px;
+  }
+
+  .wanderlust-promo {
+    padding: 35px 17px;
+  }
+
+  .wanderlust-diary-section {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .wanderlust-diary-image {
+    height: 215px;
+  }
+
+  .wanderlust-diary-content {
+    padding: 20px 18px 22px;
+  }
+
+  .wanderlust-diary-content h3 {
+    font-size: 22px;
+  }
+
+  .wanderlust-categories button {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.wanderlust-diaries-page a:focus-visible,
+.wanderlust-diaries-page button:focus-visible {
+  outline: 3px solid var(--wd-gold);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wanderlust-diaries-page *,
+  .wanderlust-diaries-page *::before,
+  .wanderlust-diaries-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

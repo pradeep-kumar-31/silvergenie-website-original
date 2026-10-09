@@ -1,0 +1,387 @@
+/* =========================================================
+   SILVERGENIE — THE HEALING TOUCH
+   WHY SILVERGENIE SECTION
+========================================================= */
+
+.healing-section {
+  width: 100%;
+  padding: 100px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.healing-container {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+
+/* =========================================================
+   LEFT IMAGE
+========================================================= */
+
+.healing-image {
+  position: relative;
+  width: 100%;
+  height: 560px;
+
+  border-radius: 28px;
+  overflow: hidden;
+
+  background: #f2f7f6;
+
+  box-shadow:
+    0 20px 50px rgba(22, 48, 44, 0.12);
+}
+
+.healing-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.6s ease;
+}
+
+.healing-image:hover img {
+  transform: scale(1.03);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.healing-image-overlay {
+  position: absolute;
+
+  left: 24px;
+  bottom: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding: 15px 20px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px rgba(22, 48, 44, 0.12);
+
+  backdrop-filter: blur(8px);
+}
+
+.healing-image-overlay span {
+  font-size: 18px;
+  font-weight: 800;
+
+  color: #16302c;
+  letter-spacing: 0.2px;
+}
+
+.healing-image-overlay small {
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #20b69e;
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.healing-content {
+  width: 100%;
+  max-width: 560px;
+}
+
+.healing-label {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color: #20b69e;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.healing-content h2 {
+  margin: 0 0 25px;
+
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.12;
+
+  font-weight: 800;
+
+  color: #16302c;
+
+  letter-spacing: -1.2px;
+}
+
+.healing-content h2 span {
+  color: #20b69e;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+.healing-content > p {
+  margin: 0 0 18px;
+
+  font-size: 16px;
+  line-height: 1.85;
+
+  font-weight: 400;
+
+  color: #647773;
+}
+
+.healing-content > p:last-of-type {
+  margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT AREA
+========================================================= */
+
+.healing-highlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  margin-top: 25px;
+}
+
+.healing-highlight-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 18px;
+
+  background: #f6fbfa;
+
+  border: 1px solid #e0efec;
+
+  border-radius: 16px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.healing-highlight-item:hover {
+  transform: translateY(-4px);
+
+  border-color: #b9e4db;
+
+  box-shadow:
+    0 12px 30px rgba(32, 182, 158, 0.10);
+}
+
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
+.healing-check {
+  flex: 0 0 28px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #20b69e;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   HIGHLIGHT TEXT
+========================================================= */
+
+.healing-highlight-item strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  line-height: 1.35;
+
+  color: #16302c;
+}
+
+.healing-highlight-item small {
+  display: block;
+
+  font-size: 12px;
+  line-height: 1.55;
+
+  color: #70827e;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .healing-section {
+    padding: 80px 0;
+  }
+
+  .healing-container {
+    width: min(90%, 760px);
+
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .healing-image {
+    height: 500px;
+  }
+
+  .healing-content {
+    max-width: 100%;
+  }
+
+  .healing-content h2 {
+    font-size: 42px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .healing-section {
+    padding: 65px 0;
+  }
+
+  .healing-container {
+    width: calc(100% - 32px);
+
+    gap: 35px;
+  }
+
+  .healing-image {
+    height: 380px;
+
+    border-radius: 22px;
+  }
+
+  .healing-image-overlay {
+    left: 16px;
+    bottom: 16px;
+
+    padding: 12px 15px;
+  }
+
+  .healing-image-overlay span {
+    font-size: 16px;
+  }
+
+  .healing-image-overlay small {
+    font-size: 11px;
+  }
+
+  .healing-label {
+    font-size: 11px;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 14px;
+  }
+
+  .healing-content h2 {
+    margin-bottom: 20px;
+
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .healing-content > p {
+    font-size: 15px;
+    line-height: 1.75;
+
+    margin-bottom: 16px;
+  }
+
+  .healing-highlight {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .healing-highlight-item {
+    padding: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .healing-section {
+    padding: 50px 0;
+  }
+
+  .healing-image {
+    height: 330px;
+  }
+
+  .healing-content h2 {
+    font-size: 30px;
+  }
+
+  .healing-content > p {
+    font-size: 14px;
+  }
+
+}

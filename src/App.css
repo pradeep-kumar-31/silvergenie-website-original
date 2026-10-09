@@ -1,184 +1,410 @@
+/* =========================================================
+   SILVERGENIE — APP.CSS
+   GLOBAL APP STYLES
+========================================================= */
+
+
+/* =========================================================
+   CSS VARIABLES
+========================================================= */
+
+:root {
+  --primary: #20b69e;
+  --primary-dark: #168d7a;
+  --primary-light: #e3f7f2;
+
+  --dark: #16302c;
+  --text: #637772;
+  --muted: #71827e;
+
+  --background: #ffffff;
+  --light-background: #f5fbf9;
+
+  --border: #e2eeeb;
+  --accent: #20b69e;
+
+  --shadow: 0 15px 40px rgba(22, 48, 44, 0.10);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--background);
+  color: var(--dark);
+
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   APP WRAPPER
+========================================================= */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   COMMON ELEMENTS
+========================================================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--dark);
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+  width: 100%;
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+  background: rgba(32, 182, 158, 0.22);
+  color: var(--dark);
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f8f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b5d5ce;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+
+/* =========================================================
+   COMMON BUTTON RESET
+========================================================= */
+
+button {
+  border: 0;
+}
+
+
+/* =========================================================
+   REMOVE OLD VITE DEFAULT STYLES
+========================================================= */
+
+.logo {
+  max-width: none;
+}
+
+.card {
+  padding: 0;
+}
+
+
+/* =========================================================
+   COUNTER
+   Kept only for compatibility if used somewhere.
+========================================================= */
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
+
   color: var(--accent);
-  background: var(--accent-bg);
+  background: var(--primary-light);
+
   border: 2px solid transparent;
-  transition: border-color 0.3s;
+
+  transition: border-color 0.3s ease;
+
   margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+.counter:hover {
+  border-color: var(--accent);
 }
+
+.counter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   LEGACY VITE HERO
+   Kept harmless in case old starter markup exists.
+========================================================= */
+
+.hero .base,
+.hero .framework,
+.hero .vite {
+  display: none;
+}
+
+
+/* =========================================================
+   LEGACY CENTER
+========================================================= */
 
 #center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  width: 100%;
 }
+
+
+/* =========================================================
+   LEGACY NEXT STEPS
+========================================================= */
 
 #next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+  width: 100%;
 }
 
 #next-steps ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
 }
+
+
+/* =========================================================
+   LEGACY DOCS
+========================================================= */
+
+#docs {
+  width: 100%;
+}
+
+
+/* =========================================================
+   LEGACY SPACER
+========================================================= */
 
 #spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+  width: 100%;
 }
+
+
+/* =========================================================
+   LEGACY TICKS
+========================================================= */
 
 .ticks {
   position: relative;
   width: 100%;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+
+/* =========================================================
+   RESPONSIVE CONTAINER
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .container {
+    width: min(100% - 40px, 1150px);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  html {
+    scroll-padding-top: 74px;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .container {
+    width: calc(100% - 40px);
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

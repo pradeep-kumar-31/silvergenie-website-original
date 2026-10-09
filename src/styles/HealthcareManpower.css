@@ -1,0 +1,721 @@
+/* =========================================================
+   SILVERGENIE — HEALTHCARE MANPOWER
+   COMPLETE RESPONSIVE CSS
+========================================================= */
+
+.manpower-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #16302c;
+  overflow: hidden;
+}
+
+.manpower-page *,
+.manpower-page *::before,
+.manpower-page *::after {
+  box-sizing: border-box;
+}
+
+.manpower-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.manpower-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #20b69e;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.manpower-heading {
+  max-width: 760px;
+  margin-bottom: 55px;
+}
+
+.manpower-heading h2,
+.manpower-intro h2,
+.manpower-workforce h2,
+.manpower-cta h2 {
+  margin: 0 0 20px;
+  color: #16302c;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+}
+
+.manpower-heading h2 span,
+.manpower-intro h2 span,
+.manpower-workforce h2 span,
+.manpower-cta h2 span {
+  display: block;
+  color: #20b69e;
+}
+
+.manpower-heading p,
+.manpower-intro p,
+.manpower-workforce p,
+.manpower-cta p {
+  color: #61736f;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.manpower-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 52px;
+  padding: 14px 26px;
+
+  border-radius: 50px;
+  background: #16302c;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.manpower-btn:hover {
+  background: #20b69e;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.manpower-hero {
+  min-height: 720px;
+  padding: 80px 0 100px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(32, 182, 158, 0.16),
+      transparent 36%
+    ),
+    linear-gradient(
+      135deg,
+      #f2fbf9 0%,
+      #ffffff 68%
+    );
+}
+
+.manpower-hero .manpower-container {
+  min-height: 520px;
+
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+
+  gap: 70px;
+  align-items: center;
+}
+
+.manpower-hero-content {
+  max-width: 650px;
+}
+
+.manpower-hero-content h1 {
+  margin: 0 0 25px;
+
+  color: #16302c;
+
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+.manpower-hero-content h1 span {
+  display: block;
+  color: #20b69e;
+}
+
+.manpower-hero-content p {
+  max-width: 620px;
+  margin: 0 0 35px;
+
+  color: #60736f;
+
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.manpower-hero-image {
+  position: relative;
+  min-height: 500px;
+}
+
+.manpower-hero-image img {
+  width: 100%;
+  height: 500px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 35px;
+
+  box-shadow:
+    0 25px 70px rgba(22, 48, 44, 0.16);
+}
+
+.manpower-floating-card {
+  position: absolute;
+
+  right: -25px;
+  bottom: 35px;
+
+  width: 190px;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 50px rgba(22, 48, 44, 0.15);
+}
+
+.manpower-floating-card strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #20b69e;
+
+  font-size: 30px;
+}
+
+.manpower-floating-card span {
+  color: #16302c;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.manpower-intro {
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.manpower-intro .manpower-container {
+  max-width: 950px;
+  text-align: center;
+}
+
+.manpower-intro h2 {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.manpower-intro p {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.manpower-services {
+  padding: 110px 0;
+  background: #f3fbf9;
+}
+
+.manpower-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.manpower-card {
+  min-height: 245px;
+
+  padding: 30px;
+
+  border: 1px solid rgba(32, 182, 158, 0.15);
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 35px rgba(22, 48, 44, 0.06);
+
+  transition: all 0.3s ease;
+}
+
+.manpower-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 22px 50px rgba(22, 48, 44, 0.12);
+}
+
+.manpower-card-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 35px;
+}
+
+.manpower-number {
+  color: #20b69e;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.manpower-arrow {
+  color: #20b69e;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  transition: transform 0.3s ease;
+}
+
+.manpower-card:hover .manpower-arrow {
+  transform: translate(4px, -4px);
+}
+
+.manpower-card h3 {
+  margin: 0 0 12px;
+
+  color: #16302c;
+
+  font-size: 23px;
+}
+
+.manpower-card p {
+  margin: 0;
+
+  color: #687b77;
+
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   WORKFORCE
+========================================================= */
+
+.manpower-workforce {
+  padding: 115px 0;
+
+  background: #ffffff;
+}
+
+.manpower-workforce .manpower-container {
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+.manpower-workforce-content {
+  max-width: 570px;
+}
+
+.manpower-workforce-content p {
+  margin: 0 0 18px;
+}
+
+.manpower-workforce-content .manpower-btn {
+  margin-top: 15px;
+}
+
+.manpower-workforce-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.manpower-list-item {
+  min-height: 135px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid #dcece8;
+
+  border-radius: 20px;
+
+  background: #f7fcfb;
+
+  transition: all 0.3s ease;
+}
+
+.manpower-list-item:hover {
+  background: #16302c;
+
+  border-color: #16302c;
+
+  transform: translateY(-5px);
+}
+
+.manpower-list-item span {
+  color: #20b69e;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.manpower-list-item strong {
+  color: #16302c;
+
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.manpower-list-item:hover strong {
+  color: #ffffff;
+}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.manpower-benefits {
+  padding: 110px 0;
+
+  background: #f3fbf9;
+}
+
+.manpower-benefits-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.manpower-benefit {
+  min-height: 170px;
+
+  padding: 28px;
+
+  border-radius: 22px;
+
+  border: 1px solid #e0efec;
+
+  background: #ffffff;
+
+  transition: all 0.3s ease;
+}
+
+.manpower-benefit:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 45px rgba(22, 48, 44, 0.09);
+}
+
+.manpower-benefit span {
+  color: #20b69e;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.manpower-benefit h3 {
+  margin: 30px 0 0;
+
+  color: #16302c;
+
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.manpower-cta {
+  padding: 120px 0;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(32, 182, 158, 0.18),
+      transparent 42%
+    ),
+    #eaf8f5;
+}
+
+.manpower-cta .manpower-container {
+  max-width: 800px;
+}
+
+.manpower-cta h2 {
+  font-size: clamp(38px, 5vw, 60px);
+}
+
+.manpower-cta p {
+  max-width: 650px;
+
+  margin: 0 auto 30px;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.manpower-faq {
+  padding: 110px 0;
+
+  background: #ffffff;
+}
+
+.manpower-faq-list {
+  max-width: 950px;
+}
+
+.manpower-faq-item {
+  border-bottom: 1px solid #dce8e5;
+}
+
+.manpower-faq-item summary {
+  min-height: 85px;
+
+  padding: 22px 5px;
+
+  display: grid;
+
+  grid-template-columns: 55px 1fr 35px;
+
+  gap: 15px;
+
+  align-items: center;
+
+  cursor: pointer;
+
+  list-style: none;
+}
+
+.manpower-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.manpower-faq-item summary > span {
+  color: #20b69e;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.manpower-faq-item summary strong {
+  color: #16302c;
+
+  font-size: 17px;
+}
+
+.manpower-faq-item summary b {
+  color: #20b69e;
+
+  font-size: 25px;
+
+  text-align: right;
+
+  transition: transform 0.3s ease;
+}
+
+.manpower-faq-item[open] summary b {
+  transform: rotate(45deg);
+}
+
+.manpower-faq-item > p {
+  max-width: 800px;
+
+  margin: 0 55px 25px;
+
+  color: #687b77;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .manpower-hero .manpower-container,
+  .manpower-workforce .manpower-container {
+    grid-template-columns: 1fr;
+  }
+
+  .manpower-hero-content {
+    max-width: 750px;
+  }
+
+  .manpower-hero-image {
+    max-width: 650px;
+    width: 100%;
+  }
+
+  .manpower-workforce-content {
+    max-width: 750px;
+  }
+
+  .manpower-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .manpower-container {
+    width: min(92%, 600px);
+  }
+
+  .manpower-hero {
+    min-height: auto;
+
+    padding: 125px 0 70px;
+  }
+
+  .manpower-hero .manpower-container {
+    gap: 45px;
+  }
+
+  .manpower-hero-content h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .manpower-hero-content p {
+    font-size: 16px;
+  }
+
+  .manpower-hero-image {
+    min-height: 380px;
+  }
+
+  .manpower-hero-image img {
+    height: 380px;
+
+    border-radius: 25px;
+  }
+
+  .manpower-floating-card {
+    right: 15px;
+    bottom: 20px;
+  }
+
+  .manpower-intro,
+  .manpower-services,
+  .manpower-workforce,
+  .manpower-benefits,
+  .manpower-faq {
+    padding: 75px 0;
+  }
+
+  .manpower-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manpower-workforce-list {
+    grid-template-columns: 1fr;
+  }
+
+  .manpower-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manpower-benefit {
+    min-height: 150px;
+  }
+
+  .manpower-faq-item summary {
+    grid-template-columns: 40px 1fr 25px;
+  }
+
+  .manpower-faq-item summary strong {
+    font-size: 15px;
+  }
+
+  .manpower-faq-item > p {
+    margin-left: 40px;
+  }
+
+  .manpower-cta {
+    padding: 85px 0;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .manpower-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .manpower-heading h2,
+  .manpower-intro h2,
+  .manpower-workforce h2,
+  .manpower-cta h2 {
+    font-size: 34px;
+  }
+
+  .manpower-card {
+    padding: 25px;
+  }
+
+  .manpower-floating-card {
+    width: 160px;
+    padding: 17px;
+  }
+}

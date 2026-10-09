@@ -1,60 +1,80 @@
+import { Link } from "react-router-dom";
+
+/* =========================================================
+   SILVERGENIE — SERVICES
+   Content verified from SilverGenie official website
+   and official SilverGenie care offerings brochure.
+========================================================= */
+
 const services = [
   {
-    title: "Elder Care",
-    text: "Comprehensive care and support for senior citizens.",
-    image: "/image/services/elder-care.jpg",
+    title: "Senior Care",
+    text:
+      "Personal Health Records, Doctor Consultations, Fitness, Diet & Nutrition, Emotional & Mental Well-being, Health Coach Support & Monitoring, Engagement Activities and Health Webinars.",
+    image: "elder-care.jpg",
     link: "/elder-care",
   },
 
   {
     title: "Home Care",
-    text: "Senior care attendants, nursing care and home-based support.",
-    image: "/image/services/home-care.png",
+    text:
+      "Senior Care Nurses, Senior Care Attendants, Doctor Tele-consultations, Medicine Delivery, Diagnostic Tests, Home Monitoring and Emergency Care.",
+    image: "home-care.png",
     link: "/home-care",
   },
 
   {
-    title: "Emergency Care",
-    text: "Emergency preparedness, support and coordination.",
-    image: "/image/services/emergency-care.png",
-    link: "/emergency-care",
-  },
-
-  {
-    title: "Health & Care Management",
-    text: "Support for managing healthcare needs with greater convenience.",
-    image: "/image/services/health-care-management.jpeg",
-    link: "/care-management",
-  },
-
-  {
-    title: "Wellness Services",
-    text: "Support for physical and mental well-being.",
-    image: "/image/services/wellness.png",
-    link: "/wellness",
-  },
-
-  {
-    title: "NCD / Diabetes Management",
-    text: "Support for ongoing management of non-communicable health needs.",
-    image: "/image/services/diabetes-management.jpeg",
+    title: "NCD Care",
+    text:
+      "Monitoring with Wearables, Management of NCDs including diabetes, BP and hypertension, Diagnostic Support, Health Coach Assistance, Personalized Plans and Mental Wellbeing.",
+    image: "diabetes-management.jpeg",
     link: "/diabetes-management",
   },
 
   {
-    title: "Healthcare Manpower",
-    text: "Healthcare manpower and caregiving support for different care requirements.",
-    image: "/image/services/healthcare-manpower.jpg",
-    link: "/healthcare-manpower",
+    title: "Wellness Care",
+    text:
+      "Physiotherapy, Yoga & Fitness, Nutrition & Diet, Mental Health, Preventive Care, Grief Counseling, Legal Help and Documentation Assistance.",
+    image: "wellness.png",
+    link: "/wellness-care",
   },
 
   {
-    title: "Healthcare Convenience Services",
-    text: "Convenient healthcare support designed around everyday needs.",
-    image: "/image/services/healthcare-convenience.jpg",
-    link: "#contact",
+    title: "Emergency & Wellness",
+    text:
+      "24/7 Emergency Support, Emergency Preparedness, Ambulance Coordination, Care Executive Support, Care Coach Follow-up and ongoing wellness assistance.",
+    image: "emergency-care.png",
+    link: "/emergency-care",
+  },
+
+  {
+    title: "Diagnostics",
+    text:
+      "Diagnostic support including full body health checkups, diagnostic sample collection and convenient healthcare services designed to support seniors at home.",
+    image: "healthcare-convenience.jpg",
+    link: "/healthcare-convenience",
+  },
+
+  {
+    title: "Doctor Teleconsultation",
+    text:
+      "Doctor consultation services available remotely, helping seniors and families access healthcare guidance and medical support conveniently.",
+    image: "health-care-management.jpeg",
+    link: "/healthcare-convenience",
+  },
+
+  {
+    title: "Home ICU Setup",
+    text:
+      "Comprehensive intensive care support at home with medical equipment, infrastructure setup, critical care nursing and continuous care assistance.",
+    image: "healthcare-manpower.jpg",
+    link: "/home-care",
   },
 ];
+
+/* =========================================================
+   SERVICES COMPONENT
+========================================================= */
 
 function Services() {
   return (
@@ -62,7 +82,10 @@ function Services() {
 
       <div className="services-container">
 
-        {/* HEADING */}
+        {/* =================================================
+            SECTION HEADER
+        ================================================= */}
+
         <div className="services-heading">
 
           <span className="services-label">
@@ -75,59 +98,95 @@ function Services() {
           </h2>
 
           <p>
-            SilverGenie provides healthcare assistance and
-            support for seniors through a range of care
-            services.
+            SilverGenie provides proactive, personalized and
+            holistic healthcare assistance designed to support
+            seniors and their families through every stage of care.
           </p>
 
         </div>
 
 
-        {/* SERVICES */}
+        {/* =================================================
+            SERVICES GRID
+        ================================================= */}
+
         <div className="services-grid">
 
-          {services.map((item) => (
+          {services.map((service, index) => (
 
             <article
               className="service-card"
-              key={item.title}
+              key={service.title}
             >
 
-              {/* IMAGE */}
+              {/* ===========================================
+                  IMAGE
+              =========================================== */}
+
               <div className="service-image">
 
                 <img
-                  src={item.image}
-                  alt={item.title}
+                  src={`${import.meta.env.BASE_URL}image/services/${service.image}`}
+                  alt={`SilverGenie ${service.title}`}
+                  loading={index > 3 ? "lazy" : "eager"}
                 />
 
+                {/* SERVICE TAG */}
+
                 <span className="service-tag">
-                  {item.title}
+                  {service.title}
                 </span>
 
               </div>
 
 
-              {/* CONTENT */}
+              {/* ===========================================
+                  CARD CONTENT
+              =========================================== */}
+
               <div className="service-body">
 
                 <p>
-                  {item.text}
+                  {service.text}
                 </p>
 
-                <a
-                  href={item.link}
+                <Link
+                  to={service.link}
                   className="service-link"
                 >
-                  Learn More
-                  <span>→</span>
-                </a>
+                  <span className="service-link-text">
+                    Learn More
+                  </span>
+
+                  <span
+                    className="service-link-arrow"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
+                </Link>
 
               </div>
 
             </article>
 
           ))}
+
+        </div>
+
+
+        {/* =================================================
+            SERVICE NOTE
+        ================================================= */}
+
+        <div className="services-note">
+
+          <p>
+            <strong>Note:</strong>{" "}
+            SilverGenie's list of services is non-exhaustive.
+            Packages can be curated and customized as per
+            individual requirements.
+          </p>
 
         </div>
 

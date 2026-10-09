@@ -1,0 +1,361 @@
+/* =========================================================
+   HOME CARE PAGE
+========================================================= */
+
+.home-care-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #16302c;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.home-care-hero {
+  min-height: 650px;
+  padding: 120px 8% 90px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.92) 48%,
+      rgba(255, 255, 255, 0.35) 100%
+    );
+
+  box-sizing: border-box;
+}
+
+.home-care-hero-content {
+  max-width: 720px;
+}
+
+.home-care-label {
+  display: inline-block;
+
+  margin-bottom: 22px;
+  padding: 8px 15px;
+
+  border-radius: 30px;
+
+  background: #e9f8f4;
+  color: #1ca08a;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.home-care-hero h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 1.05;
+  font-weight: 700;
+
+  letter-spacing: -2px;
+}
+
+.home-care-hero h1 span {
+  display: block;
+  color: #20b69e;
+}
+
+.home-care-hero p {
+  max-width: 650px;
+
+  margin: 25px 0 0;
+
+  color: #61706d;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.home-care-hero p + p {
+  margin-top: 14px;
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.home-care-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 32px;
+  padding: 15px 26px;
+
+  border-radius: 50px;
+
+  background: #20b69e;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.home-care-btn:hover {
+  transform: translateY(-3px);
+
+  background: #1ca08a;
+
+  box-shadow: 0 14px 30px rgba(32, 182, 158, 0.25);
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.home-care-services {
+  padding: 110px 8%;
+  background: #f7fbfa;
+}
+
+.home-care-section-heading {
+  max-width: 720px;
+  margin-bottom: 55px;
+}
+
+.home-care-section-heading > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #20b69e;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.home-care-section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
+.home-care-section-heading h2 span {
+  display: block;
+  color: #20b69e;
+}
+
+.home-care-section-heading p {
+  max-width: 620px;
+
+  margin-top: 20px;
+
+  color: #687773;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.home-care-service-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.home-care-service-card {
+  padding: 32px;
+
+  min-height: 190px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4efec;
+
+  border-radius: 22px;
+
+  box-shadow: 0 10px 35px rgba(22, 48, 44, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.home-care-service-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #bce8df;
+
+  box-shadow: 0 18px 45px rgba(22, 48, 44, 0.10);
+}
+
+.home-care-service-card h3 {
+  margin: 0 0 14px;
+
+  font-size: 21px;
+  line-height: 1.3;
+
+  color: #16302c;
+}
+
+.home-care-service-card p {
+  margin: 0;
+
+  color: #6a7976;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.home-care-cta {
+  margin: 80px 8%;
+
+  padding: 55px 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+
+  border-radius: 30px;
+
+  background: #16302c;
+  color: #ffffff;
+}
+
+.home-care-cta span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #6ee0cc;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.home-care-cta h2 {
+  margin: 0;
+
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.1;
+}
+
+.home-care-cta .home-care-btn {
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .home-care-hero {
+    min-height: 580px;
+    padding: 110px 6% 80px;
+  }
+
+  .home-care-services {
+    padding: 90px 6%;
+  }
+
+  .home-care-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-care-cta {
+    margin: 60px 6%;
+    padding: 45px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-care-hero {
+    min-height: auto;
+    padding: 100px 22px 75px;
+  }
+
+  .home-care-hero h1 {
+    font-size: 46px;
+    letter-spacing: -1.5px;
+  }
+
+  .home-care-hero p {
+    font-size: 15px;
+  }
+
+  .home-care-services {
+    padding: 75px 22px;
+  }
+
+  .home-care-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .home-care-section-heading h2 {
+    font-size: 40px;
+  }
+
+  .home-care-service-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .home-care-service-card {
+    padding: 26px;
+  }
+
+  .home-care-cta {
+    margin: 45px 22px;
+    padding: 35px 26px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-care-cta h2 {
+    font-size: 36px;
+  }
+
+  .home-care-cta .home-care-btn {
+    margin-top: 5px;
+  }
+
+}

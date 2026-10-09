@@ -1,0 +1,299 @@
+/* =========================================================
+   SILVERGENIE — RECOGNITION / PARTNERS
+========================================================= */
+
+.recognition {
+  width: 100%;
+  padding: 58px 0 68px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.recognition-container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   LOGO GRID
+========================================================= */
+
+.recognition-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  column-gap: 28px;
+  row-gap: 28px;
+
+  align-items: center;
+}
+
+/* =========================================================
+   LOGO CARD
+========================================================= */
+
+.recognition-card {
+  width: 100%;
+  min-width: 0;
+  height: 115px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.recognition-card img {
+  display: block;
+
+  width: 100%;
+  max-width: 220px;
+  height: 95px;
+
+  object-fit: contain;
+  object-position: center;
+
+  opacity: 0.92;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* =========================================================
+   SUBTLE HOVER
+========================================================= */
+
+.recognition-card:hover img {
+  opacity: 1;
+  transform: scale(1.035);
+}
+
+/* =========================================================
+   COMBINED LOGO CARD
+========================================================= */
+
+.recognition-card:last-child {
+  grid-column: span 4;
+
+  width: 100%;
+  height: 115px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recognition-card:last-child img {
+  width: 100%;
+  max-width: 820px;
+  height: 100px;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* =========================================================
+   TABLET — 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+  .recognition {
+    padding: 48px 0 58px;
+  }
+
+  .recognition-container {
+    width: min(100% - 40px, 1000px);
+  }
+
+  .recognition-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    column-gap: 20px;
+    row-gap: 24px;
+  }
+
+  .recognition-card {
+    height: 105px;
+  }
+
+  .recognition-card img {
+    max-width: 190px;
+    height: 85px;
+  }
+
+  .recognition-card:last-child {
+    grid-column: span 3;
+    height: 105px;
+  }
+
+  .recognition-card:last-child img {
+    max-width: 680px;
+    height: 88px;
+  }
+}
+
+/* =========================================================
+   TABLET / MOBILE — 800px
+========================================================= */
+
+@media (max-width: 800px) {
+  .recognition {
+    padding: 42px 0 52px;
+  }
+
+  .recognition-container {
+    width: calc(100% - 40px);
+  }
+
+  .recognition-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 18px;
+    row-gap: 18px;
+  }
+
+  .recognition-card {
+    height: 92px;
+  }
+
+  .recognition-card img {
+    max-width: 170px;
+    height: 76px;
+  }
+
+  .recognition-card:last-child {
+    grid-column: 1 / -1;
+    height: 92px;
+  }
+
+  .recognition-card:last-child img {
+    max-width: 540px;
+    height: 78px;
+  }
+}
+
+/* =========================================================
+   MOBILE — 600px
+========================================================= */
+
+@media (max-width: 600px) {
+  .recognition {
+    padding: 38px 0 48px;
+  }
+
+  .recognition-container {
+    width: calc(100% - 32px);
+  }
+
+  .recognition-grid {
+    column-gap: 12px;
+    row-gap: 14px;
+  }
+
+  .recognition-card {
+    height: 82px;
+  }
+
+  .recognition-card img {
+    max-width: 150px;
+    height: 68px;
+  }
+
+  .recognition-card:last-child {
+    height: 82px;
+  }
+
+  .recognition-card:last-child img {
+    max-width: 460px;
+    height: 70px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE — 420px
+========================================================= */
+
+@media (max-width: 420px) {
+  .recognition {
+    padding: 32px 0 42px;
+  }
+
+  .recognition-container {
+    width: calc(100% - 24px);
+  }
+
+  .recognition-grid {
+    column-gap: 8px;
+    row-gap: 10px;
+  }
+
+  .recognition-card {
+    height: 72px;
+  }
+
+  .recognition-card img {
+    max-width: 135px;
+    height: 60px;
+  }
+
+  .recognition-card:last-child {
+    height: 74px;
+  }
+
+  .recognition-card:last-child img {
+    max-width: 360px;
+    height: 62px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 350px) {
+  .recognition-container {
+    width: calc(100% - 20px);
+  }
+
+  .recognition-card {
+    height: 66px;
+  }
+
+  .recognition-card img {
+    max-width: 120px;
+    height: 55px;
+  }
+
+  .recognition-card:last-child {
+    height: 68px;
+  }
+
+  .recognition-card:last-child img {
+    height: 56px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .recognition-card,
+  .recognition-card img {
+    transition: none;
+  }
+}

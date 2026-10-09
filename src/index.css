@@ -1,1 +1,21 @@
 @import "./styles/global.css";
+
+@import "./styles/Navbar.css";
+@import "./styles/Footer.css";
+
+@import "./styles/Hero.css";
+@import "./styles/Recognition.css";
+@import "./styles/Services.css";
+@import "./styles/Difference.css";
+@import "./styles/Stats.css";
+@import "./styles/Testimonials.css";
+@import "./styles/HomeCare.css";
+@import "./styles/Resources.css";
+@import "./styles/Contact.css";
+@import "./styles/FAQ.css";
+
+@import "./styles/ServiceDetail.css";
+@import "./styles/SubscriptionPlans.css";
+@import "./styles/CarePlans.css";
+@import "./styles/TravelWithCare.css";
+@import "./styles/ContactExtras.css";

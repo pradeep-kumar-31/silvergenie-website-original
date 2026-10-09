@@ -1,0 +1,96 @@
+/* =========================================
+   STATS
+========================================= */
+
+.stats-section {
+  padding: 100px 24px;
+  background: #ffffff;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- STATS HEADING ---------- */
+
+.stats-heading {
+  margin-bottom: 55px;
+}
+
+.stats-heading .section-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #20b69e;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.stats-heading h2 {
+  margin: 0;
+  color: #16302c;
+  font-size: 46px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.stats-heading h2 span {
+  color: #20b69e;
+}
+
+/* ---------- STATS CARDS ---------- */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  min-height: 190px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid #e5efec;
+  border-radius: 18px;
+
+  background: #f8fcfb;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(32, 182, 158, 0.45);
+  box-shadow: 0 18px 40px rgba(22, 48, 44, 0.10);
+}
+
+.stat-number {
+  margin-bottom: 14px;
+  color: #20b69e;
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.stat-title {
+  color: #16302c;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.stat-subtitle {
+  margin-top: 4px;
+  color: #71827e;
+  font-size: 13px;
+  line-height: 1.4;
+}
+

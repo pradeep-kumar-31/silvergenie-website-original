@@ -1,69 +1,120 @@
 function Resources() {
+  const resources = [
+    {
+      type: "DOCUMENT",
+      title: "SilverGenie Brochure",
+      description:
+        "Know more about SilverGenie, our services, care solutions and offerings.",
+      button: "View Brochure",
+      link:
+        "https://www.yoursilvergenie.com/wp-content/uploads/2020/10/SilverGenie_Brochure_New.pdf",
+      icon: "▣",
+    },
+
+    {
+      type: "DOCUMENT",
+      title: "Chunauti 2.0",
+      description:
+        "Explore more about SilverGenie and our vision towards better elder care.",
+      button: "Read Document",
+      link:
+        "https://www.yoursilvergenie.com/wp-content/themes/silvergenie/pdfs/Chunauti.pdf",
+      icon: "✦",
+    },
+  ];
+
   return (
     <section className="resources-section" id="resources">
+
       <div className="resources-container">
 
+        {/* =================================================
+            HEADER
+        ================================================= */}
+
         <div className="resources-heading">
+
           <span className="section-label">
             KNOW MORE ABOUT SILVERGENIE
           </span>
 
           <h2>
-            Click Below to Know More
-            <span> About SilverGenie</span>
+            Explore Our
+            <span> Resources</span>
           </h2>
 
           <p>
-            Get to know all about us, our services, offerings,
-            packages and more.
+            Get to know more about SilverGenie, our services,
+            offerings, care solutions and our approach towards
+            supporting seniors and their families.
           </p>
+
         </div>
+
+
+        {/* =================================================
+            RESOURCE CARDS
+        ================================================= */}
 
         <div className="resources-grid">
 
-          <a
-            href="https://www.yoursilvergenie.com/wp-content/uploads/2020/10/SilverGenie_Brochure_New.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="resource-card"
-          >
-            <div className="resource-icon">
-              ↗
-            </div>
+          {resources.map((resource) => (
 
-            <div>
-              <span>DOCUMENT</span>
-              <h3>Brochure</h3>
-              <p>
-                Know more about SilverGenie, its services
-                and offerings.
-              </p>
-            </div>
-          </a>
+            <a
+              key={resource.title}
+              href={resource.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resource-card"
+            >
 
-          <a
-            href="https://www.yoursilvergenie.com/wp-content/themes/silvergenie/pdfs/Chunauti.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="resource-card"
-          >
-            <div className="resource-icon">
-              ↗
-            </div>
+              {/* ICON */}
 
-            <div>
-              <span>DOCUMENT</span>
-              <h3>Chunauti 2.0</h3>
-              <p>
-                Explore more about SilverGenie and its
-                elder-care vision.
-              </p>
-            </div>
-          </a>
+              <div className="resource-icon">
+                {resource.icon}
+              </div>
+
+
+              {/* CONTENT */}
+
+              <div className="resource-content">
+
+                <span className="resource-type">
+                  {resource.type}
+                </span>
+
+                <h3>
+                  {resource.title}
+                </h3>
+
+                <p>
+                  {resource.description}
+                </p>
+
+                <span className="resource-button">
+                  {resource.button}
+                  <span className="resource-arrow">
+                    →
+                  </span>
+                </span>
+
+              </div>
+
+
+              {/* TOP ARROW */}
+
+              <span className="resource-card-arrow">
+                ↗
+              </span>
+
+            </a>
+
+          ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

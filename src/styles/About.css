@@ -1,0 +1,586 @@
+/* =========================================================
+   SILVERGENIE — ABOUT PAGE
+   COMPLETE RESPONSIVE CSS
+========================================================= */
+
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #16302c;
+  overflow: hidden;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page p {
+  margin-top: 0;
+}
+
+.about-page img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.about-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   COMMON LABEL
+========================================================= */
+
+.about-page .section-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.about-hero {
+  width: 100%;
+  min-height: 590px;
+  padding: 150px 0 110px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(32, 182, 158, 0.22),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #102824 0%,
+      #16302c 55%,
+      #1c5148 100%
+    );
+
+  color: #ffffff;
+}
+
+.about-hero .about-container {
+  max-width: 1050px;
+}
+
+.about-hero .section-label {
+  color: #8de0d1;
+}
+
+.about-hero h1 {
+  max-width: 950px;
+  margin: 0 0 28px;
+
+  color: #ffffff;
+
+  font-size: clamp(48px, 6vw, 78px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -3px;
+}
+
+.about-hero h1 span {
+  display: block;
+  color: #69d7c3;
+}
+
+.about-hero p {
+  max-width: 680px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   ABOUT INTRO
+========================================================= */
+
+.about-intro {
+  width: 100%;
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.about-intro .about-container {
+  max-width: 950px;
+}
+
+.about-intro h2 {
+  max-width: 850px;
+  margin: 0 0 28px;
+
+  color: #16302c;
+
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.about-intro p {
+  max-width: 900px;
+  margin: 0 0 18px;
+
+  color: #647772;
+
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.about-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   MISSION / VISION
+========================================================= */
+
+.mission-vision {
+  width: 100%;
+  padding: 115px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f4fbf9 0%,
+      #f8fcfb 100%
+    );
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.mission-card {
+  position: relative;
+
+  min-height: 390px;
+  padding: 48px;
+
+  border: 1px solid #deebe7;
+  border-radius: 26px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 45px rgba(22, 48, 44, 0.055);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  overflow: hidden;
+}
+
+.mission-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #20b69e;
+}
+
+.mission-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(32, 182, 158, 0.35);
+
+  box-shadow:
+    0 25px 60px rgba(22, 48, 44, 0.1);
+}
+
+.mission-card .section-label {
+  margin-bottom: 14px;
+}
+
+.mission-card h2 {
+  margin: 0 0 22px;
+
+  color: #16302c;
+
+  font-size: clamp(30px, 3vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.mission-card p {
+  margin: 0 0 17px;
+
+  color: #667a75;
+
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.mission-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.values-section {
+  width: 100%;
+  padding: 120px 0;
+
+  background: #ffffff;
+}
+
+.values-heading {
+  max-width: 800px;
+  margin-bottom: 58px;
+}
+
+.values-heading h2 {
+  margin: 0 0 22px;
+
+  color: #16302c;
+
+  font-size: clamp(38px, 5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.values-heading h2 span {
+  display: inline;
+  color: #20b69e;
+}
+
+.values-heading p {
+  max-width: 700px;
+  margin: 0;
+
+  color: #667a75;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   VALUES GRID
+========================================================= */
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.value-card {
+  position: relative;
+
+  min-height: 280px;
+  padding: 38px 35px;
+
+  border: 1px solid #dfebe8;
+  border-radius: 24px;
+
+  background: #f7fcfb;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.value-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: #20b69e;
+}
+
+.value-card:hover {
+  transform: translateY(-7px);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 22px 50px rgba(22, 48, 44, 0.09);
+}
+
+.value-card h3 {
+  margin: 0 0 16px;
+
+  color: #16302c;
+
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.value-card p {
+  margin: 0;
+
+  color: #687b76;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .about-container {
+    width: min(92%, 850px);
+  }
+
+  .about-hero {
+    min-height: auto;
+    padding: 130px 0 90px;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(46px, 7vw, 68px);
+  }
+
+  .about-intro,
+  .mission-vision,
+  .values-section {
+    padding: 90px 0;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-card {
+    min-height: auto;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .value-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .about-container {
+    width: 92%;
+  }
+
+  /* HERO */
+
+  .about-hero {
+    min-height: auto;
+    padding: 105px 0 75px;
+  }
+
+  .about-hero .about-container {
+    max-width: 100%;
+  }
+
+  .about-hero .section-label {
+    margin-bottom: 15px;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+  }
+
+  .about-hero h1 {
+    margin-bottom: 22px;
+
+    font-size: 45px;
+    line-height: 1.04;
+    letter-spacing: -1.8px;
+  }
+
+  .about-hero p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* INTRO */
+
+  .about-intro {
+    padding: 75px 0;
+  }
+
+  .about-intro h2 {
+    margin-bottom: 22px;
+
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  .about-intro p {
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+
+  /* MISSION */
+
+  .mission-vision {
+    padding: 75px 0;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .mission-card {
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .mission-card h2 {
+    font-size: 30px;
+  }
+
+  .mission-card p {
+    font-size: 15px;
+  }
+
+  /* VALUES */
+
+  .values-section {
+    padding: 75px 0;
+  }
+
+  .values-heading {
+    margin-bottom: 40px;
+  }
+
+  .values-heading h2 {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  .values-heading p {
+    font-size: 15.5px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .value-card:last-child {
+    grid-column: auto;
+  }
+
+  .value-card {
+    min-height: auto;
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .value-card h3 {
+    font-size: 23px;
+  }
+
+  .value-card p {
+    font-size: 14.5px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .about-container {
+    width: 91%;
+  }
+
+  .about-hero {
+    padding: 95px 0 65px;
+  }
+
+  .about-hero h1 {
+    font-size: 39px;
+    letter-spacing: -1.4px;
+  }
+
+  .about-hero p {
+    font-size: 15px;
+  }
+
+  .about-intro,
+  .mission-vision,
+  .values-section {
+    padding: 65px 0;
+  }
+
+  .about-intro h2,
+  .values-heading h2 {
+    font-size: 33px;
+  }
+
+  .mission-card {
+    padding: 25px;
+  }
+
+  .mission-card h2 {
+    font-size: 27px;
+  }
+
+  .mission-card p {
+    font-size: 14.5px;
+  }
+
+  .value-card {
+    padding: 25px;
+  }
+
+  .value-card h3 {
+    font-size: 21px;
+  }
+}

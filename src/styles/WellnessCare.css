@@ -1,0 +1,910 @@
+/* =========================================================
+   SILVERGENIE — WELLNESS CARE
+   COMPLETE RESPONSIVE CSS
+========================================================= */
+
+.wellness-care-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #16302c;
+  overflow: hidden;
+}
+
+.wellness-care-page *,
+.wellness-care-page *::before,
+.wellness-care-page *::after {
+  box-sizing: border-box;
+}
+
+.wellness-care-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.wellness-care-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.wellness-care-section-heading {
+  max-width: 760px;
+  margin-bottom: 55px;
+}
+
+.wellness-care-section-heading h2,
+.wellness-care-intro h2,
+.wellness-care-experts h2,
+.wellness-care-focus h2,
+.wellness-care-cta h2 {
+  margin: 0 0 22px;
+  color: #16302c;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.wellness-care-section-heading h2 span,
+.wellness-care-intro h2 span,
+.wellness-care-experts h2 span,
+.wellness-care-focus h2 span,
+.wellness-care-cta h2 span {
+  display: block;
+  color: #20b69e;
+}
+
+.wellness-care-section-heading p,
+.wellness-care-intro p,
+.wellness-care-experts p,
+.wellness-care-focus p,
+.wellness-care-cta p {
+  margin: 0;
+  color: #667a75;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.wellness-care-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 14px 27px;
+  border-radius: 50px;
+  background: #16302c;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.wellness-care-btn:hover {
+  background: #20b69e;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(32, 182, 158, 0.22);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.wellness-care-hero {
+  position: relative;
+  min-height: 700px;
+  padding: 145px 0 90px;
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(32, 182, 158, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f0fbf8 0%,
+      #ffffff 70%
+    );
+}
+
+.wellness-care-hero .wellness-care-container {
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.wellness-care-hero-content {
+  max-width: 650px;
+}
+
+.wellness-care-hero-content h1 {
+  margin: 0 0 26px;
+  color: #16302c;
+  font-size: clamp(50px, 6vw, 78px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -3.5px;
+}
+
+.wellness-care-hero-content h1 span {
+  display: block;
+  color: #20b69e;
+}
+
+.wellness-care-hero-content p {
+  max-width: 620px;
+  margin: 0 0 35px;
+  color: #60736f;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.wellness-care-hero-visual {
+  position: relative;
+  min-height: 500px;
+}
+
+.wellness-care-hero-visual::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: -25px;
+  right: -25px;
+  border-radius: 50%;
+  background: rgba(32, 182, 158, 0.12);
+  z-index: 0;
+}
+
+.wellness-care-hero-visual img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 500px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 34px;
+  box-shadow: 0 25px 70px rgba(22, 48, 44, 0.16);
+}
+
+.wellness-care-floating-card {
+  position: absolute;
+  z-index: 3;
+  right: -25px;
+  bottom: 30px;
+  width: 195px;
+  padding: 22px;
+  border: 1px solid rgba(32, 182, 158, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 50px rgba(22, 48, 44, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.wellness-care-floating-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #20b69e;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.wellness-care-floating-card span {
+  color: #16302c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.wellness-care-intro {
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.wellness-care-intro .wellness-care-container {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.wellness-care-intro h2 {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wellness-care-intro p {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   WELLNESS SERVICES
+========================================================= */
+
+.wellness-care-services {
+  padding: 110px 0;
+  background: #f3fbf9;
+}
+
+.wellness-care-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.wellness-care-service-card {
+  position: relative;
+  min-height: 210px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 50px 1fr 30px;
+  gap: 20px;
+  align-items: start;
+  border: 1px solid #dcece8;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(22, 48, 44, 0.055);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.wellness-care-service-card:hover {
+  border-color: rgba(32, 182, 158, 0.35);
+  transform: translateY(-7px);
+  box-shadow: 0 22px 50px rgba(22, 48, 44, 0.11);
+}
+
+.wellness-care-number {
+  color: #20b69e;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.wellness-care-service-card h3 {
+  margin: 0 0 12px;
+  color: #16302c;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.wellness-care-service-card p {
+  margin: 0;
+  color: #687b77;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.wellness-care-arrow {
+  color: #20b69e;
+  font-size: 25px;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.wellness-care-service-card:hover .wellness-care-arrow {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   RESOURCE POOL
+========================================================= */
+
+.wellness-care-experts {
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.wellness-care-experts .wellness-care-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.wellness-care-experts-content {
+  max-width: 560px;
+}
+
+.wellness-care-experts-content h2 {
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   RESOURCE POOL LIST
+========================================================= */
+
+.wellness-care-experts-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.wellness-care-expert-item {
+  min-height: 125px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #dcece8;
+  border-radius: 20px;
+  background: #f7fcfb;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.wellness-care-expert-item:hover {
+  background: #16302c;
+  border-color: #16302c;
+  transform: translateY(-5px);
+}
+
+.wellness-care-expert-item span {
+  display: block;
+  margin-bottom: 15px;
+  color: #20b69e;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.wellness-care-expert-item p {
+  margin: 0;
+  color: #16302c;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.wellness-care-expert-item:hover p {
+  color: #ffffff;
+}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.wellness-care-benefits {
+  padding: 110px 0;
+  background: #f3fbf9;
+}
+
+.wellness-care-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.wellness-care-benefit-card {
+  min-height: 220px;
+  padding: 28px;
+  border: 1px solid #e1efec;
+  border-radius: 22px;
+  background: #ffffff;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.wellness-care-benefit-card:hover {
+  border-color: rgba(32, 182, 158, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(22, 48, 44, 0.09);
+}
+
+.wellness-care-benefit-card > span {
+  color: #20b69e;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.wellness-care-benefit-card h3 {
+  margin: 30px 0 12px;
+  color: #16302c;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.wellness-care-benefit-card p {
+  margin: 0;
+  color: #687b77;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   WELLNESS FOCUS
+========================================================= */
+
+.wellness-care-focus {
+  padding: 115px 0;
+  background: #16302c;
+}
+
+.wellness-care-focus .wellness-care-container {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.wellness-care-focus-content {
+  max-width: 600px;
+}
+
+.wellness-care-focus-content h2 {
+  color: #ffffff;
+}
+
+.wellness-care-focus-content p {
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.wellness-care-focus .wellness-care-label {
+  color: #55d4be;
+}
+
+.wellness-care-focus .wellness-care-btn {
+  background: #20b69e;
+}
+
+.wellness-care-focus .wellness-care-btn:hover {
+  background: #ffffff;
+  color: #16302c;
+}
+
+/* =========================================================
+   FOCUS GRID
+========================================================= */
+
+.wellness-care-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.wellness-care-focus-grid > div {
+  min-height: 150px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.wellness-care-focus-grid > div:hover {
+  transform: translateY(-5px);
+  border-color: rgba(32, 182, 158, 0.45);
+  background: rgba(32, 182, 158, 0.1);
+}
+
+.wellness-care-focus-grid strong {
+  color: #20b69e;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.wellness-care-focus-grid span {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.wellness-care-faq {
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.wellness-care-faq-list {
+  max-width: 950px;
+}
+
+.wellness-care-faq-item {
+  border-bottom: 1px solid #dce8e5;
+}
+
+.wellness-care-faq-item summary {
+  min-height: 85px;
+  padding: 22px 5px;
+  display: grid;
+  grid-template-columns: 55px 1fr 35px;
+  gap: 15px;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.wellness-care-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.wellness-care-faq-item summary > span {
+  color: #20b69e;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.wellness-care-faq-item summary strong {
+  color: #16302c;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.wellness-care-faq-item summary b {
+  color: #20b69e;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: right;
+  transition: transform 0.25s ease;
+}
+
+.wellness-care-faq-item[open] summary b {
+  transform: rotate(45deg);
+}
+
+.wellness-care-faq-item > p {
+  max-width: 800px;
+  margin: 0 55px 25px;
+  color: #687b77;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.wellness-care-cta {
+  padding: 120px 0;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(32, 182, 158, 0.2),
+      transparent 42%
+    ),
+    #eaf8f5;
+}
+
+.wellness-care-cta .wellness-care-container {
+  max-width: 800px;
+}
+
+.wellness-care-cta h2 {
+  font-size: clamp(40px, 5vw, 62px);
+}
+
+.wellness-care-cta p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+}
+
+.wellness-care-cta .wellness-care-btn {
+  background: #16302c;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .wellness-care-hero .wellness-care-container,
+  .wellness-care-experts .wellness-care-container,
+  .wellness-care-focus .wellness-care-container {
+    grid-template-columns: 1fr;
+  }
+
+  .wellness-care-hero-content {
+    max-width: 760px;
+  }
+
+  .wellness-care-hero-visual {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .wellness-care-experts-content {
+    max-width: 760px;
+  }
+
+  .wellness-care-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wellness-care-focus-grid {
+    max-width: 700px;
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .wellness-care-hero {
+    padding-top: 125px;
+  }
+
+  .wellness-care-hero .wellness-care-container {
+    gap: 55px;
+  }
+
+  .wellness-care-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wellness-care-experts .wellness-care-container {
+    gap: 55px;
+  }
+
+  .wellness-care-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wellness-care-focus .wellness-care-container {
+    gap: 50px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .wellness-care-container {
+    width: min(92%, 600px);
+  }
+
+  .wellness-care-hero {
+    min-height: auto;
+    padding: 120px 0 70px;
+  }
+
+  .wellness-care-hero .wellness-care-container {
+    gap: 45px;
+  }
+
+  .wellness-care-hero-content h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .wellness-care-hero-content p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .wellness-care-hero-visual {
+    min-height: 380px;
+  }
+
+  .wellness-care-hero-visual img {
+    height: 380px;
+    border-radius: 25px;
+  }
+
+  .wellness-care-hero-visual::before {
+    width: 100px;
+    height: 100px;
+    right: -10px;
+    top: -15px;
+  }
+
+  .wellness-care-floating-card {
+    right: 12px;
+    bottom: 18px;
+    width: 165px;
+    padding: 17px;
+  }
+
+  .wellness-care-floating-card strong {
+    font-size: 26px;
+  }
+
+  .wellness-care-intro,
+  .wellness-care-services,
+  .wellness-care-experts,
+  .wellness-care-benefits,
+  .wellness-care-focus,
+  .wellness-care-faq {
+    padding: 75px 0;
+  }
+
+  .wellness-care-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .wellness-care-section-heading h2,
+  .wellness-care-intro h2,
+  .wellness-care-experts h2,
+  .wellness-care-focus h2,
+  .wellness-care-cta h2 {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .wellness-care-section-heading p,
+  .wellness-care-intro p,
+  .wellness-care-experts p,
+  .wellness-care-focus p,
+  .wellness-care-cta p {
+    font-size: 15px;
+  }
+
+  .wellness-care-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wellness-care-service-card {
+    min-height: 190px;
+    grid-template-columns: 45px 1fr 25px;
+    padding: 25px;
+    gap: 15px;
+  }
+
+  .wellness-care-service-card h3 {
+    font-size: 20px;
+  }
+
+  .wellness-care-service-card p {
+    font-size: 14px;
+  }
+
+  .wellness-care-experts-list {
+    grid-template-columns: 1fr;
+  }
+
+  .wellness-care-expert-item {
+    min-height: 110px;
+  }
+
+  .wellness-care-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wellness-care-benefit-card {
+    min-height: 180px;
+  }
+
+  .wellness-care-focus-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wellness-care-faq-item summary {
+    grid-template-columns: 40px 1fr 25px;
+    gap: 10px;
+  }
+
+  .wellness-care-faq-item summary strong {
+    font-size: 15px;
+  }
+
+  .wellness-care-faq-item > p {
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+
+  .wellness-care-cta {
+    padding: 85px 0;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .wellness-care-hero {
+    padding-top: 110px;
+  }
+
+  .wellness-care-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .wellness-care-hero-content p {
+    font-size: 15px;
+  }
+
+  .wellness-care-hero-visual {
+    min-height: 330px;
+  }
+
+  .wellness-care-hero-visual img {
+    height: 330px;
+  }
+
+  .wellness-care-floating-card {
+    width: 150px;
+    padding: 15px;
+  }
+
+  .wellness-care-floating-card strong {
+    font-size: 24px;
+  }
+
+  .wellness-care-floating-card span {
+    font-size: 12px;
+  }
+
+  .wellness-care-section-heading h2,
+  .wellness-care-intro h2,
+  .wellness-care-experts h2,
+  .wellness-care-focus h2,
+  .wellness-care-cta h2 {
+    font-size: 33px;
+  }
+
+  .wellness-care-service-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px;
+  }
+
+  .wellness-care-arrow {
+    display: none;
+  }
+
+  .wellness-care-focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wellness-care-focus-grid > div {
+    min-height: 120px;
+  }
+
+  .wellness-care-faq-item summary {
+    min-height: 75px;
+    padding: 18px 0;
+  }
+}

@@ -1,14 +1,24 @@
+import "../styles/WhySilverGenie.css";
+
+/* =========================================================
+   SILVERGENIE — THE HEALING TOUCH
+   Content verified from official SilverGenie website
+========================================================= */
+
 function WhySilverGenie() {
   return (
-    <section className="healing-section">
+    <section className="healing-section" id="healing">
 
       <div className="healing-container">
 
-        {/* LEFT IMAGE */}
+        {/* =================================================
+            LEFT IMAGE
+        ================================================= */}
+
         <div className="healing-image">
 
           <img
-            src="/image/healing/healing-touch.jpeg"
+            src={`${import.meta.env.BASE_URL}image/healing/healing-touch.jpeg`}
             alt="SilverGenie Elder Care"
           />
 
@@ -20,17 +30,28 @@ function WhySilverGenie() {
         </div>
 
 
-        {/* RIGHT CONTENT */}
+        {/* =================================================
+            RIGHT CONTENT
+        ================================================= */}
+
         <div className="healing-content">
 
-          <span className="section-label">
+          {/* LABEL */}
+
+          <span className="healing-label">
             THE HEALING TOUCH OF SILVERGENIE
           </span>
 
+
+          {/* HEADING */}
+
           <h2>
-            Care That Makes a
-            <span> Difference</span>
+            The Healing Touch of{" "}
+            <span>SilverGenie</span>
           </h2>
+
+
+          {/* OFFICIAL WEBSITE CONTENT */}
 
           <p>
             SilverGenie understands the importance of elder care.
@@ -50,22 +71,43 @@ function WhySilverGenie() {
             the senior care industry.
           </p>
 
-          <div className="healing-points">
 
-            <div className="healing-point">
-              <span>✓</span>
+          {/* =================================================
+              SMALL HIGHLIGHT
+              Visual only — not additional website claim
+          ================================================= */}
+
+          <div className="healing-highlight">
+
+            <div className="healing-highlight-item">
+
+              <span className="healing-check">✓</span>
+
               <div>
-                <strong>Personalised Care</strong>
-                <small>Support designed around individual needs.</small>
+                <strong>Senior-Centric Care</strong>
+
+                <small>
+                  Healthcare assistance designed around the needs
+                  of senior citizens.
+                </small>
               </div>
+
             </div>
 
-            <div className="healing-point">
-              <span>✓</span>
+
+            <div className="healing-highlight-item">
+
+              <span className="healing-check">✓</span>
+
               <div>
-                <strong>Compassionate Support</strong>
-                <small>Care delivered with dignity and empathy.</small>
+                <strong>Holistic Healthcare Support</strong>
+
+                <small>
+                  Support focused on better healthcare management
+                  and improved well-being.
+                </small>
               </div>
+
             </div>
 
           </div>

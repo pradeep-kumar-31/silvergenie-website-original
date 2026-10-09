@@ -1,0 +1,1258 @@
+/* =========================================================
+   SILVERGENIE — EMERGENCY GENIE
+   COMPLETE RESPONSIVE CSS
+========================================================= */
+
+.emergency-care-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #16302c;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.emergency-care-page *,
+.emergency-care-page *::before,
+.emergency-care-page *::after {
+  box-sizing: border-box;
+}
+
+.emergency-care-container {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   COMMON LABEL
+========================================================= */
+
+.emergency-care-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+.emergency-care-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: #20b69e;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  box-shadow: 0 14px 35px rgba(32, 182, 158, 0.24);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.emergency-care-btn:hover {
+  background: #16302c;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(22, 48, 44, 0.18);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.emergency-care-hero {
+  position: relative;
+  min-height: 720px;
+  padding: 95px 0 100px;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(32, 182, 158, 0.12),
+      transparent 34%
+    ),
+    #f2faf8;
+}
+
+.emergency-care-hero .emergency-care-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+  align-items: center;
+  gap: 75px;
+}
+
+.emergency-care-hero-content {
+  max-width: 610px;
+}
+
+.emergency-care-hero h1 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(48px, 5.5vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -3.8px;
+  font-weight: 750;
+}
+
+.emergency-care-hero h1 span {
+  display: block;
+  margin-top: 7px;
+  color: #20b69e;
+}
+
+.emergency-care-hero p {
+  max-width: 590px;
+  margin: 28px 0 28px;
+  color: #647570;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   HERO PRICE
+========================================================= */
+
+.emergency-care-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 25px 0 30px;
+}
+
+.emergency-care-price span {
+  color: #6c7e79;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.emergency-care-price strong {
+  margin-top: 3px;
+  color: #16302c;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.emergency-care-price small {
+  margin-top: 7px;
+  color: #72827e;
+  font-size: 12px;
+}
+
+.emergency-care-price em {
+  margin-top: 7px;
+  color: #20a991;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.emergency-care-hero-image {
+  position: relative;
+  width: 100%;
+  height: 555px;
+  overflow: hidden;
+  border-radius: 34px;
+  background: #dceee9;
+  box-shadow:
+    0 25px 70px rgba(22, 48, 44, 0.14),
+    0 5px 15px rgba(22, 48, 44, 0.05);
+}
+
+.emergency-care-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(22, 48, 44, 0.02),
+    rgba(22, 48, 44, 0.12)
+  );
+}
+
+.emergency-care-hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.emergency-care-hero-image:hover img {
+  transform: scale(1.04);
+}
+
+/* Floating badge */
+
+.emergency-care-floating-card {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  bottom: 24px;
+  min-width: 190px;
+  padding: 17px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(22, 48, 44, 0.16);
+}
+
+.emergency-care-floating-card strong {
+  color: #20b69e;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.emergency-care-floating-card span {
+  margin-top: 6px;
+  color: #16302c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   PACKAGE HIGHLIGHTS
+========================================================= */
+
+.emergency-care-highlights {
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.emergency-care-section-heading {
+  max-width: 760px;
+  margin-bottom: 55px;
+}
+
+.emergency-care-section-heading h2 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.03;
+  letter-spacing: -2.7px;
+  font-weight: 750;
+}
+
+.emergency-care-section-heading h2 span {
+  display: block;
+  color: #20b69e;
+}
+
+.emergency-care-section-heading p {
+  max-width: 700px;
+  margin: 22px 0 0;
+  color: #687974;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   HIGHLIGHT CARDS
+========================================================= */
+
+.emergency-care-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.emergency-care-highlight-card {
+  min-height: 265px;
+  padding: 30px 27px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dfece8;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(22, 48, 44, 0.055);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.emergency-care-highlight-card:hover {
+  transform: translateY(-8px);
+  border-color: #aee0d5;
+  box-shadow: 0 22px 45px rgba(22, 48, 44, 0.11);
+}
+
+.emergency-care-number {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #e9f8f4;
+  color: #20b69e;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.emergency-care-highlight-card h3 {
+  margin: 34px 0 12px;
+  color: #16302c;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.emergency-care-highlight-card p {
+  margin: 0;
+  color: #71807c;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PACKAGE SECTION
+========================================================= */
+
+.emergency-care-package {
+  padding: 120px 0;
+  background: #f4faf8;
+}
+
+.emergency-care-package .emergency-care-container {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 85px;
+}
+
+.emergency-care-package-content {
+  max-width: 520px;
+}
+
+.emergency-care-package-content h2 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -2.5px;
+}
+
+.emergency-care-package-content h2 span {
+  display: block;
+  color: #20b69e;
+}
+
+.emergency-care-package-content p {
+  margin: 25px 0 0;
+  color: #687974;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   PACKAGE CARD
+========================================================= */
+
+.emergency-care-package-card {
+  overflow: hidden;
+  border-radius: 30px;
+  background: #16302c;
+  box-shadow: 0 25px 60px rgba(22, 48, 44, 0.17);
+}
+
+.emergency-care-package-top {
+  padding: 36px 40px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.emergency-care-package-top span {
+  display: block;
+  margin-bottom: 14px;
+  color: #20b69e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.emergency-care-package-top strong {
+  display: block;
+  color: #ffffff;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.emergency-care-package-top small {
+  display: block;
+  margin-top: 7px;
+  color: #b9ccc7;
+  font-size: 12px;
+}
+
+.emergency-care-package-top em {
+  display: block;
+  margin-top: 8px;
+  color: #20b69e;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.emergency-care-package-list {
+  padding: 8px 40px 25px;
+}
+
+.emergency-care-package-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: start;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.emergency-care-package-item:last-child {
+  border-bottom: none;
+}
+
+.emergency-care-package-item > span {
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  padding-top: 2px;
+}
+
+.emergency-care-package-item p {
+  margin: 0;
+  color: #d8e5e2;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   WHO BENEFITS
+========================================================= */
+
+.emergency-care-beneficiaries {
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.emergency-care-beneficiary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.emergency-care-beneficiary-card {
+  position: relative;
+  min-height: 190px;
+  padding: 28px;
+  border: 1px solid #e0ece9;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(22, 48, 44, 0.045);
+  transition: 0.3s ease;
+}
+
+.emergency-care-beneficiary-card:hover {
+  transform: translateY(-6px);
+  border-color: #b8e3da;
+  box-shadow: 0 18px 40px rgba(22, 48, 44, 0.09);
+}
+
+.emergency-care-beneficiary-card > span {
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.emergency-care-beneficiary-card h3 {
+  margin: 35px 0 7px;
+  color: #16302c;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.emergency-care-beneficiary-card p {
+  margin: 0;
+  color: #71807c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   WHY EMERGENCY GENIE
+========================================================= */
+
+.emergency-care-why {
+  padding: 120px 0;
+  background: #f4faf8;
+}
+
+.emergency-care-why .emergency-care-container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 80px;
+}
+
+.emergency-care-why-content {
+  max-width: 500px;
+}
+
+.emergency-care-why-content h2 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(40px, 5vw, 61px);
+  line-height: 1.04;
+  letter-spacing: -2.5px;
+}
+
+.emergency-care-why-content h2 span {
+  display: block;
+  color: #20b69e;
+}
+
+.emergency-care-why-content p {
+  margin: 24px 0 0;
+  color: #687974;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Benefit columns */
+
+.emergency-care-benefit-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.emergency-care-benefit-column {
+  padding: 32px;
+  border-radius: 25px;
+  background: #ffffff;
+  border: 1px solid #deebe8;
+  box-shadow: 0 12px 35px rgba(22, 48, 44, 0.05);
+}
+
+.emergency-care-benefit-column h3 {
+  margin: 0 0 22px;
+  color: #16302c;
+  font-size: 20px;
+}
+
+.emergency-care-benefit-column ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emergency-care-benefit-column li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf2f0;
+  color: #687974;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.emergency-care-benefit-column li:last-child {
+  border-bottom: none;
+}
+
+.emergency-care-benefit-column li span {
+  flex-shrink: 0;
+  color: #20b69e;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   GOLDEN HOURS
+========================================================= */
+
+.emergency-care-golden {
+  padding: 125px 0;
+  text-align: center;
+  background: #16302c;
+}
+
+.emergency-care-golden .emergency-care-container {
+  max-width: 850px;
+}
+
+.emergency-care-golden .emergency-care-label {
+  color: #20b69e;
+}
+
+.emergency-care-golden h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(43px, 5.5vw, 70px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+}
+
+.emergency-care-golden h2 span {
+  display: block;
+  color: #20b69e;
+}
+
+.emergency-care-golden p {
+  max-width: 720px;
+  margin: 25px auto 0;
+  color: #c8d8d4;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   EMERGENCY SCENARIOS
+========================================================= */
+
+.emergency-care-scenarios {
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.emergency-care-scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.emergency-care-scenario-card {
+  padding: 38px;
+  border: 1px solid #deebe8;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(22, 48, 44, 0.05);
+  transition: 0.3s ease;
+}
+
+.emergency-care-scenario-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(22, 48, 44, 0.09);
+}
+
+.emergency-care-scenario-card h3 {
+  margin: 0 0 23px;
+  color: #16302c;
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+.emergency-care-scenario-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emergency-care-scenario-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf2f0;
+  color: #687974;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.emergency-care-scenario-card li:last-child {
+  border-bottom: none;
+}
+
+.emergency-care-scenario-card li span {
+  flex-shrink: 0;
+  color: #20b69e;
+  font-weight: 900;
+}
+
+/* =========================================================
+   ALLIED SERVICES
+========================================================= */
+
+.emergency-care-allied {
+  padding: 115px 0;
+  background: #f4faf8;
+}
+
+.emergency-care-allied-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+}
+
+.emergency-care-allied-item {
+  min-height: 75px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid #dceae6;
+  border-radius: 16px;
+  background: #ffffff;
+  transition: 0.25s ease;
+}
+
+.emergency-care-allied-item:hover {
+  transform: translateY(-3px);
+  border-color: #a9ddd2;
+  box-shadow: 0 10px 25px rgba(22, 48, 44, 0.07);
+}
+
+.emergency-care-allied-item > span {
+  flex-shrink: 0;
+  color: #20b69e;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.emergency-care-allied-item p {
+  margin: 0;
+  color: #28403b;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.emergency-care-faq {
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.emergency-care-faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.emergency-care-faq-item {
+  border-top: 1px solid #dce8e5;
+}
+
+.emergency-care-faq-item:last-child {
+  border-bottom: 1px solid #dce8e5;
+}
+
+.emergency-care-faq-item summary {
+  min-height: 82px;
+  padding: 20px 5px;
+  display: grid;
+  grid-template-columns: 45px 1fr 30px;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.emergency-care-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.emergency-care-faq-item summary > span {
+  color: #20b69e;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.emergency-care-faq-item summary strong {
+  color: #16302c;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.emergency-care-faq-item summary b {
+  color: #20b69e;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: right;
+  transition: transform 0.25s ease;
+}
+
+.emergency-care-faq-item[open] summary b {
+  transform: rotate(45deg);
+}
+
+.emergency-care-faq-item > p {
+  max-width: 780px;
+  margin: 0 48px 25px 63px;
+  color: #687974;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.emergency-care-cta {
+  padding: 120px 0;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(32, 182, 158, 0.14),
+      transparent 45%
+    ),
+    #16302c;
+}
+
+.emergency-care-cta .emergency-care-container {
+  max-width: 850px;
+}
+
+.emergency-care-cta .emergency-care-label {
+  color: #20b69e;
+}
+
+.emergency-care-cta h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(44px, 5.5vw, 70px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+}
+
+.emergency-care-cta h2 span {
+  display: block;
+  color: #20b69e;
+}
+
+.emergency-care-cta p {
+  max-width: 650px;
+  margin: 25px auto 32px;
+  color: #c7d7d3;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .emergency-care-container {
+    width: min(92%, 900px);
+  }
+
+  .emergency-care-hero .emergency-care-container {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 45px;
+  }
+
+  .emergency-care-hero-image {
+    height: 500px;
+  }
+
+  .emergency-care-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .emergency-care-package .emergency-care-container {
+    gap: 50px;
+  }
+
+  .emergency-care-beneficiary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .emergency-care-why .emergency-care-container {
+    gap: 45px;
+  }
+
+  .emergency-care-allied-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .emergency-care-container {
+    width: calc(100% - 50px);
+  }
+
+  /* HERO */
+
+  .emergency-care-hero {
+    min-height: auto;
+    padding: 75px 0 80px;
+  }
+
+  .emergency-care-hero .emergency-care-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .emergency-care-hero-content {
+    max-width: 760px;
+  }
+
+  .emergency-care-hero-image {
+    height: 480px;
+  }
+
+  /* PACKAGE */
+
+  .emergency-care-package .emergency-care-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .emergency-care-package-content {
+    max-width: 750px;
+  }
+
+  /* WHY */
+
+  .emergency-care-why .emergency-care-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .emergency-care-why-content {
+    max-width: 750px;
+  }
+
+  /* BENEFICIARIES */
+
+  .emergency-care-beneficiary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* SCENARIOS */
+
+  .emergency-care-scenarios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .emergency-care-container {
+    width: calc(100% - 36px);
+  }
+
+  /* COMMON */
+
+  .emergency-care-label {
+    margin-bottom: 13px;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+  }
+
+  /* HERO */
+
+  .emergency-care-hero {
+    padding: 55px 0 65px;
+  }
+
+  .emergency-care-hero .emergency-care-container {
+    gap: 35px;
+  }
+
+  .emergency-care-hero h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .emergency-care-hero p {
+    margin: 21px 0 23px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .emergency-care-price {
+    margin: 22px 0 27px;
+  }
+
+  .emergency-care-price strong {
+    font-size: 38px;
+  }
+
+  .emergency-care-btn {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .emergency-care-hero-image {
+    height: 360px;
+    border-radius: 24px;
+  }
+
+  .emergency-care-floating-card {
+    left: 15px;
+    bottom: 15px;
+    min-width: 165px;
+    padding: 14px 16px;
+  }
+
+  /* HIGHLIGHTS */
+
+  .emergency-care-highlights {
+    padding: 75px 0;
+  }
+
+  .emergency-care-section-heading {
+    margin-bottom: 35px;
+  }
+
+  .emergency-care-section-heading h2 {
+    font-size: 40px;
+    letter-spacing: -1.8px;
+  }
+
+  .emergency-care-section-heading p {
+    font-size: 15px;
+  }
+
+  .emergency-care-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .emergency-care-highlight-card {
+    min-height: 190px;
+    padding: 25px;
+  }
+
+  .emergency-care-highlight-card h3 {
+    margin-top: 27px;
+    font-size: 19px;
+  }
+
+  /* PACKAGE */
+
+  .emergency-care-package {
+    padding: 75px 0;
+  }
+
+  .emergency-care-package-content h2 {
+    font-size: 40px;
+    letter-spacing: -1.8px;
+  }
+
+  .emergency-care-package-content p {
+    font-size: 15px;
+  }
+
+  .emergency-care-package-card {
+    border-radius: 23px;
+  }
+
+  .emergency-care-package-top {
+    padding: 28px 24px;
+  }
+
+  .emergency-care-package-top strong {
+    font-size: 40px;
+  }
+
+  .emergency-care-package-list {
+    padding: 5px 24px 20px;
+  }
+
+  .emergency-care-package-item {
+    grid-template-columns: 32px 1fr;
+    gap: 10px;
+    padding: 15px 0;
+  }
+
+  .emergency-care-package-item p {
+    font-size: 13px;
+  }
+
+  /* BENEFICIARIES */
+
+  .emergency-care-beneficiaries {
+    padding: 75px 0;
+  }
+
+  .emergency-care-beneficiary-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .emergency-care-beneficiary-card {
+    min-height: 155px;
+    padding: 24px;
+  }
+
+  .emergency-care-beneficiary-card h3 {
+    margin-top: 28px;
+    font-size: 19px;
+  }
+
+  /* WHY */
+
+  .emergency-care-why {
+    padding: 75px 0;
+  }
+
+  .emergency-care-why-content h2 {
+    font-size: 40px;
+    letter-spacing: -1.8px;
+  }
+
+  .emergency-care-why-content p {
+    font-size: 15px;
+  }
+
+  .emergency-care-benefit-columns {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .emergency-care-benefit-column {
+    padding: 25px;
+  }
+
+  /* GOLDEN */
+
+  .emergency-care-golden {
+    padding: 80px 0;
+  }
+
+  .emergency-care-golden h2 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .emergency-care-golden p {
+    font-size: 15px;
+  }
+
+  /* SCENARIOS */
+
+  .emergency-care-scenarios {
+    padding: 75px 0;
+  }
+
+  .emergency-care-scenario-card {
+    padding: 27px;
+    border-radius: 21px;
+  }
+
+  .emergency-care-scenario-card h3 {
+    font-size: 20px;
+  }
+
+  .emergency-care-scenario-card li {
+    font-size: 14px;
+  }
+
+  /* ALLIED */
+
+  .emergency-care-allied {
+    padding: 75px 0;
+  }
+
+  .emergency-care-allied-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .emergency-care-allied-item {
+    min-height: 65px;
+  }
+
+  /* FAQ */
+
+  .emergency-care-faq {
+    padding: 75px 0;
+  }
+
+  .emergency-care-faq-item summary {
+    grid-template-columns: 30px 1fr 25px;
+    gap: 10px;
+    min-height: 75px;
+    padding: 17px 0;
+  }
+
+  .emergency-care-faq-item summary strong {
+    font-size: 14px;
+  }
+
+  .emergency-care-faq-item > p {
+    margin: 0 25px 22px 40px;
+    font-size: 13px;
+  }
+
+  /* CTA */
+
+  .emergency-care-cta {
+    padding: 80px 0;
+  }
+
+  .emergency-care-cta h2 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  .emergency-care-cta p {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .emergency-care-container {
+    width: calc(100% - 28px);
+  }
+
+  .emergency-care-hero h1 {
+    font-size: 40px;
+  }
+
+  .emergency-care-section-heading h2,
+  .emergency-care-package-content h2,
+  .emergency-care-why-content h2 {
+    font-size: 36px;
+  }
+
+  .emergency-care-golden h2,
+  .emergency-care-cta h2 {
+    font-size: 39px;
+  }
+
+  .emergency-care-hero-image {
+    height: 320px;
+  }
+}

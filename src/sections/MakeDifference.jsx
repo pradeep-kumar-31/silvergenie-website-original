@@ -1,45 +1,58 @@
-function MakeDifference() {
-  const points = [
-    {
-      title: "Compassionate Human Intervention",
-      description:
-        "Driven by compassion and zeal to help senior citizens in need",
-      image: "/image/difference/compassionate-care.jpeg",
-    },
-    {
-      title: "Clinical Analytics",
-      description:
-        "Harnessing the power of real-time data to generate actionable insights",
-      image: "/image/difference/clinical-analytics.png",
-    },
-    {
-      title: "Competent Technology",
-      description:
-        "Backed by innovative technology to provide best-in-class care",
-      image: "/image/difference/healthcare-technology.png",
-    },
-    {
-      title: "Continuous Wellness Support",
-      description:
-        "Providing round-the-clock support for physical and mental well-being needs",
-      image: "/image/difference/continuous-wellness.png",
-    },
-    {
-      title: "Consistent Delivery of Services",
-      description:
-        "Delivering holistic support and care for elders to cater to their every need",
-      image: "/image/difference/service-delivery.png",
-    },
-  ];
+import "../styles/MakeDifference.css";
 
+/* =========================================================
+   SILVERGENIE — MAKE A DIFFERENCE
+========================================================= */
+
+const points = [
+  {
+    title: "Compassionate Human Intervention",
+    description:
+      "Driven by compassion and zeal to help senior citizens in need",
+    image: "image/difference/compassionate-care.jpeg",
+  },
+  {
+    title: "Clinical Analytics",
+    description:
+      "Harnessing the power of real-time data to generate actionable insights",
+    image: "image/difference/clinical-analytics.png",
+  },
+  {
+    title: "Competent Technology",
+    description:
+      "Backed by innovative technology to provide best-in-class care",
+    image: "image/difference/healthcare-technology.png",
+  },
+  {
+    title: "Continuous Wellness Support",
+    description:
+      "Providing round-the-clock support for physical and mental well-being needs",
+    image: "image/difference/continuous-wellness.png",
+  },
+  {
+    title: "Consistent Delivery of Services",
+    description:
+      "Delivering holistic support and care for elders to cater to their every need",
+    image: "image/difference/service-delivery.png",
+  },
+];
+
+/* =========================================================
+   COMPONENT
+========================================================= */
+
+function MakeDifference() {
   return (
-    <section className="difference-section">
+    <section className="difference-section" id="make-difference">
       <div className="difference-container">
 
-        {/* SECTION HEADING */}
+        {/* =================================================
+            SECTION HEADING
+        ================================================= */}
+
         <div className="difference-heading">
 
-          <span className="section-label">
+          <span className="difference-label">
             MAKE A DIFFERENCE
           </span>
 
@@ -62,30 +75,35 @@ function MakeDifference() {
 
         </div>
 
+        {/* =================================================
+            DIFFERENCE CARDS
+        ================================================= */}
 
-        {/* FIVE CARDS */}
         <div className="difference-grid">
 
           {points.map((point, index) => (
-
-            <div className="difference-card" key={point.title}>
+            <article
+              className="difference-card"
+              key={point.title}
+              style={{
+                "--difference-delay": `${index * 0.08}s`,
+              }}
+            >
 
               {/* IMAGE */}
+
               <div className="difference-image">
 
                 <img
-                  src={point.image}
-                  alt={point.title}
+                  src={`${import.meta.env.BASE_URL}${point.image}`}
+                  alt={`SilverGenie ${point.title}`}
+                  loading="lazy"
                 />
-
-                {/* <div className="difference-number">
-                  0{index + 1}
-                </div> */}
 
               </div>
 
-
               {/* CONTENT */}
+
               <div className="difference-card-content">
 
                 <h3>
@@ -98,8 +116,7 @@ function MakeDifference() {
 
               </div>
 
-            </div>
-
+            </article>
           ))}
 
         </div>

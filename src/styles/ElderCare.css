@@ -1,0 +1,1039 @@
+/* =========================================================
+   SILVERGENIE — ELDER CARE
+   COMPLETE RESPONSIVE CSS
+========================================================= */
+
+.elder-care-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #16302c;
+  overflow: hidden;
+}
+
+.elder-care-page *,
+.elder-care-page *::before,
+.elder-care-page *::after {
+  box-sizing: border-box;
+}
+
+.elder-care-page a {
+  text-decoration: none;
+}
+
+.elder-care-page ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.elder-care-section-heading {
+  width: min(1200px, 90%);
+  margin: 0 auto 55px;
+}
+
+.elder-care-section-heading > span {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.elder-care-section-heading h2 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.elder-care-section-heading h2 em {
+  color: #20b69e;
+  font-style: normal;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.elder-care-hero {
+  width: 100%;
+  min-height: 680px;
+  padding: 115px 6%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+  gap: 70px;
+  align-items: center;
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(32, 182, 158, 0.12),
+      transparent 32%
+    ),
+    #f4fbf9;
+}
+
+.elder-care-hero-content {
+  width: 100%;
+  max-width: 700px;
+}
+
+.elder-care-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.elder-care-hero h1 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+.elder-care-hero h1 span {
+  display: block;
+  color: #20b69e;
+}
+
+.elder-care-hero p {
+  max-width: 610px;
+  margin: 28px 0 30px;
+  color: #657571;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.elder-care-stats {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 0 35px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.elder-care-stats > div {
+  min-height: 90px;
+  padding: 17px 14px;
+  border: 1px solid #dcece8;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.elder-care-stats strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #20b69e;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.elder-care-stats span {
+  display: block;
+  color: #526661;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.elder-care-primary-btn,
+.elder-care-plan-btn,
+.elder-care-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 25px;
+  border-radius: 50px;
+  background: #20b69e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(32, 182, 158, 0.18);
+  transition: all 0.3s ease;
+}
+
+.elder-care-primary-btn:hover,
+.elder-care-plan-btn:hover,
+.elder-care-cta-btn:hover {
+  background: #16302c;
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.elder-care-hero-image {
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+  border-radius: 32px;
+  box-shadow: 0 25px 65px rgba(22, 48, 44, 0.16);
+}
+
+.elder-care-hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.elder-care-location {
+  width: 100%;
+  min-height: 105px;
+  padding: 28px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border-bottom: 1px solid #e5efec;
+  background: #ffffff;
+  text-align: center;
+}
+
+.elder-care-location span {
+  color: #20b69e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.elder-care-location p {
+  margin: 0;
+  color: #526661;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   SPECIALIZED CARE
+========================================================= */
+
+.elder-care-specialized {
+  width: 100%;
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.elder-care-service-grid {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.elder-care-service-card {
+  min-width: 0;
+  padding: 34px;
+  border: 1px solid #e1ece9;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(22, 48, 44, 0.055);
+  transition: all 0.3s ease;
+}
+
+.elder-care-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(22, 48, 44, 0.10);
+}
+
+.elder-care-service-label {
+  display: block;
+  margin-bottom: 15px;
+  color: #20b69e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.elder-care-service-card h3 {
+  margin: 0 0 17px;
+  color: #16302c;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.elder-care-service-card h4 {
+  margin: 25px 0 8px;
+  color: #16302c;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.elder-care-service-card p {
+  margin: 0;
+  color: #687773;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.elder-care-price {
+  display: block;
+  margin: 8px 0;
+  color: #16302c;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.elder-care-duty {
+  display: inline-block;
+  margin: 10px 0 20px;
+  padding: 7px 12px;
+  border-radius: 30px;
+  background: #eaf8f5;
+  color: #168d7a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.elder-care-service-card ul {
+  list-style: none;
+}
+
+.elder-care-service-card li {
+  position: relative;
+  padding: 10px 0 10px 24px;
+  border-top: 1px solid #edf3f1;
+  color: #526661;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.elder-care-service-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #20b69e;
+  font-weight: 800;
+}
+
+.elder-care-service-card small {
+  display: block;
+  margin-top: 18px;
+  color: #8a9995;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   AT HOME SERVICES
+========================================================= */
+
+.elder-care-home-services {
+  width: 100%;
+  padding: 110px 6%;
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 90px;
+  align-items: start;
+  background: #f3faf8;
+}
+
+.elder-care-home-heading {
+  position: sticky;
+  top: 110px;
+}
+
+.elder-care-home-heading > span {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.elder-care-home-heading h2 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.elder-care-home-heading h2 em {
+  color: #20b69e;
+  font-style: normal;
+}
+
+.elder-care-home-list {
+  width: 100%;
+}
+
+.elder-care-home-item {
+  min-height: 72px;
+  padding: 17px 0;
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #dce9e5;
+}
+
+.elder-care-home-item strong {
+  color: #20b69e;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.elder-care-home-item span {
+  color: #16302c;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   SUBSCRIPTION PLANS
+========================================================= */
+
+.elder-care-plans {
+  width: 100%;
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.elder-care-plan-grid {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.elder-care-plan-card {
+  position: relative;
+  min-width: 0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dfece9;
+  border-radius: 24px;
+  background: #f8fcfb;
+  transition: all 0.3s ease;
+}
+
+.elder-care-plan-card:hover {
+  transform: translateY(-7px);
+  background: #ffffff;
+  box-shadow: 0 22px 50px rgba(22, 48, 44, 0.10);
+}
+
+.elder-care-plan-name {
+  display: block;
+  min-height: 38px;
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.elder-care-plan-card h3 {
+  margin: 15px 0 5px;
+  color: #16302c;
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+
+.elder-care-plan-billing {
+  min-height: 42px;
+  margin: 0 0 22px;
+  color: #7a8985;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.elder-care-plan-card ul {
+  flex: 1;
+  list-style: none;
+}
+
+.elder-care-plan-card li {
+  position: relative;
+  padding: 10px 0 10px 22px;
+  border-top: 1px solid #e7efed;
+  color: #526661;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.elder-care-plan-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #20b69e;
+  font-weight: 800;
+}
+
+.elder-care-plan-btn {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.elder-care-plan-note {
+  width: min(1200px, 90%);
+  margin: 28px auto 0;
+  color: #7c8d88;
+  font-size: 12px;
+}
+
+/* =========================================================
+   OTHER SERVICES
+========================================================= */
+
+.elder-care-other {
+  width: 100%;
+  padding: 110px 0;
+  background: #f3faf8;
+}
+
+.elder-care-other-grid {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.elder-care-other-card {
+  min-height: 170px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #dcebe7;
+  border-radius: 20px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.elder-care-other-card:hover {
+  transform: translateY(-6px);
+  background: #16302c;
+}
+
+.elder-care-other-card > span {
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.elder-care-other-card h3 {
+  margin: 30px 0 0;
+  color: #16302c;
+  font-size: 18px;
+}
+
+.elder-care-other-card:hover h3 {
+  color: #ffffff;
+}
+
+/* =========================================================
+   WHY SILVERGENIE
+========================================================= */
+
+.elder-care-why {
+  width: 100%;
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.elder-care-why-grid {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.elder-care-why-card {
+  min-height: 220px;
+  padding: 28px;
+  border: 1px solid #e1ece9;
+  border-radius: 22px;
+  background: #f8fcfb;
+  transition: all 0.3s ease;
+}
+
+.elder-care-why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(22, 48, 44, 0.09);
+}
+
+.elder-care-why-card > strong {
+  color: #20b69e;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.elder-care-why-card h3 {
+  margin: 28px 0 12px;
+  color: #16302c;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.elder-care-why-card p {
+  margin: 0;
+  color: #687773;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.elder-care-cta {
+  width: 100%;
+  padding: 120px 20px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(32, 182, 158, 0.18),
+      transparent 40%
+    ),
+    #16302c;
+}
+
+.elder-care-cta > span {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #55d4be;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.elder-care-cta h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.elder-care-cta h2 em {
+  color: #20b69e;
+  font-style: normal;
+}
+
+.elder-care-cta p {
+  max-width: 650px;
+  margin: 25px auto 32px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.elder-care-cta-btn {
+  background: #20b69e;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.elder-care-faq {
+  width: 100%;
+  padding: 115px 0;
+  background: #ffffff;
+}
+
+.elder-care-faq-list {
+  width: min(1000px, 90%);
+  margin: 0 auto;
+}
+
+.elder-care-faq-item {
+  border-bottom: 1px solid #dfeae7;
+}
+
+.elder-care-faq-item summary {
+  min-height: 82px;
+  padding: 22px 0;
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.elder-care-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.elder-care-faq-item summary span {
+  color: #16302c;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.elder-care-faq-item summary strong {
+  color: #20b69e;
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.elder-care-faq-item[open] summary strong {
+  transform: rotate(45deg);
+}
+
+.elder-care-faq-item > p {
+  max-width: 850px;
+  margin: 0 55px 25px 0;
+  color: #687773;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.elder-care-final {
+  width: 100%;
+  padding: 100px 20px;
+  text-align: center;
+  background: #f3faf8;
+}
+
+.elder-care-final h2 {
+  max-width: 900px;
+  margin: 0 auto 25px;
+  color: #16302c;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.elder-care-final p {
+  max-width: 800px;
+  margin: 0 auto 18px;
+  color: #687773;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .elder-care-hero {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 40px;
+    padding: 100px 5%;
+  }
+
+  .elder-care-hero-image {
+    height: 480px;
+  }
+
+  .elder-care-home-services {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .elder-care-home-heading {
+    position: static;
+  }
+
+  .elder-care-plan-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .elder-care-other-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .elder-care-hero {
+    grid-template-columns: 1fr;
+    padding: 85px 6%;
+  }
+
+  .elder-care-hero-content {
+    max-width: 750px;
+  }
+
+  .elder-care-hero-image {
+    height: 450px;
+    max-width: 700px;
+  }
+
+  .elder-care-stats {
+    max-width: 750px;
+  }
+
+  .elder-care-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elder-care-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .elder-care-plan-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .elder-care-section-heading {
+    width: 90%;
+    margin-bottom: 38px;
+  }
+
+  .elder-care-section-heading h2 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  /* HERO */
+
+  .elder-care-hero {
+    min-height: auto;
+    padding: 70px 20px;
+    gap: 42px;
+  }
+
+  .elder-care-hero h1 {
+    font-size: 46px;
+    letter-spacing: -2px;
+  }
+
+  .elder-care-hero p {
+    font-size: 16px;
+  }
+
+  .elder-care-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .elder-care-stats > div {
+    min-height: 82px;
+  }
+
+  .elder-care-hero-image {
+    height: 370px;
+    border-radius: 24px;
+  }
+
+  /* LOCATION */
+
+  .elder-care-location {
+    flex-direction: column;
+    gap: 7px;
+    padding: 25px 20px;
+  }
+
+  /* SECTIONS */
+
+  .elder-care-specialized,
+  .elder-care-plans,
+  .elder-care-other,
+  .elder-care-why,
+  .elder-care-faq {
+    padding: 80px 0;
+  }
+
+  /* SERVICE */
+
+  .elder-care-service-grid {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+
+  .elder-care-service-card {
+    padding: 27px;
+    border-radius: 20px;
+  }
+
+  .elder-care-service-card h3 {
+    font-size: 21px;
+  }
+
+  /* HOME */
+
+  .elder-care-home-services {
+    padding: 80px 5%;
+  }
+
+  .elder-care-home-heading h2 {
+    font-size: 43px;
+  }
+
+  /* PLANS */
+
+  .elder-care-plan-grid {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+
+  .elder-care-plan-card {
+    padding: 27px;
+  }
+
+  /* OTHER */
+
+  .elder-care-other-grid {
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* WHY */
+
+  .elder-care-why-grid {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+
+  /* CTA */
+
+  .elder-care-cta {
+    padding: 85px 20px;
+  }
+
+  .elder-care-cta h2 {
+    font-size: 44px;
+  }
+
+  /* FAQ */
+
+  .elder-care-faq-list {
+    width: 90%;
+  }
+
+  .elder-care-faq-item summary {
+    grid-template-columns: 1fr 30px;
+  }
+
+  .elder-care-faq-item summary span {
+    font-size: 15px;
+  }
+
+  .elder-care-faq-item > p {
+    margin: 0 30px 25px 0;
+  }
+
+  /* FINAL */
+
+  .elder-care-final {
+    padding: 75px 20px;
+  }
+
+  .elder-care-final h2 {
+    font-size: 38px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .elder-care-hero {
+    padding: 60px 18px;
+  }
+
+  .elder-care-hero h1 {
+    font-size: 40px;
+  }
+
+  .elder-care-hero p {
+    font-size: 15px;
+  }
+
+  .elder-care-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .elder-care-stats strong {
+    font-size: 18px;
+  }
+
+  .elder-care-stats span {
+    font-size: 11px;
+  }
+
+  .elder-care-hero-image {
+    height: 330px;
+  }
+
+  .elder-care-section-heading h2 {
+    font-size: 35px;
+  }
+
+  .elder-care-service-card {
+    padding: 23px;
+  }
+
+  .elder-care-home-item {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .elder-care-home-item span {
+    font-size: 14px;
+  }
+
+  .elder-care-other-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elder-care-cta h2 {
+    font-size: 38px;
+  }
+
+  .elder-care-final h2 {
+    font-size: 34px;
+  }
+}

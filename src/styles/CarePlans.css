@@ -1,0 +1,441 @@
+/* =========================================================
+   SILVERGENIE - CARE PLANS PAGE
+========================================================= */
+
+.care-plans-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #16302c;
+}
+
+.care-plans-container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.care-plans-hero {
+  padding: 150px 0 110px;
+  background: linear-gradient(
+    135deg,
+    #f1fbf8 0%,
+    #ffffff 55%,
+    #eaf8f4 100%
+  );
+}
+
+.care-plans-hero-content {
+  max-width: 820px;
+}
+
+.care-plans-hero .section-label,
+.care-plans-heading .section-label,
+.care-plans-cta .section-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #20b69e;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.care-plans-hero h1 {
+  margin: 0 0 24px;
+  color: #16302c;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.care-plans-hero h1 span {
+  color: #20b69e;
+}
+
+.care-plans-hero p {
+  max-width: 720px;
+  margin: 0 0 32px;
+  color: #60736f;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+.care-plans-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 14px 27px;
+  border: none;
+  border-radius: 50px;
+  background: #20b69e;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.care-plans-button:hover {
+  background: #16302c;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PLANS SECTION
+========================================================= */
+
+.care-plans-section {
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.care-plans-heading {
+  max-width: 720px;
+  margin-bottom: 55px;
+}
+
+.care-plans-heading h2 {
+  margin: 0 0 18px;
+  color: #16302c;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.15;
+}
+
+.care-plans-heading h2 span {
+  color: #20b69e;
+}
+
+.care-plans-heading p {
+  margin: 0;
+  color: #687b77;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CARE PLAN CARDS
+========================================================= */
+
+.care-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.care-plan-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 470px;
+  padding: 34px;
+  border: 1px solid #dcece8;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 15px 45px rgba(22, 48, 44, 0.07);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.care-plan-card:hover {
+  transform: translateY(-8px);
+  border-color: #bce6dd;
+  box-shadow: 0 25px 55px rgba(22, 48, 44, 0.12);
+}
+
+
+/* CARD TOP */
+
+.care-plan-card-top {
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e5efec;
+}
+
+.care-plan-card h3 {
+  margin: 0 0 10px;
+  color: #16302c;
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.care-plan-subtitle {
+  margin: 0;
+  color: #20b69e;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+
+/* DESCRIPTION */
+
+.care-plan-description {
+  margin: 24px 0;
+  color: #687b77;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+
+/* FEATURES */
+
+.care-plan-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.care-plan-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #435955;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.care-plan-card li span {
+  flex-shrink: 0;
+  color: #20b69e;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   ENQUIRE ABOUT THIS PLAN BUTTON
+========================================================= */
+
+.care-plan-card > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 13px 18px;
+  border-radius: 10px;
+  background: #20b69e;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.care-plan-card > a:hover {
+  background: #16302c;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.care-plans-process {
+  padding: 110px 0;
+  background: #f4faf8;
+}
+
+.care-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.care-process-card {
+  padding: 30px;
+  border: 1px solid #e1eeeb;
+  border-radius: 20px;
+  background: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.care-process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(22, 48, 44, 0.08);
+}
+
+.care-process-card > span {
+  display: block;
+  margin-bottom: 22px;
+  color: #20b69e;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.care-process-card h3 {
+  margin: 0 0 12px;
+  color: #16302c;
+  font-size: 21px;
+}
+
+.care-process-card p {
+  margin: 0;
+  color: #687b77;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.care-plans-cta {
+  padding: 90px 0;
+  background: #16302c;
+}
+
+.care-plans-cta .care-plans-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.care-plans-cta h2 {
+  max-width: 650px;
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.15;
+}
+
+.care-plans-cta h2 span {
+  color: #67d8c3;
+}
+
+.care-plans-cta p {
+  max-width: 620px;
+  margin: 0;
+  color: #c6d8d4;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.care-plans-cta .care-plans-button {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .care-plans-hero {
+    padding: 120px 0 80px;
+  }
+
+  .care-plans-section,
+  .care-plans-process {
+    padding: 80px 0;
+  }
+
+  .care-plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .care-plan-card {
+    min-height: auto;
+  }
+
+  .care-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .care-plans-cta .care-plans-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .care-plans-container {
+    width: min(92%, 500px);
+  }
+
+  .care-plans-hero {
+    padding: 100px 0 70px;
+  }
+
+  .care-plans-hero h1 {
+    font-size: 43px;
+  }
+
+  .care-plans-hero p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .care-plans-section,
+  .care-plans-process {
+    padding: 70px 0;
+  }
+
+  .care-plans-heading {
+    margin-bottom: 35px;
+  }
+
+  .care-plans-heading h2 {
+    font-size: 34px;
+  }
+
+  .care-plan-card {
+    padding: 26px;
+    border-radius: 20px;
+  }
+
+  .care-plan-card > a {
+    min-height: 50px;
+    font-size: 14px;
+  }
+
+  .care-process-card {
+    padding: 25px;
+  }
+
+  .care-plans-cta {
+    padding: 70px 0;
+  }
+
+  .care-plans-cta h2 {
+    font-size: 34px;
+  }
+
+  .care-plans-cta .care-plans-button {
+    width: 100%;
+  }
+
+}
+

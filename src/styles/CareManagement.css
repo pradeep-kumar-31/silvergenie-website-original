@@ -1,0 +1,641 @@
+/* =========================================================
+   SILVERGENIE — CARE MANAGEMENT
+========================================================= */
+
+.care-management-page {
+  min-height: 100vh;
+  background: #fff;
+  color: #16302c;
+  overflow: hidden;
+}
+
+.care-management-page * {
+  box-sizing: border-box;
+}
+
+.care-management-page span {
+  color: #20b69e;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.care-management-hero {
+  min-height: 650px;
+  padding: 90px 7%;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+  background: #f5fbf9;
+}
+
+.care-management-hero-content {
+  max-width: 650px;
+}
+
+.care-management-label,
+.care-management-intro > span,
+.care-management-section-heading > span,
+.care-management-feature-content > span,
+.care-management-dark-content > span,
+.care-management-convenience-content > span,
+.care-management-journey-heading > span,
+.care-management-cta > span {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #20b69e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.care-management-hero h1 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(45px, 5.5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.care-management-hero h1 span,
+.care-management-hero p span {
+  display: block;
+  color: #20b69e;
+}
+
+.care-management-hero p {
+  max-width: 550px;
+  margin: 28px 0 34px;
+  color: #687773;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.care-management-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 27px;
+  border-radius: 30px;
+  background: #20b69e;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(32, 182, 158, 0.2);
+  transition: 0.3s ease;
+}
+
+.care-management-btn:hover {
+  background: #16302c;
+  transform: translateY(-3px);
+}
+
+.care-management-hero-image {
+  height: 520px;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(22, 48, 44, 0.15);
+}
+
+.care-management-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.care-management-intro {
+  max-width: 950px;
+  margin: auto;
+  padding: 110px 25px 90px;
+  text-align: center;
+}
+
+.care-management-intro h2,
+.care-management-section-heading h2,
+.care-management-feature-content h2,
+.care-management-dark-content h2,
+.care-management-convenience-content h2,
+.care-management-journey-heading h2,
+.care-management-cta h2 {
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.care-management-intro h2 span,
+.care-management-section-heading h2 span,
+.care-management-feature-content h2 span,
+.care-management-dark-content h2 span,
+.care-management-convenience-content h2 span,
+.care-management-journey-heading h2 span,
+.care-management-cta h2 span {
+  color: #20b69e;
+}
+
+.care-management-intro p {
+  max-width: 800px;
+  margin: 22px auto 0;
+  color: #687773;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.care-management-feature {
+  padding: 100px 7%;
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 80px;
+  align-items: center;
+  background: #f5fbf9;
+}
+
+.care-management-feature-image {
+  height: 500px;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.care-management-feature-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.care-management-feature-content {
+  max-width: 650px;
+}
+
+.care-management-feature-content p {
+  margin: 20px 0 0;
+  color: #687773;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.care-management-section,
+.care-management-workforce,
+.care-management-plans,
+.care-management-covi,
+.care-management-offerings {
+  padding: 110px 7%;
+}
+
+.care-management-section-heading {
+  max-width: 850px;
+  margin-bottom: 55px;
+}
+
+.care-management-section-heading p {
+  max-width: 720px;
+  margin: 22px 0 0;
+  color: #687773;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CLINICAL SERVICES
+========================================================= */
+
+.care-management-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.care-management-points > div {
+  min-height: 210px;
+  padding: 30px;
+  border: 1px solid #e2eeeb;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(22, 48, 44, 0.05);
+  transition: 0.3s ease;
+}
+
+.care-management-points > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(22, 48, 44, 0.1);
+}
+
+.care-management-points strong,
+.care-management-workforce-grid strong {
+  color: #20b69e;
+  font-size: 13px;
+}
+
+.care-management-points h3 {
+  margin: 20px 0 12px;
+  font-size: 20px;
+}
+
+.care-management-points p {
+  margin: 0;
+  color: #687773;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   EMERGENCY
+========================================================= */
+
+.care-management-dark {
+  padding: 110px 7%;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  background: #16302c;
+}
+
+.care-management-dark-content h2 {
+  color: #fff;
+}
+
+.care-management-dark-content p {
+  margin-top: 25px;
+  color: #c6d5d1;
+  line-height: 1.8;
+}
+
+.care-management-dark-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.care-management-dark-grid > div {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.care-management-dark-grid h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.care-management-dark-grid p {
+  margin: 0;
+  color: #b9cbc6;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   WORKFORCE
+========================================================= */
+
+.care-management-workforce {
+  background: #f5fbf9;
+}
+
+.care-management-workforce-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.care-management-workforce-grid > div {
+  min-height: 150px;
+  padding: 25px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid #e2eeeb;
+}
+
+.care-management-workforce-grid h3 {
+  margin: 20px 0 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   CONVENIENCE
+========================================================= */
+
+.care-management-convenience {
+  padding: 110px 7%;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.care-management-convenience-content p {
+  max-width: 650px;
+  margin: 22px 0 0;
+  color: #687773;
+  line-height: 1.8;
+}
+
+.care-management-convenience-list {
+  display: grid;
+  gap: 12px;
+}
+
+.care-management-convenience-list div {
+  padding: 20px 25px;
+  border-radius: 14px;
+  background: #f5fbf9;
+  border: 1px solid #e2eeeb;
+  color: #16302c;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PLANS
+========================================================= */
+
+.care-management-plans {
+  background: #f5fbf9;
+}
+
+.care-management-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.care-management-plan-grid > div {
+  padding: 45px 30px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid #e2eeeb;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(22, 48, 44, 0.05);
+}
+
+.care-management-plan-grid span {
+  color: #20b69e;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.care-management-plan-grid h3 {
+  margin: 15px 0 0;
+  font-size: 30px;
+}
+
+
+/* =========================================================
+   COVIHOME
+========================================================= */
+
+.care-management-covi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.care-management-covi-grid > div {
+  padding: 28px;
+  border-radius: 18px;
+  background: #f7faf9;
+  border: 1px solid #e5efec;
+}
+
+.care-management-covi-grid h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.care-management-covi-grid p {
+  margin: 0;
+  color: #687773;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   OTHER OFFERINGS
+========================================================= */
+
+.care-management-offerings {
+  background: #f5fbf9;
+}
+
+.care-management-offering-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.care-management-offering-grid > div {
+  padding: 32px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #e2eeeb;
+}
+
+.care-management-offering-grid h3 {
+  margin: 0 0 15px;
+  font-size: 22px;
+}
+
+.care-management-offering-grid p {
+  margin: 0 0 22px;
+  color: #687773;
+  line-height: 1.7;
+}
+
+.care-management-offering-grid a {
+  color: #20b69e;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.care-management-journey {
+  padding: 110px 7%;
+}
+
+.care-management-journey-heading {
+  max-width: 750px;
+  margin-bottom: 55px;
+}
+
+.care-management-journey-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.care-management-journey-steps > div {
+  padding: 30px;
+  border-left: 3px solid #20b69e;
+  background: #f7faf9;
+  border-radius: 0 18px 18px 0;
+}
+
+.care-management-journey-steps strong {
+  color: #20b69e;
+  font-size: 14px;
+}
+
+.care-management-journey-steps p {
+  margin: 15px 0 0;
+  color: #687773;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.care-management-cta {
+  padding: 110px 25px;
+  text-align: center;
+  background: #16302c;
+}
+
+.care-management-cta h2 {
+  color: #fff;
+}
+
+.care-management-cta p {
+  margin: 20px 0 30px;
+  color: #c6d5d1;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .care-management-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .care-management-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .care-management-dark {
+    grid-template-columns: 1fr;
+  }
+
+  .care-management-points {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .care-management-workforce-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .care-management-convenience {
+    grid-template-columns: 1fr;
+  }
+
+  .care-management-covi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .care-management-journey-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .care-management-hero {
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .care-management-hero h1 {
+    font-size: 42px;
+  }
+
+  .care-management-hero-image {
+    height: 360px;
+    border-radius: 22px;
+  }
+
+  .care-management-intro,
+  .care-management-section,
+  .care-management-workforce,
+  .care-management-plans,
+  .care-management-covi,
+  .care-management-offerings,
+  .care-management-journey,
+  .care-management-convenience {
+    padding: 75px 20px;
+  }
+
+  .care-management-feature {
+    padding: 75px 20px;
+    gap: 40px;
+  }
+
+  .care-management-feature-image {
+    height: 350px;
+  }
+
+  .care-management-points,
+  .care-management-workforce-grid,
+  .care-management-plan-grid,
+  .care-management-covi-grid,
+  .care-management-offering-grid,
+  .care-management-journey-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .care-management-dark {
+    padding: 75px 20px;
+  }
+
+  .care-management-dark-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .care-management-convenience {
+    gap: 40px;
+  }
+
+  .care-management-cta {
+    padding: 75px 20px;
+  }
+}

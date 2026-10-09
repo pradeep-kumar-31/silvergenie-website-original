@@ -1,25 +1,35 @@
 import { useState } from "react";
 
-import travelHero from "../assets/TravelWithCare/travel-hero.jpeg";
-import mountains from "../assets/TravelWithCare/mountains.jpeg";
-import island from "../assets/TravelWithCare/island.jpeg";
-import monsoon from "../assets/TravelWithCare/monsoon.jpeg";
+/* =========================================================
+   TRAVEL IMAGES
+========================================================= */
 
+import travelHero from "../assets/TravelWithCare/travel-hero.jpeg";
+
+import bali from "../assets/TravelWithCare/bali.jpeg";
+import bhutan from "../assets/TravelWithCare/bhutan.jpeg";
+import charDham from "../assets/TravelWithCare/char-dham.jpeg";
+import devDiwali from "../assets/TravelWithCare/dev-diwali.jpeg";
+import durgaPuja from "../assets/TravelWithCare/durga-puja.jpeg";
 import goldenTriangle from "../assets/TravelWithCare/golden-triangle.jpeg";
+import hornbillFestival from "../assets/TravelWithCare/hornbill-festival.jpeg";
+import jagadhatriPuja from "../assets/TravelWithCare/jagadhatri-puja.jpeg";
+import kashmir from "../assets/TravelWithCare/kashmir.jpeg";
+import meghalaya from "../assets/TravelWithCare/meghalaya.jpeg";
+import monsoon from "../assets/TravelWithCare/monsoon.jpeg";
+import mountains from "../assets/TravelWithCare/mountains.jpeg";
+import onam from "../assets/TravelWithCare/onam.jpeg";
+import puriDham from "../assets/TravelWithCare/puri-dham.jpeg";
+import rannOfKutch from "../assets/TravelWithCare/rann-of-kutch.jpeg";
+import shaktipeethHimachal from "../assets/TravelWithCare/shaktipeeth-himachal.jpg";
+import shaktipeethNorthEast from "../assets/TravelWithCare/shaktipeeth-north-east.jpeg";
+import templeTrails from "../assets/TravelWithCare/temple-trails.jpeg";
+import varanasi from "../assets/TravelWithCare/varanasi.jpeg";
+import wellness from "../assets/TravelWithCare/wellness.jpeg";
 import westBengal from "../assets/TravelWithCare/west-bengal.jpeg";
 import andaman from "../assets/TravelWithCare/andaman.jpeg";
+import arunachalPradesh from "../assets/TravelWithCare/arunachal-pradesh.jpeg";
 
-import durgaPuja from "../assets/TravelWithCare/durga-puja.jpeg";
-import rannOfKutch from "../assets/TravelWithCare/rann-of-kutch.jpeg";
-import hornbillFestival from "../assets/TravelWithCare/hornbill-festival.jpeg";
-import onam from "../assets/TravelWithCare/onam.jpeg";
-import devDiwali from "../assets/TravelWithCare/dev-diwali.jpeg";
-import jagadhatriPuja from "../assets/TravelWithCare/jagadhatri-puja.jpeg";
-
-import varanasi from "../assets/TravelWithCare/varanasi.jpeg";
-import charDham from "../assets/TravelWithCare/char-dham.jpeg";
-import templeTrails from "../assets/TravelWithCare/temple-trails.jpeg";
-import wellness from "../assets/TravelWithCare/wellness.jpeg";
 
 /* =========================================================
    WHATSAPP BUTTON
@@ -63,6 +73,7 @@ function WhatsAppButton({ destination }) {
   );
 }
 
+
 /* =========================================================
    JOURNEY CARD
 ========================================================= */
@@ -70,20 +81,31 @@ function WhatsAppButton({ destination }) {
 function JourneyCard({ journey }) {
   return (
     <article className="travel-journey-card">
+
       <div className="travel-card-image">
-        <img src={journey.image} alt={journey.title} />
+
+        <img
+          src={journey.image}
+          alt={journey.title}
+        />
 
         <div className="travel-card-tag">
           {journey.tag || journey.category}
         </div>
+
       </div>
 
+
       <div className="travel-card-body">
+
         <span className="travel-card-location">
           {journey.location}
         </span>
 
-        <h3>{journey.title}</h3>
+        <h3>
+          {journey.title}
+        </h3>
+
 
         {journey.date && (
           <div className="travel-card-month">
@@ -91,16 +113,19 @@ function JourneyCard({ journey }) {
           </div>
         )}
 
-        {/* DURATION */}
+
         {journey.durations?.length > 0 && (
           <div className="travel-duration-multiple">
+
             {journey.durations.map((duration, index) => (
               <strong key={index}>
                 {duration}
               </strong>
             ))}
+
           </div>
         )}
+
 
         {journey.price && (
           <div className="travel-card-price">
@@ -108,39 +133,55 @@ function JourneyCard({ journey }) {
           </div>
         )}
 
-        <p>{journey.description}</p>
+
+        <p>
+          {journey.description}
+        </p>
+
 
         <div className="travel-card-bottom">
-          <span>{journey.tag || journey.category}</span>
+
+          <span>
+            {journey.tag || journey.category}
+          </span>
 
           <div className="travel-card-actions">
-            <WhatsAppButton destination={journey.title} />
+
+            <WhatsAppButton
+              destination={journey.title}
+            />
 
             <a href="/#contact">
               Request Callback →
             </a>
+
           </div>
+
         </div>
+
       </div>
+
     </article>
   );
 }
 
+
 /* =========================================================
-   SILVERGENIE WANDERLUST
    TRAVEL WITH CARE
 ========================================================= */
 
 function TravelWithCare() {
-  const [activeCategory, setActiveCategory] = useState(
-    "All Journeys"
-  );
+
+  const [activeCategory, setActiveCategory] =
+    useState("All Journeys");
+
 
   /* =======================================================
      MAIN JOURNEYS
   ======================================================= */
 
   const journeys = [
+
     {
       title: "Char Dham Yatra",
       image: charDham,
@@ -160,7 +201,7 @@ function TravelWithCare() {
 
     {
       title: "Shaktipeeths of North East India",
-      image: templeTrails,
+      image: shaktipeethNorthEast,
       location: "INDIA • NORTH EAST",
       category: "Spiritual",
       tag: "Spiritual Nature",
@@ -173,7 +214,7 @@ function TravelWithCare() {
 
     {
       title: "Puri Dham & Shaktipeeths of Odisha",
-      image: templeTrails,
+      image: puriDham,
       location: "INDIA • ODISHA",
       category: "Spiritual",
       tag: "Spiritual Coastal",
@@ -199,7 +240,7 @@ function TravelWithCare() {
 
     {
       title: "Shaktipeeths of Himachal Pradesh",
-      image: mountains,
+      image: shaktipeethHimachal,
       location: "INDIA • HIMACHAL PRADESH",
       category: "Spiritual",
       tag: "Spiritual Shaktipeeth",
@@ -212,7 +253,7 @@ function TravelWithCare() {
 
     {
       title: "Arunachal Pradesh",
-      image: mountains,
+      image: arunachalPradesh,
       location: "INDIA • NORTH EAST",
       category: "Mountains",
       tag: "Himalayan Journey",
@@ -225,7 +266,7 @@ function TravelWithCare() {
 
     {
       title: "Breathtaking Bhutan",
-      image: mountains,
+      image: bhutan,
       location: "BHUTAN • HIMALAYA",
       category: "International",
       tag: "Spiritual Himalaya",
@@ -238,7 +279,7 @@ function TravelWithCare() {
 
     {
       title: "Kashmir: Paradise on Earth",
-      image: mountains,
+      image: kashmir,
       location: "INDIA • KASHMIR",
       category: "Mountains",
       tag: "Mountains",
@@ -251,7 +292,7 @@ function TravelWithCare() {
 
     {
       title: "Bali: Tropical Bliss",
-      image: island,
+      image: bali,
       location: "BALI • INTERNATIONAL",
       category: "International",
       tag: "Island Serenity",
@@ -264,7 +305,7 @@ function TravelWithCare() {
 
     {
       title: "Meghalaya: Wanderlust in the Abode of Clouds",
-      image: monsoon,
+      image: meghalaya,
       location: "INDIA • NORTH EAST",
       category: "Mountains",
       tag: "Monsoon",
@@ -326,24 +367,29 @@ function TravelWithCare() {
       description:
         "Take time to pause, reconnect and experience thoughtfully paced wellness journeys.",
     },
+
   ];
 
+
   /* =======================================================
-     FILTER
+     FILTERED JOURNEYS
   ======================================================= */
 
   const filteredJourneys =
     activeCategory === "All Journeys"
       ? journeys
       : journeys.filter(
-          (journey) => journey.category === activeCategory
+          (journey) =>
+            journey.category === activeCategory
         );
+
 
   /* =======================================================
      UPCOMING EXPERIENCES
   ======================================================= */
 
   const upcomingJourneys = [
+
     {
       number: "01",
       title: "Mizoram",
@@ -360,7 +406,7 @@ function TravelWithCare() {
       number: "02",
       title: "Bhutan",
       subtitle: "Breathtaking Bhutan",
-      image: mountains,
+      image: bhutan,
       category: "INTERNATIONAL",
       date:
         "24th – 30th Sep, 2nd – 8th Oct, 16th – 22nd Oct, 9th – 15th Nov, 23rd – 29th Nov 2026",
@@ -373,20 +419,23 @@ function TravelWithCare() {
       number: "03",
       title: "Arunachal Pradesh",
       subtitle: "Land of the Dawn-Lit Mountains",
-      image: mountains,
+      image: arunachalPradesh,
       category: "INCREDIBLE INDIA",
       date: "October 17 – October 23, 2026",
       duration: "7 Days / 6 Nights",
       description:
         "Explore the breathtaking landscapes and cultural heritage of Arunachal Pradesh through a carefully curated journey.",
     },
+
   ];
+
 
   /* =======================================================
      HEART OF BHARAT
   ======================================================= */
 
   const bharatJourneys = [
+
     {
       number: "01",
       title: "Golden Triangle",
@@ -419,13 +468,16 @@ function TravelWithCare() {
       description:
         "Discover turquoise waters, island landscapes and peaceful coastal experiences.",
     },
+
   ];
+
 
   /* =======================================================
      FESTIVALS
   ======================================================= */
 
   const festivals = [
+
     {
       number: "01",
       title: "Durga Pujo in West Bengal",
@@ -491,13 +543,16 @@ function TravelWithCare() {
       description:
         "Discover the unique traditions and festive heritage of Bengal.",
     },
+
   ];
+
 
   /* =======================================================
      SPIRITUAL JOURNEYS
   ======================================================= */
 
   const spiritualJourneys = [
+
     {
       number: "01",
       title: "Varanasi",
@@ -512,7 +567,7 @@ function TravelWithCare() {
     {
       number: "02",
       title: "Puri Dham",
-      image: charDham,
+      image: puriDham,
       category: "PILGRIMAGE EXPERIENCE",
       date: "April – September 2026",
       duration: "4 Days / 3 Nights",
@@ -530,14 +585,18 @@ function TravelWithCare() {
       description:
         "Explore India's remarkable temples, architecture and traditions through meaningful journeys.",
     },
+
   ];
+
 
   /* =======================================================
      RENDER
   ======================================================= */
 
   return (
+
     <div className="travel-page">
+
 
       {/* =====================================================
           HERO
@@ -581,6 +640,7 @@ function TravelWithCare() {
 
           </div>
 
+
           <div className="travel-hero-stats">
 
             <div>
@@ -602,6 +662,7 @@ function TravelWithCare() {
 
         </div>
 
+
         <div className="travel-hero-visual">
 
           <img
@@ -613,6 +674,7 @@ function TravelWithCare() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           INTRO
@@ -640,6 +702,7 @@ function TravelWithCare() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           SILVERGENIE SOJOURNS
@@ -670,9 +733,6 @@ function TravelWithCare() {
 
         </div>
 
-        {/* =================================================
-            CATEGORY BUTTONS
-        ================================================= */}
 
         <div className="travel-category-tabs">
 
@@ -704,29 +764,32 @@ function TravelWithCare() {
 
         </div>
 
-        {/* =================================================
-            FILTERED JOURNEY GRID
-        ================================================= */}
 
         <div className="travel-journey-grid">
 
           {filteredJourneys.length > 0 ? (
 
             filteredJourneys.map((journey) => (
+
               <JourneyCard
                 key={journey.title}
                 journey={journey}
               />
+
             ))
 
           ) : (
 
             <div className="travel-no-results">
-              <h3>No journeys found</h3>
+
+              <h3>
+                No journeys found
+              </h3>
 
               <p>
                 Please select another category.
               </p>
+
             </div>
 
           )}
@@ -734,6 +797,7 @@ function TravelWithCare() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           UPCOMING EXPERIENCES
@@ -765,6 +829,7 @@ function TravelWithCare() {
 
         </div>
 
+
         <div className="travel-feature-grid">
 
           {upcomingJourneys.map((journey) => (
@@ -787,6 +852,7 @@ function TravelWithCare() {
 
               </div>
 
+
               <div className="travel-feature-content">
 
                 <span>
@@ -803,15 +869,14 @@ function TravelWithCare() {
                   {journey.date}
                 </div>
 
-                {journey.duration && (
-                  <strong className="travel-feature-duration">
-                    {journey.duration}
-                  </strong>
-                )}
+                <strong className="travel-feature-duration">
+                  {journey.duration}
+                </strong>
 
                 <p>
                   {journey.description}
                 </p>
+
 
                 <div className="travel-card-actions">
 
@@ -834,6 +899,7 @@ function TravelWithCare() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           HEART OF BHARAT
@@ -861,6 +927,7 @@ function TravelWithCare() {
 
         </div>
 
+
         <div className="travel-bharat-grid">
 
           {bharatJourneys.map((journey) => (
@@ -883,6 +950,7 @@ function TravelWithCare() {
 
               </div>
 
+
               <div className="travel-bharat-content">
 
                 <span>
@@ -893,21 +961,18 @@ function TravelWithCare() {
                   {journey.title}
                 </h3>
 
-                {journey.date && (
-                  <div className="travel-card-date">
-                    {journey.date}
-                  </div>
-                )}
+                <div className="travel-card-date">
+                  {journey.date}
+                </div>
 
-                {journey.duration && (
-                  <strong className="travel-feature-duration">
-                    {journey.duration}
-                  </strong>
-                )}
+                <strong className="travel-feature-duration">
+                  {journey.duration}
+                </strong>
 
                 <p>
                   {journey.description}
                 </p>
+
 
                 <div className="travel-card-actions">
 
@@ -935,6 +1000,7 @@ function TravelWithCare() {
 
       </section>
 
+
       {/* =====================================================
           WHEN INDIA CELEBRATES
       ===================================================== */}
@@ -960,6 +1026,7 @@ function TravelWithCare() {
 
         </div>
 
+
         <div className="travel-festival-list">
 
           {festivals.map((festival) => (
@@ -982,6 +1049,7 @@ function TravelWithCare() {
 
               </div>
 
+
               <div className="travel-festival-content">
 
                 <span>
@@ -996,15 +1064,14 @@ function TravelWithCare() {
                   {festival.date}
                 </div>
 
-                {festival.duration && (
-                  <strong className="travel-feature-duration">
-                    {festival.duration}
-                  </strong>
-                )}
+                <strong className="travel-feature-duration">
+                  {festival.duration}
+                </strong>
 
                 <p>
                   {festival.description}
                 </p>
+
 
                 <div className="travel-card-actions">
 
@@ -1031,6 +1098,7 @@ function TravelWithCare() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           WHERE TRADITIONS THRIVE
@@ -1067,6 +1135,7 @@ function TravelWithCare() {
 
           </div>
 
+
           <div className="travel-traditions-visual">
 
             <div className="travel-traditions-circle">
@@ -1077,6 +1146,7 @@ function TravelWithCare() {
               />
 
             </div>
+
 
             <div className="travel-traditions-note">
 
@@ -1099,6 +1169,7 @@ function TravelWithCare() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           PATHS TO THE DIVINE
@@ -1126,6 +1197,7 @@ function TravelWithCare() {
 
         </div>
 
+
         <div className="travel-divine-grid">
 
           {spiritualJourneys.map((journey) => (
@@ -1148,6 +1220,7 @@ function TravelWithCare() {
 
               </div>
 
+
               <div className="travel-divine-content">
 
                 <span>
@@ -1158,21 +1231,18 @@ function TravelWithCare() {
                   {journey.title}
                 </h3>
 
-                {journey.date && (
-                  <div className="travel-card-date">
-                    {journey.date}
-                  </div>
-                )}
+                <div className="travel-card-date">
+                  {journey.date}
+                </div>
 
-                {journey.duration && (
-                  <strong className="travel-feature-duration">
-                    {journey.duration}
-                  </strong>
-                )}
+                <strong className="travel-feature-duration">
+                  {journey.duration}
+                </strong>
 
                 <p>
                   {journey.description}
                 </p>
+
 
                 <div className="travel-card-actions">
 
@@ -1200,6 +1270,7 @@ function TravelWithCare() {
 
       </section>
 
+
       {/* =====================================================
           WELLNESS
       ===================================================== */}
@@ -1219,6 +1290,7 @@ function TravelWithCare() {
 
             </div>
 
+
             <div className="travel-wellness-badge">
 
               <strong>
@@ -1237,6 +1309,7 @@ function TravelWithCare() {
 
           </div>
 
+
           <div className="travel-wellness-content">
 
             <span>
@@ -1254,6 +1327,7 @@ function TravelWithCare() {
               calendar, but to give you space to breathe,
               reconnect and simply be.
             </p>
+
 
             <div className="travel-wellness-points">
 
@@ -1274,6 +1348,7 @@ function TravelWithCare() {
 
             </div>
 
+
             <a
               href="/#contact"
               className="travel-wellness-button"
@@ -1286,6 +1361,7 @@ function TravelWithCare() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           TRAVEL PHILOSOPHY
@@ -1309,6 +1385,7 @@ function TravelWithCare() {
 
           </div>
 
+
           <div className="travel-philosophy-text">
 
             <p>
@@ -1325,6 +1402,7 @@ function TravelWithCare() {
           </div>
 
         </div>
+
 
         <div className="travel-philosophy-points">
 
@@ -1349,6 +1427,7 @@ function TravelWithCare() {
 
           </div>
 
+
           <div className="travel-philosophy-point">
 
             <strong>
@@ -1369,6 +1448,7 @@ function TravelWithCare() {
             </div>
 
           </div>
+
 
           <div className="travel-philosophy-point">
 
@@ -1394,6 +1474,7 @@ function TravelWithCare() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           FINAL CTA
@@ -1425,6 +1506,7 @@ function TravelWithCare() {
             </p>
 
           </div>
+
 
           <div className="travel-final-actions">
 

@@ -1,0 +1,212 @@
+/* ---------- EMAIL & INSTAGRAM ---------- */
+
+.contact-email,
+.contact-social {
+  margin-top: 18px;
+  padding: 15px 18px;
+  border: 1px solid #e1ece9;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: all 0.3s ease;
+}
+
+.contact-email:hover,
+.contact-social:hover {
+  transform: translateX(6px);
+  border-color: rgba(32, 182, 158, 0.45);
+  box-shadow: 0 10px 25px rgba(22, 48, 44, 0.06);
+}
+
+.contact-email span,
+.contact-social span {
+  display: block;
+  margin-bottom: 5px;
+  color: #71827e;
+  font-size: 12px;
+}
+
+.contact-email a,
+.contact-social a {
+  color: #16302c;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-email a:hover,
+.contact-social a:hover {
+  color: #20b69e;
+}
+
+
+/* ---------- CHECKBOX ---------- */
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.checkbox-grid label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 12px;
+  border: 1px solid #e1ece9;
+  border-radius: 10px;
+  background: #fbfefd;
+  color: #687c77;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkbox-grid label:hover {
+  transform: translateY(-2px);
+  border-color: rgba(32, 182, 158, 0.45);
+  background: #f3fbf8;
+}
+
+
+
+
+/* ---------- MESSAGE ---------- */
+
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 110px;
+  padding: 14px 16px;
+  border: 1px solid #dce9e5;
+  border-radius: 10px;
+  outline: none;
+  resize: vertical;
+  background: #ffffff;
+  color: #16302c;
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.form-group textarea::placeholder {
+  color: #9aa9a5;
+}
+
+.form-group textarea:focus {
+  border-color: #20b69e;
+  box-shadow: 0 0 0 3px rgba(32, 182, 158, 0.10);
+}
+
+
+/* ---------- SUBMIT BUTTON ---------- */
+
+.contact-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 22px;
+  border: none;
+  border-radius: 30px;
+  background: #20b69e;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-3px);
+  background: #1ca08a;
+  box-shadow: 0 12px 28px rgba(32, 182, 158, 0.25);
+}
+
+.contact-submit span {
+  transition: transform 0.3s ease;
+}
+
+.contact-submit:hover span {
+  transform: translateX(5px);
+}
+
+
+/* ---------- CONTACT ANIMATION ---------- */
+
+.contact-info {
+  animation: contactInfoIn 0.8s ease both;
+}
+
+.contact-form {
+  animation: contactFormIn 0.8s ease 0.15s both;
+}
+
+@keyframes contactInfoIn {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contactFormIn {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .contact-info {
+    max-width: 700px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .contact-section {
+    padding: 75px 20px;
+  }
+
+  .contact-info h2 {
+    font-size: 35px;
+  }
+
+  .contact-form {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
