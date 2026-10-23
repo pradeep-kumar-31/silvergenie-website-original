@@ -1,34 +1,33 @@
 import { useState } from "react";
 
-/* =========================================================
-   TRAVEL IMAGES
-========================================================= */
-
 import travelHero from "../assets/TravelWithCare/travel-hero.jpeg";
 
-import bali from "../assets/TravelWithCare/bali.jpeg";
+import mountains from "../assets/TravelWithCare/mountains.jpeg";
+import island from "../assets/TravelWithCare/bali.jpeg";
+import monsoon from "../assets/TravelWithCare/monsoon.jpeg";
+
+import shaktipeethNorthEast from "../assets/TravelWithCare/shaktipeeth-north-east.jpeg";
+import puriDham from "../assets/TravelWithCare/puri-dham.jpeg";
+import shaktipeethHimachal from "../assets/TravelWithCare/shaktipeeth-himachal.jpg";
+
 import bhutan from "../assets/TravelWithCare/bhutan.jpeg";
-import charDham from "../assets/TravelWithCare/char-dham.jpeg";
-import devDiwali from "../assets/TravelWithCare/dev-diwali.jpeg";
-import durgaPuja from "../assets/TravelWithCare/durga-puja.jpeg";
-import goldenTriangle from "../assets/TravelWithCare/golden-triangle.jpeg";
-import hornbillFestival from "../assets/TravelWithCare/hornbill-festival.jpeg";
-import jagadhatriPuja from "../assets/TravelWithCare/jagadhatri-puja.jpeg";
 import kashmir from "../assets/TravelWithCare/kashmir.jpeg";
 import meghalaya from "../assets/TravelWithCare/meghalaya.jpeg";
-import monsoon from "../assets/TravelWithCare/monsoon.jpeg";
-import mountains from "../assets/TravelWithCare/mountains.jpeg";
-import onam from "../assets/TravelWithCare/onam.jpeg";
-import puriDham from "../assets/TravelWithCare/puri-dham.jpeg";
-import rannOfKutch from "../assets/TravelWithCare/rann-of-kutch.jpeg";
-import shaktipeethHimachal from "../assets/TravelWithCare/shaktipeeth-himachal.jpg";
-import shaktipeethNorthEast from "../assets/TravelWithCare/shaktipeeth-north-east.jpeg";
-import templeTrails from "../assets/TravelWithCare/temple-trails.jpeg";
-import varanasi from "../assets/TravelWithCare/varanasi.jpeg";
-import wellness from "../assets/TravelWithCare/wellness.jpeg";
+
+import goldenTriangle from "../assets/TravelWithCare/golden-triangle.jpeg";
 import westBengal from "../assets/TravelWithCare/west-bengal.jpeg";
-import andaman from "../assets/TravelWithCare/andaman.jpeg";
-import arunachalPradesh from "../assets/TravelWithCare/arunachal-pradesh.jpeg";
+
+import durgaPuja from "../assets/TravelWithCare/durga-puja.jpeg";
+import rannOfKutch from "../assets/TravelWithCare/rann-of-kutch.jpeg";
+import hornbillFestival from "../assets/TravelWithCare/hornbill-festival.jpeg";
+import onam from "../assets/TravelWithCare/onam.jpeg";
+import devDiwali from "../assets/TravelWithCare/dev-diwali.jpeg";
+import jagadhatriPuja from "../assets/TravelWithCare/jagadhatri-puja.jpeg";
+
+import varanasi from "../assets/TravelWithCare/varanasi.jpeg";
+import charDham from "../assets/TravelWithCare/char-dham.jpeg";
+import templeTrails from "../assets/TravelWithCare/temple-trails.jpeg";
+import wellness from "../assets/TravelWithCare/wellness.jpeg";
 
 
 /* =========================================================
@@ -102,9 +101,7 @@ function JourneyCard({ journey }) {
           {journey.location}
         </span>
 
-        <h3>
-          {journey.title}
-        </h3>
+        <h3>{journey.title}</h3>
 
 
         {journey.date && (
@@ -116,13 +113,11 @@ function JourneyCard({ journey }) {
 
         {journey.durations?.length > 0 && (
           <div className="travel-duration-multiple">
-
             {journey.durations.map((duration, index) => (
               <strong key={index}>
                 {duration}
               </strong>
             ))}
-
           </div>
         )}
 
@@ -145,13 +140,14 @@ function JourneyCard({ journey }) {
             {journey.tag || journey.category}
           </span>
 
+
           <div className="travel-card-actions">
 
             <WhatsAppButton
               destination={journey.title}
             />
 
-            <a href="/#contact">
+            <a href="tel:18002030527" aria-label="Call SilverGenie at 1800 203 0527">
               Request Callback →
             </a>
 
@@ -167,7 +163,112 @@ function JourneyCard({ journey }) {
 
 
 /* =========================================================
-   TRAVEL WITH CARE
+   FEATURE CARD
+========================================================= */
+
+function FeatureCard({ journey }) {
+  return (
+    <article className="travel-feature-card">
+
+      <div className="travel-feature-image">
+
+        <img
+          src={journey.image}
+          alt={journey.title}
+        />
+
+        <div className="travel-feature-number">
+          {journey.number}
+        </div>
+
+      </div>
+
+
+      <div className="travel-feature-content">
+
+        <span>
+          {journey.category}
+        </span>
+
+        <h3>
+          {journey.title}
+
+          {journey.subtitle && (
+            <>
+              <br />
+              <em>{journey.subtitle}</em>
+            </>
+          )}
+        </h3>
+
+
+        {journey.date && (
+          <div className="travel-feature-date">
+            {journey.date}
+          </div>
+        )}
+
+
+        {journey.duration && (
+          <strong className="travel-feature-duration">
+            {journey.duration}
+          </strong>
+        )}
+
+
+        <p>
+          {journey.description}
+        </p>
+
+
+        <div className="travel-card-actions">
+
+          <WhatsAppButton
+            destination={journey.title}
+          />
+
+          <a href="tel:18002030527" aria-label="Call SilverGenie at 1800 203 0527">
+            Request Callback →
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+  );
+}
+
+
+/* =========================================================
+   YOUTUBE URL HELPER
+========================================================= */
+function getYouTubeVideoId(url = "") {
+  if (!url || url.includes("YOUR_VIDEO_ID")) return "";
+
+  try {
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.hostname.includes("youtu.be")) {
+      return parsedUrl.pathname.split("/").filter(Boolean)[0] || "";
+    }
+
+    if (parsedUrl.pathname.startsWith("/shorts/")) {
+      return parsedUrl.pathname.split("/")[2] || "";
+    }
+
+    if (parsedUrl.pathname.startsWith("/embed/")) {
+      return parsedUrl.pathname.split("/")[2] || "";
+    }
+
+    return parsedUrl.searchParams.get("v") || "";
+  } catch {
+    return "";
+  }
+}
+
+/* =========================================================
+   SILVERGENIE TRAVEL WITH CARE
 ========================================================= */
 
 function TravelWithCare() {
@@ -253,7 +354,7 @@ function TravelWithCare() {
 
     {
       title: "Arunachal Pradesh",
-      image: arunachalPradesh,
+      image: mountains,
       location: "INDIA • NORTH EAST",
       category: "Mountains",
       tag: "Himalayan Journey",
@@ -292,7 +393,7 @@ function TravelWithCare() {
 
     {
       title: "Bali: Tropical Bliss",
-      image: bali,
+      image: island,
       location: "BALI • INTERNATIONAL",
       category: "International",
       tag: "Island Serenity",
@@ -344,7 +445,7 @@ function TravelWithCare() {
 
     {
       title: "Andaman & Nicobar Islands",
-      image: andaman,
+      image: island,
       location: "INDIA • ISLAND ESCAPE",
       category: "International",
       tag: "Island Escape",
@@ -367,12 +468,11 @@ function TravelWithCare() {
       description:
         "Take time to pause, reconnect and experience thoughtfully paced wellness journeys.",
     },
-
   ];
 
 
   /* =======================================================
-     FILTERED JOURNEYS
+     FILTER
   ======================================================= */
 
   const filteredJourneys =
@@ -419,14 +519,13 @@ function TravelWithCare() {
       number: "03",
       title: "Arunachal Pradesh",
       subtitle: "Land of the Dawn-Lit Mountains",
-      image: arunachalPradesh,
+      image: mountains,
       category: "INCREDIBLE INDIA",
       date: "October 17 – October 23, 2026",
       duration: "7 Days / 6 Nights",
       description:
         "Explore the breathtaking landscapes and cultural heritage of Arunachal Pradesh through a carefully curated journey.",
     },
-
   ];
 
 
@@ -461,14 +560,13 @@ function TravelWithCare() {
     {
       number: "03",
       title: "Andaman & Nicobar Islands",
-      image: andaman,
+      image: island,
       category: "ISLAND ESCAPE",
       date: "December 15, 2026 onwards",
       duration: "5 Days / 4 Nights",
       description:
         "Discover turquoise waters, island landscapes and peaceful coastal experiences.",
     },
-
   ];
 
 
@@ -543,7 +641,6 @@ function TravelWithCare() {
       description:
         "Discover the unique traditions and festive heritage of Bengal.",
     },
-
   ];
 
 
@@ -585,16 +682,30 @@ function TravelWithCare() {
       description:
         "Explore India's remarkable temples, architecture and traditions through meaningful journeys.",
     },
-
   ];
 
+
+
+  /* =======================================================
+     WANDERLUST REFLECTIONS — SEVEN VIDEO CARDS
+     Replace each sample YouTube URL with your own video link.
+  ======================================================= */
+
+  const wanderlustVideos = [
+    { title: "Wanderlust Reflection 1", youtubeUrl: "https://youtube.com/shorts/zuhu3AM5Dwk?si=LpGc0kgDlJxzsn9Q", image: meghalaya },
+    { title: "Wanderlust Reflection 2", youtubeUrl: "https://youtube.com/shorts/oohEW7odE6k?si=Hzf2Q2S0yhhGDaya", image: westBengal },
+    { title: "Wanderlust Reflection 3", youtubeUrl: "https://youtu.be/hyAS1ddP27Y?si=IcdGDilFZ5j5GTbu", image: bhutan },
+    { title: "Wanderlust Reflection 4", youtubeUrl: "https://youtube.com/shorts/sTqsjq4yum0?si=qyg0-ZBnYJ61-zEw", image: mountains },
+    { title: "Wanderlust Reflection 5", youtubeUrl: "https://youtu.be/fMboLrZX_rA?si=upA3LqNsX09D4IB_", image: kashmir },
+    { title: "Wanderlust Reflection 6", youtubeUrl: "https://youtu.be/bwiEUKiXsRA?si=QZWhF4iDnY-O_Gmr", image: varanasi },
+    { title: "Wanderlust Reflection 7", youtubeUrl: "https://youtube.com/shorts/4bmj9fSnmG0?si=8IHzhu1iA-ESJdLv", image: rannOfKutch },
+  ];
 
   /* =======================================================
      RENDER
   ======================================================= */
 
   return (
-
     <div className="travel-page">
 
 
@@ -639,7 +750,6 @@ function TravelWithCare() {
             </a>
 
           </div>
-
 
           <div className="travel-hero-stats">
 
@@ -705,7 +815,7 @@ function TravelWithCare() {
 
 
       {/* =====================================================
-          SILVERGENIE SOJOURNS
+          SOJOURNS
       ===================================================== */}
 
       <section
@@ -770,12 +880,10 @@ function TravelWithCare() {
           {filteredJourneys.length > 0 ? (
 
             filteredJourneys.map((journey) => (
-
               <JourneyCard
                 key={journey.title}
                 journey={journey}
               />
-
             ))
 
           ) : (
@@ -833,67 +941,10 @@ function TravelWithCare() {
         <div className="travel-feature-grid">
 
           {upcomingJourneys.map((journey) => (
-
-            <article
-              className="travel-feature-card"
+            <FeatureCard
               key={journey.number}
-            >
-
-              <div className="travel-feature-image">
-
-                <img
-                  src={journey.image}
-                  alt={journey.title}
-                />
-
-                <div className="travel-feature-number">
-                  {journey.number}
-                </div>
-
-              </div>
-
-
-              <div className="travel-feature-content">
-
-                <span>
-                  {journey.category}
-                </span>
-
-                <h3>
-                  {journey.title}
-                  <br />
-                  <em>{journey.subtitle}</em>
-                </h3>
-
-                <div className="travel-feature-date">
-                  {journey.date}
-                </div>
-
-                <strong className="travel-feature-duration">
-                  {journey.duration}
-                </strong>
-
-                <p>
-                  {journey.description}
-                </p>
-
-
-                <div className="travel-card-actions">
-
-                  <WhatsAppButton
-                    destination={journey.title}
-                  />
-
-                  <a href="/#contact">
-                    Request Callback →
-                  </a>
-
-                </div>
-
-              </div>
-
-            </article>
-
+              journey={journey}
+            />
           ))}
 
         </div>
@@ -980,10 +1031,7 @@ function TravelWithCare() {
                     destination={journey.title}
                   />
 
-                  <a
-                    href="/#contact"
-                    className="travel-explore-btn"
-                  >
+                  <a href={`https://wa.me/9810534232?text=${encodeURIComponent('Hello SilverGenie! I am interested in Explore Experience. Please share details and available travel packages.')}`} target="_blank" rel="noopener noreferrer" className="travel-explore-btn">
                     Explore Experience
                     <span>→</span>
                   </a>
@@ -999,10 +1047,8 @@ function TravelWithCare() {
         </div>
 
       </section>
-
-
-      {/* =====================================================
-          WHEN INDIA CELEBRATES
+            {/* =====================================================
+          FESTIVALS
       ===================================================== */}
 
       <section className="travel-festivals">
@@ -1079,10 +1125,7 @@ function TravelWithCare() {
                     destination={festival.title}
                   />
 
-                  <a
-                    href="/#contact"
-                    className="travel-explore-btn"
-                  >
+                  <a href={`https://wa.me/9810534232?text=${encodeURIComponent('Hello SilverGenie! I am interested in Explore Experience. Please share details and available travel packages.')}`} target="_blank" rel="noopener noreferrer" className="travel-explore-btn">
                     Explore Experience
                     <span>→</span>
                   </a>
@@ -1101,7 +1144,7 @@ function TravelWithCare() {
 
 
       {/* =====================================================
-          WHERE TRADITIONS THRIVE
+          TRADITIONS
       ===================================================== */}
 
       <section className="travel-traditions">
@@ -1126,10 +1169,7 @@ function TravelWithCare() {
               places unforgettable.
             </p>
 
-            <a
-              href="/#contact"
-              className="travel-traditions-button"
-            >
+            <a href={`https://wa.me/9810534232?text=${encodeURIComponent('Hello SilverGenie! I am interested in Discover Cultural Journeys. Please share details and available travel packages.')}`} target="_blank" rel="noopener noreferrer" className="travel-traditions-button">
               Discover Cultural Journeys →
             </a>
 
@@ -1172,7 +1212,7 @@ function TravelWithCare() {
 
 
       {/* =====================================================
-          PATHS TO THE DIVINE
+          DIVINE
       ===================================================== */}
 
       <section className="travel-divine">
@@ -1250,10 +1290,7 @@ function TravelWithCare() {
                     destination={journey.title}
                   />
 
-                  <a
-                    href="/#contact"
-                    className="travel-explore-btn"
-                  >
+                  <a href={`https://wa.me/9810534232?text=${encodeURIComponent('Hello SilverGenie! I am interested in Discover Journey. Please share details and available travel packages.')}`} target="_blank" rel="noopener noreferrer" className="travel-explore-btn">
                     Discover Journey
                     <span>→</span>
                   </a>
@@ -1349,10 +1386,7 @@ function TravelWithCare() {
             </div>
 
 
-            <a
-              href="/#contact"
-              className="travel-wellness-button"
-            >
+            <a href={`https://wa.me/9810534232?text=${encodeURIComponent('Hello SilverGenie! I am interested in Explore Wellness Journeys. Please share details and available travel packages.')}`} target="_blank" rel="noopener noreferrer" className="travel-wellness-button">
               Explore Wellness Journeys →
             </a>
 
@@ -1476,6 +1510,45 @@ function TravelWithCare() {
       </section>
 
 
+
+      {/* =====================================================
+          WANDERLUST REFLECTIONS
+      ===================================================== */}
+      <section className="wanderlust-stories-section" id="wanderlust-stories">
+        <div className="wanderlust-stories-heading">
+          <h2>Wanderlust Reflections</h2>
+        </div>
+
+        <div className="wanderlust-video-grid">
+          {wanderlustVideos.map((video) => {
+            const videoId = getYouTubeVideoId(video.youtubeUrl);
+            const hasVideo = Boolean(videoId);
+
+            return (
+              <article className="wanderlust-video-card" key={video.title}>
+                <div className="wanderlust-video-frame">
+                  {hasVideo ? (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                      title={video.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <div className="wanderlust-video-placeholder">
+                      <img src={video.image} alt="" loading="lazy" />
+                      <span className="wanderlust-play-button" aria-hidden="true">▶</span>
+                    </div>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
       {/* =====================================================
           FINAL CTA
       ===================================================== */}
@@ -1510,18 +1583,18 @@ function TravelWithCare() {
 
           <div className="travel-final-actions">
 
-            <a
-              href="/#contact"
-              className="travel-final-primary"
-            >
+            <a href={`https://wa.me/9810534232?text=${encodeURIComponent('Hello SilverGenie! I am interested in Plan My Journey. Please share details and available travel packages.')}`} target="_blank" rel="noopener noreferrer" className="travel-final-primary">
               Plan My Journey →
             </a>
 
+            {/* CALLBACK BUTTON */}
+
             <a
-              href="/#contact"
+              href="tel:18002030527"
               className="travel-final-secondary"
+              aria-label="Call SilverGenie at 1800 203 0527"
             >
-              Enquire Now
+              Request a Call Back
             </a>
 
           </div>

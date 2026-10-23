@@ -28,6 +28,7 @@ import FAQ from "./sections/FAQ";
 // =========================================================
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import RefundPolicy from "./pages/RefundPolicy";
 
 // =========================================================
 // BLOG ARTICLE PAGES
@@ -40,6 +41,7 @@ import CertifiedCaregiver from "./pages/CertifiedCaregiver";
 // WANDERLUST DIARIES
 // =========================================================
 import WanderlustDiaries from "./pages/WanderlustDiaries";
+import WanderlustStory from "./pages/WanderlustStory";
 
 // =========================================================
 // SERVICE PAGES
@@ -61,244 +63,351 @@ import TravelWithCare from "./pages/TravelWithCare";
 
 // =========================================================
 // HOME PAGE
+// ContactSection is rendered ONLY on the Home page.
 // =========================================================
-
 function Home() {
   return (
     <>
       <Navbar />
 
       <main>
-
-        {/* HERO */}
         <Hero />
-
-        {/* RECOGNITION */}
         <Recognition />
-
-        {/* SERVICES */}
         <Services />
-
-        {/* WHY SILVERGENIE */}
         <WhySilverGenie />
-
-        {/* MAKE A DIFFERENCE */}
         <MakeDifference />
-
-        {/* STATS */}
         <Stats />
-
-        {/* TESTIMONIALS */}
         <Testimonials />
-
-        {/* HOME CARE */}
         <HomeCare />
-
-        {/* RESOURCES */}
         <Resources />
-
-        {/* FAQ */}
         <FAQ />
-
-        {/* CONTACT */}
         <ContactSection />
-
       </main>
 
       <Footer />
-
       <Chatbot />
     </>
   );
 }
 
 // =========================================================
-// APP
+// SHARED PAGE LAYOUT
+// Navbar, Footer and Chatbot are shared by inner pages.
+// ContactSection is NOT included here.
 // =========================================================
+function PageLayout({ children }) {
+  return (
+    <>
+      <Navbar />
 
+      <main>{children}</main>
+
+      <Footer />
+      <Chatbot />
+    </>
+  );
+}
+
+// =========================================================
+// 404 PAGE
+// =========================================================
+function NotFound() {
+  return (
+    <PageLayout>
+      <section
+        style={{
+          minHeight: "55vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: "40px 20px",
+        }}
+      >
+        <h1>404 — Page Not Found</h1>
+
+        <p>
+          Sorry, the page you are looking for does not exist.
+        </p>
+
+        <a
+          href="/"
+          style={{
+            display: "inline-block",
+            marginTop: "20px",
+            padding: "12px 24px",
+            background: "#20B69E",
+            color: "#ffffff",
+            textDecoration: "none",
+            borderRadius: "8px",
+            fontWeight: 600,
+          }}
+        >
+          Back to Home
+        </a>
+      </section>
+    </PageLayout>
+  );
+}
+
+// =========================================================
+// APP ROUTES
+// =========================================================
 function App() {
   return (
-    <BrowserRouter basename="/silvergenie-website-original">
-
-      {/* Scroll to top whenever route changes */}
+    <BrowserRouter>
       <ScrollToTop />
 
       <Routes>
-
-        {/* =================================================
-            HOME
-        ================================================= */}
-
+        {/* =========================================
+            HOME PAGE
+            URL: /
+        ========================================= */}
         <Route
           path="/"
           element={<Home />}
         />
 
-
-        {/* =================================================
+        {/* =========================================
             ABOUT
-        ================================================= */}
-
+            URL: /about
+        ========================================= */}
         <Route
           path="/about"
-          element={<About />}
+          element={
+            <PageLayout>
+              <About />
+            </PageLayout>
+          }
         />
 
+        {/* =========================================
+            REFUND POLICY
+            URL: /refund-policy
+        ========================================= */}
+        <Route
+          path="/refund-policy"
+          element={
+            <PageLayout>
+              <RefundPolicy />
+            </PageLayout>
+          }
+        />
 
-        {/* =================================================
-            BLOG / SENIOR CARE DIARIES
-        ================================================= */}
-
+        {/* =========================================
+            BLOG
+            URL: /blog
+        ========================================= */}
         <Route
           path="/blog"
-          element={<Blog />}
+          element={
+            <PageLayout>
+              <Blog />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
-            BLOG ARTICLE 1
-            INVEST IN A CAREGIVER
-        ================================================= */}
-
+        {/* =========================================
+            BLOG ARTICLES
+        ========================================= */}
         <Route
           path="/blog/invest-in-a-caregiver"
-          element={<InvestInCaregiver />}
+          element={
+            <PageLayout>
+              <InvestInCaregiver />
+            </PageLayout>
+          }
         />
-
-
-        {/* =================================================
-            BLOG ARTICLE 2
-            ELDER CARE & HOME HEALTH CARE
-        ================================================= */}
 
         <Route
           path="/blog/elder-care-and-home-health-care"
-          element={<ElderHomeHealth />}
+          element={
+            <PageLayout>
+              <ElderHomeHealth />
+            </PageLayout>
+          }
         />
-
-
-        {/* =================================================
-            BLOG ARTICLE 3
-            CERTIFIED CAREGIVERS VS DOMESTIC MAIDS
-        ================================================= */}
 
         <Route
           path="/blog/certified-caregivers-vs-domestic-maids"
-          element={<CertifiedCaregiver />}
+          element={
+            <PageLayout>
+              <CertifiedCaregiver />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
+        {/* =========================================
             WANDERLUST DIARIES
-        ================================================= */}
-
+            URL: /wanderlust-diaries
+        ========================================= */}
         <Route
           path="/wanderlust-diaries"
-          element={<WanderlustDiaries />}
+          element={
+            <PageLayout>
+              <WanderlustDiaries />
+            </PageLayout>
+          }
         />
 
+        {/* =========================================
+            WANDERLUST STORIES
+            Examples:
+            /wanderlust/bhutan
+            /wanderlust/assam
+            /wanderlust/meghalaya
+        ========================================= */}
+        <Route
+          path="/wanderlust/:slug"
+          element={
+            <PageLayout>
+              <WanderlustStory />
+            </PageLayout>
+          }
+        />
 
-        {/* =================================================
+        {/* =========================================
             ELDER CARE
-        ================================================= */}
-
+            URL: /elder-care
+        ========================================= */}
         <Route
           path="/elder-care"
-          element={<ElderCare />}
+          element={
+            <PageLayout>
+              <ElderCare />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
+        {/* =========================================
             HOME CARE
-        ================================================= */}
-
+            URL: /home-care
+        ========================================= */}
         <Route
           path="/home-care"
-          element={<HomeCarePage />}
+          element={
+            <PageLayout>
+              <HomeCarePage />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
+        {/* =========================================
             EMERGENCY CARE
-        ================================================= */}
-
+            URL: /emergency-care
+        ========================================= */}
         <Route
           path="/emergency-care"
-          element={<EmergencyCare />}
+          element={
+            <PageLayout>
+              <EmergencyCare />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
-            NCD / DIABETES MANAGEMENT
-        ================================================= */}
-
+        {/* =========================================
+            DIABETES MANAGEMENT
+            URL: /diabetes-management
+        ========================================= */}
         <Route
           path="/diabetes-management"
-          element={<DiabetesManagement />}
+          element={
+            <PageLayout>
+              <DiabetesManagement />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
+        {/* =========================================
             WELLNESS CARE
-        ================================================= */}
-
+            URL: /wellness-care
+        ========================================= */}
         <Route
           path="/wellness-care"
-          element={<WellnessCare />}
+          element={
+            <PageLayout>
+              <WellnessCare />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
+        {/* =========================================
             HEALTHCARE MANPOWER
-        ================================================= */}
-
+            URL: /healthcare-manpower
+        ========================================= */}
         <Route
           path="/healthcare-manpower"
-          element={<HealthcareManpower />}
+          element={
+            <PageLayout>
+              <HealthcareManpower />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
+        {/* =========================================
             HEALTHCARE CONVENIENCE
-        ================================================= */}
-
+            URL: /healthcare-convenience
+        ========================================= */}
         <Route
           path="/healthcare-convenience"
-          element={<HealthcareConvenience />}
+          element={
+            <PageLayout>
+              <HealthcareConvenience />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
+        {/* =========================================
             CARE MANAGEMENT
-        ================================================= */}
-
+            URL: /care-management
+        ========================================= */}
         <Route
           path="/care-management"
-          element={<CareManagement />}
+          element={
+            <PageLayout>
+              <CareManagement />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
-            CARE PLANS
-        ================================================= */}
-
+        {/* =========================================
+            SUBSCRIPTION PLANS
+            URL: /subscription-plans
+        ========================================= */}
         <Route
           path="/subscription-plans"
-          element={<SubscriptionPlans />}
+          element={
+            <PageLayout>
+              <SubscriptionPlans />
+            </PageLayout>
+          }
         />
 
-
-        {/* =================================================
+        {/* =========================================
             TRAVEL WITH CARE
-        ================================================= */}
+            URL: /travel-with-care
 
+            TravelWithCare is rendered only here.
+            ContactSection is not added to this page.
+        ========================================= */}
         <Route
           path="/travel-with-care"
-          element={<TravelWithCare />}
+          element={
+            <PageLayout>
+              <TravelWithCare />
+            </PageLayout>
+          }
         />
 
+        {/* =========================================
+            404 — UNKNOWN ROUTES
+        ========================================= */}
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
       </Routes>
-
     </BrowserRouter>
   );
 }

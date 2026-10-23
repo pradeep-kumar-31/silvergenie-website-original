@@ -1,6 +1,17 @@
 import "../styles/WellnessCare.css";
 
 function WellnessCare() {
+  // =====================================================
+  // CONTACT FORM URL
+  // Uses the Vite base path to avoid hard-coded URL errors.
+  // =====================================================
+
+  const contactUrl = `${import.meta.env.BASE_URL}#contact`;
+
+  // =====================================================
+  // WELLNESS SERVICES
+  // =====================================================
+
   const wellnessServices = [
     {
       number: "01",
@@ -34,6 +45,10 @@ function WellnessCare() {
     },
   ];
 
+  // =====================================================
+  // WELLNESS AREAS
+  // =====================================================
+
   const wellnessAreas = [
     "Physical Wellbeing",
     "Mental Wellbeing",
@@ -42,6 +57,10 @@ function WellnessCare() {
     "Counselling",
     "Preventive Wellness",
   ];
+
+  // =====================================================
+  // FREQUENTLY ASKED QUESTIONS
+  // =====================================================
 
   const faqs = [
     {
@@ -75,11 +94,10 @@ function WellnessCare() {
     <main className="wellness-care-page">
 
       {/* =====================================================
-          HERO
+          HERO SECTION
       ===================================================== */}
 
       <section className="wellness-care-hero">
-
         <div className="wellness-care-container">
 
           <div className="wellness-care-hero-content">
@@ -101,11 +119,13 @@ function WellnessCare() {
               wellbeing.
             </p>
 
+            {/* BUTTON 1: CONTACT FORM */}
+
             <a
-              href="/silvergenie-website-original/#contact"
+              href={contactUrl}
               className="wellness-care-btn"
             >
-              Know More →
+              Know More <span aria-hidden="true">→</span>
             </a>
 
           </div>
@@ -128,16 +148,14 @@ function WellnessCare() {
           </div>
 
         </div>
-
       </section>
 
 
       {/* =====================================================
-          INTRO
+          INTRO SECTION
       ===================================================== */}
 
       <section className="wellness-care-intro">
-
         <div className="wellness-care-container">
 
           <span className="wellness-care-label">
@@ -146,7 +164,7 @@ function WellnessCare() {
 
           <h2>
             Taking care of an elder's
-            <span>mental & physical wellbeing.</span>
+            <span>mental &amp; physical wellbeing.</span>
           </h2>
 
           <p>
@@ -158,7 +176,6 @@ function WellnessCare() {
           </p>
 
         </div>
-
       </section>
 
 
@@ -167,7 +184,6 @@ function WellnessCare() {
       ===================================================== */}
 
       <section className="wellness-care-services">
-
         <div className="wellness-care-container">
 
           <div className="wellness-care-section-heading">
@@ -189,11 +205,9 @@ function WellnessCare() {
 
           </div>
 
-
           <div className="wellness-care-services-grid">
 
             {wellnessServices.map((service) => (
-
               <article
                 className="wellness-care-service-card"
                 key={service.number}
@@ -204,29 +218,24 @@ function WellnessCare() {
                 </span>
 
                 <div>
+                  <h3>{service.title}</h3>
 
-                  <h3>
-                    {service.title}
-                  </h3>
-
-                  <p>
-                    {service.text}
-                  </p>
-
+                  <p>{service.text}</p>
                 </div>
 
-                <span className="wellness-care-arrow">
+                <span
+                  className="wellness-care-arrow"
+                  aria-hidden="true"
+                >
                   →
                 </span>
 
               </article>
-
             ))}
 
           </div>
 
         </div>
-
       </section>
 
 
@@ -235,7 +244,6 @@ function WellnessCare() {
       ===================================================== */}
 
       <section className="wellness-care-experts">
-
         <div className="wellness-care-container">
 
           <div className="wellness-care-experts-content">
@@ -259,11 +267,9 @@ function WellnessCare() {
 
           </div>
 
-
           <div className="wellness-care-experts-list">
 
             {wellnessAreas.map((area, index) => (
-
               <div
                 className="wellness-care-expert-item"
                 key={area}
@@ -273,18 +279,14 @@ function WellnessCare() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p>
-                  {area}
-                </p>
+                <p>{area}</p>
 
               </div>
-
             ))}
 
           </div>
 
         </div>
-
       </section>
 
 
@@ -293,7 +295,6 @@ function WellnessCare() {
       ===================================================== */}
 
       <section className="wellness-care-benefits">
-
         <div className="wellness-care-container">
 
           <div className="wellness-care-section-heading">
@@ -314,16 +315,13 @@ function WellnessCare() {
 
           </div>
 
-
           <div className="wellness-care-benefits-grid">
 
             <article className="wellness-care-benefit-card">
 
               <span>01</span>
 
-              <h3>
-                Physical Wellbeing
-              </h3>
+              <h3>Physical Wellbeing</h3>
 
               <p>
                 Support for maintaining physical health and
@@ -332,14 +330,11 @@ function WellnessCare() {
 
             </article>
 
-
             <article className="wellness-care-benefit-card">
 
               <span>02</span>
 
-              <h3>
-                Mental Wellbeing
-              </h3>
+              <h3>Mental Wellbeing</h3>
 
               <p>
                 Counselling and professional support for
@@ -348,14 +343,11 @@ function WellnessCare() {
 
             </article>
 
-
             <article className="wellness-care-benefit-card">
 
               <span>03</span>
 
-              <h3>
-                Nutrition
-              </h3>
+              <h3>Nutrition</h3>
 
               <p>
                 Guidance from dieticians and nutritionists
@@ -364,14 +356,11 @@ function WellnessCare() {
 
             </article>
 
-
             <article className="wellness-care-benefit-card">
 
               <span>04</span>
 
-              <h3>
-                Fitness & Yoga
-              </h3>
+              <h3>Fitness &amp; Yoga</h3>
 
               <p>
                 Fitness and yoga support to encourage a
@@ -383,7 +372,6 @@ function WellnessCare() {
           </div>
 
         </div>
-
       </section>
 
 
@@ -392,7 +380,6 @@ function WellnessCare() {
       ===================================================== */}
 
       <section className="wellness-care-focus">
-
         <div className="wellness-care-container">
 
           <div className="wellness-care-focus-content">
@@ -412,15 +399,16 @@ function WellnessCare() {
               the mental and physical wellbeing of elders.
             </p>
 
+            {/* BUTTON 2: CONTACT FORM */}
+
             <a
-              href="/silvergenie-website-original/#contact"
+              href={contactUrl}
               className="wellness-care-btn"
             >
-              Connect With Us →
+              Connect With Us <span aria-hidden="true">→</span>
             </a>
 
           </div>
-
 
           <div className="wellness-care-focus-grid">
 
@@ -441,22 +429,20 @@ function WellnessCare() {
 
             <div>
               <strong>04</strong>
-              <span>Fitness & Yoga</span>
+              <span>Fitness &amp; Yoga</span>
             </div>
 
           </div>
 
         </div>
-
       </section>
 
 
       {/* =====================================================
-          FAQ
+          FAQ SECTION
       ===================================================== */}
 
       <section className="wellness-care-faq">
-
         <div className="wellness-care-container">
 
           <div className="wellness-care-section-heading">
@@ -472,11 +458,9 @@ function WellnessCare() {
 
           </div>
 
-
           <div className="wellness-care-faq-list">
 
             {faqs.map((faq, index) => (
-
               <details
                 className="wellness-care-faq-item"
                 key={faq.question}
@@ -488,28 +472,20 @@ function WellnessCare() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <strong>
-                    {faq.question}
-                  </strong>
+                  <strong>{faq.question}</strong>
 
-                  <b>
-                    +
-                  </b>
+                  <b aria-hidden="true">+</b>
 
                 </summary>
 
-                <p>
-                  {faq.answer}
-                </p>
+                <p>{faq.answer}</p>
 
               </details>
-
             ))}
 
           </div>
 
         </div>
-
       </section>
 
 
@@ -518,7 +494,6 @@ function WellnessCare() {
       ===================================================== */}
 
       <section className="wellness-care-cta">
-
         <div className="wellness-care-container">
 
           <span className="wellness-care-label">
@@ -535,15 +510,16 @@ function WellnessCare() {
             Services and the support available for seniors.
           </p>
 
+          {/* BUTTON 3: CONTACT FORM */}
+
           <a
-            href="/silvergenie-website-original/#contact"
+            href={contactUrl}
             className="wellness-care-btn"
           >
-            Connect Now →
+            Connect Now <span aria-hidden="true">→</span>
           </a>
 
         </div>
-
       </section>
 
     </main>

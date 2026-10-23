@@ -1025,6 +1025,7 @@
   font-size: clamp(48px, 5vw, 76px);
   line-height: 0.98;
   letter-spacing: -2px;
+  color: #73d5c4;
 }
 
 .travel-traditions-content h2 em {
@@ -1816,4 +1817,579 @@
     width: 100%;
   }
 
+}/* =========================================================
+   WANDERLUST VIDEO STORIES + TRAVEL DIARIES
+   Add this to your TravelWithCare CSS file.
+========================================================= */
+
+.wanderlust-stories-section {
+  padding: 96px 6%;
+  background: #f8f7f3;
+  color: #183d35;
+}
+
+.wanderlust-stories-heading,
+.wanderlust-diaries-heading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.wanderlust-stories-heading > span,
+.wanderlust-diaries-heading > span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #b47b43;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.wanderlust-stories-heading h2,
+.wanderlust-diaries-heading h2 {
+  margin: 0 0 14px;
+  color: #183d35;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.15;
+}
+
+.wanderlust-stories-heading h2 em,
+.wanderlust-diaries-heading h2 em {
+  color: #b47b43;
+  font-family: Georgia, serif;
+  font-weight: 500;
+}
+
+.wanderlust-stories-heading p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #66736e;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.wanderlust-video-grid,
+.wanderlust-diaries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1240px;
+  margin: 0 auto 76px;
+}
+
+.wanderlust-video-card,
+.wanderlust-diary-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(24, 61, 53, 0.1);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(24, 61, 53, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wanderlust-video-card:hover,
+.wanderlust-diary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(24, 61, 53, 0.13);
+}
+
+.wanderlust-video-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #e8ece8;
+}
+
+.wanderlust-video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.wanderlust-video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.wanderlust-video-placeholder::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.58));
+  content: "";
+}
+
+.wanderlust-video-placeholder img,
+.wanderlust-diary-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.wanderlust-video-placeholder:hover img,
+.wanderlust-diary-image:hover img {
+  transform: scale(1.05);
+}
+
+.wanderlust-play-button {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  padding-left: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: #b47b43;
+  color: #fff;
+  font-size: 22px;
+}
+
+.wanderlust-video-placeholder small {
+  position: absolute;
+  z-index: 1;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.wanderlust-video-content,
+.wanderlust-diary-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+.wanderlust-story-category {
+  margin-bottom: 10px;
+  color: #b47b43;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.wanderlust-video-content h3,
+.wanderlust-diary-content h3 {
+  margin: 0 0 12px;
+  color: #183d35;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.wanderlust-video-content p,
+.wanderlust-diary-content p {
+  margin: 0 0 22px;
+  color: #68746f;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.wanderlust-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  color: #183d35;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.wanderlust-read-more span {
+  color: #b47b43;
+  font-size: 19px;
+  transition: transform 0.2s ease;
+}
+
+.wanderlust-read-more:hover span {
+  transform: translateX(4px);
+}
+
+.wanderlust-diaries-heading {
+  margin-top: 10px;
+  margin-bottom: 34px;
+}
+
+.wanderlust-diary-image {
+  display: block;
+  height: 230px;
+  overflow: hidden;
+  background: #e8ece8;
+}
+
+.wanderlust-diary-content {
+  min-height: 270px;
+}
+
+.wanderlust-diary-date {
+  margin-bottom: 10px;
+  color: #b47b43;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.wanderlust-all-diaries {
+  margin-top: -38px;
+  text-align: center;
+}
+
+.wanderlust-all-diaries a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 1px solid #183d35;
+  border-radius: 999px;
+  color: #183d35;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.wanderlust-all-diaries a:hover {
+  background: #183d35;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .wanderlust-video-grid,
+  .wanderlust-diaries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wanderlust-stories-section {
+    padding: 72px 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .wanderlust-video-grid,
+  .wanderlust-diaries-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 54px;
+  }
+
+  .wanderlust-stories-section {
+    padding: 58px 18px;
+  }
+
+  .wanderlust-video-content,
+  .wanderlust-diary-content {
+    padding: 20px;
+  }
+
+  .wanderlust-diary-content {
+    min-height: auto;
+  }
+
+  .wanderlust-diary-image {
+    height: 215px;
+  }
+
+  .wanderlust-all-diaries {
+    margin-top: -24px;
+  }
+}
+
+/* =========================================================
+   FINAL BUTTON ALIGNMENT FIXES
+   These rules intentionally come last to normalize buttons
+   across the full TravelWithCare page.
+========================================================= */
+.travel-page a,
+.travel-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.travel-page .travel-primary-btn,
+.travel-page .travel-secondary-btn,
+.travel-page .travel-whatsapp-btn,
+.travel-page .travel-card-actions > a,
+.travel-page .travel-explore-btn,
+.travel-page .travel-traditions-button,
+.travel-page .travel-wellness-button,
+.travel-page .travel-final-primary,
+.travel-page .travel-final-secondary,
+.travel-page .wanderlust-read-more,
+.travel-page .wanderlust-all-diaries a {
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.travel-page .travel-primary-btn,
+.travel-page .travel-secondary-btn {
+  min-height: 52px;
+  padding: 12px 24px;
+  gap: 9px;
+  white-space: normal;
+}
+
+.travel-page .travel-card-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.travel-page .travel-card-actions > a,
+.travel-page .travel-card-actions > .travel-whatsapp-btn,
+.travel-page .travel-card-actions > .travel-explore-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  margin: 0;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.travel-page .travel-card-actions > .travel-whatsapp-btn {
+  background: #20b69e !important;
+  color: #fff !important;
+}
+
+.travel-page .travel-card-actions > a:not(.travel-whatsapp-btn) {
+  background: #edf7f4 !important;
+  color: #16302c !important;
+  border-color: #d8e9e4;
+}
+
+.travel-page .travel-card-actions > a:not(.travel-whatsapp-btn):hover {
+  background: #16302c !important;
+  color: #fff !important;
+  border-color: #16302c;
+}
+
+.travel-page .travel-explore-btn,
+.travel-page .travel-card-actions > .travel-explore-btn {
+  background: #16302c !important;
+  color: #fff !important;
+}
+
+.travel-page .travel-explore-btn:hover,
+.travel-page .travel-card-actions > .travel-explore-btn:hover {
+  background: #20b69e !important;
+  color: #fff !important;
+}
+
+.travel-page .travel-explore-btn span {
+  flex: 0 0 auto;
+  font-size: 15px;
+}
+
+.travel-page .travel-final-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.travel-page .travel-final-primary,
+.travel-page .travel-final-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  white-space: normal;
+}
+
+.travel-page .wanderlust-video-content,
+.travel-page .wanderlust-diary-content {
+  min-width: 0;
+  height: 100%;
+}
+
+.travel-page .wanderlust-video-content p,
+.travel-page .wanderlust-diary-content p {
+  flex-grow: 1;
+}
+
+.travel-page .wanderlust-read-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 9px 16px;
+  border: 1px solid #d7e7e2;
+  border-radius: 999px;
+  background: #f1f8f6;
+  color: #16302c !important;
+}
+
+.travel-page .wanderlust-read-more:hover {
+  background: #16302c;
+  border-color: #16302c;
+  color: #fff !important;
+}
+
+.travel-page .wanderlust-read-more span {
+  color: #20b69e;
+}
+
+.travel-page .wanderlust-read-more:hover span {
+  color: #fff;
+}
+
+.travel-page .wanderlust-all-diaries a {
+  min-height: 50px;
+  padding: 12px 24px;
+  line-height: 1.25;
+}
+
+.travel-page .travel-category-tabs button {
+  min-height: 42px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.travel-page a:focus-visible,
+.travel-page button:focus-visible {
+  outline: 3px solid rgba(32, 182, 158, 0.55);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .travel-page .travel-card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-page .travel-card-actions > a,
+  .travel-page .travel-card-actions > .travel-whatsapp-btn,
+  .travel-page .travel-card-actions > .travel-explore-btn {
+    min-height: 44px;
+  }
+
+  .travel-page .travel-final-actions {
+    max-width: none;
+  }
+
+  .travel-page .travel-primary-btn,
+  .travel-page .travel-secondary-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   FINAL FIX: JOURNEY CARD HEIGHT + BUTTON ALIGNMENT
+   Keeps WhatsApp on one line and aligns action buttons at
+   the same vertical position across cards in each grid row.
+========================================================= */
+.travel-page .travel-journey-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+}
+
+.travel-page .travel-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.travel-page .travel-card-bottom {
+  margin-top: auto;
+  padding-top: 17px;
+}
+
+.travel-page .travel-card-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.travel-page .travel-card-actions > .travel-whatsapp-btn {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  gap: 7px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.travel-page .travel-card-actions > .travel-whatsapp-btn .travel-whatsapp-icon {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.travel-page .travel-card-actions > .travel-whatsapp-btn > span,
+.travel-page .travel-card-actions > .travel-whatsapp-btn > strong {
+  flex: 0 0 auto;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+}
+
+.travel-page .travel-card-actions > a:not(.travel-whatsapp-btn) {
+  overflow-wrap: normal;
+  word-break: normal;
+  text-align: center;
+}
+
+/* Four-column cards need compact, single-line button labels. */
+@media (min-width: 1101px) {
+  .travel-page .travel-card-actions {
+    gap: 8px;
+  }
+
+  .travel-page .travel-card-actions > .travel-whatsapp-btn,
+  .travel-page .travel-card-actions > a:not(.travel-whatsapp-btn) {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 11px !important;
+  }
+}
+
+/* On smaller screens, stack buttons but keep the same clean alignment. */
+@media (max-width: 600px) {
+  .travel-page .travel-card-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .travel-page .travel-card-actions > .travel-whatsapp-btn {
+    justify-content: center;
+  }
 }

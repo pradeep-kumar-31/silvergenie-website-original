@@ -1,13 +1,24 @@
 /* =========================================================
    SILVERGENIE — EMERGENCY GENIE
-   COMPLETE RESPONSIVE CSS
+   Professional Corporate UI
+   Designed for the provided EmergencyCare.jsx
 ========================================================= */
 
 .emergency-care-page {
+  --ec-primary: #20b69e;
+  --ec-primary-dark: #168b78;
+  --ec-dark: #16302c;
+  --ec-text: #566762;
+  --ec-muted: #75847f;
+  --ec-light: #f4f9f7;
+  --ec-border: #e2ebe7;
+  --ec-white: #ffffff;
+
+  width: 100%;
   min-height: 100vh;
-  background: #ffffff;
-  color: #16302c;
-  overflow: hidden;
+  overflow: clip;
+  background: var(--ec-white);
+  color: var(--ec-dark);
   font-family: inherit;
 }
 
@@ -17,147 +28,232 @@
   box-sizing: border-box;
 }
 
+.emergency-care-page img {
+  display: block;
+  max-width: 100%;
+}
+
+.emergency-care-page h1,
+.emergency-care-page h2,
+.emergency-care-page h3,
+.emergency-care-page p {
+  margin-top: 0;
+}
+
+.emergency-care-page p {
+  color: var(--ec-text);
+  line-height: 1.8;
+}
+
 .emergency-care-container {
-  width: min(1200px, calc(100% - 80px));
-  margin: 0 auto;
+  width: min(1180px, calc(100% - 64px));
+  margin-inline: auto;
 }
 
 /* =========================================================
-   COMMON LABEL
+   SECTION LABELS
 ========================================================= */
 
-.emergency-care-label {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #20b69e;
-  font-size: 12px;
+.emergency-care-page .emergency-care-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 8px 14px;
+
+  border: 1px solid #d5eee7;
+  border-radius: 50px;
+
+  background: #eaf7f3;
+  color: var(--ec-primary-dark);
+
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 2.2px;
-  line-height: 1.4;
+  line-height: 1.6;
+  letter-spacing: 1.35px;
+  text-align: center;
   text-transform: uppercase;
 }
 
 /* =========================================================
-   COMMON BUTTON
+   UNIVERSAL BUTTONS
+   All buttons same dimensions and centered
 ========================================================= */
 
-.emergency-care-btn {
+.emergency-care-page .emergency-care-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+
+  width: 235px;
+  min-width: 235px;
   min-height: 54px;
-  padding: 0 30px;
-  border-radius: 999px;
-  background: #20b69e;
+
+  margin: 0 auto;
+  padding: 13px 18px;
+
+  border: 1px solid var(--ec-primary);
+  border-radius: 9px;
+
+  background: var(--ec-primary);
   color: #ffffff;
-  text-decoration: none;
+
+  font-family: inherit;
   font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  box-shadow: 0 14px 35px rgba(32, 182, 158, 0.24);
+  font-weight: 750;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(32, 182, 158, 0.12);
+
   transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
 }
 
-.emergency-care-btn:hover {
-  background: #16302c;
-  transform: translateY(-3px);
-  box-shadow: 0 18px 38px rgba(22, 48, 44, 0.18);
+.emergency-care-page .emergency-care-btn span {
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.emergency-care-page .emergency-care-btn:hover {
+  border-color: var(--ec-primary-dark);
+  background: var(--ec-primary-dark);
+  color: #ffffff;
+  box-shadow: 0 7px 18px rgba(22, 139, 120, 0.19);
+  transform: translateY(-2px);
+}
+
+.emergency-care-page .emergency-care-btn:focus-visible {
+  outline: 3px solid rgba(32, 182, 158, 0.35);
+  outline-offset: 4px;
+}
+
+.emergency-care-page .emergency-care-btn:active {
+  transform: translateY(0);
 }
 
 /* =========================================================
-   HERO
+   HERO SECTION
 ========================================================= */
 
 .emergency-care-hero {
   position: relative;
-  min-height: 720px;
-  padding: 95px 0 100px;
-  display: flex;
-  align-items: center;
+  padding: 88px 0 92px;
   background:
     radial-gradient(
-      circle at 90% 15%,
-      rgba(32, 182, 158, 0.12),
-      transparent 34%
+      ellipse at 90% 10%,
+      rgba(32, 182, 158, 0.09),
+      transparent 35%
     ),
-    #f2faf8;
+    #f5faf8;
 }
 
 .emergency-care-hero .emergency-care-container {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
   align-items: center;
-  gap: 75px;
+  gap: 65px;
 }
 
 .emergency-care-hero-content {
-  max-width: 610px;
+  min-width: 0;
+}
+
+.emergency-care-hero-content > .emergency-care-label {
+  margin-bottom: 22px;
 }
 
 .emergency-care-hero h1 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(48px, 5.5vw, 78px);
-  line-height: 0.98;
-  letter-spacing: -3.8px;
-  font-weight: 750;
+  margin-bottom: 23px;
+  color: var(--ec-dark);
+  font-size: clamp(42px, 5vw, 67px);
+  font-weight: 850;
+  line-height: 1.1;
+  letter-spacing: -2.3px;
 }
 
-.emergency-care-hero h1 span {
+.emergency-care-page .emergency-care-hero h1 span,
+.emergency-care-page .emergency-care-section-heading h2 span,
+.emergency-care-page .emergency-care-package-content h2 span,
+.emergency-care-page .emergency-care-why-content h2 span,
+.emergency-care-page .emergency-care-golden h2 span,
+.emergency-care-page .emergency-care-cta h2 span {
   display: block;
-  margin-top: 7px;
-  color: #20b69e;
+  color: var(--ec-primary-dark);
 }
 
-.emergency-care-hero p {
-  max-width: 590px;
-  margin: 28px 0 28px;
-  color: #647570;
-  font-size: 17px;
-  line-height: 1.8;
+.emergency-care-hero-content > p {
+  max-width: 540px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.85;
 }
 
 /* =========================================================
-   HERO PRICE
+   HERO PRICING
 ========================================================= */
 
 .emergency-care-price {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 25px 0 30px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 7px;
+
+  margin: 25px 0 8px;
+  color: var(--ec-dark);
 }
 
-.emergency-care-price span {
-  color: #6c7e79;
-  font-size: 13px;
+.emergency-care-price > span {
+  color: var(--ec-muted);
+  font-size: 14px;
   font-weight: 600;
 }
 
 .emergency-care-price strong {
-  margin-top: 3px;
-  color: #16302c;
-  font-size: 42px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: -1.5px;
+  color: var(--ec-dark);
+  font-size: 38px;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
 .emergency-care-price small {
-  margin-top: 7px;
-  color: #72827e;
+  color: var(--ec-muted);
   font-size: 12px;
+  font-weight: 600;
 }
 
 .emergency-care-price em {
-  margin-top: 7px;
-  color: #20a991;
-  font-size: 12px;
+  flex-basis: 100%;
+  margin-top: 5px;
+  color: var(--ec-primary-dark);
+  font-size: 13px;
   font-style: normal;
   font-weight: 700;
+}
+
+.emergency-care-hero-content > .emergency-care-btn {
+  display: flex;
+  margin: 24px 0 0;
+}
+
+.emergency-care-price-note {
+  max-width: 420px;
+  margin: 16px 0 0;
+  color: var(--ec-muted);
+  font-size: 12px;
+  line-height: 1.7;
 }
 
 /* =========================================================
@@ -166,68 +262,95 @@
 
 .emergency-care-hero-image {
   position: relative;
-  width: 100%;
-  height: 555px;
-  overflow: hidden;
-  border-radius: 34px;
-  background: #dceee9;
-  box-shadow:
-    0 25px 70px rgba(22, 48, 44, 0.14),
-    0 5px 15px rgba(22, 48, 44, 0.05);
-}
-
-.emergency-care-hero-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(22, 48, 44, 0.02),
-    rgba(22, 48, 44, 0.12)
-  );
+  min-width: 0;
 }
 
 .emergency-care-hero-image img {
   width: 100%;
-  height: 100%;
-  display: block;
+  height: 525px;
+
+  border: 1px solid rgba(22, 48, 44, 0.05);
+  border-radius: 22px;
+
+  background: #eaf2ee;
   object-fit: cover;
-  transition: transform 0.7s ease;
-}
+  object-position: center;
 
-.emergency-care-hero-image:hover img {
-  transform: scale(1.04);
+  box-shadow: 0 18px 45px rgba(22, 48, 44, 0.1);
 }
-
-/* Floating badge */
 
 .emergency-care-floating-card {
   position: absolute;
-  z-index: 2;
-  left: 24px;
-  bottom: 24px;
-  min-width: 190px;
-  padding: 17px 20px;
+  right: -15px;
+  bottom: 25px;
+
   display: flex;
   flex-direction: column;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 15px 35px rgba(22, 48, 44, 0.16);
+  gap: 5px;
+
+  min-width: 205px;
+  padding: 20px 23px;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 13px;
+
+  background: #ffffff;
+  box-shadow: 0 10px 32px rgba(22, 48, 44, 0.12);
 }
 
 .emergency-care-floating-card strong {
-  color: #20b69e;
-  font-size: 25px;
-  line-height: 1;
+  color: var(--ec-primary-dark);
+  font-size: 31px;
+  font-weight: 850;
+  line-height: 1.2;
 }
 
 .emergency-care-floating-card span {
-  margin-top: 6px;
-  color: #16302c;
-  font-size: 12px;
+  color: var(--ec-dark);
+  font-size: 13px;
   font-weight: 700;
+}
+
+/* =========================================================
+   SHARED SECTION SPACING
+========================================================= */
+
+.emergency-care-highlights,
+.emergency-care-package,
+.emergency-care-beneficiaries,
+.emergency-care-why,
+.emergency-care-golden,
+.emergency-care-scenarios,
+.emergency-care-allied,
+.emergency-care-comparison,
+.emergency-care-faq {
+  padding: 86px 0;
+}
+
+.emergency-care-section-heading {
+  max-width: 790px;
+  margin: 0 auto 43px;
+  text-align: center;
+}
+
+.emergency-care-section-heading .emergency-care-label {
+  margin-bottom: 16px;
+}
+
+.emergency-care-section-heading h2 {
+  margin-bottom: 17px;
+  color: var(--ec-dark);
+  font-size: clamp(32px, 3.8vw, 46px);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+}
+
+.emergency-care-section-heading p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.85;
 }
 
 /* =========================================================
@@ -235,266 +358,312 @@
 ========================================================= */
 
 .emergency-care-highlights {
-  padding: 115px 0;
   background: #ffffff;
 }
-
-.emergency-care-section-heading {
-  max-width: 760px;
-  margin-bottom: 55px;
-}
-
-.emergency-care-section-heading h2 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(40px, 5vw, 64px);
-  line-height: 1.03;
-  letter-spacing: -2.7px;
-  font-weight: 750;
-}
-
-.emergency-care-section-heading h2 span {
-  display: block;
-  color: #20b69e;
-}
-
-.emergency-care-section-heading p {
-  max-width: 700px;
-  margin: 22px 0 0;
-  color: #687974;
-  font-size: 16px;
-  line-height: 1.85;
-}
-
-/* =========================================================
-   HIGHLIGHT CARDS
-========================================================= */
 
 .emergency-care-highlights-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .emergency-care-highlight-card {
-  min-height: 265px;
-  padding: 30px 27px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #dfece8;
-  border-radius: 24px;
+  min-width: 0;
+  padding: 27px 22px 25px;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 13px;
+
   background: #ffffff;
-  box-shadow: 0 12px 35px rgba(22, 48, 44, 0.055);
+  text-align: center;
+
+  box-shadow: 0 3px 15px rgba(22, 48, 44, 0.025);
+
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
 }
 
 .emergency-care-highlight-card:hover {
-  transform: translateY(-8px);
-  border-color: #aee0d5;
-  box-shadow: 0 22px 45px rgba(22, 48, 44, 0.11);
+  border-color: #b8e5d9;
+  box-shadow: 0 9px 25px rgba(22, 48, 44, 0.06);
+  transform: translateY(-3px);
 }
 
 .emergency-care-number {
-  width: 46px;
-  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
-  background: #e9f8f4;
-  color: #20b69e;
-  font-size: 13px;
-  font-weight: 800;
+
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 19px;
+
+  border: 1px solid #d9eee7;
+  border-radius: 12px;
+
+  background: #edf8f4;
+  color: var(--ec-primary-dark);
+
+  font-size: 15px;
+  font-weight: 850;
+  letter-spacing: 0.3px;
 }
 
 .emergency-care-highlight-card h3 {
-  margin: 34px 0 12px;
-  color: #16302c;
-  font-size: 20px;
-  line-height: 1.3;
+  margin-bottom: 11px;
+  color: var(--ec-dark);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
 .emergency-care-highlight-card p {
-  margin: 0;
-  color: #71807c;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* =========================================================
-   PACKAGE SECTION
-========================================================= */
-
-.emergency-care-package {
-  padding: 120px 0;
-  background: #f4faf8;
-}
-
-.emergency-care-package .emergency-care-container {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  align-items: center;
-  gap: 85px;
-}
-
-.emergency-care-package-content {
-  max-width: 520px;
-}
-
-.emergency-care-package-content h2 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(40px, 5vw, 62px);
-  line-height: 1.04;
-  letter-spacing: -2.5px;
-}
-
-.emergency-care-package-content h2 span {
-  display: block;
-  color: #20b69e;
-}
-
-.emergency-care-package-content p {
-  margin: 25px 0 0;
-  color: #687974;
-  font-size: 16px;
+  margin-bottom: 0;
+  font-size: 13px;
   line-height: 1.8;
 }
 
 /* =========================================================
-   PACKAGE CARD
+   PACKAGE INCLUSIONS
 ========================================================= */
 
+.emergency-care-package {
+  background: var(--ec-light);
+}
+
+.emergency-care-package > .emergency-care-container {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: 55px;
+}
+
+.emergency-care-package-content {
+  min-width: 0;
+}
+
+.emergency-care-package-content > .emergency-care-label {
+  margin-bottom: 18px;
+}
+
+.emergency-care-package-content h2 {
+  margin-bottom: 19px;
+  color: var(--ec-dark);
+  font-size: clamp(32px, 3.6vw, 44px);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -1.1px;
+}
+
+.emergency-care-package-content > p {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+/* Important information box */
+
+.emergency-care-important-note {
+  margin-top: 27px;
+  padding: 20px;
+
+  border: 1px solid #d8eae3;
+  border-left: 4px solid var(--ec-primary);
+  border-radius: 9px;
+
+  background: #ffffff;
+}
+
+.emergency-care-important-note strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ec-dark);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.emergency-care-important-note p {
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Package card */
+
 .emergency-care-package-card {
-  overflow: hidden;
-  border-radius: 30px;
-  background: #16302c;
-  box-shadow: 0 25px 60px rgba(22, 48, 44, 0.17);
+  min-width: 0;
+  padding: 30px;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 15px;
+
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(22, 48, 44, 0.055);
 }
 
 .emergency-care-package-top {
-  padding: 36px 40px 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding-bottom: 23px;
+  margin-bottom: 23px;
+
+  border-bottom: 1px solid var(--ec-border);
 }
 
-.emergency-care-package-top span {
-  display: block;
-  margin-bottom: 14px;
-  color: #20b69e;
+.emergency-care-package-top > span {
+  margin-bottom: 12px;
+  color: var(--ec-primary-dark);
   font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-weight: 850;
+  letter-spacing: 1.3px;
 }
 
-.emergency-care-package-top strong {
-  display: block;
-  color: #ffffff;
-  font-size: 48px;
-  line-height: 1;
-  letter-spacing: -2px;
+.emergency-care-package-top > strong {
+  color: var(--ec-dark);
+  font-size: 39px;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
-.emergency-care-package-top small {
-  display: block;
-  margin-top: 7px;
-  color: #b9ccc7;
+.emergency-care-package-top > small {
+  margin-top: 5px;
+  color: var(--ec-muted);
   font-size: 12px;
 }
 
-.emergency-care-package-top em {
-  display: block;
-  margin-top: 8px;
-  color: #20b69e;
-  font-size: 12px;
+.emergency-care-package-top > em {
+  margin-top: 10px;
+  color: var(--ec-primary-dark);
+  font-size: 13px;
   font-style: normal;
   font-weight: 700;
 }
 
 .emergency-care-package-list {
-  padding: 8px 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
 }
 
 .emergency-care-package-item {
   display: grid;
-  grid-template-columns: 42px 1fr;
+  grid-template-columns: 37px minmax(0, 1fr);
   align-items: start;
-  gap: 15px;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.emergency-care-package-item:last-child {
-  border-bottom: none;
+  gap: 13px;
 }
 
 .emergency-care-package-item > span {
-  color: #20b69e;
-  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  border: 1px solid #dcefe8;
+  border-radius: 9px;
+
+  background: #eff8f4;
+  color: var(--ec-primary-dark);
+
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.emergency-care-package-item h3 {
+  margin-bottom: 6px;
+  color: var(--ec-dark);
+  font-size: 15px;
   font-weight: 800;
-  padding-top: 2px;
+  line-height: 1.5;
 }
 
 .emergency-care-package-item p {
-  margin: 0;
-  color: #d8e5e2;
-  font-size: 14px;
-  line-height: 1.65;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.emergency-care-package-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 26px;
+  padding-top: 23px;
+
+  border-top: 1px solid var(--ec-border);
 }
 
 /* =========================================================
-   WHO BENEFITS
+   BENEFICIARIES
 ========================================================= */
 
 .emergency-care-beneficiaries {
-  padding: 115px 0;
   background: #ffffff;
 }
 
 .emergency-care-beneficiary-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
 .emergency-care-beneficiary-card {
-  position: relative;
-  min-height: 190px;
-  padding: 28px;
-  border: 1px solid #e0ece9;
-  border-radius: 22px;
+  min-width: 0;
+  padding: 25px 23px;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 13px;
+
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(22, 48, 44, 0.045);
-  transition: 0.3s ease;
+  text-align: left;
+
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
 }
 
 .emergency-care-beneficiary-card:hover {
-  transform: translateY(-6px);
-  border-color: #b8e3da;
-  box-shadow: 0 18px 40px rgba(22, 48, 44, 0.09);
+  border-color: #b8e5d9;
+  box-shadow: 0 8px 22px rgba(22, 48, 44, 0.055);
+  transform: translateY(-3px);
 }
 
 .emergency-care-beneficiary-card > span {
-  color: #20b69e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  margin-bottom: 18px;
+
+  border-radius: 10px;
+  background: #eaf7f3;
+  color: var(--ec-primary-dark);
+
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-weight: 850;
 }
 
 .emergency-care-beneficiary-card h3 {
-  margin: 35px 0 7px;
-  color: #16302c;
-  font-size: 20px;
-  line-height: 1.3;
+  margin-bottom: 9px;
+  color: var(--ec-dark);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
 .emergency-care-beneficiary-card p {
-  margin: 0;
-  color: #71807c;
-  font-size: 14px;
-  line-height: 1.6;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
 /* =========================================================
@@ -502,64 +671,67 @@
 ========================================================= */
 
 .emergency-care-why {
-  padding: 120px 0;
-  background: #f4faf8;
+  background: var(--ec-light);
 }
 
-.emergency-care-why .emergency-care-container {
+.emergency-care-why > .emergency-care-container {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  align-items: start;
-  gap: 80px;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: 55px;
 }
 
 .emergency-care-why-content {
-  max-width: 500px;
+  min-width: 0;
+}
+
+.emergency-care-why-content > .emergency-care-label {
+  margin-bottom: 17px;
 }
 
 .emergency-care-why-content h2 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(40px, 5vw, 61px);
-  line-height: 1.04;
-  letter-spacing: -2.5px;
+  margin-bottom: 18px;
+  color: var(--ec-dark);
+  font-size: clamp(31px, 3.4vw, 42px);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
-.emergency-care-why-content h2 span {
-  display: block;
-  color: #20b69e;
+.emergency-care-why-content > p {
+  margin-bottom: 0;
+  font-size: 14px;
 }
-
-.emergency-care-why-content p {
-  margin: 24px 0 0;
-  color: #687974;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-/* Benefit columns */
 
 .emergency-care-benefit-columns {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
 }
 
 .emergency-care-benefit-column {
-  padding: 32px;
-  border-radius: 25px;
+  min-width: 0;
+  padding: 24px 20px;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 13px;
+
   background: #ffffff;
-  border: 1px solid #deebe8;
-  box-shadow: 0 12px 35px rgba(22, 48, 44, 0.05);
 }
 
 .emergency-care-benefit-column h3 {
-  margin: 0 0 22px;
-  color: #16302c;
-  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--ec-dark);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
 .emergency-care-benefit-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
   margin: 0;
   padding: 0;
   list-style: none;
@@ -568,62 +740,84 @@
 .emergency-care-benefit-column li {
   display: flex;
   align-items: flex-start;
-  gap: 11px;
-  padding: 13px 0;
-  border-bottom: 1px solid #edf2f0;
-  color: #687974;
-  font-size: 14px;
-  line-height: 1.55;
-}
+  gap: 9px;
 
-.emergency-care-benefit-column li:last-child {
-  border-bottom: none;
+  color: var(--ec-text);
+  font-size: 12px;
+  line-height: 1.8;
 }
 
 .emergency-care-benefit-column li span {
-  flex-shrink: 0;
-  color: #20b69e;
-  font-size: 16px;
+  display: flex;
+  flex: 0 0 19px;
+  align-items: center;
+  justify-content: center;
+
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+
+  border-radius: 50%;
+  background: #e6f7f0;
+  color: var(--ec-primary-dark);
+
+  font-size: 11px;
   font-weight: 900;
 }
 
 /* =========================================================
-   GOLDEN HOURS
+   GOLDEN HOURS — DARK FEATURE SECTION
 ========================================================= */
 
 .emergency-care-golden {
-  padding: 125px 0;
+  padding: 82px 0;
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(32, 182, 158, 0.16),
+      transparent 36%
+    ),
+    #16302c;
   text-align: center;
-  background: #16302c;
 }
 
-.emergency-care-golden .emergency-care-container {
-  max-width: 850px;
+.emergency-care-golden > .emergency-care-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .emergency-care-golden .emergency-care-label {
-  color: #20b69e;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
+  color: #8de3d3;
 }
 
 .emergency-care-golden h2 {
-  margin: 0;
+  max-width: 780px;
+  margin: 0 auto 19px;
   color: #ffffff;
-  font-size: clamp(43px, 5.5vw, 70px);
-  line-height: 1.02;
-  letter-spacing: -3px;
+  font-size: clamp(34px, 4.2vw, 49px);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
 }
 
-.emergency-care-golden h2 span {
-  display: block;
-  color: #20b69e;
+.emergency-care-page .emergency-care-golden h2 span {
+  color: #65d8c3;
 }
 
 .emergency-care-golden p {
   max-width: 720px;
-  margin: 25px auto 0;
-  color: #c8d8d4;
-  font-size: 16px;
-  line-height: 1.85;
+  margin: 0 auto 28px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.emergency-care-golden .emergency-care-btn {
+  margin-inline: auto;
 }
 
 /* =========================================================
@@ -631,38 +825,39 @@
 ========================================================= */
 
 .emergency-care-scenarios {
-  padding: 115px 0;
   background: #ffffff;
 }
 
 .emergency-care-scenarios-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
 }
 
 .emergency-care-scenario-card {
-  padding: 38px;
-  border: 1px solid #deebe8;
-  border-radius: 26px;
-  background: #ffffff;
-  box-shadow: 0 12px 35px rgba(22, 48, 44, 0.05);
-  transition: 0.3s ease;
-}
+  min-width: 0;
+  padding: 28px;
 
-.emergency-care-scenario-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 45px rgba(22, 48, 44, 0.09);
+  border: 1px solid var(--ec-border);
+  border-radius: 14px;
+
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(22, 48, 44, 0.035);
 }
 
 .emergency-care-scenario-card h3 {
-  margin: 0 0 23px;
-  color: #16302c;
-  font-size: 23px;
-  line-height: 1.3;
+  margin-bottom: 21px;
+  color: var(--ec-dark);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.45;
 }
 
 .emergency-care-scenario-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
   margin: 0;
   padding: 0;
   list-style: none;
@@ -672,100 +867,280 @@
   display: flex;
   align-items: flex-start;
   gap: 11px;
-  padding: 13px 0;
-  border-bottom: 1px solid #edf2f0;
-  color: #687974;
-  font-size: 15px;
-  line-height: 1.6;
-}
 
-.emergency-care-scenario-card li:last-child {
-  border-bottom: none;
+  color: var(--ec-text);
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .emergency-care-scenario-card li span {
-  flex-shrink: 0;
-  color: #20b69e;
+  display: flex;
+  flex: 0 0 21px;
+  align-items: center;
+  justify-content: center;
+
+  width: 21px;
+  height: 21px;
+  margin-top: 1px;
+
+  border-radius: 50%;
+  background: #e7f7f1;
+  color: var(--ec-primary-dark);
+
+  font-size: 11px;
   font-weight: 900;
 }
 
+.emergency-care-scenario-note {
+  margin-top: 26px;
+  padding: 22px 24px;
+
+  border: 1px solid #e8e8dc;
+  border-left: 4px solid #c6a45a;
+  border-radius: 9px;
+
+  background: #fbfaf5;
+}
+
+.emergency-care-scenario-note > strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ec-dark);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.emergency-care-scenario-note p {
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
 /* =========================================================
-   ALLIED SERVICES
+   ALLIED CARE SERVICES
 ========================================================= */
 
 .emergency-care-allied {
-  padding: 115px 0;
-  background: #f4faf8;
+  background: var(--ec-light);
 }
 
 .emergency-care-allied-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 13px;
 }
 
 .emergency-care-allied-item {
-  min-height: 75px;
-  padding: 18px 20px;
   display: flex;
-  align-items: center;
-  gap: 18px;
-  border: 1px solid #dceae6;
-  border-radius: 16px;
+  align-items: flex-start;
+  gap: 12px;
+
+  min-width: 0;
+  min-height: 76px;
+  padding: 17px;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 10px;
+
   background: #ffffff;
-  transition: 0.25s ease;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .emergency-care-allied-item:hover {
-  transform: translateY(-3px);
-  border-color: #a9ddd2;
-  box-shadow: 0 10px 25px rgba(22, 48, 44, 0.07);
+  border-color: #b8e5d9;
+  box-shadow: 0 5px 15px rgba(22, 48, 44, 0.04);
 }
 
 .emergency-care-allied-item > span {
-  flex-shrink: 0;
-  color: #20b69e;
-  font-size: 11px;
-  font-weight: 800;
+  display: flex;
+  flex: 0 0 30px;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+  background: #eaf7f3;
+  color: var(--ec-primary-dark);
+
+  font-size: 10px;
+  font-weight: 850;
 }
 
 .emergency-care-allied-item p {
-  margin: 0;
-  color: #28403b;
+  margin: 3px 0 0;
+  color: var(--ec-dark);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.emergency-care-allied-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+
+  margin-top: 34px;
+  text-align: center;
+}
+
+.emergency-care-allied-cta p {
+  margin-bottom: 0;
   font-size: 14px;
-  line-height: 1.45;
-  font-weight: 600;
+  text-align: center;
 }
 
 /* =========================================================
-   FAQ
+   PACKAGE COMPARISON TABLE
 ========================================================= */
 
-.emergency-care-faq {
-  padding: 115px 0;
+.emergency-care-comparison {
   background: #ffffff;
 }
 
+/*
+   JSX uses .emergency-care-comparison-table-wrap.
+   Horizontal scrolling stays inside the table wrapper.
+*/
+
+.emergency-care-comparison-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 12px;
+
+  background: #ffffff;
+  box-shadow: 0 5px 22px rgba(22, 48, 44, 0.04);
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.emergency-care-comparison-table {
+  width: 100%;
+  min-width: 680px;
+
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  background: #ffffff;
+  text-align: left;
+}
+
+.emergency-care-comparison-table thead {
+  background: #edf7f3;
+}
+
+.emergency-care-comparison-table thead th {
+  padding: 20px 22px;
+
+  color: var(--ec-dark);
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1.6;
+
+  text-align: left;
+  vertical-align: middle;
+}
+
+.emergency-care-comparison-table tbody th,
+.emergency-care-comparison-table tbody td {
+  padding: 18px 22px;
+
+  border-top: 1px solid var(--ec-border);
+
+  color: var(--ec-text);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.75;
+
+  text-align: left;
+  vertical-align: top;
+}
+
+.emergency-care-comparison-table tbody th {
+  width: 28%;
+  color: var(--ec-dark);
+  font-weight: 800;
+}
+
+.emergency-care-comparison-table tbody tr:nth-child(even) {
+  background: #fafcfb;
+}
+
+.emergency-care-comparison-table tbody tr:hover {
+  background: #f1f9f6;
+}
+
+.emergency-care-comparison-note {
+  max-width: 850px;
+  margin: 21px auto 0;
+
+  color: var(--ec-muted);
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.emergency-care-comparison-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 29px;
+}
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+
+.emergency-care-faq {
+  background: var(--ec-light);
+}
+
 .emergency-care-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
   max-width: 900px;
   margin: 0 auto;
 }
 
 .emergency-care-faq-item {
-  border-top: 1px solid #dce8e5;
+  overflow: hidden;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.emergency-care-faq-item:last-child {
-  border-bottom: 1px solid #dce8e5;
+.emergency-care-faq-item[open] {
+  border-color: #b8e5d9;
+  box-shadow: 0 4px 16px rgba(22, 48, 44, 0.035);
 }
 
 .emergency-care-faq-item summary {
-  min-height: 82px;
-  padding: 20px 5px;
   display: grid;
-  grid-template-columns: 45px 1fr 30px;
+  grid-template-columns: 34px minmax(0, 1fr) 25px;
   align-items: center;
-  gap: 18px;
+  gap: 13px;
+
+  padding: 19px 21px;
+
+  color: var(--ec-dark);
   cursor: pointer;
   list-style: none;
 }
@@ -775,35 +1150,95 @@
 }
 
 .emergency-care-faq-item summary > span {
-  color: #20b69e;
-  font-size: 11px;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 8px;
+  background: #eaf7f3;
+  color: var(--ec-primary-dark);
+
+  font-size: 10px;
+  font-weight: 850;
 }
 
-.emergency-care-faq-item summary strong {
-  color: #16302c;
-  font-size: 16px;
-  line-height: 1.5;
+.emergency-care-faq-item summary > strong {
+  color: var(--ec-dark);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.7;
 }
 
-.emergency-care-faq-item summary b {
-  color: #20b69e;
-  font-size: 25px;
-  font-weight: 400;
-  text-align: right;
-  transition: transform 0.25s ease;
+.emergency-care-faq-item summary > b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: var(--ec-primary-dark);
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
-.emergency-care-faq-item[open] summary b {
+.emergency-care-faq-item[open] summary > b {
+  border-color: var(--ec-primary);
+  background: var(--ec-primary);
+  color: #ffffff;
   transform: rotate(45deg);
 }
 
 .emergency-care-faq-item > p {
-  max-width: 780px;
-  margin: 0 48px 25px 63px;
-  color: #687974;
+  margin: 0;
+  padding: 0 58px 22px 68px;
+
+  color: var(--ec-text);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.emergency-care-faq-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 36px;
+  padding: 30px 24px;
+
+  border: 1px solid var(--ec-border);
+  border-radius: 13px;
+
+  background: #ffffff;
+  text-align: center;
+}
+
+.emergency-care-faq-cta h3 {
+  margin-bottom: 9px;
+  color: var(--ec-dark);
+  font-size: 21px;
+  font-weight: 850;
+}
+
+.emergency-care-faq-cta p {
+  max-width: 600px;
+  margin: 0 auto 21px;
   font-size: 14px;
-  line-height: 1.8;
+  text-align: center;
 }
 
 /* =========================================================
@@ -811,148 +1246,193 @@
 ========================================================= */
 
 .emergency-care-cta {
-  padding: 120px 0;
-  text-align: center;
+  padding: 80px 0;
+
   background:
     radial-gradient(
-      circle at 50% 0%,
-      rgba(32, 182, 158, 0.14),
-      transparent 45%
+      ellipse at 50% 0%,
+      rgba(32, 182, 158, 0.13),
+      transparent 50%
     ),
     #16302c;
+
+  text-align: center;
 }
 
-.emergency-care-cta .emergency-care-container {
-  max-width: 850px;
+.emergency-care-cta > .emergency-care-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .emergency-care-cta .emergency-care-label {
-  color: #20b69e;
+  border-color: rgba(255, 255, 255, 0.17);
+  background: rgba(255, 255, 255, 0.07);
+  color: #8de3d3;
 }
 
 .emergency-care-cta h2 {
-  margin: 0;
+  max-width: 800px;
+  margin: 0 auto 19px;
+
   color: #ffffff;
-  font-size: clamp(44px, 5.5vw, 70px);
-  line-height: 1.02;
-  letter-spacing: -3px;
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 850;
+  line-height: 1.18;
+  letter-spacing: -1.5px;
+  text-align: center;
 }
 
-.emergency-care-cta h2 span {
-  display: block;
-  color: #20b69e;
+.emergency-care-page .emergency-care-cta h2 span {
+  color: #65d8c3;
 }
 
 .emergency-care-cta p {
-  max-width: 650px;
-  margin: 25px auto 32px;
-  color: #c7d7d3;
-  font-size: 16px;
-  line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto 27px;
+
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: center;
 }
 
 /* =========================================================
-   LARGE TABLET
+   TABLET RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1100px) {
-
+@media (max-width: 1050px) {
   .emergency-care-container {
-    width: min(92%, 900px);
+    width: calc(100% - 48px);
   }
 
   .emergency-care-hero .emergency-care-container {
-    grid-template-columns: 1fr 0.85fr;
-    gap: 45px;
+    gap: 38px;
   }
 
-  .emergency-care-hero-image {
-    height: 500px;
+  .emergency-care-hero-image img {
+    height: 450px;
+  }
+
+  .emergency-care-floating-card {
+    right: -8px;
   }
 
   .emergency-care-highlights-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .emergency-care-package .emergency-care-container {
-    gap: 50px;
+  .emergency-care-package > .emergency-care-container {
+    gap: 30px;
   }
 
   .emergency-care-beneficiary-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .emergency-care-why .emergency-care-container {
-    gap: 45px;
+  .emergency-care-why > .emergency-care-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .emergency-care-why-content {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
   }
 
   .emergency-care-allied-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* =========================================================
-   TABLET
+   TABLET / MOBILE NAVIGATION WIDTH
 ========================================================= */
 
-@media (max-width: 900px) {
-
-  .emergency-care-container {
-    width: calc(100% - 50px);
-  }
-
-  /* HERO */
-
+@media (max-width: 800px) {
   .emergency-care-hero {
-    min-height: auto;
-    padding: 75px 0 80px;
+    padding: 62px 0;
   }
 
   .emergency-care-hero .emergency-care-container {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 35px;
   }
 
   .emergency-care-hero-content {
-    max-width: 760px;
+    text-align: center;
+  }
+
+  .emergency-care-hero-content > p {
+    margin-inline: auto;
+  }
+
+  .emergency-care-price {
+    justify-content: center;
+  }
+
+  .emergency-care-hero-content > .emergency-care-btn {
+    margin-inline: auto;
+  }
+
+  .emergency-care-price-note {
+    margin-inline: auto;
   }
 
   .emergency-care-hero-image {
-    height: 480px;
+    width: min(100%, 620px);
+    margin-inline: auto;
   }
 
-  /* PACKAGE */
+  .emergency-care-hero-image img {
+    height: 430px;
+  }
 
-  .emergency-care-package .emergency-care-container {
+  .emergency-care-floating-card {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .emergency-care-package > .emergency-care-container {
     grid-template-columns: 1fr;
-    gap: 45px;
+    gap: 30px;
   }
 
   .emergency-care-package-content {
-    max-width: 750px;
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
   }
 
-  /* WHY */
-
-  .emergency-care-why .emergency-care-container {
-    grid-template-columns: 1fr;
-    gap: 45px;
+  .emergency-care-important-note {
+    text-align: left;
   }
 
-  .emergency-care-why-content {
-    max-width: 750px;
+  .emergency-care-package-card {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
   }
-
-  /* BENEFICIARIES */
-
-  .emergency-care-beneficiary-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* SCENARIOS */
 
   .emergency-care-scenarios-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .emergency-care-benefit-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .emergency-care-highlights,
+  .emergency-care-package,
+  .emergency-care-beneficiaries,
+  .emergency-care-why,
+  .emergency-care-scenarios,
+  .emergency-care-allied,
+  .emergency-care-comparison,
+  .emergency-care-faq {
+    padding: 68px 0;
   }
 }
 
@@ -961,298 +1441,356 @@
 ========================================================= */
 
 @media (max-width: 600px) {
-
   .emergency-care-container {
-    width: calc(100% - 36px);
+    width: calc(100% - 34px);
   }
-
-  /* COMMON */
-
-  .emergency-care-label {
-    margin-bottom: 13px;
-    font-size: 10px;
-    letter-spacing: 1.7px;
-  }
-
-  /* HERO */
 
   .emergency-care-hero {
-    padding: 55px 0 65px;
+    padding: 48px 0 52px;
   }
 
-  .emergency-care-hero .emergency-care-container {
-    gap: 35px;
+  .emergency-care-page .emergency-care-label {
+    margin-bottom: 15px;
+    padding: 7px 11px;
+    font-size: 9px;
+    letter-spacing: 1px;
   }
 
   .emergency-care-hero h1 {
-    font-size: 45px;
-    letter-spacing: -2px;
+    margin-bottom: 17px;
+    font-size: clamp(33px, 8.5vw, 43px);
+    letter-spacing: -1.2px;
   }
 
-  .emergency-care-hero p {
-    margin: 21px 0 23px;
-    font-size: 15px;
-    line-height: 1.7;
+  .emergency-care-hero-content > p {
+    font-size: 14px;
   }
 
   .emergency-care-price {
-    margin: 22px 0 27px;
+    margin-top: 20px;
   }
 
   .emergency-care-price strong {
-    font-size: 38px;
+    font-size: 33px;
   }
 
-  .emergency-care-btn {
-    width: 100%;
-    min-height: 52px;
+  .emergency-care-price em {
+    font-size: 12px;
   }
 
-  .emergency-care-hero-image {
-    height: 360px;
-    border-radius: 24px;
+  .emergency-care-hero-image img {
+    height: 320px;
+    border-radius: 15px;
   }
 
   .emergency-care-floating-card {
-    left: 15px;
-    bottom: 15px;
-    min-width: 165px;
+    right: 9px;
+    bottom: 9px;
+    min-width: 170px;
     padding: 14px 16px;
+    border-radius: 10px;
   }
 
-  /* HIGHLIGHTS */
+  .emergency-care-floating-card strong {
+    font-size: 25px;
+  }
 
-  .emergency-care-highlights {
-    padding: 75px 0;
+  .emergency-care-floating-card span {
+    font-size: 11px;
+  }
+
+  .emergency-care-highlights,
+  .emergency-care-package,
+  .emergency-care-beneficiaries,
+  .emergency-care-why,
+  .emergency-care-golden,
+  .emergency-care-scenarios,
+  .emergency-care-allied,
+  .emergency-care-comparison,
+  .emergency-care-faq {
+    padding: 54px 0;
   }
 
   .emergency-care-section-heading {
-    margin-bottom: 35px;
-  }
-
-  .emergency-care-section-heading h2 {
-    font-size: 40px;
-    letter-spacing: -1.8px;
-  }
-
-  .emergency-care-section-heading p {
-    font-size: 15px;
-  }
-
-  .emergency-care-highlights-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .emergency-care-highlight-card {
-    min-height: 190px;
-    padding: 25px;
-  }
-
-  .emergency-care-highlight-card h3 {
-    margin-top: 27px;
-    font-size: 19px;
-  }
-
-  /* PACKAGE */
-
-  .emergency-care-package {
-    padding: 75px 0;
-  }
-
-  .emergency-care-package-content h2 {
-    font-size: 40px;
-    letter-spacing: -1.8px;
-  }
-
-  .emergency-care-package-content p {
-    font-size: 15px;
-  }
-
-  .emergency-care-package-card {
-    border-radius: 23px;
-  }
-
-  .emergency-care-package-top {
-    padding: 28px 24px;
-  }
-
-  .emergency-care-package-top strong {
-    font-size: 40px;
-  }
-
-  .emergency-care-package-list {
-    padding: 5px 24px 20px;
-  }
-
-  .emergency-care-package-item {
-    grid-template-columns: 32px 1fr;
-    gap: 10px;
-    padding: 15px 0;
-  }
-
-  .emergency-care-package-item p {
-    font-size: 13px;
-  }
-
-  /* BENEFICIARIES */
-
-  .emergency-care-beneficiaries {
-    padding: 75px 0;
-  }
-
-  .emergency-care-beneficiary-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .emergency-care-beneficiary-card {
-    min-height: 155px;
-    padding: 24px;
-  }
-
-  .emergency-care-beneficiary-card h3 {
-    margin-top: 28px;
-    font-size: 19px;
-  }
-
-  /* WHY */
-
-  .emergency-care-why {
-    padding: 75px 0;
-  }
-
-  .emergency-care-why-content h2 {
-    font-size: 40px;
-    letter-spacing: -1.8px;
-  }
-
-  .emergency-care-why-content p {
-    font-size: 15px;
-  }
-
-  .emergency-care-benefit-columns {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .emergency-care-benefit-column {
-    padding: 25px;
-  }
-
-  /* GOLDEN */
-
-  .emergency-care-golden {
-    padding: 80px 0;
-  }
-
-  .emergency-care-golden h2 {
-    font-size: 43px;
-    letter-spacing: -2px;
-  }
-
-  .emergency-care-golden p {
-    font-size: 15px;
-  }
-
-  /* SCENARIOS */
-
-  .emergency-care-scenarios {
-    padding: 75px 0;
-  }
-
-  .emergency-care-scenario-card {
-    padding: 27px;
-    border-radius: 21px;
-  }
-
-  .emergency-care-scenario-card h3 {
-    font-size: 20px;
-  }
-
-  .emergency-care-scenario-card li {
-    font-size: 14px;
-  }
-
-  /* ALLIED */
-
-  .emergency-care-allied {
-    padding: 75px 0;
-  }
-
-  .emergency-care-allied-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .emergency-care-allied-item {
-    min-height: 65px;
-  }
-
-  /* FAQ */
-
-  .emergency-care-faq {
-    padding: 75px 0;
-  }
-
-  .emergency-care-faq-item summary {
-    grid-template-columns: 30px 1fr 25px;
-    gap: 10px;
-    min-height: 75px;
-    padding: 17px 0;
-  }
-
-  .emergency-care-faq-item summary strong {
-    font-size: 14px;
-  }
-
-  .emergency-care-faq-item > p {
-    margin: 0 25px 22px 40px;
-    font-size: 13px;
-  }
-
-  /* CTA */
-
-  .emergency-care-cta {
-    padding: 80px 0;
-  }
-
-  .emergency-care-cta h2 {
-    font-size: 44px;
-    letter-spacing: -2px;
-  }
-
-  .emergency-care-cta p {
-    font-size: 15px;
-  }
-}
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-  .emergency-care-container {
-    width: calc(100% - 28px);
-  }
-
-  .emergency-care-hero h1 {
-    font-size: 40px;
+    margin-bottom: 30px;
   }
 
   .emergency-care-section-heading h2,
   .emergency-care-package-content h2,
   .emergency-care-why-content h2 {
-    font-size: 36px;
+    font-size: 29px;
+    letter-spacing: -0.7px;
+  }
+
+  .emergency-care-section-heading p {
+    font-size: 13px;
+  }
+
+  .emergency-care-highlights-grid,
+  .emergency-care-beneficiary-grid,
+  .emergency-care-scenarios-grid,
+  .emergency-care-allied-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .emergency-care-highlight-card {
+    padding: 23px 20px;
+  }
+
+  .emergency-care-highlight-card h3 {
+    font-size: 17px;
+  }
+
+  .emergency-care-beneficiary-card {
+    padding: 22px 19px;
+  }
+
+  .emergency-care-benefit-columns {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .emergency-care-benefit-column {
+    padding: 23px 20px;
+  }
+
+  .emergency-care-benefit-column li {
+    font-size: 13px;
+  }
+
+  .emergency-care-package-card {
+    padding: 22px 17px;
+    border-radius: 12px;
+  }
+
+  .emergency-care-package-top > strong {
+    font-size: 34px;
+  }
+
+  .emergency-care-package-item {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .emergency-care-package-item > span {
+    width: 31px;
+    height: 31px;
+    font-size: 10px;
+  }
+
+  .emergency-care-package-item h3 {
+    font-size: 14px;
+  }
+
+  .emergency-care-package-item p {
+    font-size: 12px;
+  }
+
+  .emergency-care-important-note {
+    padding: 16px;
+  }
+
+  .emergency-care-scenario-card {
+    padding: 22px 19px;
+  }
+
+  .emergency-care-scenario-card h3 {
+    font-size: 18px;
+  }
+
+  .emergency-care-scenario-card li {
+    font-size: 13px;
+  }
+
+  .emergency-care-scenario-note {
+    padding: 18px;
+  }
+
+  .emergency-care-scenario-note p {
+    font-size: 12px;
+  }
+
+  .emergency-care-allied-item {
+    min-height: 0;
+    padding: 15px;
+  }
+
+  .emergency-care-allied-item p {
+    font-size: 13px;
+  }
+
+  .emergency-care-comparison-table {
+    min-width: 0;
+  }
+
+  .emergency-care-comparison-table-wrap {
+    border-radius: 9px;
+  }
+
+  .emergency-care-comparison-table {
+    min-width: 620px;
+  }
+
+  .emergency-care-comparison-table thead th,
+  .emergency-care-comparison-table tbody th,
+  .emergency-care-comparison-table tbody td {
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .emergency-care-comparison-note {
+    font-size: 11px;
+  }
+
+  .emergency-care-faq-item summary {
+    grid-template-columns: 29px minmax(0, 1fr) 23px;
+    gap: 10px;
+    padding: 15px 13px;
+  }
+
+  .emergency-care-faq-item summary > span {
+    width: 28px;
+    height: 28px;
+    font-size: 9px;
+  }
+
+  .emergency-care-faq-item summary > strong {
+    font-size: 12px;
+  }
+
+  .emergency-care-faq-item summary > b {
+    width: 23px;
+    height: 23px;
+    font-size: 16px;
+  }
+
+  .emergency-care-faq-item > p {
+    padding: 0 15px 18px 52px;
+    font-size: 12px;
+  }
+
+  .emergency-care-faq-cta {
+    margin-top: 25px;
+    padding: 25px 17px;
+  }
+
+  .emergency-care-faq-cta h3 {
+    font-size: 19px;
+  }
+
+  .emergency-care-faq-cta p {
+    font-size: 12px;
+  }
+
+  .emergency-care-golden {
+    padding: 58px 0;
   }
 
   .emergency-care-golden h2,
   .emergency-care-cta h2 {
-    font-size: 39px;
+    font-size: 31px;
+    letter-spacing: -0.7px;
   }
 
-  .emergency-care-hero-image {
-    height: 320px;
+  .emergency-care-golden p,
+  .emergency-care-cta p {
+    font-size: 13px;
+  }
+
+  .emergency-care-cta {
+    padding: 57px 0;
+  }
+
+  /* Same button size and centered alignment */
+
+  .emergency-care-page .emergency-care-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(235px, 100%);
+    min-width: 0;
+    min-height: 52px;
+
+    margin-inline: auto;
+    padding: 12px 14px;
+
+    font-size: 13px;
+  }
+
+  .emergency-care-hero-content > .emergency-care-btn {
+    margin-inline: auto;
+  }
+
+  .emergency-care-package-footer,
+  .emergency-care-allied-cta,
+  .emergency-care-comparison-cta,
+  .emergency-care-faq-cta,
+  .emergency-care-cta > .emergency-care-container,
+  .emergency-care-golden > .emergency-care-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .emergency-care-container {
+    width: calc(100% - 26px);
+  }
+
+  .emergency-care-hero h1 {
+    font-size: 31px;
+  }
+
+  .emergency-care-hero-image img {
+    height: 270px;
+  }
+
+  .emergency-care-floating-card {
+    right: 7px;
+    bottom: 7px;
+    min-width: 155px;
+    padding: 12px;
+  }
+
+  .emergency-care-section-heading h2,
+  .emergency-care-package-content h2,
+  .emergency-care-why-content h2 {
+    font-size: 26px;
+  }
+
+  .emergency-care-page .emergency-care-btn {
+    width: min(220px, 100%);
+  }
+
+  .emergency-care-faq-item summary {
+    grid-template-columns: 25px minmax(0, 1fr) 21px;
+    gap: 8px;
+    padding-inline: 10px;
+  }
+
+  .emergency-care-faq-item summary > span {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .emergency-care-page *,
+  .emergency-care-page *::before,
+  .emergency-care-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

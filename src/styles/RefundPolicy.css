@@ -1,0 +1,632 @@
+/* =========================================================
+   SILVERGENIE — REFUND POLICY PAGE
+   Responsive | Professional | Clean
+========================================================= */
+
+.refund-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #16302c;
+  font-family: inherit;
+  overflow-x: hidden;
+}
+
+.refund-page *,
+.refund-page *::before,
+.refund-page *::after {
+  box-sizing: border-box;
+}
+
+.refund-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.refund-hero {
+  position: relative;
+  padding: 82px 0 70px;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(32, 182, 158, 0.13),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f2fbf8 0%,
+      #ffffff 65%,
+      #f4fbf9 100%
+    );
+  border-bottom: 1px solid #e5f0ec;
+}
+
+.refund-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  color: #168f7b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.refund-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #20b69e;
+}
+
+.refund-hero h1 {
+  max-width: 800px;
+  margin: 0;
+  color: #16302c;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -1.8px;
+}
+
+.refund-hero > .refund-container > p {
+  max-width: 680px;
+  margin: 22px 0 0;
+  color: #657771;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.refund-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  color: #71817b;
+  font-size: 13px;
+}
+
+.refund-breadcrumb a {
+  color: #168f7b;
+  text-decoration: none;
+}
+
+.refund-breadcrumb a:hover {
+  color: #116d60;
+}
+
+
+/* =========================================================
+   MAIN CONTENT LAYOUT
+========================================================= */
+
+.refund-content-section {
+  padding: 70px 0 90px;
+  background: #ffffff;
+}
+
+.refund-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 285px;
+  align-items: start;
+  gap: 48px;
+}
+
+.refund-article {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   INTRO CARD
+========================================================= */
+
+.refund-intro-card {
+  padding: 34px;
+  margin-bottom: 50px;
+  background: #f5fbf9;
+  border: 1px solid #e1f0eb;
+  border-radius: 20px;
+}
+
+.refund-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #168f7b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.refund-intro-card h2 {
+  margin: 0 0 16px;
+  color: #16302c;
+  font-size: clamp(23px, 3vw, 30px);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.refund-intro-card p {
+  margin: 0;
+  color: #657771;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   POLICY SECTIONS
+========================================================= */
+
+.refund-policy-section {
+  position: relative;
+  padding: 0 0 38px;
+  margin-bottom: 38px;
+  border-bottom: 1px solid #e8efec;
+  scroll-margin-top: 110px;
+}
+
+.refund-section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 17px;
+  color: #148c79;
+  background: #eaf8f4;
+  border: 1px solid #d6eee6;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.refund-policy-section h2 {
+  margin: 0 0 20px;
+  color: #16302c;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.refund-policy-section p {
+  margin: 0 0 17px;
+  color: #61716b;
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.refund-policy-section p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   INFO BOXES
+========================================================= */
+
+.refund-info-box {
+  padding: 24px;
+  margin: 22px 0;
+  background: #ffffff;
+  border: 1px solid #e0ece7;
+  border-left: 4px solid #20b69e;
+  border-radius: 12px;
+}
+
+.refund-info-box h3 {
+  margin: 0 0 10px;
+  color: #16302c;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.refund-info-box p {
+  margin: 0;
+}
+
+.refund-note {
+  padding: 16px 18px;
+  color: #5e6f69 !important;
+  background: #f7f9f8;
+  border-radius: 10px;
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   REFUND EMAIL HIGHLIGHT
+========================================================= */
+
+.refund-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 22px;
+  margin: 24px 0;
+  background: #edf9f5;
+  border: 1px solid #d8eee6;
+  border-radius: 14px;
+}
+
+.refund-highlight strong {
+  color: #16302c;
+  font-size: 15px;
+}
+
+.refund-highlight a {
+  color: #148c79;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   CONTACT CARDS
+========================================================= */
+
+.refund-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 21px;
+  margin-top: 16px;
+  background: #ffffff;
+  border: 1px solid #e1ece7;
+  border-radius: 14px;
+}
+
+.refund-contact-icon {
+  display: flex;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  color: #148c79;
+  background: #eaf8f4;
+  border-radius: 12px;
+  font-size: 23px;
+}
+
+.refund-contact-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 7px;
+}
+
+.refund-contact-details > span {
+  color: #7b8983;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.refund-contact-details a {
+  color: #16302c;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.refund-contact-details a:hover {
+  color: #148c79;
+}
+
+.refund-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 14px 23px;
+  margin-top: 22px;
+  color: #ffffff;
+  background: #168f7b;
+  border: 1px solid #168f7b;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.refund-contact-button:hover {
+  color: #ffffff;
+  background: #116d60;
+  border-color: #116d60;
+}
+
+.refund-contact-button span {
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.refund-disclaimer {
+  padding: 25px;
+  margin-top: 10px;
+  background: #f7f9f8;
+  border: 1px solid #e6eeea;
+  border-radius: 14px;
+}
+
+.refund-disclaimer strong {
+  display: block;
+  margin-bottom: 12px;
+  color: #16302c;
+  font-size: 16px;
+}
+
+.refund-disclaimer p {
+  margin: 0 0 15px;
+  color: #657771;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.refund-disclaimer a {
+  display: inline-block;
+  color: #148c79;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.8;
+  text-decoration: none;
+}
+
+.refund-disclaimer a:hover {
+  color: #116d60;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.refund-sidebar {
+  position: sticky;
+  top: 105px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.refund-sidebar-card {
+  padding: 25px 21px;
+  background: #ffffff;
+  border: 1px solid #e2ece7;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(22, 48, 44, 0.04);
+}
+
+.refund-sidebar-card h3 {
+  margin: 0 0 18px;
+  color: #16302c;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.refund-sidebar-card a {
+  display: block;
+  padding: 12px 0;
+  color: #63746d;
+  border-bottom: 1px solid #edf1ef;
+  font-size: 13px;
+  line-height: 1.7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.refund-sidebar-card a:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.refund-sidebar-card a:hover {
+  color: #168f7b;
+}
+
+.refund-sidebar-help {
+  padding: 25px 22px;
+  background: linear-gradient(
+    145deg,
+    #eaf8f4,
+    #f6fbf9
+  );
+  border: 1px solid #d9eee6;
+  border-radius: 16px;
+}
+
+.refund-sidebar-help > span {
+  color: #168f7b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.refund-sidebar-help h3 {
+  margin: 14px 0 10px;
+  color: #16302c;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.refund-sidebar-help p {
+  margin: 0 0 18px;
+  color: #64756e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.refund-sidebar-help a {
+  display: inline-block;
+  color: #148c79;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .refund-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .refund-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .refund-sidebar-card,
+  .refund-sidebar-help {
+    height: 100%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .refund-container {
+    width: calc(100% - 36px);
+  }
+
+  .refund-hero {
+    padding: 55px 0 45px;
+  }
+
+  .refund-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    line-height: 1.8;
+  }
+
+  .refund-hero h1 {
+    font-size: 36px;
+    letter-spacing: -1.1px;
+  }
+
+  .refund-hero > .refund-container > p {
+    margin-top: 17px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .refund-breadcrumb {
+    gap: 9px;
+    margin-top: 23px;
+    font-size: 12px;
+  }
+
+  .refund-content-section {
+    padding: 42px 0 55px;
+  }
+
+  .refund-intro-card {
+    padding: 23px;
+    margin-bottom: 38px;
+    border-radius: 15px;
+  }
+
+  .refund-intro-card h2 {
+    font-size: 24px;
+  }
+
+  .refund-intro-card p,
+  .refund-policy-section p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .refund-policy-section {
+    padding-bottom: 29px;
+    margin-bottom: 30px;
+  }
+
+  .refund-policy-section h2 {
+    font-size: 23px;
+  }
+
+  .refund-info-box {
+    padding: 19px;
+  }
+
+  .refund-contact-card {
+    align-items: flex-start;
+    gap: 13px;
+    padding: 17px;
+  }
+
+  .refund-contact-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .refund-contact-details a {
+    font-size: 13px;
+  }
+
+  .refund-contact-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .refund-disclaimer {
+    padding: 20px;
+  }
+
+  .refund-sidebar {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .refund-sidebar-card,
+  .refund-sidebar-help {
+    padding: 22px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .refund-page *,
+  .refund-page *::before,
+  .refund-page *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

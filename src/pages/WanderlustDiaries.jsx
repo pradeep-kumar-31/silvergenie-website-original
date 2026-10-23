@@ -3,15 +3,23 @@ import { Link } from "react-router-dom";
 import "../styles/WanderlustDiaries.css";
 
 /* =====================================================
-   SILVERGENIE — WANDERLUST DIARIES
-   Images: public/image/blog/
+   SILVERGENIE PVT. LTD. — WANDERLUST DIARIES
+
+   Images:
+   public/image/blog/
+
+   Individual stories:
+   /wanderlust/:slug
 ===================================================== */
 
 const diaries = [
+  // =====================================================
   // SPIRITUAL DIARIES
+  // =====================================================
   {
     title:
       "Shaktipeeth Stories: Exploring Faith, Dynasty, and Tradition in Tripura",
+    slug: "tripura-shaktipeeth",
     category: "Spiritual Diaries",
     location: "Tripura, India",
     date: "April 10, 2026",
@@ -22,6 +30,7 @@ const diaries = [
   },
   {
     title: "A Journey Through Faith, History, and Kolkata's Essence",
+    slug: "kolkata-faith-history",
     category: "Spiritual Diaries",
     location: "Kolkata, West Bengal",
     date: "December 10, 2025",
@@ -32,6 +41,7 @@ const diaries = [
   },
   {
     title: "From Spirit to Celebration: Our Jagadhatri Pujo Experience",
+    slug: "jagadhatri-pujo",
     category: "Spiritual Diaries",
     location: "West Bengal, India",
     date: "November 1, 2025",
@@ -42,6 +52,7 @@ const diaries = [
   },
   {
     title: "From Devotion to Delight: Our #DurgaPujoWithCare Experience",
+    slug: "durga-pujo-with-care",
     category: "Spiritual Diaries",
     location: "West Bengal, India",
     date: "October 8, 2025",
@@ -52,6 +63,7 @@ const diaries = [
   },
   {
     title: "Through the Crowds: Experiencing the Mahakumbh",
+    slug: "mahakumbh",
     category: "Spiritual Diaries",
     location: "Prayagraj, Uttar Pradesh",
     date: "February 26, 2025",
@@ -61,9 +73,12 @@ const diaries = [
       "Explore the spiritual atmosphere, traditions and memorable experiences of the Mahakumbh.",
   },
 
+  // =====================================================
   // NORTHEAST DIARIES
+  // =====================================================
   {
     title: "Mizoram Through My Eyes: A Journey I Will Remember",
+    slug: "mizoram",
     category: "Northeast Diaries",
     location: "Mizoram, India",
     date: "September 23, 2026",
@@ -74,6 +89,7 @@ const diaries = [
   },
   {
     title: "A Doctor's Travel Diary: Discovering the Quiet Grace of Assam",
+    slug: "assam",
     category: "Northeast Diaries",
     location: "Assam, India",
     date: "March 10, 2026",
@@ -84,6 +100,7 @@ const diaries = [
   },
   {
     title: "Hornbill Festival Diaries: Colours of Nagaland",
+    slug: "hornbill-festival",
     category: "Northeast Diaries",
     location: "Nagaland, India",
     date: "January 7, 2026",
@@ -94,6 +111,7 @@ const diaries = [
   },
   {
     title: "Trip to Neora Valley and East Sikkim via the Silk Route",
+    slug: "neora-valley-silk-route",
     category: "Northeast Diaries",
     location: "Sikkim, India",
     date: "December 10, 2025",
@@ -104,6 +122,7 @@ const diaries = [
   },
   {
     title: "Meghalaya: The Abode of Clouds",
+    slug: "meghalaya",
     category: "Northeast Diaries",
     location: "Meghalaya, India",
     date: "June 24, 2025",
@@ -113,9 +132,12 @@ const diaries = [
       "Discover misty hills, lush green valleys, waterfalls and Meghalaya's natural beauty.",
   },
 
+  // =====================================================
   // HEART OF BHARAT
+  // =====================================================
   {
     title: "A Shared Adventure: Slow Exploration and Friendship in India",
+    slug: "shared-adventure-india",
     category: "Heart of Bharat",
     location: "India",
     date: "March 18, 2026",
@@ -126,6 +148,7 @@ const diaries = [
   },
   {
     title: "Finding My Rhythm in the Sundarbans",
+    slug: "sundarbans",
     category: "Heart of Bharat",
     location: "Sundarbans, West Bengal",
     date: "January 5, 2026",
@@ -136,6 +159,7 @@ const diaries = [
   },
   {
     title: "Under the White Rann Moon: A Journey Designed with Care",
+    slug: "white-rann-moon",
     category: "Heart of Bharat",
     location: "Rann of Kutch, Gujarat",
     date: "December 19, 2025",
@@ -146,6 +170,7 @@ const diaries = [
   },
   {
     title: "No Wonder, It's a Wonder: My Solo Travel Story at the Taj Mahal",
+    slug: "taj-mahal",
     category: "Heart of Bharat",
     location: "Agra, Uttar Pradesh",
     date: "October 30, 2025",
@@ -156,6 +181,7 @@ const diaries = [
   },
   {
     title: "My Kerala Diary",
+    slug: "kerala",
     category: "Heart of Bharat",
     location: "Kerala, India",
     date: "September 14, 2025",
@@ -165,9 +191,13 @@ const diaries = [
       "Experience Kerala's peaceful backwaters, lush landscapes and rich cultural traditions.",
   },
 
+  // =====================================================
   // ASIA, AFRICA & EUROPE
+  // =====================================================
   {
-    title: "Across Generations, Across Europe: A Winter Journey Through Italy & Switzerland",
+    title:
+      "Across Generations, Across Europe: A Winter Journey Through Italy & Switzerland",
+    slug: "italy-switzerland",
     category: "Asia, Africa & Europe",
     location: "Italy and Switzerland",
     date: "September 7, 2026",
@@ -178,17 +208,19 @@ const diaries = [
   },
   {
     title: "Bhutan Through the Comfort of Care",
+    slug: "bhutan",
     category: "Asia, Africa & Europe",
     location: "Bhutan",
     date: "July 6, 2026",
     author:
       "Ms. Namita Adhikary, Bhutan Summer Cohort 2 (2026) & Mr. Bhagirath Saha, Bhutan Summer Cohort 3 (2026)",
-    image: null,
+    image: "bhutan.png",
     description:
       "Discover Bhutan's peaceful monasteries, mountain landscapes and rich cultural traditions.",
   },
   {
     title: "Walking Backwards Through Blossoms: Our Story in Japan",
+    slug: "japan",
     category: "Asia, Africa & Europe",
     location: "Japan",
     date: "April 13, 2026",
@@ -199,6 +231,7 @@ const diaries = [
   },
   {
     title: "Egypt: Stories of and from People Who Have Walked with Time",
+    slug: "egypt",
     category: "Asia, Africa & Europe",
     location: "Egypt",
     date: "March 3, 2026",
@@ -209,6 +242,7 @@ const diaries = [
   },
   {
     title: "Under the Same Sky: Notes from Vietnam and Cambodia",
+    slug: "vietnam-cambodia",
     category: "Asia, Africa & Europe",
     location: "Vietnam and Cambodia",
     date: "October 27, 2025",
@@ -219,6 +253,9 @@ const diaries = [
   },
 ];
 
+// =====================================================
+// CATEGORIES
+// =====================================================
 const categories = [
   "All",
   "Spiritual Diaries",
@@ -227,18 +264,55 @@ const categories = [
   "Asia, Africa & Europe",
 ];
 
+// =====================================================
+// DIARY CARD IMAGE
+// Missing image par blank placeholder visible rahega.
+// =====================================================
+function DiaryImage({ diary, imageBase }) {
+  const [imageFailed, setImageFailed] = useState(false);
+
+  return (
+    <div className="wanderlust-diary-image">
+      {!imageFailed && diary.image && (
+        <img
+          src={`${imageBase}${diary.image}`}
+          alt={diary.title}
+          loading="lazy"
+          onError={() => setImageFailed(true)}
+        />
+      )}
+
+      {(imageFailed || !diary.image) && (
+        <div
+          className="wanderlust-image-placeholder"
+          aria-label={`Image placeholder for ${diary.title}`}
+        >
+          <span>SILVERGENIE WANDERLUST</span>
+          <strong>{diary.location}</strong>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// =====================================================
+// WANDERLUST DIARIES PAGE
+// =====================================================
 function WanderlustDiaries() {
   const [activeCategory, setActiveCategory] = useState("All");
+
+  const imageBase = `${import.meta.env.BASE_URL}image/blog/`;
 
   const filteredDiaries =
     activeCategory === "All"
       ? diaries
-      : diaries.filter((diary) => diary.category === activeCategory);
-
-  const imageBase = `${import.meta.env.BASE_URL}image/blog/`;
+      : diaries.filter(
+          (diary) => diary.category === activeCategory
+        );
 
   return (
-    <main className="wanderlust-diaries-page">
+    <div className="wanderlust-diaries-page">
+
       {/* HERO */}
       <section className="wanderlust-hero">
         <div className="wanderlust-hero-content">
@@ -253,11 +327,14 @@ function WanderlustDiaries() {
           </h1>
 
           <p>
-            Stories, destinations and experiences that inspire meaningful
-            journeys and unforgettable memories.
+            Stories, destinations and experiences that inspire
+            meaningful journeys and unforgettable memories.
           </p>
 
-          <a href="#diary-collection" className="wanderlust-button">
+          <a
+            href="#diary-collection"
+            className="wanderlust-button"
+          >
             Explore Our Diaries <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -268,14 +345,15 @@ function WanderlustDiaries() {
         <h2>Every Journey Has a Story</h2>
 
         <p>
-          At SilverGenie Wanderlust, we believe travel is about discovering
-          new places, experiencing different cultures and creating memories
-          that stay with us forever.
+          At SilverGenie Wanderlust, we believe travel is about
+          discovering new places, experiencing different cultures
+          and creating memories that stay with us forever.
         </p>
 
         <p>
-          Explore inspiring destinations, cultural celebrations, spiritual
-          journeys and travel experiences from India and around the world.
+          Explore inspiring destinations, cultural celebrations,
+          spiritual journeys and travel experiences from India
+          and around the world.
         </p>
       </section>
 
@@ -289,12 +367,16 @@ function WanderlustDiaries() {
           <h2>Travel Without Worry</h2>
 
           <p>
-            Make every journey more comfortable with thoughtfully planned
-            travel experiences designed around your needs. Discover new
-            destinations with greater confidence, comfort and peace of mind.
+            Make every journey more comfortable with thoughtfully
+            planned travel experiences designed around your needs.
+            Discover new destinations with greater confidence,
+            comfort and peace of mind.
           </p>
 
-          <Link to="/travel-with-care" className="wanderlust-button">
+          <Link
+            to="/travel-with-care"
+            className="wanderlust-button"
+          >
             Explore Travel With Care <span aria-hidden="true">→</span>
           </Link>
         </div>
@@ -313,9 +395,9 @@ function WanderlustDiaries() {
           <h2>Explore Our Travel Diaries</h2>
 
           <p>
-            From spiritual destinations and cultural celebrations to
-            extraordinary international journeys, find inspiration for your
-            next adventure.
+            From spiritual destinations and cultural celebrations
+            to extraordinary international journeys, find
+            inspiration for your next adventure.
           </p>
         </div>
 
@@ -328,7 +410,9 @@ function WanderlustDiaries() {
             <button
               key={category}
               type="button"
-              className={activeCategory === category ? "active" : ""}
+              className={
+                activeCategory === category ? "active" : ""
+              }
               aria-pressed={activeCategory === category}
               onClick={() => setActiveCategory(category)}
             >
@@ -337,7 +421,11 @@ function WanderlustDiaries() {
           ))}
         </div>
 
-        <p className="wanderlust-results-count" aria-live="polite">
+        {/* RESULTS COUNT */}
+        <p
+          className="wanderlust-results-count"
+          aria-live="polite"
+        >
           Showing {filteredDiaries.length}{" "}
           {filteredDiaries.length === 1 ? "story" : "stories"}
         </p>
@@ -348,25 +436,12 @@ function WanderlustDiaries() {
             filteredDiaries.map((diary) => (
               <article
                 className="wanderlust-diary-card"
-                key={diary.title}
+                key={diary.slug}
               >
-                <div className="wanderlust-diary-image">
-                  {diary.image ? (
-                    <img
-                      src={`${imageBase}${diary.image}`}
-                      alt={`${diary.title} — ${diary.location}`}
-                      loading="lazy"
-                      onError={(event) => {
-                        event.currentTarget.style.display = "none";
-                      }}
-                    />
-                  ) : (
-                    <div className="wanderlust-image-placeholder">
-                      <span>SILVERGENIE WANDERLUST</span>
-                      <strong>{diary.location}</strong>
-                    </div>
-                  )}
-                </div>
+                <DiaryImage
+                  diary={diary}
+                  imageBase={imageBase}
+                />
 
                 <div className="wanderlust-diary-content">
                   <span className="wanderlust-diary-category">
@@ -383,13 +458,16 @@ function WanderlustDiaries() {
 
                   <p>{diary.description}</p>
 
-                  {/* AUTHOR NAME — ADDED */}
                   <p className="wanderlust-diary-author">
                     <span>By </span>
                     {diary.author}
                   </p>
 
-                  <Link to="/travel-with-care">
+                  <Link
+                    to={`/wanderlust/${diary.slug}`}
+                    className="wanderlust-read-story"
+                    aria-label={`Read story: ${diary.title}`}
+                  >
                     Read Story <span aria-hidden="true">→</span>
                   </Link>
                 </div>
@@ -420,16 +498,16 @@ function WanderlustDiaries() {
         <h2>Your Next Journey Begins Here</h2>
 
         <p>
-          Looking for a comfortable, thoughtfully planned travel experience?
-          Explore SilverGenie's Travel With Care services and start planning
-          your next journey.
+          Looking for a comfortable, thoughtfully planned
+          travel experience? Explore SilverGenie's Travel
+          With Care services and start planning your next journey.
         </p>
 
         <Link to="/travel-with-care">
           Discover Travel With Care <span aria-hidden="true">→</span>
         </Link>
       </section>
-    </main>
+    </div>
   );
 }
 

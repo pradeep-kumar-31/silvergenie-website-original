@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/SubscriptionPlans.css";
 
 const plans = [
@@ -55,7 +56,7 @@ const plans = [
 
   {
     name: "EMERGENCY GENIE PLUS",
-    price: "₹800",
+    price: "₹2,500",
     period: "Per person per month, billed Semi-Annually",
     features: [
       "24/7 Emergency Support",
@@ -72,7 +73,7 @@ const plans = [
 
   {
     name: "EMERGENCY GENIE",
-    price: "₹800",
+    price: "₹1,000",
     period: "Per person per month, billed Semi-Annually",
     features: [
       "24/7 Emergency Support",
@@ -105,6 +106,40 @@ const additionalServices = [
 ];
 
 function SubscriptionPlans() {
+  const navigate = useNavigate();
+
+  // =========================================================
+  // NAVIGATE TO HOME PAGE CONTACT FORM
+  // =========================================================
+
+  const goToContact = () => {
+    const contactSection = document.getElementById("contact");
+
+    // If contact form is already available on the current page
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      return;
+    }
+
+    // Navigate to homepage and open the contact section
+    navigate("/#contact");
+
+    window.setTimeout(() => {
+      const section = document.getElementById("contact");
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 500);
+  };
+
   return (
     <main className="subscription-page">
 
@@ -381,12 +416,13 @@ function SubscriptionPlans() {
             plan that best matches your healthcare requirements.
           </p>
 
-          <a
-            href="/silvergenie-website-original/#contact"
+          <button
+            type="button"
             className="subscription-cta-button"
+            onClick={goToContact}
           >
             Enquire About a Plan →
-          </a>
+          </button>
 
         </div>
 

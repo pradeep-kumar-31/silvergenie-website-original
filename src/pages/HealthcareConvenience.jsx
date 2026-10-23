@@ -1,41 +1,117 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/HealthcareConvenience.css";
 
 function HealthcareConvenience() {
+  const navigate = useNavigate();
+
+  // =========================================================
+  // NAVIGATE TO CONTACT FORM
+  // =========================================================
+
+  const goToContact = () => {
+    const contactSection = document.getElementById("contact");
+
+    // If the contact form exists on the current page
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      return;
+    }
+
+    // Navigate to the home page and scroll to its contact section
+    navigate("/#contact");
+
+    window.setTimeout(() => {
+      const section = document.getElementById("contact");
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 500);
+  };
+
+  // =========================================================
+  // HEALTHCARE CONVENIENCE SERVICES
+  // =========================================================
+
   const convenienceServices = [
     {
       number: "01",
       title: "Dedicated Health Concierge",
-      text: "A dedicated health concierge to help coordinate and support your healthcare needs.",
+      text: "Personalized assistance to coordinate healthcare requirements and make accessing relevant services easier.",
     },
     {
       number: "02",
       title: "Personal Digital Health Records",
-      text: "Personal health records maintained digitally to help keep important health information organized.",
+      text: "Keep important medical information, health history and reports organized through Personal Health Records (PHR).",
     },
     {
       number: "03",
       title: "Physical Health Coach / Buddy",
-      text: "Physical health coach or buddy support to help you stay on track with your healthcare needs.",
+      text: "Receive guidance and support to help you stay engaged with your healthcare and well-being goals.",
     },
     {
       number: "04",
       title: "Home Sample Collection",
-      text: "Convenient access to home sample collection for diagnostic requirements.",
+      text: "Get assistance with diagnostic requirements and convenient home sample collection arrangements.",
     },
     {
       number: "05",
       title: "Medicine Delivery",
-      text: "Medicines can be arranged and delivered to your doorstep for greater convenience.",
+      text: "Get support with arranging medicines and making medication access more convenient.",
     },
     {
       number: "06",
       title: "Medical Equipment Delivery",
-      text: "Medical equipment delivery support to help make healthcare requirements available at home.",
+      text: "Access assistance with medical equipment requirements to support care and recovery at home.",
     },
     {
       number: "07",
-      title: "Customized Plans",
-      text: "Customized plans designed around individual healthcare and support requirements.",
+      title: "Customized Healthcare Plans",
+      text: "Explore personalized support options based on individual healthcare needs and preferences.",
+    },
+  ];
+
+  // =========================================================
+  // HEALTHCARE BENEFITS
+  // =========================================================
+
+  const benefits = [
+    {
+      number: "01",
+      title: "Healthcare Coordination",
+      text: "A dedicated concierge helps coordinate healthcare requirements and related services.",
+    },
+    {
+      number: "02",
+      title: "Digital Health Records",
+      text: "Keep important health information organized for easier access and healthcare coordination.",
+    },
+    {
+      number: "03",
+      title: "Health Coach / Buddy",
+      text: "Receive additional guidance and support to stay focused on your health and well-being.",
+    },
+    {
+      number: "04",
+      title: "Diagnostic Support",
+      text: "Get assistance with diagnostic requirements and home sample collection arrangements.",
+    },
+    {
+      number: "05",
+      title: "Doorstep Convenience",
+      text: "Get support with medicine and medical equipment delivery arrangements.",
+    },
+    {
+      number: "06",
+      title: "Personalized Assistance",
+      text: "Explore customized healthcare support according to your individual requirements.",
     },
   ];
 
@@ -43,7 +119,7 @@ function HealthcareConvenience() {
     <main className="healthcare-convenience-page">
 
       {/* =====================================================
-          HERO
+          HERO SECTION
       ===================================================== */}
 
       <section className="healthcare-convenience-hero">
@@ -62,19 +138,28 @@ function HealthcareConvenience() {
             </h1>
 
             <p>
-              At SilverGenie, we have got you covered. From a
-              dedicated health concierge and personal digital
-              health records to diagnostic support, medicines
-              and medical equipment delivery, we help make
-              healthcare available at your doorstep.
+              At SilverGenie, we help make managing healthcare
+              simpler and more convenient. From a dedicated
+              health concierge and Personal Health Records to
+              diagnostic support, medicine delivery and medical
+              equipment assistance, we help you access relevant
+              healthcare services with greater convenience.
             </p>
 
-            <a
-              href="/silvergenie-website-original/#contact"
+            <button
+              type="button"
               className="healthcare-convenience-btn"
+              onClick={goToContact}
             >
-              Enquire Now →
-            </a>
+              Enquire Now
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <div className="healthcare-convenience-trust-points">
+              <span>Personalized Assistance</span>
+              <span>Healthcare Coordination</span>
+              <span>Doorstep Convenience</span>
+            </div>
 
           </div>
 
@@ -82,7 +167,8 @@ function HealthcareConvenience() {
 
             <img
               src={`${import.meta.env.BASE_URL}image/services/healthcare-convenience.png`}
-              alt="SilverGenie Healthcare Convenience"
+              alt="SilverGenie healthcare convenience and concierge support"
+              fetchPriority="high"
             />
 
             <div className="healthcare-convenience-floating-card">
@@ -103,7 +189,7 @@ function HealthcareConvenience() {
 
 
       {/* =====================================================
-          INTRO
+          INTRODUCTION
       ===================================================== */}
 
       <section className="healthcare-convenience-intro">
@@ -120,12 +206,12 @@ function HealthcareConvenience() {
           </h2>
 
           <p>
-            Your dedicated health concierge will digitize your
-            personal health records and work closely with you
-            to improve your health outcomes. Whether it is your
-            diagnostic requirements or support with your
-            medication or medical equipment, SilverGenie helps
-            make everything available at your doorstep.
+            Managing healthcare involves more than doctor visits.
+            Medical records, diagnostic requirements, medicines
+            and everyday health needs also require attention.
+            SilverGenie helps coordinate these requirements
+            through personalized assistance, digital health
+            records and convenient access to relevant services.
           </p>
 
         </div>
@@ -134,7 +220,7 @@ function HealthcareConvenience() {
 
 
       {/* =====================================================
-          SERVICES
+          CONVENIENCE SERVICES
       ===================================================== */}
 
       <section className="healthcare-convenience-services">
@@ -153,9 +239,9 @@ function HealthcareConvenience() {
             </h2>
 
             <p>
-              SilverGenie brings together healthcare support
-              and everyday convenience services to make
-              managing healthcare easier.
+              Explore healthcare coordination and convenience
+              services designed to help simplify your healthcare
+              journey.
             </p>
 
           </div>
@@ -174,7 +260,7 @@ function HealthcareConvenience() {
                   {service.number}
                 </span>
 
-                <div>
+                <div className="healthcare-convenience-service-content">
 
                   <h3>
                     {service.title}
@@ -186,7 +272,10 @@ function HealthcareConvenience() {
 
                 </div>
 
-                <span className="healthcare-convenience-arrow">
+                <span
+                  className="healthcare-convenience-arrow"
+                  aria-hidden="true"
+                >
                   →
                 </span>
 
@@ -202,7 +291,7 @@ function HealthcareConvenience() {
 
 
       {/* =====================================================
-          HEALTH CONCIERGE
+          DEDICATED HEALTH CONCIERGE
       ===================================================== */}
 
       <section className="healthcare-convenience-feature">
@@ -213,7 +302,8 @@ function HealthcareConvenience() {
 
             <img
               src={`${import.meta.env.BASE_URL}image/services/healthcare-convenience.jpg`}
-              alt="SilverGenie Health Concierge"
+              alt="SilverGenie dedicated health concierge support"
+              loading="lazy"
             />
 
           </div>
@@ -231,16 +321,27 @@ function HealthcareConvenience() {
             </h2>
 
             <p>
-              Your dedicated health concierge works closely
-              with you to improve your health outcomes and
-              coordinate your healthcare requirements.
+              Your dedicated health concierge helps coordinate
+              your healthcare requirements and provides support
+              in accessing relevant services.
             </p>
 
             <p>
-              From personal health records and diagnostics to
-              medicines and medical equipment, SilverGenie
-              helps make healthcare easier and more convenient.
+              From maintaining Personal Health Records and
+              coordinating diagnostic requirements to arranging
+              medicine and medical equipment delivery, SilverGenie
+              helps make everyday healthcare management more
+              convenient.
             </p>
+
+            <button
+              type="button"
+              className="healthcare-convenience-btn"
+              onClick={goToContact}
+            >
+              Talk to Our Team
+              <span aria-hidden="true">→</span>
+            </button>
 
           </div>
 
@@ -250,7 +351,7 @@ function HealthcareConvenience() {
 
 
       {/* =====================================================
-          HOW IT HELPS
+          HEALTHCARE BENEFITS
       ===================================================== */}
 
       <section className="healthcare-convenience-benefits">
@@ -268,73 +369,36 @@ function HealthcareConvenience() {
               <span>easier.</span>
             </h2>
 
+            <p>
+              Convenient access, organized health information
+              and personalized assistance can help simplify
+              the way you manage everyday healthcare needs.
+            </p>
+
           </div>
 
 
           <div className="healthcare-convenience-benefits-grid">
 
-            <article>
+            {benefits.map((benefit) => (
 
-              <span>01</span>
+              <article key={benefit.number}>
 
-              <h3>
-                Healthcare Coordination
-              </h3>
+                <span>
+                  {benefit.number}
+                </span>
 
-              <p>
-                Support through a dedicated health concierge
-                for healthcare requirements.
-              </p>
+                <h3>
+                  {benefit.title}
+                </h3>
 
-            </article>
+                <p>
+                  {benefit.text}
+                </p>
 
+              </article>
 
-            <article>
-
-              <span>02</span>
-
-              <h3>
-                Digital Health Records
-              </h3>
-
-              <p>
-                Personal digital health records to keep
-                important healthcare information organized.
-              </p>
-
-            </article>
-
-
-            <article>
-
-              <span>03</span>
-
-              <h3>
-                Home Convenience
-              </h3>
-
-              <p>
-                Home sample collection along with medicine
-                and medical equipment delivery support.
-              </p>
-
-            </article>
-
-
-            <article>
-
-              <span>04</span>
-
-              <h3>
-                Customized Support
-              </h3>
-
-              <p>
-                Customized plans based on individual
-                healthcare requirements.
-              </p>
-
-            </article>
+            ))}
 
           </div>
 
@@ -344,7 +408,7 @@ function HealthcareConvenience() {
 
 
       {/* =====================================================
-          FINAL CTA
+          FINAL CONTACT CTA
       ===================================================== */}
 
       <section className="healthcare-convenience-cta">
@@ -361,16 +425,19 @@ function HealthcareConvenience() {
           </h2>
 
           <p>
-            Let SilverGenie help you manage your healthcare
-            needs with greater convenience and support.
+            Let our team help you explore healthcare convenience
+            services and personalized support options for
+            yourself or your loved ones.
           </p>
 
-          <a
-            href="/silvergenie-website-original/#contact"
+          <button
+            type="button"
             className="healthcare-convenience-btn"
+            onClick={goToContact}
           >
-            Connect With Us →
-          </a>
+            Connect With Us
+            <span aria-hidden="true">→</span>
+          </button>
 
         </div>
 

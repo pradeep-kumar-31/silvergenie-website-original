@@ -199,17 +199,21 @@ function ElderCare() {
     },
   ];
 
+  // Phone number for callback buttons.
+  const callbackPhone = "18002030527";
+
+  // Contact section URL.
+  // This works with the Vite BASE_URL configured for your project.
+  const contactUrl = `${import.meta.env.BASE_URL}#contact`;
+
   return (
     <div className="elder-care-page">
-
       {/* =====================================================
           HERO
       ===================================================== */}
 
       <section className="elder-care-hero">
-
         <div className="elder-care-hero-content">
-
           <span className="elder-care-label">
             YOUR NEW LIFE BEGINS WITH US
           </span>
@@ -225,7 +229,6 @@ function ElderCare() {
           </p>
 
           <div className="elder-care-stats">
-
             <div>
               <strong>100%</strong>
               <span>Peace of Mind</span>
@@ -245,53 +248,42 @@ function ElderCare() {
               <strong>1000+</strong>
               <span>Registered Customers</span>
             </div>
-
           </div>
 
           <a
-            href="/silvergenie-website-original/#contact"
+            href={`tel:${callbackPhone}`}
             className="elder-care-primary-btn"
           >
             Request a Callback →
           </a>
-
         </div>
 
         <div className="elder-care-hero-image">
-
           <img
             src={`${import.meta.env.BASE_URL}image/services/elder-care.jpg`}
             alt="SilverGenie Elder Care"
           />
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           LOCATION
       ===================================================== */}
 
       <section className="elder-care-location">
-
         <span>AVAILABLE IN</span>
 
         <p>
           Delhi, Gurugram, Noida & Kolkata Metropolitan Area
         </p>
-
       </section>
-
 
       {/* =====================================================
           SPECIALIZED CARE
       ===================================================== */}
 
       <section className="elder-care-specialized">
-
         <div className="elder-care-section-heading">
-
           <span>
             SPECIALIZED ELDER CARE AND SUPPORT
           </span>
@@ -301,16 +293,12 @@ function ElderCare() {
             <br />
             <em>to Get Started.</em>
           </h2>
-
         </div>
 
-
         <div className="elder-care-service-grid">
-
           {/* HOME ATTENDANT */}
 
           <article className="elder-care-service-card">
-
             <span className="elder-care-service-label">
               COMPASSIONATE COMPANIONSHIP
             </span>
@@ -337,14 +325,11 @@ function ElderCare() {
               *Prices may vary by: Medical Condition, City,
               Customizations (if any)
             </small>
-
           </article>
-
 
           {/* NURSING */}
 
           <article className="elder-care-service-card">
-
             <span className="elder-care-service-label">
               HEALING HANDS
             </span>
@@ -375,14 +360,11 @@ function ElderCare() {
               *Prices may vary by: Medical Condition, City,
               Customizations (if any)
             </small>
-
           </article>
-
 
           {/* DEMENTIA */}
 
           <article className="elder-care-service-card">
-
             <span className="elder-care-service-label">
               GENTLE GUIDANCE
             </span>
@@ -396,14 +378,11 @@ function ElderCare() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
-
           </article>
-
 
           {/* HOLISTIC / AT HOME */}
 
           <article className="elder-care-service-card">
-
             <span className="elder-care-service-label">
               COMFORTING CARE
             </span>
@@ -420,22 +399,16 @@ function ElderCare() {
               Personalized support designed around ongoing
               care and wellness needs.
             </p>
-
           </article>
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           AT HOME SERVICES
       ===================================================== */}
 
       <section className="elder-care-home-services">
-
         <div className="elder-care-home-heading">
-
           <span>AT HOME SERVICES</span>
 
           <h2>
@@ -443,11 +416,9 @@ function ElderCare() {
             <br />
             <em>at home.</em>
           </h2>
-
         </div>
 
         <div className="elder-care-home-list">
-
           {atHomeServices.map((service, index) => (
             <div
               className="elder-care-home-item"
@@ -460,20 +431,15 @@ function ElderCare() {
               <span>{service}</span>
             </div>
           ))}
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           SUBSCRIPTION PACKAGES
       ===================================================== */}
 
       <section className="elder-care-plans">
-
         <div className="elder-care-section-heading">
-
           <span>
             24/7 EMERGENCY & WELLNESS
           </span>
@@ -483,19 +449,14 @@ function ElderCare() {
             <br />
             <em>Packages.</em>
           </h2>
-
         </div>
 
-
         <div className="elder-care-plan-grid">
-
           {subscriptionPlans.map((plan) => (
-
             <article
               className="elder-care-plan-card"
               key={plan.name}
             >
-
               <span className="elder-care-plan-name">
                 {plan.name}
               </span>
@@ -509,43 +470,34 @@ function ElderCare() {
               </p>
 
               <ul>
-
                 {plan.features.map((feature) => (
                   <li key={feature}>
                     {feature}
                   </li>
                 ))}
-
               </ul>
 
               <a
-                href="/silvergenie-website-original/#contact"
+                href={`tel:${callbackPhone}`}
                 className="elder-care-plan-btn"
               >
                 Request a Callback
               </a>
-
             </article>
-
           ))}
-
         </div>
 
         <p className="elder-care-plan-note">
           * Ambulance charges on Actuals
         </p>
-
       </section>
-
 
       {/* =====================================================
           OTHER SERVICES
       ===================================================== */}
 
       <section className="elder-care-other">
-
         <div className="elder-care-section-heading">
-
           <span>
             OTHER SERVICES FROM SILVERGENIE
           </span>
@@ -555,42 +507,30 @@ function ElderCare() {
             <br />
             <em>can help.</em>
           </h2>
-
         </div>
 
-
         <div className="elder-care-other-grid">
-
           {otherServices.map((service, index) => (
-
             <article
               className="elder-care-other-card"
               key={service}
             >
-
               <span>
                 {String(index + 1).padStart(2, "0")}
               </span>
 
               <h3>{service}</h3>
-
             </article>
-
           ))}
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           WHY CHOOSE SILVERGENIE
       ===================================================== */}
 
       <section className="elder-care-why">
-
         <div className="elder-care-section-heading">
-
           <span>
             WHY CHOOSE SILVERGENIE
           </span>
@@ -600,19 +540,14 @@ function ElderCare() {
             <br />
             <em>rely on.</em>
           </h2>
-
         </div>
 
-
         <div className="elder-care-why-grid">
-
           {whyChoose.map((item, index) => (
-
             <article
               key={item.title}
               className="elder-care-why-card"
             >
-
               <strong>
                 {String(index + 1).padStart(2, "0")}
               </strong>
@@ -624,22 +559,16 @@ function ElderCare() {
               <p>
                 {item.text}
               </p>
-
             </article>
-
           ))}
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           CTA
       ===================================================== */}
 
       <section className="elder-care-cta">
-
         <span>
           PERSONALIZED CARE FOR THOSE, WHO CARED FOR US
         </span>
@@ -657,45 +586,32 @@ function ElderCare() {
         </p>
 
         <a
-          href="/silvergenie-website-original/#contact"
+          href={contactUrl}
           className="elder-care-cta-btn"
         >
           Book a Free Consultation
         </a>
-
       </section>
-
 
       {/* =====================================================
           FAQ
       ===================================================== */}
 
       <section className="elder-care-faq">
-
         <div className="elder-care-section-heading">
-
-          <span>
-            FREQUENTLY ASKED QUESTIONS
-          </span>
-
           <h2>
             Frequently Asked
             <br />
             <em>Questions.</em>
           </h2>
-
         </div>
 
-
         <div className="elder-care-faq-list">
-
           {faqs.map((faq, index) => (
-
             <details
               className="elder-care-faq-item"
               key={faq.question}
             >
-
               <summary>
                 <span>
                   {index + 1}. {faq.question}
@@ -707,22 +623,16 @@ function ElderCare() {
               <p>
                 {faq.answer}
               </p>
-
             </details>
-
           ))}
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           FINAL MESSAGE
       ===================================================== */}
 
       <section className="elder-care-final">
-
         <h2>
           Supporting Your Loved Ones
           <br />
@@ -742,9 +652,7 @@ function ElderCare() {
           nurses, critical care specialists, and experienced
           attendants.
         </p>
-
       </section>
-
     </div>
   );
 }

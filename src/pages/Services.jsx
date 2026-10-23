@@ -2,31 +2,31 @@ const services = [
   {
     title: "Elder Care",
     text: "Comprehensive care and support for senior citizens.",
-    image: "/image/services/elder-care.jpeg",
+    image: `${import.meta.env.BASE_URL}image/services/elder-care.jpeg`,
     link: "/elder-care",
   },
   {
     title: "Home Care",
     text: "Senior care attendants, nursing care and home-based support.",
-    image: "/image/services/home-care.png",
+    image: `${import.meta.env.BASE_URL}image/services/home-care.png`,
     link: "/home-care",
   },
   {
     title: "Nursing Care",
     text: "Professional nursing assistance and personalised healthcare support at home.",
-    image: "/image/services/healthcare-manpower.jpg",
+    image: `${import.meta.env.BASE_URL}image/services/healthcare-manpower-.png`,
     link: "/nursing-care",
   },
   {
     title: "Emergency Care",
     text: "Emergency preparedness, support and coordination.",
-    image: "/image/services/emergency-care.png",
+    image: `${import.meta.env.BASE_URL}image/services/emergency-care.png`,
     link: "/emergency-care",
   },
   {
     title: "Wellness Services",
     text: "Support for physical and mental well-being.",
-    image: "/image/services/wellness-services.png",
+    image: `${import.meta.env.BASE_URL}image/services/wellness-services.png`,
     link: "#contact",
   },
 ];
@@ -35,7 +35,6 @@ function Services() {
   return (
     <section className="services-section" id="services">
       <div className="services-container">
-
         {/* SECTION HEADING */}
         <div className="services-heading">
           <span className="section-label">OUR SERVICES</span>
@@ -56,7 +55,6 @@ function Services() {
         <div className="services-grid">
           {services.map((service) => (
             <article className="service-card" key={service.title}>
-
               {/* SERVICE IMAGE */}
               <div className="service-image">
                 <img
@@ -64,17 +62,6 @@ function Services() {
                   alt={service.title}
                   loading="eager"
                   decoding="async"
-                  onLoad={(e) => {
-                    e.currentTarget.style.opacity = "1";
-                  }}
-                  onError={(e) => {
-                    console.error(
-                      `${service.title} image load nahi hui:`,
-                      service.image
-                    );
-
-                    e.currentTarget.style.display = "none";
-                  }}
                   style={{
                     display: "block",
                     width: "100%",
@@ -82,10 +69,12 @@ function Services() {
                     minHeight: "250px",
                     objectFit: "cover",
                     objectPosition: "center",
-                    opacity: 1,
-                    visibility: "visible",
-                    position: "relative",
-                    zIndex: 2,
+                  }}
+                  onError={(event) => {
+                    console.error(
+                      `Image load nahi hui: ${service.title}`,
+                      event.currentTarget.src
+                    );
                   }}
                 />
               </div>
@@ -96,15 +85,13 @@ function Services() {
 
                 <p>{service.text}</p>
 
-                <a href={service.link}>
+                <a href={service.link} className="service-link">
                   Explore Service <span aria-hidden="true">→</span>
                 </a>
               </div>
-
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );

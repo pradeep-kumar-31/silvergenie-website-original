@@ -1,5 +1,6 @@
 /* =========================================================
    SILVERGENIE — RECOGNITION / PARTNERS
+   Responsive Layout | No Hover | No Clickable Appearance
 ========================================================= */
 
 .recognition {
@@ -8,6 +9,10 @@
   background: #ffffff;
   overflow: hidden;
 }
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .recognition-container {
   width: min(1200px, calc(100% - 48px));
@@ -20,13 +25,10 @@
 
 .recognition-grid {
   width: 100%;
-
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-
   column-gap: 28px;
   row-gap: 28px;
-
   align-items: center;
 }
 
@@ -44,16 +46,19 @@
   justify-content: center;
 
   background: transparent;
-  border: 0;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
+  outline: none;
 
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  cursor: default;
+  transform: none;
+  transition: none;
+  text-decoration: none;
 }
 
 /* =========================================================
-   LOGO IMAGE
+   LOGO IMAGE — KEEP ORIGINAL APPEARANCE
 ========================================================= */
 
 .recognition-card img {
@@ -66,24 +71,37 @@
   object-fit: contain;
   object-position: center;
 
-  opacity: 0.92;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  filter: none;
 
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transform: none;
+  transition: none;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* =========================================================
-   SUBTLE HOVER
+   NO CURSOR ACTIVITY — HOVER / CLICK / SELECT / DRAG
 ========================================================= */
 
-.recognition-card:hover img {
-  opacity: 1;
-  transform: scale(1.035);
+.recognition-card,
+.recognition-card * {
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: none;
+  animation: none;
 }
 
 /* =========================================================
-   COMBINED LOGO CARD
+   COMBINED LOGO CARD — LAST ITEM
 ========================================================= */
 
 .recognition-card:last-child {
@@ -116,12 +134,11 @@
   }
 
   .recognition-container {
-    width: min(100% - 40px, 1000px);
+    width: min(calc(100% - 40px), 1000px);
   }
 
   .recognition-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-
     column-gap: 20px;
     row-gap: 24px;
   }
@@ -161,7 +178,6 @@
 
   .recognition-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     column-gap: 18px;
     row-gap: 18px;
   }
@@ -261,7 +277,7 @@
 }
 
 /* =========================================================
-   VERY SMALL MOBILE
+   VERY SMALL MOBILE — 350px
 ========================================================= */
 
 @media (max-width: 350px) {
@@ -284,16 +300,5 @@
 
   .recognition-card:last-child img {
     height: 56px;
-  }
-}
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .recognition-card,
-  .recognition-card img {
-    transition: none;
   }
 }

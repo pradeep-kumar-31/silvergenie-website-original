@@ -1,13 +1,23 @@
 /* =========================================================
-   SILVERGENIE — NCD / DIABETES MANAGEMENT
-   PREMIUM RESPONSIVE DESIGN
+   SILVERGENIE — DIABETES & NCD MANAGEMENT
+   Premium Design | Fully Responsive
 ========================================================= */
 
+/* ==================== GLOBAL ==================== */
+
 .ncd-page {
-  min-height: 100vh;
-  background: #ffffff;
-  color: #16302c;
+  --ncd-primary: #20b69e;
+  --ncd-primary-dark: #168c79;
+  --ncd-dark: #16302c;
+  --ncd-text: #52635f;
+  --ncd-light: #f3faf8;
+  --ncd-white: #ffffff;
+
+  width: 100%;
   overflow: hidden;
+  background: var(--ncd-white);
+  color: var(--ncd-dark);
+  font-family: inherit;
 }
 
 .ncd-page *,
@@ -16,710 +26,919 @@
   box-sizing: border-box;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.ncd-hero {
-  min-height: 690px;
-  padding: 90px 8%;
-  display: flex;
-  align-items: center;
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(32, 182, 158, 0.12),
-      transparent 30%
-    ),
-    #f3fbf9;
+.ncd-container {
+  width: min(1200px, calc(100% - 64px));
+  margin: 0 auto;
 }
 
-.ncd-hero-content {
-  width: 50%;
-  max-width: 650px;
-  padding-right: 50px;
+.ncd-page h1,
+.ncd-page h2,
+.ncd-page h3,
+.ncd-page p {
+  margin-top: 0;
 }
 
-.ncd-label {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #20b69e;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.ncd-page h1,
+.ncd-page h2,
+.ncd-page h3 {
+  color: var(--ncd-dark);
+  line-height: 1.2;
 }
 
-.ncd-hero h1 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(48px, 5.5vw, 76px);
-  line-height: 1.02;
-  letter-spacing: -3px;
-  font-weight: 700;
-}
-
-.ncd-hero h1 span {
-  display: block;
-  color: #20b69e;
-}
-
-.ncd-hero p {
-  max-width: 580px;
-  margin: 28px 0 35px;
-  color: #657571;
-  font-size: 17px;
+.ncd-page p {
+  color: var(--ncd-text);
   line-height: 1.8;
 }
 
+.ncd-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--ncd-primary-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
 
-/* =========================================================
-   HERO BUTTON
-========================================================= */
+/* ==================== BUTTONS ==================== */
 
 .ncd-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 54px;
-  padding: 0 28px;
-  border-radius: 50px;
-  background: #20b69e;
+  gap: 12px;
+
+  min-height: 52px;
+  padding: 14px 27px;
+
+  border: 1px solid var(--ncd-primary);
+  border-radius: 8px;
+
+  background: var(--ncd-primary);
   color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
+
+  font-family: inherit;
+  font-size: 15px;
   font-weight: 700;
-  box-shadow: 0 14px 30px rgba(32, 182, 158, 0.22);
-  transition: all 0.3s ease;
+  line-height: 1.4;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .ncd-btn:hover {
-  background: #16302c;
-  transform: translateY(-3px);
-  box-shadow: 0 18px 35px rgba(22, 48, 44, 0.18);
+  background: var(--ncd-primary-dark);
+  border-color: var(--ncd-primary-dark);
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(32, 182, 158, 0.18);
 }
 
+.ncd-btn:focus-visible {
+  outline: 3px solid rgba(32, 182, 158, 0.35);
+  outline-offset: 4px;
+}
 
-/* =========================================================
-   HERO IMAGE
-========================================================= */
+.ncd-btn span {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* ==================== HERO SECTION ==================== */
+
+.ncd-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 55px;
+
+  width: min(1320px, calc(100% - 64px));
+  min-height: 550px;
+  margin: 30px auto 0;
+  padding: 60px 50px;
+
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(32, 182, 158, 0.11),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f0faf7 0%, #ffffff 70%);
+
+  overflow: hidden;
+}
+
+.ncd-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 610px;
+}
+
+.ncd-hero-content .ncd-eyebrow {
+  padding: 9px 14px;
+  border: 1px solid rgba(32, 182, 158, 0.25);
+  border-radius: 50px;
+  background: rgba(32, 182, 158, 0.08);
+}
+
+.ncd-hero-content h1 {
+  margin-bottom: 24px;
+  font-size: clamp(38px, 4.2vw, 60px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+}
+
+.ncd-hero-content > p {
+  max-width: 540px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
 
 .ncd-hero-image {
-  width: 50%;
-  height: 540px;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 390px;
   overflow: hidden;
-  border-radius: 34px;
-  background: #dceee9;
-  box-shadow: 0 28px 65px rgba(22, 48, 44, 0.14);
+  border-radius: 20px;
+  background: #e6f5f0;
+}
+
+.ncd-hero-image::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(22, 48, 44, 0.05);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
 }
 
 .ncd-hero-image img {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  object-position: center;
 }
 
-.ncd-hero-image:hover img {
-  transform: scale(1.04);
-}
-
-
-/* =========================================================
-   INTRO
-========================================================= */
+/* ==================== INTRO SECTION ==================== */
 
 .ncd-intro {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 30px 110px;
+  padding: 100px 0;
+  background: #ffffff;
   text-align: center;
 }
 
-.ncd-section-label {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #20b69e;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.ncd-intro .ncd-container {
+  max-width: 950px;
 }
 
 .ncd-intro h2 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(42px, 5vw, 64px);
-  line-height: 1.07;
-  letter-spacing: -2px;
-}
-
-.ncd-intro h2 span {
-  display: block;
-  color: #20b69e;
+  max-width: 800px;
+  margin: 0 auto 25px;
+  font-size: clamp(30px, 3.2vw, 43px);
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .ncd-intro p {
-  max-width: 760px;
-  margin: 25px auto 0;
-  color: #687773;
+  max-width: 850px;
+  margin: 0 auto 17px;
   font-size: 16px;
-  line-height: 1.85;
 }
 
-
-/* =========================================================
-   PROGRAM DETAILS
-========================================================= */
-
-.ncd-details {
-  padding: 115px 8%;
-  background: #f5fbf9;
+.ncd-intro p:last-child {
+  margin-bottom: 0;
 }
+
+/* ==================== SECTION HEADINGS ==================== */
 
 .ncd-section-heading {
-  max-width: 760px;
-  margin-bottom: 55px;
+  max-width: 750px;
+  margin: 0 auto 50px;
+  text-align: center;
 }
 
 .ncd-section-heading h2 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(40px, 5vw, 62px);
-  line-height: 1.05;
-  letter-spacing: -2px;
-}
-
-.ncd-section-heading h2 span {
-  color: #20b69e;
+  margin-bottom: 17px;
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .ncd-section-heading p {
   max-width: 650px;
-  margin: 22px 0 0;
-  color: #687773;
+  margin: 0 auto;
   font-size: 16px;
-  line-height: 1.8;
 }
 
+/* ==================== PROGRAM DETAILS ==================== */
 
-/* =========================================================
-   DETAILS GRID
-========================================================= */
+.ncd-program-section {
+  padding: 95px 0 105px;
+  background: var(--ncd-light);
+}
 
-.ncd-details-grid {
+.ncd-program-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.ncd-detail-card {
-  min-height: 150px;
-  padding: 28px;
-  display: flex;
-  align-items: flex-start;
-  gap: 22px;
-  border: 1px solid #dceae6;
-  border-radius: 22px;
+.ncd-program-card {
+  position: relative;
+  min-width: 0;
+  min-height: 230px;
+  padding: 30px 27px;
+
+  border: 1px solid #e4efeb;
+  border-radius: 16px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(22, 48, 44, 0.045);
-  transition: all 0.3s ease;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.ncd-detail-card:hover {
-  transform: translateY(-6px);
-  border-color: #a9ded3;
-  box-shadow: 0 20px 40px rgba(22, 48, 44, 0.09);
+.ncd-program-card:hover {
+  border-color: rgba(32, 182, 158, 0.6);
+  box-shadow: 0 12px 30px rgba(22, 48, 44, 0.06);
 }
 
-.ncd-detail-card strong {
-  flex-shrink: 0;
-  color: #20b69e;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.ncd-detail-card h3 {
-  margin: 0;
-  color: #16302c;
-  font-size: 20px;
-  line-height: 1.35;
-}
-
-
-/* =========================================================
-   SMARTWATCH SECTION
-========================================================= */
-
-.ncd-monitoring {
-  padding: 120px 8%;
-  display: grid;
-  grid-template-columns: 1fr 0.8fr;
-  align-items: center;
-  gap: 80px;
-  background: #ffffff;
-}
-
-.ncd-monitoring-content {
-  max-width: 650px;
-}
-
-.ncd-monitoring-content h2 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(42px, 5vw, 62px);
-  line-height: 1.06;
-  letter-spacing: -2px;
-}
-
-.ncd-monitoring-content h2 span {
-  display: block;
-  color: #20b69e;
-}
-
-.ncd-monitoring-content p {
-  max-width: 620px;
-  margin: 25px 0 0;
-  color: #687773;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   WATCH CARD
-========================================================= */
-
-.ncd-monitoring-box {
-  padding: 48px 38px;
-  text-align: center;
-  border-radius: 30px;
-  background: #16302c;
-  box-shadow: 0 28px 60px rgba(22, 48, 44, 0.16);
-}
-
-.ncd-watch-icon {
-  width: 105px;
-  height: 105px;
-  margin: 0 auto 25px;
+.ncd-card-number {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: rgba(32, 182, 158, 0.14);
-  color: #20b69e;
-  font-size: 48px;
-}
 
-.ncd-monitoring-badge {
-  display: inline-block;
-  margin-bottom: 15px;
-  color: #20b69e;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
+  width: 44px;
+  height: 44px;
+  margin-bottom: 22px;
 
-.ncd-monitoring-box h3 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 25px;
-}
+  border-radius: 12px;
+  background: rgba(32, 182, 158, 0.12);
+  color: var(--ncd-primary-dark);
 
-.ncd-monitoring-box p {
-  margin: 16px auto 0;
-  max-width: 400px;
-  color: #c5d5d1;
   font-size: 14px;
-  line-height: 1.7;
+  font-weight: 800;
 }
 
-
-/* =========================================================
-   SUPPORT / APPROACH
-========================================================= */
-
-.ncd-support {
-  padding: 115px 8%;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 80px;
-  align-items: center;
-  background: #f5fbf9;
+.ncd-program-card h3 {
+  margin-bottom: 13px;
+  font-size: 19px;
+  font-weight: 750;
 }
 
-.ncd-support-content {
-  max-width: 560px;
-}
-
-.ncd-support-content h2 {
-  margin: 0;
-  color: #16302c;
-  font-size: clamp(40px, 5vw, 60px);
-  line-height: 1.06;
-  letter-spacing: -2px;
-}
-
-.ncd-support-content h2 span {
-  display: block;
-  color: #20b69e;
-}
-
-.ncd-support-content p {
-  margin: 25px 0 0;
-  color: #687773;
-  font-size: 16px;
+.ncd-program-card p {
+  margin-bottom: 0;
+  font-size: 14px;
   line-height: 1.8;
 }
 
-.ncd-support-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
+/* ==================== MONITORING SECTION ==================== */
 
-.ncd-support-list > div {
-  min-height: 150px;
-  padding: 25px;
-  border: 1px solid #dceae6;
-  border-radius: 22px;
+.ncd-monitoring {
+  padding: 100px 0;
   background: #ffffff;
-  transition: all 0.3s ease;
 }
 
-.ncd-support-list > div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 38px rgba(22, 48, 44, 0.08);
+.ncd-monitoring-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 75px;
 }
 
-.ncd-support-list span {
-  color: #20b69e;
-  font-size: 13px;
+.ncd-monitoring-content h2 {
+  max-width: 600px;
+  margin-bottom: 24px;
+  font-size: clamp(30px, 3.1vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.ncd-monitoring-content > p {
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.ncd-monitoring-content .ncd-btn {
+  margin-top: 12px;
+}
+
+.ncd-monitoring-highlight {
+  position: relative;
+  padding: 48px 38px;
+
+  border: 1px solid #d9eee8;
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(32, 182, 158, 0.16),
+      transparent 45%
+    ),
+    #f1faf7;
+}
+
+.ncd-highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 62px;
+  height: 62px;
+  margin-bottom: 27px;
+
+  border-radius: 18px;
+  background: var(--ncd-primary);
+  color: #ffffff;
+
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.ncd-monitoring-highlight h3 {
+  margin-bottom: 17px;
+  font-size: 27px;
   font-weight: 800;
 }
 
-.ncd-support-list h3 {
-  margin: 25px 0 0;
-  color: #16302c;
-  font-size: 18px;
-  line-height: 1.35;
+.ncd-monitoring-highlight p {
+  margin-bottom: 0;
+  font-size: 15px;
 }
 
+/* ==================== BENEFITS SECTION ==================== */
 
-/* =========================================================
-   BENEFITS
-========================================================= */
-
-.ncd-benefits {
-  padding: 115px 8%;
-  background: #ffffff;
+.ncd-benefits-section {
+  padding: 100px 0;
+  background: #f7faf9;
 }
 
 .ncd-benefits-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .ncd-benefit-card {
-  min-height: 200px;
-  padding: 28px 24px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #dceae6;
-  border-radius: 23px;
-  background: #f8fcfb;
-  transition: all 0.3s ease;
-}
+  align-items: flex-start;
+  gap: 19px;
 
-.ncd-benefit-card:hover {
-  transform: translateY(-7px);
+  min-width: 0;
+  padding: 27px;
+
+  border: 1px solid #e5eeeb;
+  border-radius: 15px;
   background: #ffffff;
-  border-color: #a9ded3;
-  box-shadow: 0 20px 42px rgba(22, 48, 44, 0.08);
 }
 
-.ncd-benefit-card strong {
-  color: #20b69e;
-  font-size: 13px;
-  letter-spacing: 1px;
+.ncd-benefit-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 35px;
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+  background: #e0f6ef;
+  color: #168c79;
+
+  font-size: 17px;
+  font-weight: 800;
 }
 
 .ncd-benefit-card h3 {
-  margin: 35px 0 0;
-  color: #16302c;
-  font-size: 19px;
-  line-height: 1.4;
+  margin-bottom: 9px;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.ncd-benefit-card p {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .ncd-disclaimer {
-  max-width: 900px;
-  margin: 45px auto 0;
-  padding: 20px 24px;
-  border-left: 3px solid #20b69e;
-  background: #f5fbf9;
-  color: #687773;
+  max-width: 950px;
+  margin: 35px auto 0;
+  padding: 18px 22px;
+
+  border-left: 3px solid var(--ncd-primary);
+  border-radius: 0 8px 8px 0;
+  background: #edf7f4;
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ==================== WHO CAN BENEFIT ==================== */
+
+.ncd-audience-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.ncd-audience-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: start;
+  gap: 75px;
+}
+
+.ncd-audience-heading {
+  position: sticky;
+  top: 30px;
+}
+
+.ncd-audience-heading h2 {
+  margin-bottom: 22px;
+  font-size: clamp(30px, 3vw, 41px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.ncd-audience-heading p {
+  font-size: 15px;
+}
+
+.ncd-audience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.ncd-audience-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 20px 22px;
+
+  border: 1px solid #e5eeeb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.ncd-audience-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+  background: #e5f7f1;
+  color: var(--ncd-primary-dark);
+
   font-size: 13px;
+  font-weight: 800;
+}
+
+.ncd-audience-item p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.7;
 }
 
-
-/* =========================================================
-   CTA
-========================================================= */
+/* ==================== BOTTOM CTA ==================== */
 
 .ncd-cta {
-  padding: 120px 30px;
+  position: relative;
+  padding: 85px 0;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(255, 255, 255, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #16302c 0%, #1b5c50 100%);
+
   text-align: center;
-  background: #16302c;
+}
+
+.ncd-cta::before,
+.ncd-cta::after {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+
+  content: "";
+  pointer-events: none;
+}
+
+.ncd-cta::before {
+  top: -130px;
+  left: -70px;
+}
+
+.ncd-cta::after {
+  right: -70px;
+  bottom: -150px;
+}
+
+.ncd-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+}
+
+.ncd-cta .ncd-eyebrow {
+  color: #8ce8d4;
 }
 
 .ncd-cta h2 {
-  margin: 0;
-  color: #ffffff;
-  font-size: clamp(42px, 5vw, 66px);
-  line-height: 1.05;
-  letter-spacing: -2px;
-}
+  max-width: 780px;
+  margin: 0 auto 22px;
 
-.ncd-cta h2 span {
-  display: block;
-  color: #20b69e;
+  color: #ffffff;
+
+  font-size: clamp(31px, 3.6vw, 47px);
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .ncd-cta p {
   max-width: 680px;
-  margin: 25px auto 32px;
-  color: #c5d5d1;
-  font-size: 16px;
-  line-height: 1.8;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
 }
 
+.ncd-btn-light {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: var(--ncd-dark);
+}
 
-/* =========================================================
-   TABLET
-========================================================= */
+.ncd-btn-light:hover {
+  border-color: #dff7ef;
+  background: #dff7ef;
+  color: var(--ncd-dark);
+}
 
-@media (max-width: 1100px) {
+/* ==================== TABLET RESPONSIVE ==================== */
 
-  .ncd-hero {
-    padding: 80px 6%;
+@media (max-width: 1024px) {
+  .ncd-container {
+    width: min(100% - 48px, 900px);
   }
 
-  .ncd-hero-content {
-    padding-right: 25px;
+  .ncd-hero {
+    width: calc(100% - 48px);
+    grid-template-columns: 1fr 0.85fr;
+    gap: 30px;
+    min-height: 480px;
+    padding: 40px;
+  }
+
+  .ncd-hero-content h1 {
+    font-size: clamp(34px, 4.5vw, 48px);
   }
 
   .ncd-hero-image {
-    height: 480px;
+    height: 330px;
   }
 
-  .ncd-details,
-  .ncd-monitoring,
-  .ncd-support,
-  .ncd-benefits {
-    padding-left: 6%;
-    padding-right: 6%;
+  .ncd-program-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .ncd-benefits-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .ncd-hero {
-    padding: 75px 6%;
-    flex-direction: column;
-    align-items: stretch;
+  .ncd-monitoring-layout,
+  .ncd-audience-layout {
+    gap: 40px;
   }
 
-  .ncd-hero-content {
-    width: 100%;
-    max-width: 760px;
-    padding-right: 0;
-  }
-
-  .ncd-hero-image {
-    width: 100%;
-    height: 430px;
-    margin-top: 50px;
-  }
-
-  .ncd-details-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ncd-monitoring {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .ncd-support {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .ncd-benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .ncd-monitoring-highlight {
+    padding: 35px 28px;
   }
 }
 
+/* ==================== MOBILE RESPONSIVE ==================== */
 
-/* =========================================================
-   MOBILE
-========================================================= */
+@media (max-width: 767px) {
+  .ncd-container {
+    width: calc(100% - 36px);
+  }
 
-@media (max-width: 600px) {
+  .ncd-eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+
+  .ncd-btn {
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  /* HERO */
 
   .ncd-hero {
-    padding: 60px 20px 70px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    width: calc(100% - 28px);
+    min-height: auto;
+
+    margin-top: 15px;
+    padding: 32px 23px;
+
+    border-radius: 18px;
   }
 
-  .ncd-label,
-  .ncd-section-label {
-    font-size: 11px;
-    letter-spacing: 1.5px;
+  .ncd-hero-content h1 {
+    margin-bottom: 18px;
+    font-size: clamp(34px, 8vw, 44px);
+    letter-spacing: -1px;
   }
 
-  .ncd-hero h1 {
-    font-size: 43px;
-    letter-spacing: -1.8px;
-  }
-
-  .ncd-hero p {
-    margin: 22px 0 28px;
-    font-size: 15px;
+  .ncd-hero-content > p {
+    margin-bottom: 23px;
+    font-size: 14px;
+    line-height: 1.8;
   }
 
   .ncd-hero-image {
-    height: 340px;
-    margin-top: 40px;
-    border-radius: 23px;
+    height: 260px;
+    border-radius: 14px;
   }
-
 
   /* INTRO */
 
   .ncd-intro {
-    padding: 75px 20px;
+    padding: 65px 0;
   }
 
   .ncd-intro h2 {
-    font-size: 39px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    letter-spacing: -0.7px;
   }
 
   .ncd-intro p {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.85;
   }
 
-
-  /* DETAILS */
-
-  .ncd-details {
-    padding: 75px 20px;
-  }
+  /* SECTION HEADINGS */
 
   .ncd-section-heading {
-    margin-bottom: 35px;
+    margin-bottom: 32px;
   }
 
   .ncd-section-heading h2 {
-    font-size: 40px;
+    font-size: 30px;
+    letter-spacing: -0.7px;
   }
 
-  .ncd-detail-card {
-    min-height: 140px;
-    padding: 23px;
-    gap: 16px;
+  .ncd-section-heading p {
+    font-size: 14px;
   }
 
-  .ncd-detail-card h3 {
+  /* PROGRAM CARDS */
+
+  .ncd-program-section {
+    padding: 65px 0;
+  }
+
+  .ncd-program-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .ncd-program-card {
+    min-height: auto;
+    padding: 24px 22px;
+    border-radius: 13px;
+  }
+
+  .ncd-card-number {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 17px;
+  }
+
+  .ncd-program-card h3 {
     font-size: 18px;
   }
 
+  .ncd-program-card p {
+    font-size: 14px;
+  }
 
-  /* SMARTWATCH */
+  /* MONITORING */
 
   .ncd-monitoring {
-    padding: 75px 20px;
-    gap: 40px;
+    padding: 65px 0;
+  }
+
+  .ncd-monitoring-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .ncd-monitoring-content h2 {
-    font-size: 40px;
+    font-size: 30px;
+    letter-spacing: -0.7px;
   }
 
-  .ncd-monitoring-content p {
-    font-size: 15px;
+  .ncd-monitoring-content > p {
+    font-size: 14px;
   }
 
-  .ncd-monitoring-box {
-    padding: 35px 23px;
-    border-radius: 23px;
+  .ncd-monitoring-highlight {
+    padding: 30px 24px;
+    border-radius: 16px;
   }
 
-
-  /* SUPPORT */
-
-  .ncd-support {
-    padding: 75px 20px;
-    gap: 35px;
+  .ncd-highlight-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    font-size: 34px;
   }
 
-  .ncd-support-content h2 {
-    font-size: 40px;
+  .ncd-monitoring-highlight h3 {
+    font-size: 23px;
   }
 
-  .ncd-support-list {
-    grid-template-columns: 1fr;
+  .ncd-monitoring-highlight p {
+    font-size: 14px;
   }
-
 
   /* BENEFITS */
 
-  .ncd-benefits {
-    padding: 75px 20px;
+  .ncd-benefits-section {
+    padding: 65px 0;
   }
 
   .ncd-benefits-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .ncd-benefit-card {
-    min-height: 150px;
+    gap: 14px;
+    padding: 21px 18px;
+    border-radius: 12px;
+  }
+
+  .ncd-benefit-check {
+    flex-basis: 31px;
+    width: 31px;
+    height: 31px;
+    font-size: 15px;
   }
 
   .ncd-benefit-card h3 {
-    margin-top: 25px;
-    font-size: 18px;
+    font-size: 17px;
   }
 
+  .ncd-benefit-card p {
+    font-size: 13px;
+  }
+
+  .ncd-disclaimer {
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 11px;
+  }
+
+  /* AUDIENCE */
+
+  .ncd-audience-section {
+    padding: 65px 0;
+  }
+
+  .ncd-audience-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .ncd-audience-heading {
+    position: static;
+  }
+
+  .ncd-audience-heading h2 {
+    font-size: 30px;
+    letter-spacing: -0.7px;
+  }
+
+  .ncd-audience-heading p {
+    font-size: 14px;
+  }
+
+  .ncd-audience-list {
+    gap: 11px;
+  }
+
+  .ncd-audience-item {
+    gap: 13px;
+    padding: 15px;
+  }
+
+  .ncd-audience-number {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .ncd-audience-item p {
+    font-size: 13px;
+  }
 
   /* CTA */
 
   .ncd-cta {
-    padding: 75px 20px;
+    padding: 65px 0;
   }
 
   .ncd-cta h2 {
-    font-size: 42px;
+    font-size: 31px;
+    letter-spacing: -0.7px;
   }
 
   .ncd-cta p {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+/* ==================== SMALL MOBILE ==================== */
+
+@media (max-width: 380px) {
+  .ncd-container {
+    width: calc(100% - 28px);
   }
 
-  .ncd-btn {
-    width: 100%;
-    max-width: 300px;
+  .ncd-hero {
+    width: calc(100% - 20px);
+    padding: 25px 17px;
+  }
+
+  .ncd-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .ncd-hero-image {
+    height: 220px;
+  }
+
+  .ncd-intro h2,
+  .ncd-section-heading h2,
+  .ncd-monitoring-content h2,
+  .ncd-audience-heading h2 {
+    font-size: 27px;
+  }
+
+  .ncd-program-card {
+    padding: 21px 18px;
+  }
+
+  .ncd-benefit-card {
+    padding: 18px 14px;
+  }
+
+  .ncd-cta h2 {
+    font-size: 28px;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .ncd-page *,
+  .ncd-page *::before,
+  .ncd-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

@@ -1,5 +1,6 @@
+
 /* =========================================
-   CONTACT
+   CONTACT SECTION
 ========================================= */
 
 .contact-section {
@@ -9,11 +10,11 @@
 }
 
 .contact-container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-
   display: grid;
-  grid-template-columns: 0.9fr 1fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
   gap: 80px;
   align-items: center;
 }
@@ -21,13 +22,14 @@
 /* ---------- CONTACT INFO ---------- */
 
 .contact-info {
+  width: 100%;
   max-width: 560px;
+  min-width: 0;
 }
 
 .contact-info .section-label {
   display: inline-block;
   margin-bottom: 14px;
-
   color: #20b69e;
   font-size: 13px;
   font-weight: 700;
@@ -37,9 +39,9 @@
 
 .contact-info h2 {
   margin: 0 0 20px;
-
   color: #16302c;
-  font-size: 46px;
+  font-size: clamp(34px, 3.5vw, 46px);
+  font-weight: 800;
   line-height: 1.15;
   letter-spacing: -1px;
 }
@@ -51,7 +53,6 @@
 .contact-info > p {
   max-width: 520px;
   margin: 0;
-
   color: #687c77;
   font-size: 16px;
   line-height: 1.8;
@@ -66,7 +67,6 @@
 .contact-phone span {
   display: block;
   margin-bottom: 7px;
-
   color: #71827e;
   font-size: 13px;
 }
@@ -76,7 +76,7 @@
   font-size: 24px;
   font-weight: 800;
   text-decoration: none;
-
+  overflow-wrap: anywhere;
   transition: color 0.3s ease;
 }
 
@@ -84,87 +84,120 @@
   color: #20b69e;
 }
 
-/* ---------- FORM ---------- */
+/* ---------- FORM CARD ---------- */
 
 .contact-form {
+  width: 100%;
+  min-width: 0;
   padding: 34px;
-
   border: 1px solid #e1ece9;
   border-radius: 24px;
-
   background: #ffffff;
-
   box-shadow: 0 20px 50px rgba(22, 48, 44, 0.08);
 }
 
-.form-group {
-  margin-bottom: 24px;
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
 }
 
-.form-group > label {
-  display: block;
-  margin-bottom: 8px;
+/* ---------- FORM GROUP ---------- */
 
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.contact-form .form-group > label {
+  display: block;
+  margin: 0;
   color: #16302c;
   font-size: 13px;
   font-weight: 700;
+  line-height: 1.5;
 }
 
 /* ---------- INPUTS ---------- */
 
-.form-group input[type="tel"],
-.form-group input[type="email"] {
+.contact-form .form-group input,
+.contact-form .form-group select,
+.contact-form .form-group textarea {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   box-sizing: border-box;
-
+  margin: 0;
   padding: 14px 16px;
-
   border: 1px solid #dce9e5;
   border-radius: 10px;
-
   outline: none;
-
   background: #ffffff;
   color: #16302c;
-
   font-family: inherit;
   font-size: 14px;
-
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.5;
+  box-shadow: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
-.form-group input::placeholder {
+.contact-form .form-group input,
+.contact-form .form-group select {
+  height: 50px;
+}
+
+.contact-form .form-group textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.contact-form .form-group input::placeholder,
+.contact-form .form-group textarea::placeholder {
   color: #9aa9a5;
+  opacity: 1;
 }
 
-.form-group input:focus {
+.contact-form .form-group input:focus,
+.contact-form .form-group select:focus,
+.contact-form .form-group textarea:focus {
   border-color: #20b69e;
-  box-shadow: 0 0 0 3px rgba(32, 182, 158, 0.10);
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(32, 182, 158, 0.12);
 }
 
-/* ---------- CHECKBOXES ---------- */
+/* ---------- CHECKBOX GRID ---------- */
 
 .checkbox-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
 .checkbox-grid label {
   display: flex;
   align-items: center;
-  gap: 8px;
-
+  gap: 9px;
+  min-width: 0;
+  min-height: 47px;
   padding: 12px;
-
   border: 1px solid #e2ece9;
   border-radius: 10px;
-
+  background: #ffffff;
   color: #526661;
   font-size: 13px;
-
+  line-height: 1.5;
   cursor: pointer;
-
   transition:
     border-color 0.3s ease,
     background 0.3s ease;
@@ -172,32 +205,37 @@
 
 .checkbox-grid label:hover {
   border-color: #20b69e;
-  background: #f7fbfa;
+  background: #f4fbf8;
 }
 
 .checkbox-grid input {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin: 0;
   accent-color: #20b69e;
+  cursor: pointer;
 }
 
-/* ---------- BUTTON ---------- */
+/* ---------- SUBMIT BUTTON ---------- */
 
 .contact-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
-
+  min-height: 52px;
+  margin: 0;
   padding: 15px 20px;
-
   border: none;
   border-radius: 30px;
-
   background: #20b69e;
   color: #ffffff;
-
   font-family: inherit;
   font-size: 14px;
   font-weight: 700;
-
   cursor: pointer;
-
   transition:
     background 0.3s ease,
     transform 0.3s ease,
@@ -207,68 +245,16 @@
 .contact-form button:hover {
   background: #1ca08a;
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(32, 182, 158, 0.2);
+}
 
-  box-shadow: 0 10px 25px rgba(32, 182, 158, 0.20);
+.contact-form button:focus-visible {
+  outline: 3px solid rgba(32, 182, 158, 0.35);
+  outline-offset: 4px;
 }
 
 /* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 800px) {
-
-  .contact-section {
-    padding: 90px 20px;
-  }
-
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
-  .contact-info {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .contact-info > p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 500px) {
-
-  .contact-section {
-    padding: 75px 18px;
-  }
-
-  .contact-info h2 {
-    font-size: 36px;
-  }
-
-  .contact-info > p {
-    font-size: 15px;
-  }
-
-  .contact-form {
-    padding: 24px 20px;
-  }
-
-  .checkbox-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-
-  /* =========================================
-   RECOGNITION
+   RECOGNITION SECTION
 ========================================= */
 
 .recognition-section {
@@ -284,6 +270,7 @@
 }
 
 .recognition-container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -306,8 +293,9 @@
 .recognition-heading h2 {
   margin: 0 0 16px;
   color: #16302c;
-  font-size: 42px;
-  line-height: 1.15;
+  font-size: clamp(30px, 3.5vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .recognition-heading h2 span {
@@ -319,34 +307,36 @@
   margin: 0 auto;
   color: #71827e;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .recognition-strip {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
 }
 
 .recognition-card {
-  min-height: 110px;
-  padding: 22px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  min-width: 0;
+  min-height: 110px;
+  padding: 22px 15px;
   border: 1px solid #e3eeeb;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.9);
+  text-align: center;
   box-shadow: 0 10px 30px rgba(22, 48, 44, 0.06);
-  transition: transform 0.3s ease,
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .recognition-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   border-color: #20b69e;
   box-shadow: 0 15px 35px rgba(22, 48, 44, 0.09);
 }
@@ -355,12 +345,272 @@
   margin-bottom: 7px;
   color: #16302c;
   font-size: 16px;
+  line-height: 1.4;
 }
 
 .recognition-card span {
   color: #7a8985;
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
+/* =========================================
+   TABLET
+========================================= */
 
+@media (max-width: 1000px) {
+  .contact-container {
+    gap: 35px;
+  }
+
+  .contact-form {
+    padding: 27px;
+  }
+
+  .contact-info h2 {
+    font-size: 36px;
+  }
+
+  .recognition-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MOBILE / SMALL TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .contact-section {
+    padding: 75px 20px;
+  }
+
+  .contact-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .contact-info {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .contact-info > p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .contact-form {
+    padding: 28px;
+  }
+
+  .recognition-section {
+    padding: 65px 20px;
+  }
+
+  .recognition-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+  .contact-section {
+    padding: 55px 16px;
+  }
+
+  .contact-info h2 {
+    font-size: 34px;
+  }
+
+  .contact-info > p {
+    font-size: 14px;
+  }
+
+  .contact-phone a {
+    font-size: 21px;
+  }
+
+  .contact-form {
+    padding: 23px 17px;
+    border-radius: 17px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .recognition-section {
+    padding: 55px 16px;
+  }
+
+  .recognition-heading {
+    margin-bottom: 30px;
+  }
+
+  .recognition-heading h2 {
+    font-size: 30px;
+  }
+
+  .recognition-strip {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .recognition-card {
+    min-height: 95px;
+  }
+}
+
+/* =========================================
+   FIX: CHECKBOXES + MESSAGE BOX
+   Add at the END of your CSS file
+========================================= */
+
+/* Checkbox grid layout */
+.contact-form .checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Each checkbox option */
+.contact-form .checkbox-grid label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  margin: 0;
+  padding: 12px 14px;
+
+  border: 1px solid #e2ece9;
+  border-radius: 10px;
+  background: #fbfdfc;
+
+  color: #526661;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-form .checkbox-grid label:hover {
+  border-color: #20b69e;
+  background: #f1faf7;
+}
+
+/* IMPORTANT: reset global input styles */
+.contact-form .checkbox-grid input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+
+  display: inline-block;
+  flex: 0 0 16px;
+
+  width: 16px !important;
+  min-width: 16px;
+  max-width: 16px;
+  height: 16px !important;
+  min-height: 16px;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: initial;
+  border-radius: 0;
+  background: initial;
+  box-shadow: none;
+
+  accent-color: #20b69e;
+  cursor: pointer;
+}
+
+/* Keep option text beside checkbox */
+.contact-form .checkbox-grid label span {
+  display: inline;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* =========================================
+   MESSAGE TEXTAREA
+========================================= */
+
+.contact-form .form-group textarea,
+.contact-form textarea {
+  display: block;
+  width: 100% !important;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 100px;
+  height: 70px;
+
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 15px 16px !important;
+
+  border: 1px solid #dce9e5;
+  border-radius: 10px;
+  outline: none;
+
+  background: #ffffff;
+  color: #16302c;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+
+  resize: vertical;
+  box-shadow: none;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form textarea::placeholder {
+  color: #9aa9a5;
+  opacity: 1;
+}
+
+.contact-form textarea:focus {
+  border-color: #20b69e;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(32, 182, 158, 0.12);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 500px) {
+  .contact-form .checkbox-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .contact-form .checkbox-grid label {
+    min-height: 46px;
+    padding: 12px;
+  }
+
+  .contact-form .form-group textarea,
+  .contact-form textarea {
+    min-height: 120px;
+    height: 120px;
+  }
+}
