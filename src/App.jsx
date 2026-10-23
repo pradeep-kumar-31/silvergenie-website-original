@@ -63,7 +63,6 @@ import TravelWithCare from "./pages/TravelWithCare";
 
 // =========================================================
 // HOME PAGE
-// ContactSection is rendered ONLY on the Home page.
 // =========================================================
 function Home() {
   return (
@@ -92,8 +91,6 @@ function Home() {
 
 // =========================================================
 // SHARED PAGE LAYOUT
-// Navbar, Footer and Chatbot are shared by inner pages.
-// ContactSection is NOT included here.
 // =========================================================
 function PageLayout({ children }) {
   return (
@@ -127,12 +124,10 @@ function NotFound() {
       >
         <h1>404 — Page Not Found</h1>
 
-        <p>
-          Sorry, the page you are looking for does not exist.
-        </p>
+        <p>Sorry, the page you are looking for does not exist.</p>
 
         <a
-          href="/"
+          href="/silvergenie-website-original/"
           style={{
             display: "inline-block",
             marginTop: "20px",
@@ -156,23 +151,14 @@ function NotFound() {
 // =========================================================
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/silvergenie-website-original">
       <ScrollToTop />
 
       <Routes>
-        {/* =========================================
-            HOME PAGE
-            URL: /
-        ========================================= */}
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        {/* HOME PAGE */}
+        <Route path="/" element={<Home />} />
 
-        {/* =========================================
-            ABOUT
-            URL: /about
-        ========================================= */}
+        {/* ABOUT */}
         <Route
           path="/about"
           element={
@@ -182,10 +168,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            REFUND POLICY
-            URL: /refund-policy
-        ========================================= */}
+        {/* REFUND POLICY */}
         <Route
           path="/refund-policy"
           element={
@@ -195,10 +178,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            BLOG
-            URL: /blog
-        ========================================= */}
+        {/* BLOG */}
         <Route
           path="/blog"
           element={
@@ -208,9 +188,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            BLOG ARTICLES
-        ========================================= */}
+        {/* BLOG ARTICLES */}
         <Route
           path="/blog/invest-in-a-caregiver"
           element={
@@ -238,10 +216,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            WANDERLUST DIARIES
-            URL: /wanderlust-diaries
-        ========================================= */}
+        {/* WANDERLUST DIARIES */}
         <Route
           path="/wanderlust-diaries"
           element={
@@ -251,13 +226,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            WANDERLUST STORIES
-            Examples:
-            /wanderlust/bhutan
-            /wanderlust/assam
-            /wanderlust/meghalaya
-        ========================================= */}
+        {/* WANDERLUST STORIES */}
         <Route
           path="/wanderlust/:slug"
           element={
@@ -267,10 +236,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            ELDER CARE
-            URL: /elder-care
-        ========================================= */}
+        {/* ELDER CARE */}
         <Route
           path="/elder-care"
           element={
@@ -280,10 +246,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            HOME CARE
-            URL: /home-care
-        ========================================= */}
+        {/* HOME CARE */}
         <Route
           path="/home-care"
           element={
@@ -293,10 +256,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            EMERGENCY CARE
-            URL: /emergency-care
-        ========================================= */}
+        {/* EMERGENCY CARE */}
         <Route
           path="/emergency-care"
           element={
@@ -306,10 +266,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            DIABETES MANAGEMENT
-            URL: /diabetes-management
-        ========================================= */}
+        {/* DIABETES MANAGEMENT */}
         <Route
           path="/diabetes-management"
           element={
@@ -319,10 +276,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            WELLNESS CARE
-            URL: /wellness-care
-        ========================================= */}
+        {/* WELLNESS CARE */}
         <Route
           path="/wellness-care"
           element={
@@ -332,10 +286,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            HEALTHCARE MANPOWER
-            URL: /healthcare-manpower
-        ========================================= */}
+        {/* HEALTHCARE MANPOWER */}
         <Route
           path="/healthcare-manpower"
           element={
@@ -345,10 +296,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            HEALTHCARE CONVENIENCE
-            URL: /healthcare-convenience
-        ========================================= */}
+        {/* HEALTHCARE CONVENIENCE */}
         <Route
           path="/healthcare-convenience"
           element={
@@ -358,10 +306,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            CARE MANAGEMENT
-            URL: /care-management
-        ========================================= */}
+        {/* CARE MANAGEMENT */}
         <Route
           path="/care-management"
           element={
@@ -371,10 +316,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            SUBSCRIPTION PLANS
-            URL: /subscription-plans
-        ========================================= */}
+        {/* SUBSCRIPTION PLANS */}
         <Route
           path="/subscription-plans"
           element={
@@ -384,13 +326,7 @@ function App() {
           }
         />
 
-        {/* =========================================
-            TRAVEL WITH CARE
-            URL: /travel-with-care
-
-            TravelWithCare is rendered only here.
-            ContactSection is not added to this page.
-        ========================================= */}
+        {/* TRAVEL WITH CARE */}
         <Route
           path="/travel-with-care"
           element={
@@ -400,13 +336,8 @@ function App() {
           }
         />
 
-        {/* =========================================
-            404 — UNKNOWN ROUTES
-        ========================================= */}
-        <Route
-          path="*"
-          element={<NotFound />}
-        />
+        {/* 404 PAGE */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
