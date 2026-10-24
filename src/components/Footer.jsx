@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SilverGenieLogo from "../assets/SilverGenieLogo.png";
+const SilverGenieLogo = `${import.meta.env.BASE_URL}SilverGenieLogo.png`;
 import "../styles/Footer.css";
 
 function Footer() {
@@ -8,14 +8,8 @@ function Footer() {
 
   return (
     <footer className="sg-footer">
-      {/* =========================================
-          MAIN FOOTER
-      ========================================= */}
-
       <div className="sg-footer-container">
-        {/* =========================================
-            BRAND SECTION
-        ========================================= */}
+        {/* BRAND SECTION */}
         <div className="sg-footer-brand">
           <Link
             to="/"
@@ -37,11 +31,8 @@ function Footer() {
             compassionate care and dependable support.
           </p>
 
-          {/* SOCIAL MEDIA ICONS */}
-
+          {/* SOCIAL MEDIA */}
           <div className="sg-footer-socials">
-            {/* FACEBOOK */}
-
             <a
               href="https://www.facebook.com/yoursilvergenie"
               target="_blank"
@@ -54,8 +45,6 @@ function Footer() {
                 <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.55c0-.93.26-1.56 1.6-1.56h1.7V3.13A22 22 0 0 0 14.3 3c-2.48 0-4.18 1.52-4.18 4.3v2.3H7.3v3.2h2.82V21h3.38Z" />
               </svg>
             </a>
-
-            {/* LINKEDIN */}
 
             <a
               href="https://www.linkedin.com/company/silvergenie/"
@@ -70,10 +59,8 @@ function Footer() {
               </svg>
             </a>
 
-            {/* INSTAGRAM */}
-
             <a
-              href="https://www.instagram.com/yoursilvergenie/?igshid=YmMyMTA2M2Y="
+              href="https://www.instagram.com/yoursilvergenie/"
               target="_blank"
               rel="noopener noreferrer"
               className="sg-social instagram"
@@ -91,7 +78,6 @@ function Footer() {
                   stroke="currentColor"
                   strokeWidth="2"
                 />
-
                 <circle
                   cx="12"
                   cy="12"
@@ -100,12 +86,9 @@ function Footer() {
                   stroke="currentColor"
                   strokeWidth="2"
                 />
-
                 <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
               </svg>
             </a>
-
-            {/* WHATSAPP */}
 
             <a
               href="https://api.whatsapp.com/send?phone=9188897588885"
@@ -123,7 +106,6 @@ function Footer() {
                   strokeWidth="1.8"
                   strokeLinejoin="round"
                 />
-
                 <path
                   d="M8.3 7.8c-.3.3-.7.8-.7 1.5s.5 1.7.9 2.3c.5.7 1.5 1.8 3 2.5 1.2.6 1.8.7 2.3.6.4-.1 1.1-.5 1.3-1 .2-.4.2-.8.1-.9-.1-.1-.3-.2-.6-.3l-1.4-.7c-.2-.1-.4-.1-.5.2l-.6.7c-.1.2-.3.2-.5.1-.3-.1-1-.4-1.6-1-.5-.5-.9-1.1-1-1.4-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.1-.5l-.6-1.4c-.1-.3-.3-.4-.5-.4h-.2Z"
                   fill="currentColor"
@@ -136,53 +118,35 @@ function Footer() {
         {/* QUICK LINKS */}
         <div className="sg-footer-column sg-footer-quick-links">
           <h3>Quick Links</h3>
-
           <Link to="/">Home</Link>
-
           <Link to="/services">Services</Link>
-
           <Link to="/care-plan">Care Plan</Link>
-
           <Link to="/travel-with-care">Travel With Care</Link>
-
           <Link to="/blog">Blogs & Articles</Link>
-
           <Link to="/resources">Resources</Link>
-
           <Link to="/contact">Contact Us</Link>
-
           <Link to="/about">About Us</Link>
         </div>
-        {/* =========================================
-            OUR SERVICES
-        ========================================= */}
+
+        {/* OUR SERVICES */}
         <div className="sg-footer-column">
           <h3>Our Services</h3>
-
           <Link to="/care-management">Care Management</Link>
-
           <Link to="/subscription-plans">Subscription Plans</Link>
-
           <Link to="/travel-with-care">Travel With Care</Link>
-
           <a href="/#services">Elder Care</a>
-
           <a href="/#services">Home Care</a>
-
           <a href="/#services">Healthcare Assistance</a>
         </div>
-        {/* =========================================
-            CONTACT INFORMATION
-        ========================================= */}
+
+        {/* CONTACT INFORMATION */}
         <div className="sg-footer-column sg-footer-contact">
           <h3>Contact Us</h3>
 
           <p className="sg-footer-contact-label">Call our support team</p>
-
           <a href="tel:18002030527">1800 203 0527</a>
 
           <p className="sg-footer-contact-label">Email us</p>
-
           <a href="mailto:info@yoursilvergenie.com">info@yoursilvergenie.com</a>
 
           <a
@@ -192,8 +156,6 @@ function Footer() {
           >
             www.yoursilvergenie.com
           </a>
-
-          {/* CTA BUTTON */}
 
           <a
             href="https://api.whatsapp.com/send?phone=9810534232"
@@ -207,10 +169,7 @@ function Footer() {
         </div>
       </div>
 
-      {/* =========================================
-          FOOTER BOTTOM
-      ========================================= */}
-
+      {/* FOOTER BOTTOM */}
       <div className="sg-footer-bottom">
         <div className="sg-footer-bottom-inner">
           <p className="sg-footer-copyright">
@@ -219,11 +178,8 @@ function Footer() {
 
           <div className="sg-footer-legal-links">
             <Link to="/privacy-policy">Privacy Policy</Link>
-
             <span className="sg-footer-divider">|</span>
-
             <Link to="/refund-policy">Refund Policy</Link>
-
             <span className="sg-footer-divider">|</span>
 
             <a
@@ -231,7 +187,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Terms & Conditions
+              Terms &amp; Conditions
             </a>
           </div>
         </div>

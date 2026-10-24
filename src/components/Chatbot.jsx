@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SilverGenieLogo from "../assets/SilverGenieLogo.png";
+const SilverGenieLogo = `${import.meta.env.BASE_URL}sg-logo.png`;
 import "./Chatbot.css";
 
 function Chatbot() {
@@ -10,69 +10,56 @@ function Chatbot() {
       {/* Floating Chatbot Button */}
       {!open && (
         <div className="chatbot-launcher">
-
-          <div className="chatbot-hint">
-            Need help? Chat with us
-          </div>
+          <div className="chatbot-hint">Need help? Chat with us</div>
 
           <button
+            type="button"
             className="chatbot-button"
             onClick={() => setOpen(true)}
             aria-label="Open SilverGenie Chatbot"
           >
             <span className="chatbot-pulse"></span>
 
-            <img
-              src={SilverGenieLogo}
-              alt="SilverGenie"
-            />
+            <img src={SilverGenieLogo} alt="SilverGenie" />
 
             <span className="chatbot-icon">✦</span>
           </button>
-
         </div>
       )}
 
       {/* Chat Window */}
       {open && (
         <div className="chatbot-window">
-
           {/* Header */}
           <div className="chatbot-header">
-
             <div className="chatbot-brand">
-
               <div className="chatbot-logo-box">
-                <img
-                  src={SilverGenieLogo}
-                  alt="SilverGenie"
-                />
+                <img src={SilverGenieLogo} alt="SilverGenie" />
               </div>
 
               <div>
                 <strong>SilverGenie</strong>
                 <span>Healthcare Assistant</span>
               </div>
-
             </div>
 
             <button
+              type="button"
               className="chatbot-close"
               onClick={() => setOpen(false)}
               aria-label="Close chatbot"
             >
               ×
             </button>
-
           </div>
 
           {/* n8n Chat */}
           <iframe
             src="https://silvergenie.app.n8n.cloud/webhook/fc6a21f1-339d-4f79-8739-052de4ed4939/chat"
-            title="SilverGenie Chatbot"
+            title="SilverGenie Healthcare Chatbot"
             className="chatbot-frame"
+            allow="microphone"
           />
-
         </div>
       )}
     </>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import SilverGenieLogo from "../assets/SilverGenieLogo.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,19 +8,16 @@ function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // =========================================================
-  // CLOSE ALL MENUS
-  // =========================================================
+  // Logo from the public folder
+  const SilverGenieLogo = `${import.meta.env.BASE_URL}sg-logo.png`;
 
+  // Close all menus
   const closeMenu = () => {
     setMenuOpen(false);
     setBlogDropdownOpen(false);
   };
 
-  // =========================================================
-  // HOME
-  // =========================================================
-
+  // Navigate home
   const goHome = () => {
     closeMenu();
 
@@ -35,10 +31,7 @@ function Navbar() {
     }
   };
 
-  // =========================================================
-  // HOME SECTION
-  // =========================================================
-
+  // Navigate to a section on the home page
   const goToHomeSection = (sectionId) => {
     closeMenu();
 
@@ -56,64 +49,35 @@ function Navbar() {
     }
   };
 
-  // =========================================================
-  // BLOG ACTIVE
-  // =========================================================
-
+  // Blog active state
   const isBlogActive =
     location.pathname === "/blog" ||
     location.pathname.startsWith("/blog/") ||
     location.pathname === "/wanderlust-diaries";
 
-  // =========================================================
-  // WANDERLUST DIARIES
-  // =========================================================
-
+  // Open Wanderlust Diaries
   const openWanderlustDiaries = () => {
     closeMenu();
-
     navigate("/wanderlust-diaries");
   };
 
   return (
     <header className="navbar">
-
       <div className="navbar-container">
-
-        {/* =================================================
-            LOGO
-        ================================================= */}
-
-        <div
+        {/* LOGO */}
+        <Link
+          to="/"
           className="navbar-logo"
-          onClick={goHome}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(event) => {
-            if (
-              event.key === "Enter" ||
-              event.key === " "
-            ) {
-              goHome();
-            }
-          }}
+          onClick={closeMenu}
+          aria-label="SilverGenie Home"
         >
-          <img
-            src={SilverGenieLogo}
-            alt="SilverGenie"
-          />
-        </div>
+          <img src={SilverGenieLogo} alt="SilverGenie" />
+        </Link>
 
-
-        {/* =================================================
-            MOBILE MENU
-        ================================================= */}
-
+        {/* MOBILE MENU BUTTON */}
         <button
           type="button"
-          className={`navbar-toggle ${
-            menuOpen ? "active" : ""
-          }`}
+          className={`navbar-toggle ${menuOpen ? "active" : ""}`}
           onClick={() => {
             setMenuOpen((previous) => !previous);
             setBlogDropdownOpen(false);
@@ -126,144 +90,81 @@ function Navbar() {
           <span></span>
         </button>
 
-
-        {/* =================================================
-            NAVIGATION
-        ================================================= */}
-
-        <nav
-          className={`navbar-menu ${
-            menuOpen ? "open" : ""
-          }`}
-        >
-
-          {/* =================================================
-              HOME
-          ================================================= */}
-
+        {/* NAVIGATION */}
+        <nav className={`navbar-menu ${menuOpen ? "open" : ""}`}>
+          {/* HOME */}
           <button
             type="button"
             className={`navbar-section-link ${
-              location.pathname === "/" &&
-              !location.hash
-                ? "active"
-                : ""
+              location.pathname === "/" && !location.hash ? "active" : ""
             }`}
             onClick={goHome}
           >
             Home
           </button>
 
-
-          {/* =================================================
-              SERVICES
-          ================================================= */}
-
+          {/* SERVICES */}
           <button
             type="button"
             className="navbar-section-link"
-            onClick={() =>
-              goToHomeSection("services")
-            }
+            onClick={() => goToHomeSection("services")}
           >
             Services
           </button>
 
-
-          {/* =================================================
-              CARE PLAN
-          ================================================= */}
-
+          {/* CARE PLAN */}
           <Link
             to="/subscription-plans"
             className={
-              location.pathname === "/subscription-plans"
-                ? "active"
-                : ""
+              location.pathname === "/subscription-plans" ? "active" : ""
             }
             onClick={closeMenu}
           >
             Care Plan
           </Link>
 
-
-          {/* =================================================
-              TRAVEL WITH CARE
-          ================================================= */}
-
+          {/* TRAVEL WITH CARE */}
           <Link
             to="/travel-with-care"
             className={
-              location.pathname === "/travel-with-care"
-                ? "active"
-                : ""
+              location.pathname === "/travel-with-care" ? "active" : ""
             }
             onClick={closeMenu}
           >
             Travel With Care
           </Link>
 
-
-          {/* =================================================
-              BLOGS & ARTICLES
-          ================================================= */}
-
+          {/* BLOGS & ARTICLES */}
           <div
             className={`navbar-dropdown ${
-              blogDropdownOpen
-                ? "dropdown-open"
-                : ""
+              blogDropdownOpen ? "dropdown-open" : ""
             }`}
           >
-
-            {/* DROPDOWN BUTTON */}
-
             <button
               type="button"
               className={`navbar-dropdown-button ${
-                isBlogActive
-                  ? "active"
-                  : ""
+                isBlogActive ? "active" : ""
               }`}
-              onClick={() =>
-                setBlogDropdownOpen(
-                  (previous) => !previous
-                )
-              }
+              onClick={() => setBlogDropdownOpen((previous) => !previous)}
               aria-expanded={blogDropdownOpen}
             >
-              <span>
-                Blogs & Articles
-              </span>
+              <span>Blogs & Articles</span>
 
               <span
                 className={`navbar-dropdown-arrow ${
-                  blogDropdownOpen
-                    ? "rotate"
-                    : ""
+                  blogDropdownOpen ? "rotate" : ""
                 }`}
               >
                 ↓
               </span>
             </button>
 
-
-            {/* =================================================
-                DROPDOWN
-            ================================================= */}
-
+            {/* DROPDOWN MENU */}
             <div
               className={`navbar-dropdown-menu ${
-                blogDropdownOpen
-                  ? "show"
-                  : ""
+                blogDropdownOpen ? "show" : ""
               }`}
             >
-
-              {/* =================================================
-                  SENIOR CARE CHRONICLES
-              ================================================= */}
-
               <Link
                 to="/blog"
                 className={
@@ -274,135 +175,71 @@ function Navbar() {
                 }
                 onClick={closeMenu}
               >
-
-                <span className="dropdown-icon">
-                  ✦
-                </span>
+                <span className="dropdown-icon">✦</span>
 
                 <span className="dropdown-content">
-
-                  <strong>
-                    Senior Care Chronicles
-                  </strong>
-
-                  <small>
-                    Senior care & ageing insights
-                  </small>
-
+                  <strong>Senior Care Chronicles</strong>
+                  <small>Senior care & ageing insights</small>
                 </span>
-
               </Link>
-
-
-              {/* =================================================
-                  WANDERLUST DIARIES
-              ================================================= */}
 
               <button
                 type="button"
                 className={
-                  location.pathname ===
-                  "/wanderlust-diaries"
+                  location.pathname === "/wanderlust-diaries"
                     ? "dropdown-active"
                     : ""
                 }
                 onClick={openWanderlustDiaries}
               >
-
-                <span className="dropdown-icon">
-                  ✈
-                </span>
+                <span className="dropdown-icon">✈</span>
 
                 <span className="dropdown-content">
-
-                  <strong>
-                    Wanderlust Diaries
-                  </strong>
-
-                  <small>
-                    Travel experiences with care
-                  </small>
-
+                  <strong>Wanderlust Diaries</strong>
+                  <small>Travel experiences with care</small>
                 </span>
-
               </button>
-
             </div>
-
           </div>
 
-
-          {/* =================================================
-              RESOURCES
-          ================================================= */}
-
+          {/* RESOURCES */}
           <button
             type="button"
             className="navbar-section-link"
-            onClick={() =>
-              goToHomeSection("resources")
-            }
+            onClick={() => goToHomeSection("resources")}
           >
             Resources
           </button>
 
-
-          {/* =================================================
-              CONTACT
-          ================================================= */}
-
+          {/* CONTACT */}
           <button
             type="button"
             className="navbar-section-link"
-            onClick={() =>
-              goToHomeSection("contact")
-            }
+            onClick={() => goToHomeSection("contact")}
           >
             Contact Us
           </button>
 
-
-          {/* =================================================
-              ABOUT
-          ================================================= */}
-
+          {/* ABOUT */}
           <Link
             to="/about"
-            className={
-              location.pathname === "/about"
-                ? "active"
-                : ""
-            }
+            className={location.pathname === "/about" ? "active" : ""}
             onClick={closeMenu}
           >
             About Us
           </Link>
 
-
-          {/* =================================================
-              ENQUIRE NOW
-          ================================================= */}
-
+          {/* ENQUIRE NOW */}
           <button
             type="button"
             className="navbar-enquire"
-            onClick={() =>
-              goToHomeSection("contact")
-            }
+            onClick={() => goToHomeSection("contact")}
           >
-            <span>
-              Enquire Now
-            </span>
-
-            <span className="navbar-enquire-arrow">
-              →
-            </span>
+            <span>Enquire Now</span>
+            <span className="navbar-enquire-arrow">→</span>
           </button>
-
         </nav>
-
       </div>
-
     </header>
   );
 }
