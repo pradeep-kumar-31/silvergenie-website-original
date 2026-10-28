@@ -1,5 +1,7 @@
 import "../styles/ElderCare.css";
 
+const elderCareHeroImage = `${import.meta.env.BASE_URL}image/services/senoir-care-page.jpeg`;
+
 function ElderCare() {
   const homeCareServices = [
     "Personal Care & Hygiene",
@@ -172,8 +174,7 @@ function ElderCare() {
         "We offer a comprehensive range of at-home services, including emergency and wellness subscription plans, attendants, nurses, home ICU setup, diagnostics, vaccination and more. Our services are tailored to meet the unique needs of each individual.",
     },
     {
-      question:
-        "How quickly can I arrange your services for my family member?",
+      question: "How quickly can I arrange your services for my family member?",
       answer:
         "SilverGenie is committed to providing rapid assistance. We can arrange 24x7 Caregivers within a day, ensuring that your loved ones receive the care they need promptly.",
     },
@@ -199,24 +200,15 @@ function ElderCare() {
     },
   ];
 
-  // Phone number for callback buttons.
   const callbackPhone = "18002030527";
-
-  // Contact section URL.
-  // This works with the Vite BASE_URL configured for your project.
   const contactUrl = `${import.meta.env.BASE_URL}#contact`;
 
   return (
     <div className="elder-care-page">
-      {/* =====================================================
-          HERO
-      ===================================================== */}
-
+      {/* HERO */}
       <section className="elder-care-hero">
         <div className="elder-care-hero-content">
-          <span className="elder-care-label">
-            YOUR NEW LIFE BEGINS WITH US
-          </span>
+          <span className="elder-care-label">YOUR NEW LIFE BEGINS WITH US</span>
 
           <h1>
             Comprehensive
@@ -224,8 +216,8 @@ function ElderCare() {
           </h1>
 
           <p>
-            SilverGenie provides advanced healthcare assistance
-            and personalized care for seniors.
+            SilverGenie provides advanced healthcare assistance and personalized
+            care for seniors.
           </p>
 
           <div className="elder-care-stats">
@@ -233,61 +225,49 @@ function ElderCare() {
               <strong>100%</strong>
               <span>Peace of Mind</span>
             </div>
-
             <div>
               <strong>20+</strong>
               <span>Lives Saved</span>
             </div>
-
             <div>
               <strong>4.8/5</strong>
               <span>Star Rating</span>
             </div>
-
             <div>
               <strong>1000+</strong>
               <span>Registered Customers</span>
             </div>
           </div>
 
-          <a
-            href={`tel:${callbackPhone}`}
-            className="elder-care-primary-btn"
-          >
+          <a href={`tel:${callbackPhone}`} className="elder-care-primary-btn">
             Request a Callback →
           </a>
         </div>
 
         <div className="elder-care-hero-image">
           <img
-            src={`${import.meta.env.BASE_URL}image/services/elder-care.jpg`}
-            alt="SilverGenie Elder Care"
+            src={elderCareHeroImage}
+            alt="Senior receiving care at home"
+            onError={(event) => {
+              console.error(
+                "Elder care image failed to load:",
+                event.currentTarget.src,
+              );
+            }}
           />
         </div>
       </section>
 
-      {/* =====================================================
-          LOCATION
-      ===================================================== */}
-
+      {/* LOCATION */}
       <section className="elder-care-location">
         <span>AVAILABLE IN</span>
-
-        <p>
-          Delhi, Gurugram, Noida & Kolkata Metropolitan Area
-        </p>
+        <p>Delhi, Gurugram, Noida &amp; Kolkata Metropolitan Area</p>
       </section>
 
-      {/* =====================================================
-          SPECIALIZED CARE
-      ===================================================== */}
-
+      {/* SPECIALIZED CARE */}
       <section className="elder-care-specialized">
         <div className="elder-care-section-heading">
-          <span>
-            SPECIALIZED ELDER CARE AND SUPPORT
-          </span>
-
+          <span>SPECIALIZED ELDER CARE AND SUPPORT</span>
           <h2>
             Select a Service
             <br />
@@ -296,83 +276,50 @@ function ElderCare() {
         </div>
 
         <div className="elder-care-service-grid">
-          {/* HOME ATTENDANT */}
-
           <article className="elder-care-service-card">
             <span className="elder-care-service-label">
               COMPASSIONATE COMPANIONSHIP
             </span>
-
-            <h3>
-              Certified Home Attendant Services for Seniors
-            </h3>
-
+            <h3>Certified Home Attendant Services for Seniors</h3>
             <strong className="elder-care-price">
               Charges from ₹ 999-1299/day*
             </strong>
-
-            <span className="elder-care-duty">
-              24/7 Duty Available
-            </span>
-
+            <span className="elder-care-duty">24/7 Duty Available</span>
             <ul>
               {homeCareServices.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-
             <small>
-              *Prices may vary by: Medical Condition, City,
-              Customizations (if any)
+              *Prices may vary by: Medical Condition, City, Customizations (if
+              any)
             </small>
           </article>
 
-          {/* NURSING */}
-
           <article className="elder-care-service-card">
-            <span className="elder-care-service-label">
-              HEALING HANDS
-            </span>
-
-            <h3>
-              Licensed Home Care Nurses
-            </h3>
-
+            <span className="elder-care-service-label">HEALING HANDS</span>
+            <h3>Licensed Home Care Nurses</h3>
             <strong className="elder-care-price">
               Nursing Care Charges start at ₹ 1699 /day
             </strong>
-
             <strong className="elder-care-price">
               ICU Nurse Care Charges start at ₹ 1999 /day
             </strong>
-
-            <span className="elder-care-duty">
-              24/7 Duty Available
-            </span>
-
+            <span className="elder-care-duty">24/7 Duty Available</span>
             <ul>
               {nursingServices.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-
             <small>
-              *Prices may vary by: Medical Condition, City,
-              Customizations (if any)
+              *Prices may vary by: Medical Condition, City, Customizations (if
+              any)
             </small>
           </article>
 
-          {/* DEMENTIA */}
-
           <article className="elder-care-service-card">
-            <span className="elder-care-service-label">
-              GENTLE GUIDANCE
-            </span>
-
-            <h3>
-              Expert Care for Alzheimer's and Dementia Patients
-            </h3>
-
+            <span className="elder-care-service-label">GENTLE GUIDANCE</span>
+            <h3>Expert Care for Alzheimer's and Dementia Patients</h3>
             <ul>
               {dementiaServices.map((item) => (
                 <li key={item}>{item}</li>
@@ -380,37 +327,22 @@ function ElderCare() {
             </ul>
           </article>
 
-          {/* HOLISTIC / AT HOME */}
-
           <article className="elder-care-service-card">
-            <span className="elder-care-service-label">
-              COMFORTING CARE
-            </span>
-
-            <h3>
-              Dedicated Support for Effective Recovery At Home
-            </h3>
-
-            <h4>
-              HOLISTIC GENIE CARE
-            </h4>
-
+            <span className="elder-care-service-label">COMFORTING CARE</span>
+            <h3>Dedicated Support for Effective Recovery At Home</h3>
+            <h4>HOLISTIC GENIE CARE</h4>
             <p>
-              Personalized support designed around ongoing
-              care and wellness needs.
+              Personalized support designed around ongoing care and wellness
+              needs.
             </p>
           </article>
         </div>
       </section>
 
-      {/* =====================================================
-          AT HOME SERVICES
-      ===================================================== */}
-
+      {/* AT HOME SERVICES */}
       <section className="elder-care-home-services">
         <div className="elder-care-home-heading">
           <span>AT HOME SERVICES</span>
-
           <h2>
             Care and support,
             <br />
@@ -420,30 +352,18 @@ function ElderCare() {
 
         <div className="elder-care-home-list">
           {atHomeServices.map((service, index) => (
-            <div
-              className="elder-care-home-item"
-              key={service}
-            >
-              <strong>
-                {String(index + 1).padStart(2, "0")}
-              </strong>
-
+            <div className="elder-care-home-item" key={service}>
+              <strong>{String(index + 1).padStart(2, "0")}</strong>
               <span>{service}</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* =====================================================
-          SUBSCRIPTION PACKAGES
-      ===================================================== */}
-
+      {/* SUBSCRIPTION PACKAGES */}
       <section className="elder-care-plans">
         <div className="elder-care-section-heading">
-          <span>
-            24/7 EMERGENCY & WELLNESS
-          </span>
-
+          <span>24/7 EMERGENCY &amp; WELLNESS</span>
           <h2>
             Subscription
             <br />
@@ -453,55 +373,29 @@ function ElderCare() {
 
         <div className="elder-care-plan-grid">
           {subscriptionPlans.map((plan) => (
-            <article
-              className="elder-care-plan-card"
-              key={plan.name}
-            >
-              <span className="elder-care-plan-name">
-                {plan.name}
-              </span>
-
-              <h3>
-                {plan.price}
-              </h3>
-
-              <p className="elder-care-plan-billing">
-                {plan.text}
-              </p>
-
+            <article className="elder-care-plan-card" key={plan.name}>
+              <span className="elder-care-plan-name">{plan.name}</span>
+              <h3>{plan.price}</h3>
+              <p className="elder-care-plan-billing">{plan.text}</p>
               <ul>
                 {plan.features.map((feature) => (
-                  <li key={feature}>
-                    {feature}
-                  </li>
+                  <li key={feature}>{feature}</li>
                 ))}
               </ul>
-
-              <a
-                href={`tel:${callbackPhone}`}
-                className="elder-care-plan-btn"
-              >
+              <a href={`tel:${callbackPhone}`} className="elder-care-plan-btn">
                 Request a Callback
               </a>
             </article>
           ))}
         </div>
 
-        <p className="elder-care-plan-note">
-          * Ambulance charges on Actuals
-        </p>
+        <p className="elder-care-plan-note">* Ambulance charges on Actuals</p>
       </section>
 
-      {/* =====================================================
-          OTHER SERVICES
-      ===================================================== */}
-
+      {/* OTHER SERVICES */}
       <section className="elder-care-other">
         <div className="elder-care-section-heading">
-          <span>
-            OTHER SERVICES FROM SILVERGENIE
-          </span>
-
+          <span>OTHER SERVICES FROM SILVERGENIE</span>
           <h2>
             More ways we
             <br />
@@ -511,30 +405,18 @@ function ElderCare() {
 
         <div className="elder-care-other-grid">
           {otherServices.map((service, index) => (
-            <article
-              className="elder-care-other-card"
-              key={service}
-            >
-              <span>
-                {String(index + 1).padStart(2, "0")}
-              </span>
-
+            <article className="elder-care-other-card" key={service}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{service}</h3>
             </article>
           ))}
         </div>
       </section>
 
-      {/* =====================================================
-          WHY CHOOSE SILVERGENIE
-      ===================================================== */}
-
+      {/* WHY CHOOSE SILVERGENIE */}
       <section className="elder-care-why">
         <div className="elder-care-section-heading">
-          <span>
-            WHY CHOOSE SILVERGENIE
-          </span>
-
+          <span>WHY CHOOSE SILVERGENIE</span>
           <h2>
             Care you can
             <br />
@@ -544,59 +426,33 @@ function ElderCare() {
 
         <div className="elder-care-why-grid">
           {whyChoose.map((item, index) => (
-            <article
-              key={item.title}
-              className="elder-care-why-card"
-            >
-              <strong>
-                {String(index + 1).padStart(2, "0")}
-              </strong>
-
-              <h3>
-                {item.title}
-              </h3>
-
-              <p>
-                {item.text}
-              </p>
+            <article key={item.title} className="elder-care-why-card">
+              <strong>{String(index + 1).padStart(2, "0")}</strong>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      {/* =====================================================
-          CTA
-      ===================================================== */}
-
+      {/* CTA */}
       <section className="elder-care-cta">
-        <span>
-          PERSONALIZED CARE FOR THOSE, WHO CARED FOR US
-        </span>
-
+        <span>PERSONALIZED CARE FOR THOSE, WHO CARED FOR US</span>
         <h2>
           Your New Life
           <br />
           <em>Begins With Us.</em>
         </h2>
-
         <p>
-          Schedule a consultation today and discover how
-          SilverGenie can make a difference in your loved
-          one's life.
+          Schedule a consultation today and discover how SilverGenie can make a
+          difference in your loved one's life.
         </p>
-
-        <a
-          href={contactUrl}
-          className="elder-care-cta-btn"
-        >
+        <a href={contactUrl} className="elder-care-cta-btn">
           Book a Free Consultation
         </a>
       </section>
 
-      {/* =====================================================
-          FAQ
-      ===================================================== */}
-
+      {/* FAQ */}
       <section className="elder-care-faq">
         <div className="elder-care-section-heading">
           <h2>
@@ -608,49 +464,35 @@ function ElderCare() {
 
         <div className="elder-care-faq-list">
           {faqs.map((faq, index) => (
-            <details
-              className="elder-care-faq-item"
-              key={faq.question}
-            >
+            <details className="elder-care-faq-item" key={faq.question}>
               <summary>
                 <span>
                   {index + 1}. {faq.question}
                 </span>
-
                 <strong>+</strong>
               </summary>
-
-              <p>
-                {faq.answer}
-              </p>
+              <p>{faq.answer}</p>
             </details>
           ))}
         </div>
       </section>
 
-      {/* =====================================================
-          FINAL MESSAGE
-      ===================================================== */}
-
+      {/* FINAL MESSAGE */}
       <section className="elder-care-final">
         <h2>
           Supporting Your Loved Ones
           <br />
           in Their Golden Years
         </h2>
-
         <p>
-          In a fast-paced world, life can get busy, and our
-          parents need support and care during these precious
-          years. That’s where SilverGenie steps in, offering a
-          range of services tailored to your family’s needs.
+          In a fast-paced world, life can get busy, and our parents need support
+          and care during these precious years. That’s where SilverGenie steps
+          in, offering a range of services tailored to your family’s needs.
         </p>
-
         <p>
-          We understand the importance of providing
-          comprehensive care through a team of highly skilled
-          nurses, critical care specialists, and experienced
-          attendants.
+          We understand the importance of providing comprehensive care through a
+          team of highly skilled nurses, critical care specialists, and
+          experienced attendants.
         </p>
       </section>
     </div>

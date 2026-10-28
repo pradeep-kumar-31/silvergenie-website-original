@@ -8,16 +8,14 @@ function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Logo from the public folder
-  const SilverGenieLogo = `${import.meta.env.BASE_URL}sg-logo.png`;
+  // Same logo path as the footer
+  const SilverGenieLogo = `${import.meta.env.BASE_URL}SilverGenieLogo.png`;
 
-  // Close all menus
   const closeMenu = () => {
     setMenuOpen(false);
     setBlogDropdownOpen(false);
   };
 
-  // Navigate home
   const goHome = () => {
     closeMenu();
 
@@ -31,7 +29,6 @@ function Navbar() {
     }
   };
 
-  // Navigate to a section on the home page
   const goToHomeSection = (sectionId) => {
     closeMenu();
 
@@ -49,13 +46,11 @@ function Navbar() {
     }
   };
 
-  // Blog active state
   const isBlogActive =
     location.pathname === "/blog" ||
     location.pathname.startsWith("/blog/") ||
     location.pathname === "/wanderlust-diaries";
 
-  // Open Wanderlust Diaries
   const openWanderlustDiaries = () => {
     closeMenu();
     navigate("/wanderlust-diaries");
@@ -71,7 +66,7 @@ function Navbar() {
           onClick={closeMenu}
           aria-label="SilverGenie Home"
         >
-          <img src={SilverGenieLogo} alt="SilverGenie" />
+          <img src={SilverGenieLogo} alt="SilverGenie Logo" />
         </Link>
 
         {/* MOBILE MENU BUTTON */}
@@ -148,8 +143,7 @@ function Navbar() {
               onClick={() => setBlogDropdownOpen((previous) => !previous)}
               aria-expanded={blogDropdownOpen}
             >
-              <span>Blogs & Articles</span>
-
+              <span>Blogs &amp; Articles</span>
               <span
                 className={`navbar-dropdown-arrow ${
                   blogDropdownOpen ? "rotate" : ""
@@ -176,10 +170,9 @@ function Navbar() {
                 onClick={closeMenu}
               >
                 <span className="dropdown-icon">✦</span>
-
                 <span className="dropdown-content">
                   <strong>Senior Care Chronicles</strong>
-                  <small>Senior care & ageing insights</small>
+                  <small>Senior care &amp; ageing insights</small>
                 </span>
               </Link>
 
@@ -193,7 +186,6 @@ function Navbar() {
                 onClick={openWanderlustDiaries}
               >
                 <span className="dropdown-icon">✈</span>
-
                 <span className="dropdown-content">
                   <strong>Wanderlust Diaries</strong>
                   <small>Travel experiences with care</small>

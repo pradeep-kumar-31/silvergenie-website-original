@@ -1,20 +1,47 @@
-import React from "react";
-import { Link } from "react-router-dom";
-const SilverGenieLogo = `${import.meta.env.BASE_URL}SilverGenieLogo.png`;
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Footer.css";
+
+const SilverGenieLogo = `${import.meta.env.BASE_URL}SilverGenieLogo.png`;
+
+const companyPolicyUrl =
+  "https://www.yoursilvergenie.com/disclaimer-privacy-policy-and-terms-conditions/";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      const sectionId = location.hash.slice(1);
+
+      const timer = setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname, location.hash]);
+
+  const goToTop = (event) => {
+    if (location.pathname === "/") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className="sg-footer">
       <div className="sg-footer-container">
-        {/* BRAND SECTION */}
         <div className="sg-footer-brand">
           <Link
             to="/"
             className="sg-footer-logo-link"
             aria-label="SilverGenie Home"
+            onClick={goToTop}
           >
             <img
               src={SilverGenieLogo}
@@ -31,7 +58,6 @@ function Footer() {
             compassionate care and dependable support.
           </p>
 
-          {/* SOCIAL MEDIA */}
           <div className="sg-footer-socials">
             <a
               href="https://www.facebook.com/yoursilvergenie"
@@ -107,7 +133,7 @@ function Footer() {
                   strokeLinejoin="round"
                 />
                 <path
-                  d="M8.3 7.8c-.3.3-.7.8-.7 1.5s.5 1.7.9 2.3c.5.7 1.5 1.8 3 2.5 1.2.6 1.8.7 2.3.6.4-.1 1.1-.5 1.3-1 .2-.4.2-.8.1-.9-.1-.1-.3-.2-.6-.3l-1.4-.7c-.2-.1-.4-.1-.5.2l-.6.7c-.1.2-.3.2-.5.1-.3-.1-1-.4-1.6-1-.5-.5-.9-1.1-1-1.4-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.1-.5l-.6-1.4c-.1-.3-.3-.4-.5-.4h-.2Z"
+                  d="M8.3 7.8c-.3.3-.7.8-.7 1.5s.5 1.7.9 2.3c.5.7 1.5 1.8 3 2.5 1.2.6 1.8.7 2.3.6.4-.1 1.1-.5 1.3-1 .2-.4.2-.8.1-.9-.1-.1-.3-.2-.6-.3l-1.4-.7c-.2-.1-.4-.1-.5.2l-.6.7c-.1.1-.3.2-.5.1-.3-.1-1-.4-1.6-1-.5-.5-.9-1.1-1-1.4-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.1-.5l-.6-1.4c-.1-.3-.3-.4-.5-.4h-.2Z"
                   fill="currentColor"
                 />
               </svg>
@@ -118,25 +144,29 @@ function Footer() {
         {/* QUICK LINKS */}
         <div className="sg-footer-column sg-footer-quick-links">
           <h3>Quick Links</h3>
-          <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/care-plan">Care Plan</Link>
+
+          <Link to="/" onClick={goToTop}>
+            Home
+          </Link>
+          <Link to="/#services">Services</Link>
+          <Link to="/subscription-plans">Care Plan</Link>
           <Link to="/travel-with-care">Travel With Care</Link>
-          <Link to="/blog">Blogs & Articles</Link>
-          <Link to="/resources">Resources</Link>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/blog">Blogs &amp; Articles</Link>
+          <Link to="/#resources">Resources</Link>
+          <Link to="/#contact">Contact Us</Link>
           <Link to="/about">About Us</Link>
         </div>
 
         {/* OUR SERVICES */}
         <div className="sg-footer-column">
           <h3>Our Services</h3>
+
           <Link to="/care-management">Care Management</Link>
           <Link to="/subscription-plans">Subscription Plans</Link>
           <Link to="/travel-with-care">Travel With Care</Link>
-          <a href="/#services">Elder Care</a>
-          <a href="/#services">Home Care</a>
-          <a href="/#services">Healthcare Assistance</a>
+          <Link to="/elder-care">Elder Care</Link>
+          <Link to="/home-care">Home Care</Link>
+          <Link to="/healthcare-convenience">Healthcare Assistance</Link>
         </div>
 
         {/* CONTACT INFORMATION */}
@@ -147,7 +177,9 @@ function Footer() {
           <a href="tel:18002030527">1800 203 0527</a>
 
           <p className="sg-footer-contact-label">Email us</p>
-          <a href="mailto:info@yoursilvergenie.com">info@yoursilvergenie.com</a>
+          <a href="mailto:ceo.office@yoursilvergenie.com">
+            ceo.office@yoursilvergenie.com
+          </a>
 
           <a
             href="https://www.yoursilvergenie.com/"
@@ -183,7 +215,7 @@ function Footer() {
             <span className="sg-footer-divider">|</span>
 
             <a
-              href="https://www.yoursilvergenie.com/disclaimer-privacy-policy-and-terms-conditions/"
+              href={companyPolicyUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

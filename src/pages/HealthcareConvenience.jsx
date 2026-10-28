@@ -117,17 +117,13 @@ function HealthcareConvenience() {
 
   return (
     <main className="healthcare-convenience-page">
-
       {/* =====================================================
           HERO SECTION
       ===================================================== */}
 
       <section className="healthcare-convenience-hero">
-
         <div className="healthcare-convenience-container">
-
           <div className="healthcare-convenience-hero-content">
-
             <span className="healthcare-convenience-label">
               SILVERGENIE HEALTHCARE CONVENIENCE
             </span>
@@ -138,12 +134,11 @@ function HealthcareConvenience() {
             </h1>
 
             <p>
-              At SilverGenie, we help make managing healthcare
-              simpler and more convenient. From a dedicated
-              health concierge and Personal Health Records to
-              diagnostic support, medicine delivery and medical
-              equipment assistance, we help you access relevant
-              healthcare services with greater convenience.
+              At SilverGenie, we help make managing healthcare simpler and more
+              convenient. From a dedicated health concierge and Personal Health
+              Records to diagnostic support, medicine delivery and medical
+              equipment assistance, we help you access relevant healthcare
+              services with greater convenience.
             </p>
 
             <button
@@ -160,11 +155,9 @@ function HealthcareConvenience() {
               <span>Healthcare Coordination</span>
               <span>Doorstep Convenience</span>
             </div>
-
           </div>
 
           <div className="healthcare-convenience-hero-visual">
-
             <img
               src={`${import.meta.env.BASE_URL}image/services/healthcare-convenience.png`}
               alt="SilverGenie healthcare convenience and concierge support"
@@ -172,30 +165,20 @@ function HealthcareConvenience() {
             />
 
             <div className="healthcare-convenience-floating-card">
-
               <strong>360°</strong>
 
-              <span>
-                Healthcare Support
-              </span>
-
+              <span>Healthcare Support</span>
             </div>
-
           </div>
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           INTRODUCTION
       ===================================================== */}
 
       <section className="healthcare-convenience-intro">
-
         <div className="healthcare-convenience-container">
-
           <span className="healthcare-convenience-label">
             CONVENIENCE SERVICES
           </span>
@@ -206,29 +189,22 @@ function HealthcareConvenience() {
           </h2>
 
           <p>
-            Managing healthcare involves more than doctor visits.
-            Medical records, diagnostic requirements, medicines
-            and everyday health needs also require attention.
-            SilverGenie helps coordinate these requirements
-            through personalized assistance, digital health
-            records and convenient access to relevant services.
+            Managing healthcare involves more than doctor visits. Medical
+            records, diagnostic requirements, medicines and everyday health
+            needs also require attention. SilverGenie helps coordinate these
+            requirements through personalized assistance, digital health records
+            and convenient access to relevant services.
           </p>
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           CONVENIENCE SERVICES
       ===================================================== */}
 
       <section className="healthcare-convenience-services">
-
         <div className="healthcare-convenience-container">
-
           <div className="healthcare-convenience-section-heading">
-
             <span className="healthcare-convenience-label">
               OUR CONVENIENCE SERVICES
             </span>
@@ -239,37 +215,25 @@ function HealthcareConvenience() {
             </h2>
 
             <p>
-              Explore healthcare coordination and convenience
-              services designed to help simplify your healthcare
-              journey.
+              Explore healthcare coordination and convenience services designed
+              to help simplify your healthcare journey.
             </p>
-
           </div>
 
-
           <div className="healthcare-convenience-services-grid">
-
             {convenienceServices.map((service) => (
-
               <article
                 className="healthcare-convenience-service-card"
                 key={service.number}
               >
-
                 <span className="healthcare-convenience-number">
                   {service.number}
                 </span>
 
                 <div className="healthcare-convenience-service-content">
+                  <h3>{service.title}</h3>
 
-                  <h3>
-                    {service.title}
-                  </h3>
-
-                  <p>
-                    {service.text}
-                  </p>
-
+                  <p>{service.text}</p>
                 </div>
 
                 <span
@@ -278,39 +242,27 @@ function HealthcareConvenience() {
                 >
                   →
                 </span>
-
               </article>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           DEDICATED HEALTH CONCIERGE
       ===================================================== */}
 
       <section className="healthcare-convenience-feature">
-
         <div className="healthcare-convenience-container">
-
           <div className="healthcare-convenience-feature-image">
-
             <img
-              src={`${import.meta.env.BASE_URL}image/services/healthcare-convenience.jpg`}
+              src={`${import.meta.env.BASE_URL}image/services/healthcare-convenience-page.jpeg`}
               alt="SilverGenie dedicated health concierge support"
               loading="lazy"
             />
-
           </div>
 
-
           <div className="healthcare-convenience-feature-content">
-
             <span className="healthcare-convenience-label">
               DEDICATED HEALTH CONCIERGE
             </span>
@@ -321,17 +273,15 @@ function HealthcareConvenience() {
             </h2>
 
             <p>
-              Your dedicated health concierge helps coordinate
-              your healthcare requirements and provides support
-              in accessing relevant services.
+              Your dedicated health concierge helps coordinate your healthcare
+              requirements and provides support in accessing relevant services.
             </p>
 
             <p>
-              From maintaining Personal Health Records and
-              coordinating diagnostic requirements to arranging
-              medicine and medical equipment delivery, SilverGenie
-              helps make everyday healthcare management more
-              convenient.
+              From maintaining Personal Health Records and coordinating
+              diagnostic requirements to arranging medicine and medical
+              equipment delivery, SilverGenie helps make everyday healthcare
+              management more convenient.
             </p>
 
             <button
@@ -342,24 +292,17 @@ function HealthcareConvenience() {
               Talk to Our Team
               <span aria-hidden="true">→</span>
             </button>
-
           </div>
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           HEALTHCARE BENEFITS
       ===================================================== */}
 
       <section className="healthcare-convenience-benefits">
-
         <div className="healthcare-convenience-container">
-
           <div className="healthcare-convenience-section-heading">
-
             <span className="healthcare-convenience-label">
               THE SILVERGENIE DIFFERENCE
             </span>
@@ -370,51 +313,32 @@ function HealthcareConvenience() {
             </h2>
 
             <p>
-              Convenient access, organized health information
-              and personalized assistance can help simplify
-              the way you manage everyday healthcare needs.
+              Convenient access, organized health information and personalized
+              assistance can help simplify the way you manage everyday
+              healthcare needs.
             </p>
-
           </div>
-
 
           <div className="healthcare-convenience-benefits-grid">
-
             {benefits.map((benefit) => (
-
               <article key={benefit.number}>
+                <span>{benefit.number}</span>
 
-                <span>
-                  {benefit.number}
-                </span>
+                <h3>{benefit.title}</h3>
 
-                <h3>
-                  {benefit.title}
-                </h3>
-
-                <p>
-                  {benefit.text}
-                </p>
-
+                <p>{benefit.text}</p>
               </article>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           FINAL CONTACT CTA
       ===================================================== */}
 
       <section className="healthcare-convenience-cta">
-
         <div className="healthcare-convenience-container">
-
           <span className="healthcare-convenience-label">
             SILVERGENIE HEALTHCARE CONVENIENCE
           </span>
@@ -425,9 +349,8 @@ function HealthcareConvenience() {
           </h2>
 
           <p>
-            Let our team help you explore healthcare convenience
-            services and personalized support options for
-            yourself or your loved ones.
+            Let our team help you explore healthcare convenience services and
+            personalized support options for yourself or your loved ones.
           </p>
 
           <button
@@ -438,11 +361,8 @@ function HealthcareConvenience() {
             Connect With Us
             <span aria-hidden="true">→</span>
           </button>
-
         </div>
-
       </section>
-
     </main>
   );
 }

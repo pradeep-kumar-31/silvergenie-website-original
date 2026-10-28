@@ -1,16 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-// =========================================================
 // COMPONENTS
-// =========================================================
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Chatbot from "./components/Chatbot";
 
-// =========================================================
 // HOME SECTIONS
-// =========================================================
 import Hero from "./sections/Hero";
 import Recognition from "./sections/Recognition";
 import Services from "./sections/Services";
@@ -23,29 +19,22 @@ import Resources from "./sections/Resources";
 import ContactSection from "./sections/ContactSection";
 import FAQ from "./sections/FAQ";
 
-// =========================================================
 // MAIN PAGES
-// =========================================================
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 
-// =========================================================
 // BLOG ARTICLE PAGES
-// =========================================================
 import InvestInCaregiver from "./pages/InvestInCaregiver";
 import ElderHomeHealth from "./pages/ElderHomeHealth";
 import CertifiedCaregiver from "./pages/CertifiedCaregiver";
 
-// =========================================================
 // WANDERLUST DIARIES
-// =========================================================
 import WanderlustDiaries from "./pages/WanderlustDiaries";
 import WanderlustStory from "./pages/WanderlustStory";
 
-// =========================================================
 // SERVICE PAGES
-// =========================================================
 import ElderCare from "./pages/ElderCare";
 import HomeCarePage from "./pages/HomeCarePage";
 import EmergencyCare from "./pages/EmergencyCare";
@@ -55,15 +44,10 @@ import HealthcareManpower from "./pages/HealthcareManpower";
 import HealthcareConvenience from "./pages/HealthcareConvenience";
 import CareManagement from "./pages/CareManagement";
 
-// =========================================================
 // OTHER PAGES
-// =========================================================
 import SubscriptionPlans from "./pages/SubscriptionPlans";
 import TravelWithCare from "./pages/TravelWithCare";
 
-// =========================================================
-// HOME PAGE
-// =========================================================
 function Home() {
   return (
     <>
@@ -89,25 +73,17 @@ function Home() {
   );
 }
 
-// =========================================================
-// SHARED PAGE LAYOUT
-// =========================================================
 function PageLayout({ children }) {
   return (
     <>
       <Navbar />
-
       <main>{children}</main>
-
       <Footer />
       <Chatbot />
     </>
   );
 }
 
-// =========================================================
-// 404 PAGE
-// =========================================================
 function NotFound() {
   return (
     <PageLayout>
@@ -123,11 +99,10 @@ function NotFound() {
         }}
       >
         <h1>404 — Page Not Found</h1>
-
         <p>Sorry, the page you are looking for does not exist.</p>
 
-        <a
-          href="/silvergenie-website-original/"
+        <Link
+          to="/"
           style={{
             display: "inline-block",
             marginTop: "20px",
@@ -140,22 +115,19 @@ function NotFound() {
           }}
         >
           Back to Home
-        </a>
+        </Link>
       </section>
     </PageLayout>
   );
 }
 
-// =========================================================
-// APP ROUTES
-// =========================================================
 function App() {
   return (
     <BrowserRouter basename="/silvergenie-website-original">
       <ScrollToTop />
 
       <Routes>
-        {/* HOME PAGE */}
+        {/* HOME */}
         <Route path="/" element={<Home />} />
 
         {/* ABOUT */}
@@ -164,6 +136,16 @@ function App() {
           element={
             <PageLayout>
               <About />
+            </PageLayout>
+          }
+        />
+
+        {/* PRIVACY POLICY */}
+        <Route
+          path="/privacy-policy"
+          element={
+            <PageLayout>
+              <PrivacyPolicy />
             </PageLayout>
           }
         />
@@ -336,7 +318,7 @@ function App() {
           }
         />
 
-        {/* 404 PAGE */}
+        {/* 404 */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
