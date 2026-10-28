@@ -32,13 +32,13 @@ const services = [
   {
     title: "Emergency & Wellness",
     text: "24/7 Emergency Support, Emergency Preparedness, Ambulance Coordination, Care Executive Support, Care Coach Follow-up and ongoing wellness assistance.",
-    image: "emergency-care.png",
+    image: "emergency-care.jpeg",
     link: "/emergency-care",
   },
   {
     title: "Diagnostics",
     text: "Diagnostic support including full body health checkups, diagnostic sample collection and convenient healthcare services designed to support seniors at home.",
-    image: "healthcare-convenience.jpg",
+    image: "healthcare-convenience.jpeg",
     link: "/healthcare-convenience",
   },
   {
@@ -50,7 +50,7 @@ const services = [
   {
     title: "Home ICU Setup",
     text: "Comprehensive intensive care support at home with medical equipment, infrastructure setup, critical care nursing and continuous care assistance.",
-    image: "healthcare-manpower-.png",
+    image: "healthcare-manpower-.jpeg",
     link: "/home-care",
   },
 ];
@@ -63,23 +63,19 @@ function Services() {
   return (
     <section className="services-section" id="services">
       <div className="services-container">
-
         {/* SECTION HEADER */}
 
         <div className="services-heading">
-          <span className="services-label">
-            OUR SERVICES
-          </span>
+          <span className="services-label">OUR SERVICES</span>
 
           <h2>
-            Comprehensive Care for{" "}
-            <span>Seniors</span>
+            Comprehensive Care for <span>Seniors</span>
           </h2>
 
           <p>
-            SilverGenie provides proactive, personalized and
-            holistic healthcare assistance designed to support
-            seniors and their families through every stage of care.
+            SilverGenie provides proactive, personalized and holistic healthcare
+            assistance designed to support seniors and their families through
+            every stage of care.
           </p>
         </div>
 
@@ -87,10 +83,7 @@ function Services() {
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <article
-              className="service-card"
-              key={service.title}
-            >
+            <article className="service-card" key={service.title}>
               {/* SERVICE IMAGE */}
 
               <div className="service-image">
@@ -102,14 +95,12 @@ function Services() {
                   onError={(event) => {
                     console.error(
                       `Image load failed: ${service.title}`,
-                      event.currentTarget.src
+                      event.currentTarget.src,
                     );
                   }}
                 />
 
-                <span className="service-tag">
-                  {service.title}
-                </span>
+                <span className="service-tag">{service.title}</span>
               </div>
 
               {/* CARD CONTENT */}
@@ -117,18 +108,10 @@ function Services() {
               <div className="service-body">
                 <p>{service.text}</p>
 
-                <Link
-                  to={service.link}
-                  className="service-link"
-                >
-                  <span className="service-link-text">
-                    Learn More
-                  </span>
+                <Link to={service.link} className="service-link">
+                  <span className="service-link-text">Learn More</span>
 
-                  <span
-                    className="service-link-arrow"
-                    aria-hidden="true"
-                  >
+                  <span className="service-link-arrow" aria-hidden="true">
                     →
                   </span>
                 </Link>
@@ -141,13 +124,11 @@ function Services() {
 
         <div className="services-note">
           <p>
-            <strong>Note:</strong>{" "}
-            SilverGenie's list of services is non-exhaustive.
-            Packages can be curated and customized as per
+            <strong>Note:</strong> SilverGenie's list of services is
+            non-exhaustive. Packages can be curated and customized as per
             individual requirements.
           </p>
         </div>
-
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/Footer.css";
 
-const SilverGenieLogo = `${import.meta.env.BASE_URL}SilverGenieLogo.png`;
+const SilverGenieLogo = `${import.meta.env.BASE_URL}LOGO-NEW.png`;
 
 const companyPolicyUrl =
   "https://www.yoursilvergenie.com/disclaimer-privacy-policy-and-terms-conditions/";
