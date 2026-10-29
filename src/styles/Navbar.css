@@ -913,3 +913,111 @@
     animation-duration: 0.01ms !important;
   }
 }
+/* =========================================================
+   PROFESSIONAL ENQUIRE BUTTON MOTION
+========================================================= */
+
+.navbar-menu .navbar-enquire {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  animation:
+    navbar-enquire-float 3s ease-in-out infinite,
+    navbar-enquire-glow 3s ease-in-out infinite;
+}
+
+.navbar-menu .navbar-enquire::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -20%;
+  bottom: -20%;
+  left: -65%;
+  width: 38%;
+  transform: skewX(-20deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.32),
+    transparent
+  );
+  animation: navbar-enquire-shine 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.navbar-menu .navbar-enquire > span {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-menu .navbar-enquire .navbar-enquire-arrow {
+  animation: navbar-enquire-arrow 1.1s ease-in-out infinite alternate;
+}
+
+.navbar-menu .navbar-enquire:hover {
+  animation-play-state: paused;
+}
+
+@keyframes navbar-enquire-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes navbar-enquire-glow {
+  0%,
+  100% {
+    box-shadow: 0 5px 14px rgba(32, 182, 158, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 8px 20px rgba(32, 182, 158, 0.28);
+  }
+}
+
+@keyframes navbar-enquire-shine {
+  0%,
+  32% {
+    left: -65%;
+  }
+
+  72%,
+  100% {
+    left: 140%;
+  }
+}
+
+@keyframes navbar-enquire-arrow {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-menu .navbar-enquire,
+  .navbar-menu .navbar-enquire::before,
+  .navbar-menu .navbar-enquire .navbar-enquire-arrow {
+    animation: none !important;
+  }
+}
+
+
+/* Keep the moving light above the button fill and text above the light */
+.navbar-menu .navbar-enquire::before {
+  z-index: 0;
+}
+
+.navbar-menu .navbar-enquire:hover,
+.navbar-menu .navbar-enquire:focus-visible {
+  animation: none;
+  transform: translateY(-1px);
+}

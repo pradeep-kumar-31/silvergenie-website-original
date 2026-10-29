@@ -4,9 +4,6 @@ import "../styles/Footer.css";
 
 const SilverGenieLogo = `${import.meta.env.BASE_URL}LOGO-NEW.png`;
 
-const companyPolicyUrl =
-  "https://www.yoursilvergenie.com/disclaimer-privacy-policy-and-terms-conditions/";
-
 function Footer() {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
@@ -182,14 +179,6 @@ function Footer() {
           </a>
 
           <a
-            href="https://www.yoursilvergenie.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            www.yoursilvergenie.com
-          </a>
-
-          <a
             href="https://api.whatsapp.com/send?phone=9810534232"
             target="_blank"
             rel="noopener noreferrer"
@@ -214,13 +203,7 @@ function Footer() {
             <Link to="/refund-policy">Refund Policy</Link>
             <span className="sg-footer-divider">|</span>
 
-            <a
-              href={companyPolicyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Terms &amp; Conditions
-            </a>
+            <Link to="/terms-conditions">Terms &amp; Conditions</Link>
           </div>
         </div>
       </div>

@@ -24,6 +24,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
+import TermsConditions from "./pages/TermsConditions";
 
 // BLOG ARTICLE PAGES
 import InvestInCaregiver from "./pages/InvestInCaregiver";
@@ -160,6 +161,15 @@ function App() {
           }
         />
 
+        {/* TERMS & CONDITIONS */}
+        <Route
+          path="/terms-conditions"
+          element={
+            <PageLayout>
+              <TermsConditions />
+            </PageLayout>
+          }
+        />
         {/* BLOG */}
         <Route
           path="/blog"

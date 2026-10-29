@@ -1,0 +1,222 @@
+/* SilverGenie Terms & Conditions — light, readable brand palette */
+.terms-page {
+  --sg-teal: #47c8b3;
+  --sg-teal-dark: #087f75;
+  --sg-navy: #173f43;
+  --sg-text: #344e52;
+  --sg-muted: #5d7275;
+  --sg-border: #d9eeea;
+  min-height: 100vh;
+  padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 56px);
+  background: linear-gradient(180deg, #f1fbf9 0%, #ffffff 48%, #f7fbfa 100%);
+  color: var(--sg-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.terms-header {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto 30px;
+  padding: clamp(34px, 5vw, 58px);
+  overflow: hidden;
+  border: 1px solid #c9eee7;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #e5f8f4 0%, #d5f3ed 55%, #c8eee6 100%);
+  box-shadow: 0 14px 36px rgba(23, 89, 81, 0.09);
+  color: var(--sg-navy);
+}
+
+.terms-header::before,
+.terms-header::after {
+  position: absolute;
+  border: 1px solid rgba(8, 127, 117, 0.12);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.terms-header::before {
+  top: -155px;
+  right: -35px;
+  width: 330px;
+  height: 330px;
+  box-shadow: 0 0 0 25px rgba(32, 182, 158, 0.045), 0 0 0 52px rgba(32, 182, 158, 0.035);
+}
+
+.terms-header::after {
+  right: 155px;
+  bottom: -205px;
+  width: 270px;
+  height: 270px;
+}
+
+.terms-eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 7px 13px;
+  border: 1px solid #a8e1d7;
+  border-radius: 999px;
+  background: #f5fffc;
+  color: #087f75;
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.terms-header h1 {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0;
+  color: #173f43;
+  font-size: clamp(2.1rem, 5vw, 3.35rem);
+  font-weight: 750;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+}
+
+.terms-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: clamp(26px, 4.5vw, 54px);
+  border: 1px solid #e0eeeb;
+  border-top: 4px solid #72d6c4;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(23, 63, 67, 0.065);
+}
+
+.terms-section {
+  margin: 0 0 32px;
+  padding: 0 0 32px;
+  border-bottom: 1px solid var(--sg-border);
+}
+
+.terms-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.terms-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0 0 17px;
+  color: #176d66;
+  font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.terms-section h2::before {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 32px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #72d6c4, #20b69e);
+  content: "";
+}
+
+.terms-subsection {
+  margin: 20px 0 0;
+  padding: 22px 24px;
+  border: 1px solid #dceeea;
+  border-left: 4px solid #72d6c4;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f5fcfa, #ffffff);
+  box-shadow: 0 5px 16px rgba(23, 63, 67, 0.04);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.terms-subsection:hover {
+  transform: translateY(-2px);
+  border-color: #b9e8df;
+  box-shadow: 0 10px 24px rgba(23, 63, 67, 0.075);
+}
+
+.terms-subsection h3 {
+  margin: 0 0 11px;
+  color: #087f75;
+  font-size: 1.08rem;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.terms-page p,
+.terms-page li {
+  color: var(--sg-muted);
+  font-size: 1rem;
+  line-height: 1.82;
+}
+
+.terms-page p {
+  margin: 0 0 14px;
+}
+
+.terms-page p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-page ul,
+.terms-page ol {
+  margin: 13px 0 0;
+  padding-left: 1.55rem;
+}
+
+.terms-page li {
+  margin: 8px 0;
+  padding-left: 5px;
+}
+
+.terms-page li::marker {
+  color: #20a993;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .terms-page {
+    padding: 30px 14px 40px;
+  }
+
+  .terms-header {
+    margin-bottom: 18px;
+    padding: 34px 23px;
+    border-radius: 17px;
+  }
+
+  .terms-header::before {
+    right: -185px;
+  }
+
+  .terms-content {
+    padding: 26px 19px;
+    border-radius: 17px;
+  }
+
+  .terms-section {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+  }
+
+  .terms-subsection {
+    padding: 18px 16px;
+  }
+
+  .terms-page p,
+  .terms-page li {
+    font-size: 0.96rem;
+    line-height: 1.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terms-subsection,
+  .terms-subsection:hover {
+    transform: none;
+    transition: none;
+  }
+}

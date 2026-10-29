@@ -1,6 +1,7 @@
 import { useState } from "react";
-const SilverGenieLogo = `${import.meta.env.BASE_URL}sg-logo.png`;
 import "./Chatbot.css";
+
+const SilverGenieLogo = `${import.meta.env.BASE_URL}LOGO-NEW.png`;
 
 function Chatbot() {
   const [open, setOpen] = useState(false);
@@ -19,9 +20,7 @@ function Chatbot() {
             aria-label="Open SilverGenie Chatbot"
           >
             <span className="chatbot-pulse"></span>
-
             <img src={SilverGenieLogo} alt="SilverGenie" />
-
             <span className="chatbot-icon">✦</span>
           </button>
         </div>

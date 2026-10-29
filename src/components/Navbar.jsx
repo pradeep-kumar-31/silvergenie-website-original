@@ -203,15 +203,6 @@ function Navbar() {
             Resources
           </button>
 
-          {/* CONTACT */}
-          <button
-            type="button"
-            className="navbar-section-link"
-            onClick={() => goToHomeSection("contact")}
-          >
-            Contact Us
-          </button>
-
           {/* ABOUT */}
           <Link
             to="/about"
@@ -220,6 +211,15 @@ function Navbar() {
           >
             About Us
           </Link>
+
+          {/* CONTACT */}
+          <button
+            type="button"
+            className="navbar-section-link"
+            onClick={() => goToHomeSection("contact")}
+          >
+            Contact Us
+          </button>
 
           {/* ENQUIRE NOW */}
           <button

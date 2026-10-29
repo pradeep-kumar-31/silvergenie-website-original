@@ -139,14 +139,29 @@
 ========================================================= */
 
 .primary-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   background: #20b69e;
   color: #ffffff;
-
   border: 1px solid #20b69e;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(32, 182, 158, 0.22);
 
-  box-shadow:
-    0 12px 28px rgba(32, 182, 158, 0.22);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
+
 
 .primary-btn:hover {
   background: #168d7a;
@@ -631,6 +646,87 @@
   .primary-btn,
   .secondary-btn,
   .hero-dots button {
+    transition: none;
+  }
+}
+/* =========================================================
+   POLISHED CONNECT NOW BUTTON + REDUCED HERO TOP SPACING
+========================================================= */
+
+.hero-container {
+  padding-top: 34px;
+  padding-bottom: 46px;
+}
+
+.hero .primary-btn {
+  isolation: isolate;
+  overflow: hidden;
+  gap: 10px;
+  min-width: 168px;
+  background: linear-gradient(
+    110deg,
+    #20b69e 0%,
+    #20b69e 43%,
+    #45cfb8 50%,
+    #20b69e 57%,
+    #20b69e 100%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  color: #ffffff;
+  border-color: #20b69e;
+  box-shadow: 0 10px 24px rgba(32, 182, 158, 0.22);
+  transition:
+    background-position 600ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.hero .primary-btn:hover {
+  background-position: 0 0;
+  background-color: #168d7a;
+  border-color: #168d7a;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(32, 182, 158, 0.32);
+}
+
+.hero .primary-btn:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 6px 14px rgba(32, 182, 158, 0.2);
+}
+
+.hero .primary-btn:focus-visible {
+  outline: 3px solid rgba(32, 182, 158, 0.4);
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    padding-top: 44px;
+    padding-bottom: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-container {
+    padding-top: 32px;
+    padding-bottom: 46px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-container {
+    padding-top: 26px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .primary-btn {
     transition: none;
   }
 }
