@@ -40,28 +40,20 @@
   pointer-events: none;
 }
 
-
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
+/* Main container */
 
 .sg-footer-container {
-  width: min(1200px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 75px 0 65px;
-
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.45fr 0.8fr 1fr 1.15fr;
   gap: 42px;
-
-  position: relative;
-  z-index: 1;
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 75px 0 65px;
 }
 
-
-/* =========================================================
-   BRAND SECTION
-========================================================= */
+/* Brand section */
 
 .sg-footer-brand {
   min-width: 0;
@@ -71,8 +63,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
   margin-bottom: 15px;
+  text-decoration: none;
 }
 
 .sg-footer-logo {
@@ -86,52 +78,48 @@
   margin: 0 0 16px;
   color: #ffffff;
   font-size: 28px;
-  line-height: 1.25;
   font-weight: 750;
+  line-height: 1.25;
   letter-spacing: -0.7px;
 }
 
 .sg-footer-description {
   max-width: 340px;
   margin: 0;
-
   color: #b5c8c3;
   font-size: 14px;
   line-height: 1.85;
 }
 
-
-/* =========================================================
-   SOCIAL MEDIA ICONS
-========================================================= */
+/* Social media icons */
 
 .sg-footer-socials {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-
   margin-top: 25px;
 }
 
 .sg-footer-socials .sg-social {
-  width: 42px;
-  height: 42px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
+  width: 42px;
+  height: 42px;
   overflow: hidden;
-
   border-radius: 50%;
   color: #ffffff;
   text-decoration: none;
-
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
+}
+
+.sg-footer-socials .sg-social:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
 .sg-footer-socials .sg-social svg {
@@ -179,26 +167,20 @@
   background-color: #25d366;
 }
 
-
-/* =========================================================
-   FOOTER COLUMNS
-========================================================= */
+/* Footer columns */
 
 .sg-footer-column {
-  min-width: 0;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 13px;
+  min-width: 0;
 }
 
 .sg-footer-column h3 {
   position: relative;
-
   margin: 0 0 12px;
   padding-bottom: 12px;
-
   color: #ffffff;
   font-size: 17px;
   font-weight: 700;
@@ -206,30 +188,24 @@
 }
 
 .sg-footer-column h3::after {
-  content: "";
-
   position: absolute;
-  left: 0;
   bottom: 0;
-
+  left: 0;
   width: 34px;
   height: 3px;
-
   border-radius: 5px;
   background: #20b69e;
+  content: "";
 }
 
 .sg-footer-column > a:not(.sg-footer-cta) {
   display: inline-block;
   max-width: 100%;
-
   color: #b5c8c3;
   font-size: 13.5px;
   line-height: 1.65;
-
   text-decoration: none;
   overflow-wrap: anywhere;
-
   transition:
     color 0.25s ease,
     transform 0.25s ease;
@@ -240,10 +216,7 @@
   transform: translateX(4px);
 }
 
-
-/* =========================================================
-   CONTACT COLUMN
-========================================================= */
+/* Contact column */
 
 .sg-footer-contact {
   gap: 12px;
@@ -251,7 +224,6 @@
 
 .sg-footer-contact-label {
   margin: 0;
-
   color: #819b94;
   font-size: 12px;
   line-height: 1.5;
@@ -261,34 +233,71 @@
   margin-top: -7px;
 }
 
+/* Location link */
 
-/* =========================================================
-   CTA BUTTON
-========================================================= */
+.sg-footer-location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.sg-footer-location-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  max-width: 100%;
+  color: #b5c8c3;
+  font-size: 13px;
+  line-height: 1.75;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.25s ease;
+}
+
+.sg-footer-location-link:hover {
+  color: #52d7c0;
+}
+
+.sg-footer-location-icon {
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  fill: none;
+  stroke: #20b69e;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sg-footer-location-link:focus-visible {
+  outline: 3px solid #52d7c0;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* CTA button */
 
 .sg-footer-cta {
-  width: 100%;
-  max-width: 225px;
-  min-height: 48px;
-
-  margin-top: 12px;
-  padding: 12px 16px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-
+  width: 100%;
+  max-width: 225px;
+  min-height: 48px;
+  margin-top: 12px;
+  padding: 12px 16px;
   border: 1px solid #20b69e;
   border-radius: 9px;
-
   background: #20b69e;
   color: #102723;
-
   font-size: 13px;
   font-weight: 750;
   text-decoration: none;
-
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
@@ -297,11 +306,10 @@
 }
 
 .sg-footer-cta:hover {
-  background: #52d7c0;
-  border-color: #52d7c0;
-  color: #102723;
-
   transform: translateY(-2px);
+  border-color: #52d7c0;
+  background: #52d7c0;
+  color: #102723;
   box-shadow: 0 8px 22px rgba(32, 182, 158, 0.2);
 }
 
@@ -310,35 +318,28 @@
   line-height: 1;
 }
 
-
-/* =========================================================
-   BOTTOM FOOTER
-========================================================= */
+/* Footer bottom */
 
 .sg-footer-bottom {
   position: relative;
   z-index: 1;
-
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(0, 0, 0, 0.12);
 }
 
 .sg-footer-bottom-inner {
-  width: min(1200px, calc(100% - 48px));
-  min-height: 76px;
-
-  margin: 0 auto;
-  padding: 20px 0;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  width: min(1200px, calc(100% - 48px));
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 .sg-footer-copyright {
   margin: 0;
-
   color: #91a59f;
   font-size: 12px;
   line-height: 1.7;
@@ -356,9 +357,7 @@
   color: #b5c8c3;
   font-size: 12px;
   line-height: 1.7;
-
   text-decoration: none;
-
   transition: color 0.25s ease;
 }
 
@@ -371,27 +370,19 @@
   font-size: 12px;
 }
 
-
-/* =========================================================
-   KEYBOARD ACCESSIBILITY
-========================================================= */
+/* Keyboard accessibility */
 
 .sg-footer a:focus-visible {
   outline: 3px solid #52d7c0;
   outline-offset: 4px;
 }
 
-
-/* =========================================================
-   TABLET RESPONSIVE
-========================================================= */
+/* Tablet responsive */
 
 @media (max-width: 1000px) {
-
   .sg-footer-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 48px 40px;
-
     padding-top: 65px;
     padding-bottom: 55px;
   }
@@ -407,22 +398,15 @@
   .sg-footer-bottom-inner {
     align-items: flex-start;
   }
-
 }
 
-
-/* =========================================================
-   MOBILE RESPONSIVE
-========================================================= */
+/* Mobile responsive */
 
 @media (max-width: 600px) {
-
   .sg-footer-container {
-    width: calc(100% - 40px);
-
     grid-template-columns: minmax(0, 1fr);
     gap: 38px;
-
+    width: calc(100% - 40px);
     padding-top: 50px;
     padding-bottom: 45px;
   }
@@ -473,19 +457,21 @@
     font-size: 13.5px;
   }
 
+  .sg-footer-location-link {
+    font-size: 13.5px;
+  }
+
   .sg-footer-cta {
     max-width: 100%;
     min-height: 48px;
   }
 
   .sg-footer-bottom-inner {
-    width: calc(100% - 40px);
-
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 14px;
-
+    width: calc(100% - 40px);
     padding: 22px 0;
   }
 
@@ -497,16 +483,11 @@
   .sg-footer-legal-links a {
     font-size: 11.5px;
   }
-
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* Small mobile */
 
 @media (max-width: 360px) {
-
   .sg-footer-container {
     width: calc(100% - 32px);
   }
@@ -522,21 +503,15 @@
   .sg-footer-legal-links a {
     font-size: 10.5px;
   }
-
 }
 
-
-/* =========================================================
-   REDUCED MOTION ACCESSIBILITY
-========================================================= */
+/* Reduced motion accessibility */
 
 @media (prefers-reduced-motion: reduce) {
-
   .sg-footer *,
   .sg-footer *::before,
   .sg-footer *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
-
 }

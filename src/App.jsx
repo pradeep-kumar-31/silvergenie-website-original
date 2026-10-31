@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Chatbot from "./components/Chatbot";
+import WhatsAppCommunityPopup from "./components/WhatsAppCommunityPopup";
 
 // HOME SECTIONS
 import Hero from "./sections/Hero";
@@ -25,6 +26,7 @@ import Blog from "./pages/Blog";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import Locations from "./pages/Locations";
 
 // BLOG ARTICLE PAGES
 import InvestInCaregiver from "./pages/InvestInCaregiver";
@@ -119,8 +121,7 @@ function NotFound() {
 }
 
 /*
- * Har story ke multiple URLs yahan point kar sakte hain.
- * Isse purane short URLs aur WordPress ke original article slugs dono work karte hain.
+ * Multiple URLs can point to the same Wanderlust story page.
  */
 const wanderlustStoryRoutes = [
   {
@@ -233,27 +234,47 @@ const wanderlustStoryRoutes = [
   },
   {
     Component: Kerala,
-    paths: ["kerala", "wanderlust/kerala"],
+    paths: ["kerala", "wanderlust/kerala", "my-kerala-diary"],
   },
   {
     Component: ItalySwitzerland,
-    paths: ["italy-switzerland", "wanderlust/italy-switzerland"],
+    paths: [
+      "italy-switzerland",
+      "wanderlust/italy-switzerland",
+      "across-generations-across-europe-a-winter-journey-through-italy-switzerland",
+    ],
   },
   {
     Component: Bhutan,
-    paths: ["bhutan", "wanderlust/bhutan"],
+    paths: [
+      "bhutan",
+      "wanderlust/bhutan",
+      "bhutan-through-the-comfort-of-care",
+    ],
   },
   {
     Component: Japan,
-    paths: ["japan", "wanderlust/japan"],
+    paths: [
+      "japan",
+      "wanderlust/japan",
+      "walking-backwards-through-blossoms-our-story-in-japan",
+    ],
   },
   {
     Component: Egypt,
-    paths: ["egypt", "wanderlust/egypt"],
+    paths: [
+      "egypt",
+      "wanderlust/egypt",
+      "egypt-stories-of-and-from-people-who-have-walked-with-time",
+    ],
   },
   {
     Component: VietnamCambodia,
-    paths: ["vietnam-cambodia", "wanderlust/vietnam-cambodia"],
+    paths: [
+      "vietnam-cambodia",
+      "wanderlust/vietnam-cambodia",
+      "under-the-same-sky-notes-from-vietnam-and-cambodia",
+    ],
   },
 ];
 
@@ -261,6 +282,9 @@ function App() {
   return (
     <BrowserRouter basename="/silvergenie-website-original">
       <ScrollToTop />
+
+      {/* Global popup: routes ke bahar, isliye har page par available */}
+      <WhatsAppCommunityPopup />
 
       <Routes>
         {/* HOME */}
@@ -272,6 +296,16 @@ function App() {
           element={
             <PageLayout>
               <About />
+            </PageLayout>
+          }
+        />
+
+        {/* LOCATIONS */}
+        <Route
+          path="/locations"
+          element={
+            <PageLayout>
+              <Locations />
             </PageLayout>
           }
         />

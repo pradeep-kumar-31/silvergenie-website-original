@@ -178,6 +178,29 @@ function Footer() {
             ceo.office@yoursilvergenie.com
           </a>
 
+          <div className="sg-footer-location">
+            <p className="sg-footer-contact-label">Our locations</p>
+
+            <Link
+              to="/locations"
+              className="sg-footer-location-link"
+              aria-label="View SilverGenie locations"
+            >
+              <svg
+                className="sg-footer-location-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+
+              <span>
+                Agartala | Delhi | Faridabad | Gurugram | Kolkata | Noida
+              </span>
+            </Link>
+          </div>
+
           <a
             href="https://api.whatsapp.com/send?phone=9810534232"
             target="_blank"
@@ -202,7 +225,6 @@ function Footer() {
             <span className="sg-footer-divider">|</span>
             <Link to="/refund-policy">Refund Policy</Link>
             <span className="sg-footer-divider">|</span>
-
             <Link to="/terms-conditions">Terms &amp; Conditions</Link>
           </div>
         </div>
