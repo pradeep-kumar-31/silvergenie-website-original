@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/jagdhatriPujo.css";
-
+import "../styles/JagdhatriPujo.css";
 const story = {
   title: "From Spirit to Celebration: Our Jagadhatri Pujo Experience",
   category: "Wanderlust Diaries",
