@@ -35,7 +35,7 @@ import CertifiedCaregiver from "./pages/CertifiedCaregiver";
 import WanderlustDiaries from "./pages/WanderlustDiaries";
 import TripuraShaktipeeth from "./pages/TripuraShaktipeeth";
 import KolkataFaithHistory from "./pages/KolkataFaithHistory";
-import JagadhatriPujo from "./pages/JagadhatriPujo";
+import JagadhatriPujo from "./pages/JagdhatriPujo";
 import DurgaPujoWithCare from "./pages/DurgaPujoWithCare";
 import Mahakumbh from "./pages/Mahakumbh";
 import Mizoram from "./pages/MizoramJourney";
