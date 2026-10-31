@@ -1,0 +1,436 @@
+.kerala-diary {
+  --kerala-ink: #173b38;
+  --kerala-body: #405552;
+  --kerala-muted: #71817e;
+  --kerala-teal: #18b5a1;
+  --kerala-teal-dark: #118f82;
+  --kerala-line: #dce9e6;
+  --kerala-soft: #f3f8f7;
+
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--kerala-body);
+}
+
+.kerala-diary,
+.kerala-diary * {
+  box-sizing: border-box;
+}
+
+/* Full-width hero; title sits at the bottom-left of the image */
+.kerala-diary__hero {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: clamp(500px, 70vh, 790px);
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  background: #173b38;
+}
+
+.kerala-diary__hero-image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.kerala-diary__hero-shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 29, 27, 0.68) 0%,
+      rgba(8, 29, 27, 0.34) 58%,
+      rgba(8, 29, 27, 0.08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 29, 27, 0.78) 0%,
+      rgba(8, 29, 27, 0.2) 58%,
+      rgba(8, 29, 27, 0.03) 100%
+    );
+}
+
+.kerala-diary__hero-content {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: clamp(42px, 7vw, 90px) 28px;
+  color: #fff;
+}
+
+.kerala-diary__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.kerala-diary__eyebrow::before {
+  width: 28px;
+  height: 2px;
+  background: var(--kerala-teal);
+  content: "";
+}
+
+.kerala-diary__hero h1 {
+  max-width: 950px;
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 6.5vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+  text-wrap: balance;
+  text-shadow: 0 3px 22px rgba(0, 0, 0, 0.3);
+}
+
+.kerala-diary__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.kerala-diary__meta-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--kerala-teal);
+}
+
+/* Article body */
+.kerala-diary__article {
+  width: min(900px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 84px) 0 30px;
+}
+
+.kerala-diary__article > p {
+  margin: 0 0 26px;
+  color: var(--kerala-body);
+  font-size: clamp(1.02rem, 1.45vw, 1.2rem);
+  line-height: 1.9;
+}
+
+.kerala-diary__article > .kerala-diary__intro {
+  margin-bottom: 38px;
+  color: var(--kerala-ink);
+  font-size: clamp(1.18rem, 2vw, 1.45rem);
+  line-height: 1.78;
+}
+
+.kerala-diary__section {
+  margin: 0 0 38px;
+}
+
+.kerala-diary__section h2 {
+  position: relative;
+  margin: 46px 0 21px;
+  padding-bottom: 15px;
+  color: var(--kerala-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3.3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.kerala-diary__section h2::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 58px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--kerala-teal), #a6c84e);
+  content: "";
+}
+
+/* In-article image */
+.kerala-diary__photo {
+  margin: 38px 0 44px;
+}
+
+.kerala-diary__photo img {
+  display: block;
+  width: 100%;
+  max-height: 620px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 18px 50px rgba(23, 59, 56, 0.14);
+}
+
+/* Closing line */
+.kerala-diary__article > .kerala-diary__closing {
+  margin: 34px 0 42px;
+  padding: 22px 26px;
+  border-left: 4px solid var(--kerala-teal);
+  border-radius: 0 12px 12px 0;
+  background: var(--kerala-soft);
+  color: var(--kerala-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.7;
+}
+
+/* Author card */
+.kerala-diary__author {
+  margin-top: 46px;
+  padding-top: 28px;
+  border-top: 1px solid var(--kerala-line);
+}
+
+.kerala-diary__author-label {
+  margin: 0 0 16px;
+  color: var(--kerala-teal-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.kerala-diary__author-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid var(--kerala-line);
+  border-radius: 18px;
+  background: #fbfdfc;
+}
+
+.kerala-diary__author-card > img {
+  display: block;
+  width: 150px;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.kerala-diary__author-card h2 {
+  margin: 0 0 12px;
+  color: var(--kerala-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.kerala-diary__author-card p {
+  margin: 0 0 12px;
+  color: var(--kerala-body);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.kerala-diary__author-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Category tag */
+.kerala-diary__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid var(--kerala-line);
+}
+
+.kerala-diary__tags > strong {
+  color: var(--kerala-muted);
+  font-size: 0.92rem;
+}
+
+.kerala-diary__tags a {
+  display: inline-flex;
+  padding: 9px 15px;
+  border: 1px solid rgba(24, 181, 161, 0.25);
+  border-radius: 999px;
+  background: rgba(24, 181, 161, 0.08);
+  color: var(--kerala-teal-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.kerala-diary__tags a:hover {
+  border-color: var(--kerala-teal);
+  background: var(--kerala-teal);
+  color: #fff;
+}
+
+/* Disclaimer */
+.kerala-diary__disclaimer {
+  margin-top: 30px;
+  padding: 22px 24px;
+  border: 1px solid var(--kerala-line);
+  border-radius: 14px;
+  background: #fbfdfc;
+}
+
+.kerala-diary__disclaimer > strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--kerala-ink);
+  font-size: 0.95rem;
+}
+
+.kerala-diary__disclaimer p {
+  margin: 0;
+  color: var(--kerala-muted);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.kerala-diary__disclaimer p strong {
+  color: var(--kerala-ink);
+}
+
+/* Related article cards */
+.kerala-diary__related {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: min(1120px, calc(100% - 48px));
+  margin: 28px auto 80px;
+}
+
+.kerala-diary__related a {
+  display: flex;
+  min-height: 130px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 28px;
+  border: 1px solid var(--kerala-line);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--kerala-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.45;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.kerala-diary__related a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(24, 181, 161, 0.55);
+  box-shadow: 0 14px 34px rgba(23, 59, 56, 0.09);
+}
+
+.kerala-diary__related a span {
+  color: var(--kerala-teal-dark);
+  font-family: Arial, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .kerala-diary__hero {
+    min-height: clamp(470px, 72svh, 650px);
+  }
+
+  .kerala-diary__hero-image {
+    object-position: 58% center;
+  }
+
+  .kerala-diary__hero-shade {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(8, 29, 27, 0.84) 0%,
+        rgba(8, 29, 27, 0.38) 72%,
+        rgba(8, 29, 27, 0.12) 100%
+      ),
+      linear-gradient(90deg, rgba(8, 29, 27, 0.2), transparent);
+  }
+
+  .kerala-diary__hero-content {
+    padding: 38px 22px;
+  }
+
+  .kerala-diary__hero h1 {
+    font-size: clamp(2.5rem, 11vw, 4.2rem);
+  }
+
+  .kerala-diary__meta {
+    gap: 9px;
+    font-size: 0.86rem;
+  }
+
+  .kerala-diary__article {
+    width: calc(100% - 40px);
+    padding-top: 42px;
+  }
+
+  .kerala-diary__article > p {
+    line-height: 1.8;
+  }
+
+  .kerala-diary__section h2 {
+    margin-top: 38px;
+  }
+
+  .kerala-diary__photo img {
+    border-radius: 12px;
+  }
+
+  .kerala-diary__author-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .kerala-diary__author-card > img {
+    width: 112px;
+    border-radius: 12px;
+  }
+
+  .kerala-diary__related {
+    grid-template-columns: 1fr;
+    width: calc(100% - 40px);
+    margin-bottom: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kerala-diary__tags a,
+  .kerala-diary__related a {
+    transition: none;
+  }
+}

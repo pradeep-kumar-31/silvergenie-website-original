@@ -1,137 +1,138 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/WanderlustArticle.css";
-const imageBase = `${import.meta.env.BASE_URL}image/blog/`;
+import "../styles/jagdhatriPujo.css";
+
+const story = {
+  title: "From Spirit to Celebration: Our Jagadhatri Pujo Experience",
+  category: "Wanderlust Diaries",
+  date: "November 1, 2025",
+  author: "Wanderlust Diaries",
+  location: "Chandannagar, West Bengal",
+  heroImage:
+    "https://www.yoursilvergenie.com/wp-content/uploads/2025/11/jagadhatri-pujo.png",
+  articleImage:
+    "https://www.yoursilvergenie.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-01-at-19.28.13_bbd6c9a9.jpg",
+};
+
+const paragraphs = [
+  "The SilverGenie Wanderlust group travelled to Chandannagar to experience Jagadhatri Pujo, a celebration that brings together devotion and local culture. Jagadhatri is understood as the goddess who sustains the universe.",
+  "The day began with tea at Ahare Bahare, followed by visits to several neighbourhood pandals. Brahmanpara Jagarani welcomed the group with lively community spirit; Shitala Tala Sarbojanin offered a warm reception, and the golden display at Kolpukur Dhar made a strong impression. The group continued to Khalisani before stopping for lunch.",
+  "The afternoon brought more pandal visits, including Fotikgora, Moddhanchal Sarbojanin and Beniyapukur. With careful guidance throughout the route, the group completed its parikrama at Bagbazar Sarbojanin.",
+  "The experience was thoughtfully paced, with comfortable travel intervals, refreshments and time to enjoy each stop. The team helped everyone feel included and supported, even amid the busy festival crowds.",
+  "For the travellers, the day became a shared celebration of faith, friendship and tradition. The care put into the arrangements allowed everyone to experience Chandannagar’s Jagadhatri Puja at their own pace.",
+];
+
+function StoryHero() {
+  return (
+    <section className="wanderlust-story-hero">
+      <img
+        src={story.heroImage}
+        alt="Jagadhatri Puja celebration in Chandannagar"
+        className="wanderlust-story-hero-image"
+      />
+
+      <div className="wanderlust-story-hero-overlay">
+        <span className="wanderlust-story-hero-category">{story.category}</span>
+        <h1>{story.title}</h1>
+      </div>
+    </section>
+  );
+}
 
 export default function JagadhatriPujo() {
   return (
-    <main className="jagadhatri-original-page">
-      {/* ARTICLE CONTAINER */}
-      <article className="jagadhatri-original-article">
+    <main className="wanderlust-story-page">
+      <StoryHero />
 
-        {/* HERO IMAGE WITH TITLE OVERLAY */}
-        <header className="jagadhatri-original-header">
-          <img
-            src={`${imageBase}jagadhatri-pujo.png`}
-            alt="Jagadhatri Pujo celebration in Chandannagar"
-            className="jagadhatri-original-hero-image"
-          />
+      <div className="wanderlust-story-container">
+        <nav className="wanderlust-story-breadcrumb" aria-label="Breadcrumb">
+          <Link to="/">Home</Link>
+          <span aria-hidden="true">/</span>
+          <Link to="/wanderlust-diaries">Wanderlust Diaries</Link>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{story.title}</span>
+        </nav>
 
-          <div className="jagadhatri-original-overlay">
-            <h1>
-              From Spirit to Celebration: Our Jagadhatri Pujo Experience
-            </h1>
+        <article className="wanderlust-story-article">
+          <header className="wanderlust-story-header">
+            <div className="wanderlust-story-meta">
+              <span>{story.date}</span>
+              <span>By {story.author}</span>
+              <span>{story.location}</span>
+            </div>
 
-            <p className="jagadhatri-original-meta">
-              November 1, 2025 | By Wanderlust Diaries
+            <p className="wanderlust-story-intro">
+              A festive day in Chandannagar brings together Jagadhatri Pujo,
+              neighbourhood pandals and the warmth of travelling as a group.
+            </p>
+          </header>
+
+          <div className="wanderlust-story-body">
+            <section className="wanderlust-story-content-section">
+              <h2>Jagadhatri Pujo in Chandannagar</h2>
+
+              {paragraphs.slice(0, 2).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </section>
+
+            <figure className="wanderlust-story-inline-image">
+              <img
+                src={story.articleImage}
+                alt="A moment from the Chandannagar Jagadhatri Puja journey"
+                loading="lazy"
+              />
+              <figcaption>
+                A moment from the Chandannagar Jagadhatri Puja experience.
+              </figcaption>
+            </figure>
+
+            <section className="wanderlust-story-content-section">
+              <h2>A Day of Pandal Visits</h2>
+
+              {paragraphs.slice(2).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </section>
+
+            <p className="wanderlust-story-closing">
+              A celebration of faith, companionship and care.
             </p>
           </div>
-        </header>
 
-        {/* ARTICLE TEXT */}
-        <div className="jagadhatri-original-content">
-          <p>
-            This festive season, our Wanderlust cohort travelled to
-            Chandannagar to witness the celebration of Jagadhatri Pujo,
-            a festival deeply rooted in cultural pride and spirituality.
-            Jagadhatri means “Holder of the Universe.” We began our day
-            with tea at Ahare Bahare before continuing our journey.
-            This was a small reminder of how these small gestures of
-            care and understanding truly stay with us.
+          <section className="wanderlust-story-tags" aria-label="Story tags">
+            <h3>Tags</h3>
+            <div className="wanderlust-story-tags-list">
+              <span className="wanderlust-story-tag">PujoWithCare</span>
+              <span className="wanderlust-story-tag">Wanderlust Diaries</span>
+            </div>
+          </section>
+
+          <p className="wanderlust-story-disclaimer">
+            The views and opinions expressed in this blog belong to the author.
+            Please obtain the author’s permission before reusing the writing or
+            photographs.
           </p>
 
-          <p>
-            Our first visit was to Brahmanpara Jagarani, a glowing
-            pandal filled with a vibrant neighbourhood spirit. We then
-            made our way to Shitala Tala Sarbojanin, where we were
-            welcomed warmly into the heart of the festivities. The
-            golden beauty of the pandal at Kolpukur Dhar left everyone
-            mesmerized, followed by the joy and laughter that filled
-            our stop at Khalisani.
-          </p>
-
-          <p>
-            After a delicious lunch at a thoughtfully chosen restaurant,
-            we continued to Fotikgora, where the experience felt almost
-            magical. Our next stop, Moddhanchal Sarbojanin, stood out
-            with its luminous decorations and atmosphere. We then visited
-            Beniyapukur, guided gently throughout, before concluding our
-            parikrama at Bagbazar Sarbojanin, a serene and beautiful end
-            to the day. We are deeply grateful and blessed to have
-            experienced this journey together.
-          </p>
-
-          {/* ARTICLE COLLAGE IMAGE */}
-          <figure className="jagadhatri-original-collage">
-            <img
-              src={`${imageBase}jagadhatri-pujo-collage.png`}
-              alt="Moments from the SilverGenie Jagadhatri Pujo journey"
-              loading="lazy"
-            />
-          </figure>
-
-          <p>
-            The essence of devotion, warmth of togetherness, and care in
-            every detail could be experienced in each and every moment
-            of Chandannagar Jagadhatri Puja Darshan. The entire journey
-            was smooth right from the beginning. Travel timings were at
-            appropriate intervals, the transition from one temple to
-            another and from pandal to pandal was smooth, and every
-            minute detail seemed to be thought over. Above all, the
-            feeling of comfort and ease followed the group right through
-            the day.
-          </p>
-
-          <p>
-            The team led with warmth and attentiveness. They guided us
-            smoothly from one stop to the next, making everyone feel
-            included, supported, and unhurried. Even in busy festive
-            surroundings, the arrangements never felt hurried.
-            Refreshments were planned thoughtfully, pauses were given
-            their place, and there was a natural flow to allow each
-            person to take in the spiritual atmosphere at their own pace.
-          </p>
-
-          <p>
-            It was much more than the journey itself but seemed to be
-            the mutual celebration of faith and companionship. The
-            experience held moments of reflection, joy, and deep
-            connection with tradition. It reminded us that when care
-            and intention guide the journey, the journey itself becomes
-            part of the blessing.
-          </p>
-
-          {/* TAG */}
-          <div className="jagadhatri-original-tags">
-            <span>Tags:</span>{" "}
-            <Link to="/wanderlust-diaries">Spiritual Diaries</Link>
-          </div>
-
-          {/* DISCLAIMER */}
-          <div className="jagadhatri-original-disclaimer">
-            <strong>Disclaimer:</strong> The views and opinions expressed
-            in this blog are solely those of the author. This blog is
-            protected under SilverGenie's copyright, while the written
-            content remains the intellectual property of the author.
-            Reproduction, distribution, or use of the content in any
-            manner requires the author's prior consent.
-          </div>
-
-          {/* PREVIOUS / NEXT LINKS */}
           <nav
-            className="jagadhatri-original-navigation"
-            aria-label="Other Wanderlust stories"
+            className="wanderlust-story-related"
+            aria-label="Related stories"
           >
-            <Link to="/wanderlust/kolkata-faith-history">
-              ← No wonder, it's no wonder: My Solo Travel Story at the Taj Mahal
+            <Link to="/no-wonder-its-a-wonder-my-solo-travel-story-at-the-taj-mahal">
+              No wonder, it’s a wonder: My Solo Travel Story at the Taj Mahal
             </Link>
 
-            <Link to="/wanderlust/durga-pujo-with-care">
-              Trip to Assam Valley and Silk Route →
+            <Link to="/trip-to-neora-valley-and-east-sikkim-via-the-silk-route">
+              Trip to Neora Valley and East Sikkim via the Silk Route
             </Link>
           </nav>
-        </div>
-      </article>
+
+          <div className="wanderlust-story-navigation">
+            <Link to="/wanderlust-diaries" className="wanderlust-story-back">
+              ← Back to Wanderlust Diaries
+            </Link>
+          </div>
+        </article>
+      </div>
     </main>
   );
 }

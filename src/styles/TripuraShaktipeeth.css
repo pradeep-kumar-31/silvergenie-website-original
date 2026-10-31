@@ -1,630 +1,569 @@
-/* =========================================================
-   SILVERGENIE WANDERLUST DIARIES
-   TRIPURA SHAKTIPEETH ARTICLE
-   Independent Responsive Stylesheet
-========================================================= */
+/* TripuraShaktipeeth.css */
 
-/* =========================
-   ROOT ARTICLE
-========================= */
+.wanderlust-story-page {
+  --sg-teal: #13aa9e;
+  --sg-teal-dark: #087b74;
+  --sg-blue: #27a6d2;
+  --sg-lime: #91c83e;
+  --sg-ink: #243b3d;
+  --sg-body: #43585a;
+  --sg-muted: #718183;
+  --sg-paper: #fff;
+  --sg-soft: #f1f8f7;
+  --sg-line: #dce9e7;
 
-.tripura-article-page {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 28px 30px 60px;
-  background: #ffffff;
-  color: #344b48;
-  font-family: inherit;
+  max-width: none;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--sg-paper);
+  color: var(--sg-ink);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wanderlust-story-page *,
+.wanderlust-story-page *::before,
+.wanderlust-story-page *::after {
   box-sizing: border-box;
 }
 
-.tripura-article-page *,
-.tripura-article-page *::before,
-.tripura-article-page *::after {
-  box-sizing: border-box;
+/* Full-width hero */
+
+.wanderlust-story-hero {
+  position: relative;
+  left: 50%;
+  display: flex;
+  width: 100vw;
+  max-width: none;
+  min-height: clamp(500px, 72vh, 820px);
+  margin-left: -50vw;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  background: #20383a;
 }
 
-/* =========================
-   BREADCRUMB
-========================= */
+.wanderlust-story-hero::after {
+  position: absolute;
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(9 28 30 / 5%) 15%,
+      rgb(9 28 30 / 20%) 48%,
+      rgb(9 28 30 / 82%) 100%
+    );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+}
 
-.tripura-article-page .wanderlust-article-breadcrumb {
+.wanderlust-story-hero-image {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  inset: 0;
+}
+
+.wanderlust-story-hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  margin: auto 0 0;
+  padding: 0 clamp(28px, 7vw, 120px) clamp(38px, 6vh, 76px);
+  color: #fff;
+  text-align: left !important;
+}
+
+.wanderlust-story-hero-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 999px;
+  background: var(--sg-teal);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.wanderlust-story-hero h1 {
+  max-width: 1050px;
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 6vw, 5.4rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  text-align: left !important;
+  text-shadow: 0 3px 24px rgb(0 0 0 / 55%);
+  text-wrap: balance;
+}
+
+/* Full-width page container */
+
+.wanderlust-story-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-inline: clamp(24px, 6vw, 100px);
+}
+
+/* Breadcrumb */
+
+.wanderlust-story-breadcrumb {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 9px;
-  margin: 0 auto 25px;
-  color: #81908d;
-  font-size: 12px;
-  line-height: 1.6;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--sg-line);
+  color: var(--sg-muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
-.tripura-article-page .wanderlust-article-breadcrumb a {
-  color: #168f80;
+.wanderlust-story-breadcrumb a,
+.wanderlust-story-related a,
+.wanderlust-story-back {
+  color: inherit;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 180ms ease;
 }
 
-.tripura-article-page .wanderlust-article-breadcrumb a:hover {
-  color: #0e675c;
+.wanderlust-story-breadcrumb a:hover,
+.wanderlust-story-related a:hover,
+.wanderlust-story-back:hover {
+  color: var(--sg-teal-dark);
 }
 
-.tripura-article-page .wanderlust-article-breadcrumb span:last-child {
-  color: #61716e;
+.wanderlust-story-page a:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid rgb(19 170 158 / 45%);
+  outline-offset: 4px;
 }
 
-/* =========================
-   ARTICLE HEADER
-========================= */
+/* Article layout */
 
-.tripura-article-page .tripura-article-header {
+.wanderlust-story-article {
   width: 100%;
-  max-width: 850px;
-  margin: 0 auto 28px;
-  text-align: center;
+  max-width: none;
+  margin: 0;
+  padding: 56px 0 80px;
 }
 
-.tripura-article-page .tripura-article-eyebrow {
-  display: inline-block;
-  margin-bottom: 15px;
-  color: #159c89;
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: 2px;
-  line-height: 1.6;
+.wanderlust-story-header {
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--sg-line);
 }
 
-.tripura-article-page .tripura-article-header h1 {
-  max-width: 850px;
-  margin: 0 auto 18px;
-  color: #163d38;
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 800;
-  line-height: 1.17;
-  letter-spacing: -1px;
-  overflow-wrap: anywhere;
-}
-
-.tripura-article-page .wanderlust-article-meta {
+.wanderlust-story-meta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 10px 20px;
+  color: var(--sg-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.wanderlust-story-meta span {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: #74827f;
-  font-size: 12px;
-  line-height: 1.6;
+  gap: 9px;
 }
 
-.tripura-article-page .wanderlust-article-meta-divider {
-  color: #b5c0bd;
-}
-
-/* =========================
-   FEATURED IMAGE
-========================= */
-
-.tripura-article-page .tripura-featured-image {
-  position: relative;
-  width: 100%;
-  max-width: 850px;
-  height: 410px;
-  margin: 0 auto 35px;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #edf2f0;
-  isolation: isolate;
-}
-
-.tripura-article-page .tripura-featured-image > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: none;
-}
-
-.tripura-article-page .tripura-featured-image::after {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(13, 36, 32, 0.85) 0%,
-    rgba(13, 36, 32, 0.28) 45%,
-    rgba(13, 36, 32, 0.02) 100%
-  );
-  content: "";
-  pointer-events: none;
-}
-
-.tripura-article-page .tripura-featured-overlay {
-  position: absolute;
-  z-index: 1;
-  right: 28px;
-  bottom: 27px;
-  left: 28px;
-  color: #ffffff;
-}
-
-.tripura-article-page .tripura-featured-overlay > span {
-  display: block;
-  margin-bottom: 10px;
-  color: #9ff2df;
-  font-size: 10px;
-  font-weight: 750;
-  letter-spacing: 2px;
-  line-height: 1.5;
-}
-
-.tripura-article-page .tripura-featured-overlay > p {
-  max-width: 580px;
-  margin: 0;
-  color: #ffffff;
-  font-size: clamp(21px, 3vw, 30px);
-  font-weight: 750;
-  line-height: 1.3;
-}
-
-/* =========================
-   ARTICLE CONTENT
-========================= */
-
-.tripura-article-page .tripura-article-content {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #4b5d59;
-}
-
-.tripura-article-page .tripura-article-content > p {
-  margin: 0 0 20px;
-  color: #53635f;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.9;
-  overflow-wrap: break-word;
-}
-
-.tripura-article-page .tripura-article-section {
-  width: 100%;
-  margin: 38px 0;
-}
-
-.tripura-article-page .tripura-article-section h2 {
-  margin: 0 0 16px;
-  color: #173f39;
-  font-size: clamp(22px, 2.6vw, 29px);
-  font-weight: 750;
-  line-height: 1.35;
-  letter-spacing: -0.35px;
-  overflow-wrap: anywhere;
-}
-
-.tripura-article-page .tripura-article-section > p {
-  margin: 0 0 17px;
-  color: #53635f;
-  font-size: 15px;
-  line-height: 1.9;
-  overflow-wrap: break-word;
-}
-
-/* =========================
-   ARTICLE IMAGE CARDS
-========================= */
-
-.tripura-article-page .tripura-image-card {
-  width: 100%;
-  margin: 25px 0 30px;
-  padding: 0;
-}
-
-.tripura-article-page .tripura-image-card > img {
-  display: block;
-  width: 100%;
-  max-height: 480px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-  background: #f0f5f3;
-}
-
-.tripura-article-page .tripura-image-card figcaption {
-  margin-top: 10px;
-  color: #778581;
-  font-size: 12px;
-  line-height: 1.7;
-  text-align: center;
-}
-
-/* =========================
-   IMAGE PLACEHOLDER
-========================= */
-
-.tripura-article-page .tripura-image-card-placeholder {
-  width: 100%;
-}
-
-.tripura-article-page .tripura-image-placeholder {
-  display: flex;
-  min-height: 260px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 25px;
-  border: 1px dashed #b9d7d0;
-  border-radius: 12px;
-  background: #f5faf8;
-  color: #788d87;
-  text-align: center;
-}
-
-.tripura-article-page .tripura-placeholder-icon {
-  display: flex;
-  width: 48px;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
+.wanderlust-story-meta span + span::before {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: #e2f2ed;
-  color: #209b84;
-  font-size: 25px;
+  background: var(--sg-lime);
+  content: "";
 }
 
-.tripura-article-page .tripura-image-placeholder > span {
-  font-size: 12px;
-  line-height: 1.6;
+.wanderlust-story-intro {
+  max-width: 1200px;
+  margin: 25px 0 0;
+  color: #3b5556;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
-/* =========================
-   CONCLUSION
-========================= */
+/* Article sections */
 
-.tripura-article-page .tripura-conclusion {
-  margin-top: 45px;
-  padding: 28px;
-  border-left: 4px solid #1bb39d;
-  border-radius: 0 12px 12px 0;
-  background: #f3faf7;
+.wanderlust-story-body {
+  padding-top: 10px;
 }
 
-.tripura-article-page .tripura-conclusion h2 {
-  margin-top: 0;
+.wanderlust-story-content-section {
+  padding-top: 40px;
 }
 
-.tripura-article-page .tripura-article-closing {
-  margin-top: 24px !important;
-  color: #168f80 !important;
-  font-size: 21px !important;
-  font-weight: 750 !important;
-  letter-spacing: 0.2px;
+.wanderlust-story-content-section h2,
+.wanderlust-story-curators > h2 {
+  margin: 0 0 18px;
+  color: var(--sg-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
-/* =========================
-   CURATORS SECTION
-========================= */
+.wanderlust-story-content-section h2::after {
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--sg-teal), var(--sg-lime));
+  content: "";
+}
 
-.tripura-article-page .tripura-curators {
+.wanderlust-story-content-section p {
+  max-width: 1200px;
+  margin: 0 0 18px;
+  color: var(--sg-body);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.9;
+}
+
+.wanderlust-story-content-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Article image */
+
+.wanderlust-story-inline-image {
   width: 100%;
-  max-width: 1000px;
-  margin: 65px auto 35px;
-  padding-top: 38px;
-  border-top: 1px solid #e5eeeb;
+  margin: 40px 0 20px;
 }
 
-.tripura-article-page .tripura-section-heading {
-  max-width: 650px;
-  margin: 0 auto 30px;
-  text-align: center;
+.wanderlust-story-inline-image img {
+  display: block;
+  width: 100%;
+  max-height: 720px;
+  border-radius: 10px;
+  background: var(--sg-soft);
+  object-fit: cover;
+  box-shadow: 0 18px 48px rgb(36 59 61 / 14%);
 }
 
-.tripura-article-page .tripura-section-heading > span {
-  color: #169b88;
-  font-size: 10px;
-  font-weight: 750;
-  letter-spacing: 2px;
-  line-height: 1.6;
+.wanderlust-story-inline-image figcaption {
+  padding: 12px 4px 0;
+  color: var(--sg-muted);
+  font-size: 0.82rem;
+  font-style: italic;
 }
 
-.tripura-article-page .tripura-section-heading h2 {
-  margin: 10px 0;
-  color: #163d38;
-  font-size: clamp(26px, 3vw, 34px);
-  font-weight: 800;
+/* Closing line */
+
+.wanderlust-story-closing {
+  margin: 42px 0 0;
+  padding: 23px 28px;
+  border-left: 4px solid var(--sg-teal);
+  border-radius: 0 8px 8px 0;
+  background: var(--sg-soft);
+  color: var(--sg-teal-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* About the curators */
+
+.wanderlust-story-curators {
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid var(--sg-line);
+}
+
+.wanderlust-story-curators > h2 {
+  margin-bottom: 26px;
+}
+
+.wanderlust-story-curators-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.wanderlust-story-curator {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  align-items: start;
+  gap: 17px;
+  padding: 22px;
+  border: 1px solid var(--sg-line);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgb(36 59 61 / 4%);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.wanderlust-story-curator:hover {
+  transform: translateY(-3px);
+  border-color: rgb(19 170 158 / 50%);
+  box-shadow: 0 14px 32px rgb(36 59 61 / 10%);
+}
+
+.wanderlust-story-curator img {
+  display: block;
+  width: 78px;
+  height: 78px;
+  border: 3px solid #e1f2ef;
+  border-radius: 50%;
+  background: var(--sg-soft);
+  object-fit: cover;
+}
+
+.wanderlust-story-curator h3 {
+  margin: 1px 0 7px;
+  color: var(--sg-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
   line-height: 1.3;
 }
 
-.tripura-article-page .tripura-section-heading > p {
+.wanderlust-story-curator p {
   margin: 0;
-  color: #70807c;
-  font-size: 14px;
-  line-height: 1.8;
+  color: var(--sg-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
-.tripura-article-page .tripura-curator-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
+/* Tags */
 
-.tripura-article-page .tripura-curator-card {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  overflow: hidden;
-  border: 1px solid #e3ece9;
-  border-radius: 14px;
-  background: #ffffff;
-}
-
-.tripura-article-page .tripura-curator-photo {
-  display: flex;
-  min-height: 210px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: #f2f8f6;
-  color: #80918c;
-}
-
-.tripura-article-page .tripura-curator-photo > span {
-  font-size: 12px;
-}
-
-.tripura-article-page .tripura-curator-info {
-  padding: 22px;
-}
-
-.tripura-article-page .tripura-curator-info h3 {
-  margin: 0 0 10px;
-  color: #173f39;
-  font-size: 20px;
-  font-weight: 750;
-  line-height: 1.4;
-}
-
-.tripura-article-page .tripura-curator-info p {
-  margin: 0;
-  color: #64736f;
-  font-size: 13px;
-  line-height: 1.85;
-}
-
-/* =========================
-   ARTICLE TAGS
-========================= */
-
-.tripura-article-page .tripura-article-tags {
+.wanderlust-story-tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 800px;
-  margin: 35px auto 22px;
+  gap: 12px 20px;
+  margin-top: 42px;
+  padding-top: 25px;
+  border-top: 1px solid var(--sg-line);
 }
 
-.tripura-article-page .tripura-article-tags > span {
-  color: #4d5e59;
-  font-size: 12px;
+.wanderlust-story-tags h3 {
+  margin: 0;
+  color: var(--sg-ink);
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.wanderlust-story-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.wanderlust-story-tag {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 5px 14px;
+  border: 1px solid #cce7e2;
+  border-radius: 999px;
+  background: #eff9f7;
+  color: var(--sg-teal-dark);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+/* Disclaimer */
+
+.wanderlust-story-disclaimer {
+  max-width: 1200px;
+  margin: 22px 0 0;
+  color: var(--sg-muted);
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+/* Related stories */
+
+.wanderlust-story-related {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.wanderlust-story-related a {
+  position: relative;
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+  padding: 22px 50px 22px 22px;
+  border: 1px solid var(--sg-line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--sg-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.wanderlust-story-related a::after {
+  position: absolute;
+  right: 20px;
+  color: var(--sg-teal);
+  content: "↗";
+  font-family: Arial, sans-serif;
+  font-size: 1.15rem;
+  transition: transform 180ms ease;
+}
+
+.wanderlust-story-related a:hover {
+  border-color: rgb(19 170 158 / 55%);
+  box-shadow: 0 10px 26px rgb(36 59 61 / 8%);
+}
+
+.wanderlust-story-related a:hover::after {
+  transform: translate(3px, -3px);
+}
+
+/* Back link */
+
+.wanderlust-story-navigation {
+  margin-top: 30px;
+}
+
+.wanderlust-story-back {
+  display: inline-flex;
+  align-items: center;
+  color: var(--sg-teal-dark);
+  font-size: 0.92rem;
   font-weight: 700;
 }
 
-.tripura-article-page .tripura-article-tags > a {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 13px;
-  border: 1px solid #d8ebe5;
-  border-radius: 30px;
-  background: #f3faf7;
-  color: #168b79;
-  font-size: 12px;
-  line-height: 1.4;
-  text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
-}
+/* Tablet */
 
-.tripura-article-page .tripura-article-tags > a:hover {
-  background: #1bb39d;
-  color: #ffffff;
-}
-
-/* =========================
-   DISCLAIMER
-========================= */
-
-.tripura-article-page .wanderlust-article-disclaimer {
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto 0;
-  padding: 16px 18px;
-  border: 1px solid #e2e8e6;
-  border-radius: 8px;
-  background: #fafcfb;
-  color: #77827f;
-  font-size: 11px;
-  line-height: 1.8;
-}
-
-.tripura-article-page .wanderlust-article-disclaimer strong {
-  color: #465954;
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 768px) {
-  .tripura-article-page {
-    padding: 22px 22px 45px;
+@media (max-width: 800px) {
+  .wanderlust-story-hero {
+    min-height: 64svh;
   }
 
-  .tripura-article-page .tripura-article-header h1 {
-    font-size: 36px;
+  .wanderlust-story-hero-overlay {
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-bottom: 42px;
   }
 
-  .tripura-article-page .tripura-featured-image {
-    height: 340px;
-    margin-bottom: 28px;
-    border-radius: 11px;
+  .wanderlust-story-container {
+    padding-inline: 32px;
   }
 
-  .tripura-article-page .tripura-featured-overlay {
-    right: 22px;
-    bottom: 22px;
-    left: 22px;
-  }
-
-  .tripura-article-page .tripura-article-content > p,
-  .tripura-article-page .tripura-article-section > p {
-    font-size: 14px;
-    line-height: 1.85;
-  }
-
-  .tripura-article-page .tripura-curator-photo {
-    min-height: 180px;
-  }
-
-  .tripura-article-page .tripura-curator-info {
-    padding: 18px;
+  .wanderlust-story-curators-grid,
+  .wanderlust-story-related {
+    grid-template-columns: 1fr;
   }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* Mobile */
 
 @media (max-width: 520px) {
-  .tripura-article-page {
-    padding: 18px 15px 35px;
+  .wanderlust-story-hero {
+    min-height: 62svh;
   }
 
-  .tripura-article-page .wanderlust-article-breadcrumb {
-    gap: 6px;
-    margin-bottom: 20px;
-    font-size: 11px;
+  .wanderlust-story-hero-overlay {
+    padding: 0 22px 30px;
   }
 
-  .tripura-article-page .tripura-article-header {
-    margin-bottom: 22px;
+  .wanderlust-story-hero h1 {
+    font-size: clamp(2.25rem, 10.5vw, 3.3rem);
   }
 
-  .tripura-article-page .tripura-article-eyebrow {
-    margin-bottom: 11px;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-  }
-
-  .tripura-article-page .tripura-article-header h1 {
-    font-size: 29px;
-    letter-spacing: -0.5px;
-    line-height: 1.22;
-  }
-
-  .tripura-article-page .wanderlust-article-meta {
-    font-size: 11px;
-  }
-
-  .tripura-article-page .tripura-featured-image {
-    height: 260px;
-    margin-bottom: 24px;
-    border-radius: 9px;
-  }
-
-  .tripura-article-page .tripura-featured-overlay {
-    right: 15px;
-    bottom: 17px;
-    left: 15px;
-  }
-
-  .tripura-article-page .tripura-featured-overlay > span {
-    font-size: 8px;
-    letter-spacing: 1.3px;
-  }
-
-  .tripura-article-page .tripura-featured-overlay > p {
-    font-size: 21px;
-  }
-
-  .tripura-article-page .tripura-article-content > p,
-  .tripura-article-page .tripura-article-section > p {
-    margin-bottom: 15px;
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .tripura-article-page .tripura-article-section {
-    margin: 30px 0;
-  }
-
-  .tripura-article-page .tripura-article-section h2 {
+  .wanderlust-story-hero-category {
     margin-bottom: 13px;
-    font-size: 23px;
+    font-size: 0.68rem;
   }
 
-  .tripura-article-page .tripura-image-placeholder {
-    min-height: 190px;
+  .wanderlust-story-container {
+    padding-inline: 22px;
   }
 
-  .tripura-article-page .tripura-conclusion {
-    padding: 20px 17px;
+  .wanderlust-story-article {
+    padding-top: 36px;
   }
 
-  .tripura-article-page .tripura-curators {
-    margin-top: 45px;
-    padding-top: 30px;
-  }
-
-  .tripura-article-page .tripura-curator-list {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-  }
-
-  .tripura-article-page .tripura-curator-photo {
-    min-height: 200px;
-  }
-
-  .tripura-article-page .tripura-curator-info {
-    padding: 18px;
-  }
-
-  .tripura-article-page .tripura-section-heading h2 {
-    font-size: 27px;
-  }
-
-  .tripura-article-page .tripura-article-tags {
+  .wanderlust-story-meta {
+    display: grid;
     gap: 8px;
   }
 
-  .tripura-article-page .wanderlust-article-disclaimer {
-    padding: 13px;
-    font-size: 10px;
+  .wanderlust-story-meta span + span::before {
+    display: none;
+  }
+
+  .wanderlust-story-intro {
+    font-size: 1.28rem;
+  }
+
+  .wanderlust-story-content-section {
+    padding-top: 32px;
+  }
+
+  .wanderlust-story-content-section p {
+    font-size: 1rem;
+  }
+
+  .wanderlust-story-inline-image img {
+    border-radius: 6px;
+  }
+
+  .wanderlust-story-curator {
+    grid-template-columns: 62px minmax(0, 1fr);
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .wanderlust-story-curator img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .wanderlust-story-closing {
+    padding: 19px 20px;
   }
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
+/* Respect reduced-motion settings */
 
-@media (max-width: 360px) {
-  .tripura-article-page {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  .tripura-article-page .tripura-article-header h1 {
-    font-size: 25px;
-  }
-
-  .tripura-article-page .tripura-featured-image {
-    height: 220px;
-  }
-
-  .tripura-article-page .tripura-featured-overlay > p {
-    font-size: 18px;
+@media (prefers-reduced-motion: reduce) {
+  .wanderlust-story-page *,
+  .wanderlust-story-page *::before,
+  .wanderlust-story-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -1,462 +1,210 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/WanderlustDiaries.css";
+import "../styles/VietnamCambodia.css";
 
-const imageBase = `${import.meta.env.BASE_URL}image/blog/`;
+const images = {
+  hero: "https://www.yoursilvergenie.com/wp-content/uploads/2025/10/Banner-Image-Blogs.png",
+  article:
+    "https://www.yoursilvergenie.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-01-at-19.28.13_80809251.jpg",
+  author: "https://www.yoursilvergenie.com/wp-content/uploads/2020/10/kuhu.jpg",
+};
 
-function VietnamCambodia() {
+export default function VietnamCambodia() {
   return (
-    <main className="wanderlust-story-page">
-
-      {/* HERO SECTION */}
-      <section className="wanderlust-story-hero">
-        <div className="wanderlust-story-hero-content">
-
-          <span className="wanderlust-eyebrow">
-            SILVERGENIE WANDERLUST DIARIES
-          </span>
-
-          <span className="wanderlust-story-category">
-            ASIA, AFRICA & EUROPE
-          </span>
-
-          <h1>
-            Under the Same Sky:
-            <br />
-            Notes from Vietnam and Cambodia
-          </h1>
-
-          <p className="wanderlust-story-lead">
-            From Hanoi's charming streets and Ha Long Bay's misty
-            waters to Hoi An's glowing lanterns and the ancient
-            temples of Angkor — a journey where culture, connection
-            and thoughtful care came together.
-          </p>
-
-          <div className="wanderlust-story-meta">
-            <span>📅 October 27, 2025</span>
-            <span>✍️ By Kuhu Adhikary</span>
-          </div>
-
-          <a
-            href="#vietnam-cambodia-story"
-            className="wanderlust-sidebar-button"
-          >
-            Explore the Journey ↓
-          </a>
-
-        </div>
-      </section>
-
-      {/* FEATURED IMAGE */}
-      <section className="wanderlust-story-featured-image">
+    <main className="vietnam-cambodia">
+      <header className="vietnam-cambodia__hero">
         <img
-          src={`${imageBase}vietnam-cambodia.png`}
-          alt="A journey through Vietnam and Cambodia"
-          onError={(event) => {
-            event.currentTarget.style.display = "none";
-          }}
+          className="vietnam-cambodia__hero-image"
+          src={images.hero}
+          alt="Vietnam and Cambodia travel journey"
         />
-      </section>
+        <div className="vietnam-cambodia__hero-overlay" />
 
-      {/* MAIN STORY */}
-      <section
-        className="wanderlust-story-layout"
-        id="vietnam-cambodia-story"
-      >
-
-        <article className="wanderlust-story-content">
-
-          <p className="wanderlust-story-lead">
-            Some journeys are remembered for the places we visit.
-            Others stay with us because of the feelings they create.
-            This journey through Vietnam and Cambodia brought
-            together historic landmarks, local culture, memorable
-            food and moments made special by thoughtful planning.
+        <div className="vietnam-cambodia__hero-content">
+          <p className="vietnam-cambodia__eyebrow">
+            Asia, Africa and Europe Diaries
           </p>
+          <h1>Under the Same Sky: Notes from Vietnam and Cambodia</h1>
+          <p className="vietnam-cambodia__meta">
+            October 27, 2025 <span aria-hidden="true">•</span> By Kuhu Adhikary
+          </p>
+        </div>
+      </header>
 
-          {/* HANOI */}
-          <section className="wanderlust-story-section">
-            <h2>01. Hanoi — A Morning of Coffee and Discovery</h2>
+      <article className="vietnam-cambodia__article">
+        <p className="vietnam-cambodia__lead">
+          Hanoi woke softly, bathed in gold. At a little café called Noted, time
+          seemed to slow. Strong coffee, quiet chatter, and the warmth of a new
+          beginning filled the morning. Around the corner, the French Opera
+          House stood with quiet dignity, a reminder that grace can be simple.
+          SilverGenie had planned the beginning of the trip with accessible
+          local walks, shorter transfers, and trusted partners who understood
+          how pre-seniors travel, with comfort and not rush.
+        </p>
 
+        <p>
+          Train Street came next, that narrow stretch where trains brush past
+          doorsteps. Locals barely blinked while we, wide-eyed, held our breath.
+          SilverGenie’s Care Coach guided us safely to the viewing point,
+          ensuring every photograph and every heartbeat was captured with
+          confidence. Dinner that night was curated, nothing too grand but
+          simple, in a cozy local eatery with balanced meals, soft seating, and
+          patient servers who understood our pace. Sometimes, the best luxury is
+          thoughtfulness.
+        </p>
+
+        <p>
+          Beyond Hanoi, Ninh Binh opened wide with fields like silk, cliffs like
+          stone guardians, and water mirroring the sky. Our boat journey was
+          pre-checked for easy access, assisted boarding, and restroom breaks
+          mapped by the team. Inside the caves, the silence felt sacred and
+          knowing that everything was taken care of allowed us to simply be.
+        </p>
+
+        <p>
+          Ha Long Bay shimmered in mist and myth. SilverGenie’s on-ground
+          partner ensured seamless boarding, accessible cabins, and safety
+          briefings that reassured. Dinner on deck was slow and soulful, framed
+          by views that words could never hold.
+        </p>
+
+        <p>
+          In Da Nang, city and sea met like old friends. The Golden Bridge,
+          those vast stone hands holding the sky, became more than a photo stop.
+          The team had arranged priority cable car boarding, shaded rest points,
+          and personalized assistance for anyone needing support. Inside the
+          Marble Mountains, our guide, briefed in advance, ensured that even
+          those preferring gentler climbs could experience the shrines and the
+          light filtering through the stone.
+        </p>
+
+        <p>
+          Hoi An felt like poetry come alive, with lanterns swaying by the river
+          and gentle music in the air. The team had reserved an early slot to
+          avoid the crowd, arranged wheel-assisted access, and even included a
+          local craft demonstration so no one was left watching from the side.
+          “A date with the lanterns,” someone said, and it truly was intimate,
+          unhurried, and unforgettable.
+        </p>
+
+        <p>
+          Saigon pulsed with energy, full of scooters, laughter, and rhythm, yet
+          every detail had been coordinated. SilverGenie’s partner guide
+          balanced the pace, alternating vibrant city tours with restful tea
+          sessions and wellness breaks. In the Mekong Delta, boats were selected
+          for easy boarding, and meals were allergen-checked in advance. Between
+          honey tea, folk songs, and temple chants, care and culture blended
+          seamlessly.
+        </p>
+
+        <figure className="vietnam-cambodia__photo">
+          <img
+            src={images.article}
+            alt="A travel moment from Vietnam and Cambodia"
+            loading="lazy"
+          />
+          <figcaption>Vietnam and Cambodia — Photos by Author</figcaption>
+        </figure>
+
+        <p>
+          Crossing into Cambodia felt like stepping between worlds. Siem Reap
+          held an older calm. Our evenings featured accessible cultural
+          performances, and the team ensured all transfers and temple visits
+          aligned with comfort and stamina levels.
+        </p>
+
+        <p>
+          Before dawn, we stood before Angkor Wat, not jostling in crowds but in
+          a quiet zone, the team had pre-booked for sunrise viewing. As the
+          temple unfurled with the light, someone whispered, “The world is awake
+          again.” Later that evening, during the Apsara dance, we understood
+          that travel isn’t about how far you go but how deeply you feel.
+        </p>
+
+        <p>
+          From Hanoi’s first cup of coffee to Angkor’s awakening stones, every
+          moment was made smoother, safer, and more soulful through thoughtful
+          coordination, with care woven into every itinerary and inclusivity
+          built into every plan.
+        </p>
+
+        <p className="vietnam-cambodia__closing">
+          That is the #SilverGenieAdvantage: journeys curated for Care,
+          Accessibility, and Inclusivity, coordinated with precision and empathy
+          so every traveller feels supported. Every itinerary is truly #Bespoke,
+          crafted around comfort, culture, and connection, reminding us that
+          wonder does not need to be chased. Sometimes, it finds us exactly
+          where we stand.
+        </p>
+
+        <section className="vietnam-cambodia__author">
+          <img src={images.author} alt="Kuhu Adhikary" loading="lazy" />
+          <div>
+            <p className="vietnam-cambodia__author-label">Author</p>
+            <h2>Kuhu Adhikary</h2>
             <p>
-              Hanoi welcomed the travellers with golden morning
-              light and the relaxed atmosphere of a local café
-              called Noted. Strong coffee, quiet conversations
-              and the excitement of a new destination created
-              a lovely beginning.
+              Kuhu Adhikary sees travel as a way of discovering both the world
+              and herself, one ordinary yet unforgettable moment at a time. What
+              began as a small experiment in writing soon became a trusted way
+              to capture memories and quirky historical insights from her
+              journeys.
             </p>
-
             <p>
-              Nearby, the French Opera House stood as a reminder
-              of the city's architectural heritage.
+              She finds joy in coffee-fuelled mornings and spontaneous
+              adventures, often blending the two whenever possible. Reading
+              brings her comfort, while trying new experiences, whether a new
+              city or even a bold coffee order, excites her curiosity. She
+              approaches life with an open heart, always ready for the
+              unexpected.
             </p>
-
             <p>
-              The itinerary included accessible local walks,
-              shorter transfers and trusted local partners.
-              These arrangements allowed the travellers to
-              explore comfortably without feeling rushed.
+              Along the way, she has come to believe that life offers more
+              surprises than a classic film, and she embraces laughter as her
+              way of navigating it. Turning mishaps into stories, she continues
+              forward with a simple philosophy: stay grateful, keep moving, and
+              savour every moment.
             </p>
-          </section>
-
-          {/* TRAIN STREET */}
-          <section className="wanderlust-story-section">
-            <h2>02. Hanoi Train Street — An Unforgettable View</h2>
-
-            <p>
-              The next stop was Hanoi's famous Train Street,
-              where railway tracks run close to the surrounding
-              homes and cafés.
-            </p>
-
-            <p>
-              The unusual setting captured everyone's attention.
-              With guidance from SilverGenie's Care Coach,
-              the group reached an appropriate viewing point
-              and could enjoy the experience with greater
-              confidence.
-            </p>
-
-            <p>
-              It was a reminder that memorable travel experiences
-              are even better when visitors can explore their
-              surroundings with appropriate guidance.
-            </p>
-          </section>
-
-          {/* NINH BINH */}
-          <section className="wanderlust-story-section">
-            <h2>03. Ninh Binh — Where Nature Opens Up</h2>
-
-            <p>
-              Beyond Hanoi, Ninh Binh revealed a landscape of
-              expansive fields, towering limestone formations
-              and waterways reflecting the sky.
-            </p>
-
-            <p>
-              A boat journey offered an opportunity to experience
-              the scenery from the water. The arrangements
-              included checking access requirements, assisted
-              boarding and suitable restroom breaks.
-            </p>
-
-            <p>
-              Inside the caves, the atmosphere became quiet
-              and reflective. With practical arrangements
-              taken care of, the travellers could concentrate
-              on the natural beauty around them.
-            </p>
-          </section>
-
-          {/* HA LONG BAY */}
-          <section className="wanderlust-story-section">
-            <h2>04. Ha Long Bay — A Landscape Wrapped in Mist</h2>
-
-            <p>
-              Ha Long Bay welcomed the group with misty views
-              and a landscape that seemed to emerge gradually
-              from the water.
-            </p>
-
-            <p>
-              Local arrangements supported a smooth boarding
-              experience, with attention to accessible cabins
-              and safety briefings.
-            </p>
-
-            <p>
-              As evening arrived, dinner on deck provided
-              a peaceful opportunity to appreciate the
-              surrounding scenery and enjoy the atmosphere
-              at an unhurried pace.
-            </p>
-          </section>
-
-          {/* DA NANG */}
-          <section className="wanderlust-story-section">
-            <h2>05. Da Nang — Between Mountains and Sea</h2>
-
-            <p>
-              In Da Nang, the energy of the city met the
-              beauty of the coastline. One of the memorable
-              highlights was the Golden Bridge, famous for
-              its enormous stone hands appearing to hold
-              the bridge above the landscape.
-            </p>
-
-            <p>
-              Priority cable-car boarding, shaded resting
-              points and personalised assistance helped
-              travellers experience the attraction more
-              comfortably.
-            </p>
-
-            <p>
-              At the Marble Mountains, the guide helped
-              the group explore the shrines and stone
-              surroundings while accommodating different
-              comfort levels and preferences for climbing.
-            </p>
-          </section>
-
-          {/* HOI AN */}
-          <section className="wanderlust-story-section">
-            <h2>06. Hoi An — A Date with the Lanterns</h2>
-
-            <p>
-              Hoi An felt like poetry brought to life.
-              Lanterns swayed above the river, gentle music
-              filled the air, and the town offered a different
-              rhythm from the larger cities.
-            </p>
-
-            <p>
-              An earlier visit helped the group avoid some
-              of the crowds. Wheel-assisted access and
-              a local craft demonstration made it easier
-              for everyone to participate in the experience.
-            </p>
-
-            <p>
-              The glowing lanterns and riverside atmosphere
-              created a particularly intimate and memorable
-              moment of the journey.
-            </p>
-          </section>
-
-          {/* SAIGON */}
-          <section className="wanderlust-story-section">
-            <h2>07. Saigon — A City Full of Energy</h2>
-
-            <p>
-              Saigon brought another kind of atmosphere:
-              lively streets, scooters, conversations and
-              the unmistakable rhythm of a busy city.
-            </p>
-
-            <p>
-              The local guide balanced sightseeing with
-              quieter tea breaks and wellness pauses,
-              giving the travellers time to recharge
-              between activities.
-            </p>
-
-            <p>
-              The itinerary demonstrated how a thoughtfully
-              planned journey can include lively urban
-              experiences while leaving room for rest.
-            </p>
-          </section>
-
-          {/* MEKONG DELTA */}
-          <section className="wanderlust-story-section">
-            <h2>08. Mekong Delta — Culture Along the Water</h2>
-
-            <p>
-              The Mekong Delta offered a different perspective
-              on Vietnamese life. The journey included boat
-              experiences arranged with easier boarding
-              in mind.
-            </p>
-
-            <p>
-              Meals were checked for allergy-related
-              requirements in advance. Honey tea, folk songs
-              and temple chants added cultural depth to
-              the experience.
-            </p>
-
-            <p>
-              Here, thoughtful coordination and local
-              traditions came together, allowing the
-              travellers to enjoy the destination with
-              greater peace of mind.
-            </p>
-          </section>
-
-          {/* CAMBODIA */}
-          <section className="wanderlust-story-section">
-            <h2>09. Cambodia — A Different World</h2>
-
-            <p>
-              Crossing into Cambodia felt like stepping
-              into another world. Siem Reap offered a
-              quieter atmosphere and a sense of history
-              that shaped the next chapter of the journey.
-            </p>
-
-            <p>
-              Cultural performances and temple visits
-              were coordinated with attention to comfort,
-              individual stamina and smooth transfers.
-            </p>
-
-            <p>
-              These arrangements helped the group experience
-              the destination while respecting the different
-              needs and preferences of its travellers.
-            </p>
-          </section>
-
-          {/* ANGKOR WAT */}
-          <section className="wanderlust-story-section">
-            <h2>10. Angkor Wat — Watching History Awaken</h2>
-
-            <p>
-              Before dawn, the travellers gathered for
-              sunrise at Angkor Wat. A pre-arranged viewing
-              area helped them avoid the most crowded
-              parts of the experience.
-            </p>
-
-            <p>
-              As daylight gradually illuminated the ancient
-              temple, the moment felt deeply moving.
-              One traveller whispered, "The world is awake
-              again."
-            </p>
-
-            <p>
-              Later, an Apsara dance performance brought
-              another dimension of Cambodian culture to life.
-              The graceful movements and traditional
-              storytelling made the evening memorable.
-            </p>
-          </section>
-
-          {/* SILVERGENIE ADVANTAGE */}
-          <section className="wanderlust-story-section">
-            <h2>The SilverGenie Advantage</h2>
-
-            <p>
-              From the first cup of coffee in Hanoi to
-              sunrise at Angkor Wat, the journey brought
-              together thoughtful planning, local knowledge
-              and attention to individual comfort.
-            </p>
-
-            <p>
-              Accessible arrangements, carefully coordinated
-              transfers, appropriate rest periods and
-              personalised assistance helped travellers
-              focus on the experience rather than the
-              logistics.
-            </p>
-
-            <p>
-              This reflects SilverGenie's approach to
-              <strong> care, accessibility and inclusivity </strong>
-              — creating bespoke travel experiences that
-              respect different needs while making room
-              for discovery, culture and connection.
-            </p>
-          </section>
-
-          {/* CONCLUSION */}
-          <section className="wanderlust-story-section">
-            <h2>Wonder Is Better When Shared</h2>
-
-            <p>
-              Vietnam and Cambodia offered much more than
-              beautiful scenery and historic landmarks.
-              They brought together local traditions,
-              meaningful encounters and moments of quiet
-              reflection.
-            </p>
-
-            <p>
-              The journey showed that travel does not
-              need to be rushed to be extraordinary.
-              With thoughtful planning and the right
-              support, every traveller can have more
-              opportunities to connect with a destination.
-            </p>
-
-            <p>
-              Sometimes, wonder does not need to be chased.
-              Sometimes, it finds us exactly where we stand.
-            </p>
-          </section>
-
-          {/* TAGS */}
-          <div className="wanderlust-story-tags">
-            <span>Vietnam</span>
-            <span>Cambodia</span>
-            <span>Hanoi</span>
-            <span>Ha Long Bay</span>
-            <span>Hoi An</span>
-            <span>Angkor Wat</span>
-            <span>Accessible Travel</span>
           </div>
+        </section>
 
-          {/* PREVIOUS / NEXT */}
-          <div className="wanderlust-story-navigation">
+        <div className="vietnam-cambodia__tags">
+          <strong>Tags:</strong>
+          <a
+            href="https://www.yoursilvergenie.com/tag/asia-africa-and-europe-diaries/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Asia Africa And Europe Diaries
+          </a>
+        </div>
 
-            <Link to="/wanderlust/darjeeling-kalimpong-kurseong">
-              <span>← Previous Story</span>
-              <strong>
-                Darjeeling, Kalimpong and Kurseong
-              </strong>
-            </Link>
-
-            <Link to="/wanderlust/egypt">
-              <span>Next Story →</span>
-              <strong>
-                Egypt: Stories of and from People Who Have Walked with Time
-              </strong>
-            </Link>
-
-          </div>
-        </article>
-
-        {/* SIDEBAR */}
-        <aside className="wanderlust-story-sidebar">
-
-          <div className="wanderlust-sidebar-card">
-            <span className="wanderlust-eyebrow">
-              EXPLORE ASIA
-            </span>
-
-            <h3>
-              Discover More Than Destinations
-            </h3>
-
-            <p>
-              Explore journeys that bring together local
-              culture, historical landmarks, meaningful
-              encounters and thoughtful travel planning.
-            </p>
-
-            <Link
-              to="/travel-with-care"
-              className="wanderlust-sidebar-button"
-            >
-              Explore Journeys →
-            </Link>
-          </div>
-
-          <div className="wanderlust-sidebar-card">
-            <h3>More Wanderlust Stories</h3>
-
-            <p>
-              Discover personal travel stories from
-              India and destinations around the world.
-            </p>
-
-            <Link
-              to="/wanderlust-diaries"
-              className="wanderlust-sidebar-button"
-            >
-              View All Diaries →
-            </Link>
-          </div>
-
+        <aside className="vietnam-cambodia__disclaimer">
+          <strong>Disclaimer</strong>
+          <p>
+            The views and opinions expressed in this blog are solely those of
+            the author. The blog page is protected under{" "}
+            <strong>SilverGenie’s copyright</strong>, while the written content
+            remains the intellectual property of the author. Reproduction,
+            distribution, or use of the content in any form requires the
+            author’s prior consent. Unauthorized use or infringement will be
+            subject to legal action.
+          </p>
         </aside>
-      </section>
+
+        <nav
+          className="vietnam-cambodia__related"
+          aria-label="Related articles"
+        >
+          <Link to="/from-devotion-to-delight-our-durgapujowithcare-experience">
+            <span>Previous article</span>
+            From Devotion to Delight: Our #DurgaPujoWithCare Experience
+          </Link>
+
+          <Link to="/invest-in-a-caregiver">
+            <span>Next article</span>
+            Invest in a Caregiver
+          </Link>
+        </nav>
+      </article>
     </main>
   );
 }
-
-export default VietnamCambodia;

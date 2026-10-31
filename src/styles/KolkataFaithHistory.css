@@ -1,0 +1,454 @@
+/* KolkataFaithHistory.css */
+
+.wanderlust-story-page {
+  --sg-teal: #13aa9e;
+  --sg-teal-dark: #087b74;
+  --sg-blue: #27a6d2;
+  --sg-lime: #91c83e;
+  --sg-ink: #243b3d;
+  --sg-body: #43585a;
+  --sg-muted: #718183;
+  --sg-paper: #fff;
+  --sg-soft: #f1f8f7;
+  --sg-line: #dce9e7;
+
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--sg-paper);
+  color: var(--sg-ink);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wanderlust-story-page *,
+.wanderlust-story-page *::before,
+.wanderlust-story-page *::after {
+  box-sizing: border-box;
+}
+
+/* Full-width hero image */
+
+.wanderlust-story-hero {
+  position: relative;
+  left: 50%;
+  display: flex;
+  width: 100vw;
+  max-width: none;
+  min-height: clamp(500px, 72vh, 820px);
+  margin-left: -50vw;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  background: #20383a;
+}
+
+.wanderlust-story-hero::after {
+  position: absolute;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(9 28 30 / 5%) 15%,
+    rgb(9 28 30 / 20%) 48%,
+    rgb(9 28 30 / 82%) 100%
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+}
+
+.wanderlust-story-hero-image {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  inset: 0;
+}
+
+.wanderlust-story-hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  margin: auto 0 0;
+  padding: 0 clamp(28px, 7vw, 120px) clamp(38px, 6vh, 76px);
+  color: #fff;
+  text-align: left !important;
+}
+
+.wanderlust-story-hero-category {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 999px;
+  background: var(--sg-teal);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.wanderlust-story-hero h1 {
+  max-width: 1050px;
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 6vw, 5.4rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  text-align: left !important;
+  text-shadow: 0 3px 24px rgb(0 0 0 / 55%);
+  text-wrap: balance;
+}
+
+/* Page layout */
+
+.wanderlust-story-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-inline: clamp(24px, 6vw, 100px);
+}
+
+.wanderlust-story-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--sg-line);
+  color: var(--sg-muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.wanderlust-story-breadcrumb a,
+.wanderlust-story-related a,
+.wanderlust-story-back {
+  color: inherit;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.wanderlust-story-breadcrumb a:hover,
+.wanderlust-story-related a:hover,
+.wanderlust-story-back:hover {
+  color: var(--sg-teal-dark);
+}
+
+.wanderlust-story-page a:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid rgb(19 170 158 / 45%);
+  outline-offset: 4px;
+}
+
+/* Article */
+
+.wanderlust-story-article {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 56px 0 80px;
+}
+
+.wanderlust-story-header {
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--sg-line);
+}
+
+.wanderlust-story-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  color: var(--sg-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.wanderlust-story-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.wanderlust-story-meta span + span::before {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sg-lime);
+  content: "";
+}
+
+.wanderlust-story-intro {
+  max-width: 1200px;
+  margin: 25px 0 0;
+  color: #3b5556;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.wanderlust-story-body {
+  padding-top: 10px;
+}
+
+.wanderlust-story-content-section {
+  padding-top: 40px;
+}
+
+.wanderlust-story-content-section h2,
+.wanderlust-story-curators > h2 {
+  margin: 0 0 18px;
+  color: var(--sg-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.wanderlust-story-content-section h2::after {
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--sg-teal), var(--sg-lime));
+  content: "";
+}
+
+.wanderlust-story-content-section p {
+  max-width: 1200px;
+  margin: 0 0 18px;
+  color: var(--sg-body);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.9;
+}
+
+.wanderlust-story-content-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Closing quote */
+
+.wanderlust-story-closing {
+  margin: 42px 0 0;
+  padding: 23px 28px;
+  border-left: 4px solid var(--sg-teal);
+  border-radius: 0 8px 8px 0;
+  background: var(--sg-soft);
+  color: var(--sg-teal-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* Tags */
+
+.wanderlust-story-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 42px;
+  padding-top: 25px;
+  border-top: 1px solid var(--sg-line);
+}
+
+.wanderlust-story-tags h3 {
+  margin: 0;
+  color: var(--sg-ink);
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.wanderlust-story-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.wanderlust-story-tag {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 5px 14px;
+  border: 1px solid #cce7e2;
+  border-radius: 999px;
+  background: #eff9f7;
+  color: var(--sg-teal-dark);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+/* Disclaimer */
+
+.wanderlust-story-disclaimer {
+  max-width: 1200px;
+  margin: 22px 0 0;
+  color: var(--sg-muted);
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+/* Related stories */
+
+.wanderlust-story-related {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.wanderlust-story-related a {
+  position: relative;
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+  padding: 22px 50px 22px 22px;
+  border: 1px solid var(--sg-line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--sg-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.wanderlust-story-related a::after {
+  position: absolute;
+  right: 20px;
+  color: var(--sg-teal);
+  content: "↗";
+  font-family: Arial, sans-serif;
+  font-size: 1.15rem;
+  transition: transform 180ms ease;
+}
+
+.wanderlust-story-related a:hover {
+  border-color: rgb(19 170 158 / 55%);
+  box-shadow: 0 10px 26px rgb(36 59 61 / 8%);
+}
+
+.wanderlust-story-related a:hover::after {
+  transform: translate(3px, -3px);
+}
+
+/* Back link */
+
+.wanderlust-story-navigation {
+  margin-top: 30px;
+}
+
+.wanderlust-story-back {
+  display: inline-flex;
+  align-items: center;
+  color: var(--sg-teal-dark);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* Tablet */
+
+@media (max-width: 800px) {
+  .wanderlust-story-hero {
+    min-height: 64svh;
+  }
+
+  .wanderlust-story-hero-overlay {
+    padding: 0 32px 42px;
+  }
+
+  .wanderlust-story-container {
+    padding-inline: 32px;
+  }
+
+  .wanderlust-story-related {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 520px) {
+  .wanderlust-story-hero {
+    min-height: 62svh;
+  }
+
+  .wanderlust-story-hero-overlay {
+    padding: 0 22px 30px;
+  }
+
+  .wanderlust-story-hero h1 {
+    font-size: clamp(2.25rem, 10.5vw, 3.3rem);
+  }
+
+  .wanderlust-story-hero-category {
+    margin-bottom: 13px;
+    font-size: 0.68rem;
+  }
+
+  .wanderlust-story-container {
+    padding-inline: 22px;
+  }
+
+  .wanderlust-story-article {
+    padding-top: 36px;
+  }
+
+  .wanderlust-story-meta {
+    display: grid;
+    gap: 8px;
+  }
+
+  .wanderlust-story-meta span + span::before {
+    display: none;
+  }
+
+  .wanderlust-story-intro {
+    font-size: 1.28rem;
+  }
+
+  .wanderlust-story-content-section {
+    padding-top: 32px;
+  }
+
+  .wanderlust-story-content-section p {
+    font-size: 1rem;
+  }
+
+  .wanderlust-story-closing {
+    padding: 19px 20px;
+  }
+}
+
+/* Reduced motion support */
+
+@media (prefers-reduced-motion: reduce) {
+  .wanderlust-story-page *,
+  .wanderlust-story-page *::before,
+  .wanderlust-story-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

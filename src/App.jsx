@@ -33,7 +33,26 @@ import CertifiedCaregiver from "./pages/CertifiedCaregiver";
 
 // WANDERLUST DIARIES
 import WanderlustDiaries from "./pages/WanderlustDiaries";
-import WanderlustStory from "./pages/WanderlustStory";
+import TripuraShaktipeeth from "./pages/TripuraShaktipeeth";
+import KolkataFaithHistory from "./pages/KolkataFaithHistory";
+import JagadhatriPujo from "./pages/JagadhatriPujo";
+import DurgaPujoWithCare from "./pages/DurgaPujoWithCare";
+import Mahakumbh from "./pages/Mahakumbh";
+import Mizoram from "./pages/MizoramJourney";
+import Assam from "./pages/AssamTravelDiary";
+import HornbillFestival from "./pages/HornbillFestival";
+import NeoraValleySilkRoute from "./pages/SilkRoute";
+import Meghalaya from "./pages/Meghalaya";
+import SharedAdventureIndia from "./pages/SharedAdventureIndia";
+import FindingMyRhythmSundarbans from "./pages/FindingMyRhythmSundarbans";
+import WhiteRannMoon from "./pages/WhiteRannMoon";
+import TajMahal from "./pages/TajMahal";
+import Kerala from "./pages/MyKeralaDiary";
+import ItalySwitzerland from "./pages/ItalySwitzerland";
+import Bhutan from "./pages/BhutanComfortOfCare";
+import Japan from "./pages/JapanBlossoms";
+import Egypt from "./pages/EgyptStories";
+import VietnamCambodia from "./pages/VietnamCambodia";
 
 // SERVICE PAGES
 import ElderCare from "./pages/ElderCare";
@@ -88,39 +107,155 @@ function PageLayout({ children }) {
 function NotFound() {
   return (
     <PageLayout>
-      <section
-        style={{
-          minHeight: "55vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          padding: "40px 20px",
-        }}
-      >
+      <section className="not-found-page">
         <h1>404 — Page Not Found</h1>
         <p>Sorry, the page you are looking for does not exist.</p>
-
-        <Link
-          to="/"
-          style={{
-            display: "inline-block",
-            marginTop: "20px",
-            padding: "12px 24px",
-            background: "#20B69E",
-            color: "#ffffff",
-            textDecoration: "none",
-            borderRadius: "8px",
-            fontWeight: 600,
-          }}
-        >
+        <Link to="/" className="not-found-page__link">
           Back to Home
         </Link>
       </section>
     </PageLayout>
   );
 }
+
+/*
+ * Har story ke multiple URLs yahan point kar sakte hain.
+ * Isse purane short URLs aur WordPress ke original article slugs dono work karte hain.
+ */
+const wanderlustStoryRoutes = [
+  {
+    Component: TripuraShaktipeeth,
+    paths: ["tripura-shaktipeeth", "wanderlust/tripura-shaktipeeth"],
+  },
+  {
+    Component: KolkataFaithHistory,
+    paths: [
+      "kolkata-faith-history",
+      "wanderlust/kolkata-faith-history",
+      "a-journey-through-faith-history-and-kolkatas-essence",
+    ],
+  },
+  {
+    Component: JagadhatriPujo,
+    paths: [
+      "jagadhatri-pujo",
+      "wanderlust/jagadhatri-pujo",
+      "from-spirit-to-celebration-our-jagadhatri-pujo-experience",
+    ],
+  },
+  {
+    Component: DurgaPujoWithCare,
+    paths: [
+      "durga-pujo-with-care",
+      "wanderlust/durga-pujo-with-care",
+      "from-devotion-to-delight-our-durgapujowithcare-experience",
+    ],
+  },
+  {
+    Component: Mahakumbh,
+    paths: [
+      "mahakumbh",
+      "wanderlust/mahakumbh",
+      "through-the-crowds-experiencing-the-mahakumbh",
+    ],
+  },
+  {
+    Component: Mizoram,
+    paths: [
+      "mizoram",
+      "wanderlust/mizoram",
+      "mizoram-through-my-eyes-a-journey-i-will-remember",
+    ],
+  },
+  {
+    Component: Assam,
+    paths: [
+      "assam",
+      "wanderlust/assam",
+      "a-doctors-travel-diary-discovering-the-quiet-grace-of-assam",
+    ],
+  },
+  {
+    Component: HornbillFestival,
+    paths: [
+      "hornbill-festival",
+      "wanderlust/hornbill-festival",
+      "hornbill-festival-diaries-colours-of-nagaland",
+    ],
+  },
+  {
+    Component: NeoraValleySilkRoute,
+    paths: [
+      "neora-valley-silk-route",
+      "wanderlust/neora-valley-silk-route",
+      "trip-to-neora-valley-and-east-sikkim-via-the-silk-route",
+    ],
+  },
+  {
+    Component: Meghalaya,
+    paths: [
+      "meghalaya",
+      "wanderlust/meghalaya",
+      "meghalaya-the-abode-of-clouds",
+    ],
+  },
+  {
+    Component: SharedAdventureIndia,
+    paths: [
+      "shared-adventure-india",
+      "wanderlust/shared-adventure-india",
+      "a-shared-adventure-slow-exploration-and-friendship-in-india",
+    ],
+  },
+  {
+    Component: FindingMyRhythmSundarbans,
+    paths: [
+      "sundarbans",
+      "wanderlust/sundarbans",
+      "finding-my-rhythm-in-the-sundarbans",
+    ],
+  },
+  {
+    Component: WhiteRannMoon,
+    paths: [
+      "white-rann-moon",
+      "wanderlust/white-rann-moon",
+      "white-rann-senior-travel-experience-silvergenie",
+    ],
+  },
+  {
+    Component: TajMahal,
+    paths: [
+      "taj-mahal",
+      "wanderlust/taj-mahal",
+      "no-wonder-its-a-wonder-my-solo-travel-story-at-the-taj-mahal",
+    ],
+  },
+  {
+    Component: Kerala,
+    paths: ["kerala", "wanderlust/kerala"],
+  },
+  {
+    Component: ItalySwitzerland,
+    paths: ["italy-switzerland", "wanderlust/italy-switzerland"],
+  },
+  {
+    Component: Bhutan,
+    paths: ["bhutan", "wanderlust/bhutan"],
+  },
+  {
+    Component: Japan,
+    paths: ["japan", "wanderlust/japan"],
+  },
+  {
+    Component: Egypt,
+    paths: ["egypt", "wanderlust/egypt"],
+  },
+  {
+    Component: VietnamCambodia,
+    paths: ["vietnam-cambodia", "wanderlust/vietnam-cambodia"],
+  },
+];
 
 function App() {
   return (
@@ -141,7 +276,7 @@ function App() {
           }
         />
 
-        {/* PRIVACY POLICY */}
+        {/* POLICIES */}
         <Route
           path="/privacy-policy"
           element={
@@ -151,7 +286,6 @@ function App() {
           }
         />
 
-        {/* REFUND POLICY */}
         <Route
           path="/refund-policy"
           element={
@@ -161,7 +295,6 @@ function App() {
           }
         />
 
-        {/* TERMS & CONDITIONS */}
         <Route
           path="/terms-conditions"
           element={
@@ -170,6 +303,7 @@ function App() {
             </PageLayout>
           }
         />
+
         {/* BLOG */}
         <Route
           path="/blog"
@@ -180,7 +314,6 @@ function App() {
           }
         />
 
-        {/* BLOG ARTICLES */}
         <Route
           path="/blog/invest-in-a-caregiver"
           element={
@@ -218,15 +351,19 @@ function App() {
           }
         />
 
-        {/* WANDERLUST STORIES */}
-        <Route
-          path="/wanderlust/:slug"
-          element={
-            <PageLayout>
-              <WanderlustStory />
-            </PageLayout>
-          }
-        />
+        {wanderlustStoryRoutes.flatMap(({ paths, Component }) =>
+          paths.map((path) => (
+            <Route
+              key={path}
+              path={`/${path}`}
+              element={
+                <PageLayout>
+                  <Component />
+                </PageLayout>
+              }
+            />
+          )),
+        )}
 
         {/* ELDER CARE */}
         <Route
