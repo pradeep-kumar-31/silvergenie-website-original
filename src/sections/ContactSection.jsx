@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./ContactSection.css";
+
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbwjAHceJb2lyBk0ecOJLUKP74Zfl5OVQS6_DW3fC3yorQsY_tHU3c1o5PdjwK9DJ_hTyA/exec";
 
