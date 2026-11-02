@@ -6,74 +6,60 @@ import hero3 from "../assets/hero/hero 3.png";
 import hero4 from "../assets/hero/hero 4.png";
 import hero5 from "../assets/hero/hero 5.jpg";
 
-/* =========================================================
-   HERO IMAGES
-========================================================= */
-
 const heroImages = [hero1, hero2, hero3, hero4, hero5];
 
 function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
 
-  /* =======================================================
-     AUTO SLIDER
-  ======================================================= */
-
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((previous) => {
-        return (previous + 1) % heroImages.length;
-      });
+      setCurrentImage((previous) => (previous + 1) % heroImages.length);
     }, 5000);
 
     return () => clearInterval(timer);
   }, []);
 
-  /* =======================================================
-     CONTACT SCROLL
-  ======================================================= */
-
   const goToContact = () => {
     const contactSection = document.getElementById("contact");
 
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    contactSection?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
-
-  /* =======================================================
-     JSX
-  ======================================================= */
 
   return (
     <section className="hero" id="home">
       <div className="hero-container">
-        {/* =================================================
-            LEFT CONTENT
-        ================================================= */}
-
         <div className="hero-content">
-          {/* BADGE */}
-
           <div className="hero-badge">
             THE SILVERGENIE MANTRA: TRUSTED ELDER CARE
           </div>
-
-          {/* HEADING */}
 
           <h1>
             We Care for Those
             <span>Who Have Always Cared for Us</span>
           </h1>
 
-          {/* DESCRIPTION */}
+          <p>Advanced, holistic health &amp; care assistance for seniors</p>
 
-          <p>Advanced, holistic health & care assistance for seniors</p>
+          {/* Impact stats: display only, not clickable */}
+          <div className="hero-stats" aria-label="SilverGenie impact">
+            <div className="hero-stat">
+              <strong>1000+</strong>
+              <span>Seniors served directly</span>
+            </div>
 
-          {/* BUTTON */}
+            <div className="hero-stat">
+              <strong>50,000+</strong>
+              <span>Senior lives touched</span>
+            </div>
+
+            <div className="hero-stat">
+              <strong>350,000+</strong>
+              <span>Caregiver hours</span>
+            </div>
+          </div>
 
           <div className="hero-buttons">
             <button type="button" className="primary-btn" onClick={goToContact}>
@@ -82,39 +68,23 @@ function Hero() {
           </div>
         </div>
 
-        {/* =================================================
-            RIGHT IMAGE SLIDER
-        ================================================= */}
-
         <div className="hero-visual">
-          {/* SLIDES */}
-
           {heroImages.map((image, index) => (
             <img
               key={image}
               src={image}
-              alt="SilverGenie Healthcare and Elder Care"
+              alt="SilverGenie healthcare and elder care"
               className={`hero-slide ${index === currentImage ? "active" : ""}`}
             />
           ))}
 
-          {/* =================================================
-              FLOATING CARE CARD
-          ================================================= */}
-
           <div className="floating-card">
             <div className="check-icon">✓</div>
-
             <div>
               <strong>SilverGenie</strong>
-
-              <span>Trusted Elder Care & Healthcare Support</span>
+              <span>Trusted Elder Care &amp; Healthcare Support</span>
             </div>
           </div>
-
-          {/* =================================================
-              SLIDER DOTS
-          ================================================= */}
 
           <div className="hero-dots">
             {heroImages.map((_, index) => (

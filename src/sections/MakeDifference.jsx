@@ -1,77 +1,74 @@
 import "../styles/MakeDifference.css";
 
-/* =========================================================
-   SILVERGENIE — MAKE A DIFFERENCE
-========================================================= */
-
 const points = [
   {
     title: "Compassionate Human Intervention",
     description:
-      "Driven by compassion and zeal to help senior citizens in need",
+      "Driven by compassion and a commitment to helping senior citizens.",
     image: "image/difference/compassionate-care.jpeg",
   },
   {
     title: "Clinical Analytics",
-    description:
-      "Harnessing the power of real-time data to generate actionable insights",
+    description: "Using real-time data to generate actionable insights.",
     image: "image/difference/clinical-analytics.png",
   },
   {
     title: "Competent Technology",
-    description:
-      "Backed by innovative technology to provide best-in-class care",
+    description: "Using innovative technology to deliver high-quality care.",
     image: "image/difference/healthcare-technology.jpeg",
   },
   {
     title: "Continuous Wellness Support",
     description:
-      "Providing round-the-clock support for physical and mental well-being needs",
+      "Providing round-the-clock support for physical and mental well-being.",
     image: "image/difference/continuous-wellness.jpeg",
   },
   {
     title: "Consistent Delivery of Services",
     description:
-      "Delivering holistic support and care for elders to cater to their every need",
+      "Delivering holistic support to meet the varied needs of older adults.",
     image: "image/difference/service-delivery.png",
   },
 ];
-
-/* =========================================================
-   COMPONENT
-========================================================= */
 
 function MakeDifference() {
   return (
     <section className="difference-section" id="make-difference">
       <div className="difference-container">
-        {/* =================================================
-            SECTION HEADING
-        ================================================= */}
-
         <div className="difference-heading">
           <span className="difference-label">MAKE A DIFFERENCE</span>
 
-          <h2>
-            SilverGenie is committed to
-            <span> revolutionize elder care management in India.</span>
-          </h2>
+          <h2>Committed to revolutionising senior care in India</h2>
 
           <p>
-            We aim to help seniors cope with needs that come with ageing at a
-            touch of a button.
+            SilverGenie is a full-stack, broad-spectrum smart-aging startup
+            committed to revolutionising senior care in India.
           </p>
 
           <p>
-            Our comprehensive and seamless healthcare platform is designed to
-            provide senior citizens with an array of services and experts to
-            help them discover a new way of managing their healthcare needs.
+            We may be SilverGenie, but we do not claim to have a magic potion
+            for the challenges of old age.
+          </p>
+
+          <p>
+            Our work focuses on helping seniors manage some of their most
+            pressing challenges. We continually train our team to help older
+            adults approach life&apos;s changes with confidence and a smile.
+          </p>
+
+          <p>
+            We understand that one size does not fit all, so we stay flexible as
+            needs evolve. Our services range from companionship to help ease
+            loneliness to clinical care during illness. We shape our technology
+            and travel solutions around seniors&apos; need for dignity and
+            independence.
+          </p>
+
+          <p>
+            Our services and products continue to evolve with time and changing
+            needs.
           </p>
         </div>
-
-        {/* =================================================
-            DIFFERENCE CARDS
-        ================================================= */}
 
         <div className="difference-grid">
           {points.map((point, index) => (
@@ -82,8 +79,6 @@ function MakeDifference() {
                 "--difference-delay": `${index * 0.08}s`,
               }}
             >
-              {/* IMAGE */}
-
               <div className="difference-image">
                 <img
                   src={`${import.meta.env.BASE_URL}${point.image}`}
@@ -92,11 +87,8 @@ function MakeDifference() {
                 />
               </div>
 
-              {/* CONTENT */}
-
               <div className="difference-card-content">
                 <h3>{point.title}</h3>
-
                 <p>{point.description}</p>
               </div>
             </article>

@@ -1,326 +1,210 @@
-/* =========================================================
-   SILVERGENIE — MAKE A DIFFERENCE
-   Brand Theme | Premium Healthcare Design
-   Responsive Layout | 5 Cards in One Row
-========================================================= */
-
-.difference-section {
+/* Make a Difference section */
+#make-difference.difference-section {
   position: relative;
-  isolation: isolate;
-
-  width: 100%;
-  padding: 100px 0;
-
-  background: #16302c;
-  color: #ffffff;
-
+  left: 50%;
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: -50vw;
+  padding: 72px 4vw 84px;
   overflow: hidden;
+  background: linear-gradient(135deg, #eef8f5 0%, #f8fcfa 50%, #eaf6f2 100%);
+  color: #183a35;
 }
 
-/* Soft decorative background accents */
-
-.difference-section::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-
-  width: 380px;
-  height: 380px;
-
-  top: -190px;
-  right: -100px;
-
-  border-radius: 50%;
-  background: rgba(32, 182, 158, 0.12);
-
-  pointer-events: none;
-}
-
-.difference-section::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-
-  width: 300px;
-  height: 300px;
-
-  bottom: -180px;
-  left: -100px;
-
-  border-radius: 50%;
-  background: rgba(32, 182, 158, 0.08);
-
-  pointer-events: none;
-}
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.difference-container {
-  position: relative;
-  z-index: 1;
-
-  width: min(1400px, calc(100% - 70px));
+#make-difference .difference-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
 }
 
-/* =========================================================
-   SECTION HEADING
-========================================================= */
-
-.difference-heading {
-  max-width: 950px;
-  margin: 0 auto 55px;
-
+/* Section heading and paragraphs */
+#make-difference .difference-heading {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 48px;
   text-align: center;
 }
 
-/* Eyebrow label */
-
-.difference-label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 18px;
-  padding: 9px 17px;
-
-  border: 1px solid rgba(32, 182, 158, 0.4);
-  border-radius: 50px;
-
-  background: rgba(32, 182, 158, 0.1);
-
-  color: #52d7c0;
-
-  font-size: 11px;
+#make-difference .difference-label {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid #cce9df;
+  border-radius: 999px;
+  background: #e1f5ee;
+  color: #0d7868;
+  font-size: 12px;
   font-weight: 800;
-
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
-/* Main heading */
-
-.difference-heading h2 {
-  margin: 0 0 22px;
-
-  color: #ffffff;
-
-  font-size: clamp(34px, 4vw, 50px);
-  line-height: 1.2;
-
+#make-difference .difference-heading h2 {
+  width: 100%;
+  max-width: 1100px;
+  margin: 22px auto 26px;
+  color: #123b36;
+  font-size: clamp(36px, 5vw, 62px);
   font-weight: 800;
-  letter-spacing: -1.3px;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  text-align: center;
+  text-wrap: balance;
 }
 
-/* Highlighted heading */
-
-.difference-heading h2 span {
-  display: inline;
-  color: #20b69e;
+#make-difference .difference-heading h2 span {
+  color: #159a84;
 }
 
-/* Heading paragraphs */
-
-.difference-heading p {
-  max-width: 850px;
-  margin: 0 auto 13px;
-
-  color: #d2e1dc;
-
-  font-size: 15px;
-  line-height: 1.85;
-  font-weight: 400;
+#make-difference .difference-heading p {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 16px;
+  color: #465f58;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.75;
+  text-align: left;
 }
 
-.difference-heading p:last-child {
+#make-difference .difference-heading p:last-child {
   margin-bottom: 0;
 }
 
-/* =========================================================
-   FIVE CARD GRID
-========================================================= */
-
-.difference-grid {
+/* Cards grid */
+#make-difference .difference-grid {
   display: grid;
-
   width: 100%;
-
   grid-template-columns: repeat(5, minmax(0, 1fr));
-
-  gap: 22px;
-  align-items: stretch;
+  gap: 20px;
 }
 
-/* =========================================================
-   CARD
-========================================================= */
-
-.difference-card {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-
+#make-difference .difference-card {
   min-width: 0;
-
   overflow: hidden;
-
-  background: #ffffff;
-
-  border: 1px solid rgba(32, 182, 158, 0.18);
-  border-radius: 20px;
-
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-
-  opacity: 0;
-
-  animation: differenceCardReveal 0.65s ease forwards;
+  border: 1px solid #d8eae4;
+  border-radius: 18px;
+  background: #def4f5;
+  color: #183a35;
+  box-shadow: 0 10px 28px rgba(24, 58, 53, 0.08);
+  animation: differenceFadeUp 0.6s ease both;
   animation-delay: var(--difference-delay, 0s);
-
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
-/* Card hover */
-
-.difference-card:hover {
-  transform: translateY(-6px);
-
-  border-color: #20b69e;
-
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+#make-difference .difference-card:hover {
+  transform: translateY(-5px);
+  border-color: #a8d9cb;
+  box-shadow: 0 18px 38px rgba(24, 58, 53, 0.14);
 }
 
-/* =========================================================
-   CARD IMAGE
-========================================================= */
-
-.difference-image {
-  position: relative;
-
+#make-difference .difference-image {
   width: 100%;
-  height: 220px;
-
-  flex-shrink: 0;
-
+  height: 190px;
   overflow: hidden;
-
-  background: #e8f5f1;
+  background: #e8f6f1;
 }
 
-.difference-image img {
+#make-difference .difference-image img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-  object-position: center;
-
-  transition: transform 0.5s ease;
+  transition: transform 0.35s ease;
 }
 
-/* Subtle image zoom */
-
-.difference-card:hover .difference-image img {
-  transform: scale(1.045);
+#make-difference .difference-card:hover .difference-image img {
+  transform: scale(1.04);
 }
 
-/* Image overlay */
-
-.difference-image::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(22, 48, 44, 0) 55%,
-    rgba(22, 48, 44, 0.15) 100%
-  );
-
-  pointer-events: none;
+#make-difference .difference-card-content {
+  padding: 20px;
 }
 
-/* =========================================================
-   CARD CONTENT
-========================================================= */
-
-.difference-card-content {
-  position: relative;
-
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-
-  padding: 23px 19px 25px;
-
-  background: hsl(157, 89%, 10%);
+#make-difference .difference-card-content h3 {
+  margin: 0 0 10px;
+  color: #183a35;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.35;
 }
 
-/* Small teal accent */
-
-.difference-card-content::before {
-  content: "";
-
-  display: block;
-
-  width: 35px;
-  height: 3px;
-
-  margin-bottom: 16px;
-
-  border-radius: 10px;
-
-  background: #20b69e;
-
-  transition: width 0.3s ease;
-}
-
-.difference-card:hover .difference-card-content::before {
-  width: 55px;
-}
-
-/* Card title */
-
-.difference-card-content h3 {
-  margin: 0 0 12px;
-
-  color: #16302c;
-
-  font-size: 17px;
-  line-height: 1.45;
-
-  font-weight: 800;
-  letter-spacing: -0.2px;
-}
-
-/* Card description */
-
-.difference-card-content p {
+#make-difference .difference-card-content p {
   margin: 0;
-
-  color: #586d67;
-
-  font-size: 13px;
-  line-height: 1.8;
-
-  font-weight: 400;
+  color: #536b64;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
-/* =========================================================
-   CARD REVEAL ANIMATION
-========================================================= */
+/* Tablet */
+@media (max-width: 1100px) {
+  #make-difference.difference-section {
+    padding: 62px 28px 70px;
+  }
 
-@keyframes differenceCardReveal {
+  #make-difference .difference-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  #make-difference .difference-heading p {
+    font-size: 16px;
+  }
+}
+
+/* Small tablet */
+@media (max-width: 760px) {
+  #make-difference .difference-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #make-difference .difference-image {
+    height: 180px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  #make-difference.difference-section {
+    padding: 52px 18px 60px;
+  }
+
+  #make-difference .difference-heading {
+    margin-bottom: 32px;
+  }
+
+  #make-difference .difference-heading h2 {
+    margin: 18px auto;
+    font-size: clamp(32px, 8vw, 42px);
+  }
+
+  #make-difference .difference-heading p {
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  #make-difference .difference-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #make-difference .difference-image {
+    height: 210px;
+  }
+
+  #make-difference .difference-card-content {
+    padding: 18px;
+  }
+}
+
+/* Card entrance animation */
+@keyframes differenceFadeUp {
   from {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(14px);
   }
 
   to {
@@ -329,239 +213,14 @@
   }
 }
 
-/* =========================================================
-   LARGE DESKTOP / LAPTOP
-========================================================= */
-
-@media (min-width: 1400px) {
-  .difference-grid {
-    gap: 24px;
-  }
-
-  .difference-image {
-    height: 230px;
-  }
-
-  .difference-card-content {
-    padding: 25px 21px 27px;
-  }
-
-  .difference-card-content h3 {
-    font-size: 18px;
-  }
-
-  .difference-card-content p {
-    font-size: 14px;
-  }
-}
-
-/* =========================================================
-   TABLET LANDSCAPE
-========================================================= */
-
-@media (max-width: 1150px) {
-  .difference-container {
-    width: min(94%, 1000px);
-  }
-
-  .difference-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .difference-image {
-    height: 230px;
-  }
-
-  .difference-card-content {
-    padding: 22px 20px 25px;
-  }
-
-  .difference-card-content h3 {
-    font-size: 17px;
-  }
-
-  .difference-card-content p {
-    font-size: 13.5px;
-  }
-}
-
-/* =========================================================
-   TABLET PORTRAIT
-========================================================= */
-
-@media (max-width: 800px) {
-  .difference-section {
-    padding: 80px 0;
-  }
-
-  .difference-container {
-    width: calc(100% - 40px);
-  }
-
-  .difference-heading {
-    margin-bottom: 42px;
-  }
-
-  .difference-heading h2 {
-    font-size: 38px;
-  }
-
-  .difference-heading p {
-    font-size: 14px;
-  }
-
-  .difference-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .difference-image {
-    height: 235px;
-  }
-
-  .difference-card-content {
-    padding: 22px 20px 25px;
-  }
-
-  .difference-card-content h3 {
-    font-size: 17px;
-  }
-
-  .difference-card-content p {
-    font-size: 14px;
-  }
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-  .difference-section {
-    padding: 65px 0;
-  }
-
-  .difference-container {
-    width: calc(100% - 32px);
-  }
-
-  .difference-heading {
-    margin-bottom: 35px;
-  }
-
-  .difference-label {
-    margin-bottom: 15px;
-    padding: 8px 13px;
-
-    font-size: 10px;
-    letter-spacing: 1.4px;
-  }
-
-  .difference-heading h2 {
-    margin-bottom: 18px;
-
-    font-size: 32px;
-    line-height: 1.22;
-
-    letter-spacing: -0.6px;
-  }
-
-  .difference-heading p {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .difference-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
-  }
-
-  .difference-card {
-    border-radius: 18px;
-  }
-
-  .difference-image {
-    height: 260px;
-  }
-
-  .difference-card-content {
-    padding: 22px 20px 25px;
-  }
-
-  .difference-card-content::before {
-    margin-bottom: 14px;
-  }
-
-  .difference-card-content h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-
-  .difference-card-content p {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-}
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-  .difference-section {
-    padding: 55px 0;
-  }
-
-  .difference-container {
-    width: calc(100% - 28px);
-  }
-
-  .difference-heading h2 {
-    font-size: 29px;
-  }
-
-  .difference-heading p {
-    font-size: 13.5px;
-  }
-
-  .difference-image {
-    height: 235px;
-  }
-
-  .difference-card-content {
-    padding: 20px 17px 23px;
-  }
-
-  .difference-card-content h3 {
-    font-size: 17px;
-  }
-
-  .difference-card-content p {
-    font-size: 13.5px;
-  }
-}
-
-/* =========================================================
-   REDUCED MOTION ACCESSIBILITY
-========================================================= */
-
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .difference-card {
-    opacity: 1;
+  #make-difference .difference-card {
     animation: none;
     transition: none;
   }
 
-  .difference-card:hover {
-    transform: none;
-  }
-
-  .difference-card:hover .difference-image img {
-    transform: none;
-  }
-
-  .difference-card:hover .difference-card-content::before {
-    width: 35px;
+  #make-difference .difference-image img {
+    transition: none;
   }
 }

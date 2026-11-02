@@ -147,7 +147,7 @@ function Navbar() {
             About Us
           </Link>
 
-          {renderDropdown("health", "Health Service", healthLinks)}
+          {renderDropdown("health", "Health Services", healthLinks)}
           {renderDropdown("beyond", "Beyond Health", beyondHealthLinks)}
           {renderDropdown("resources", "Resources", resourceLinks)}
 
