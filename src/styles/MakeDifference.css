@@ -19,7 +19,7 @@
   margin: 0 auto;
 }
 
-/* Section heading and paragraphs */
+/* Heading and centered copy */
 #make-difference .difference-heading {
   width: 100%;
   max-width: none;
@@ -56,17 +56,26 @@
   color: #159a84;
 }
 
-#make-difference .difference-heading p {
+#make-difference .difference-copy {
+  display: block;
   width: 100%;
   max-width: none;
-  margin: 0 0 16px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#make-difference .difference-copy p {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto 16px;
   color: #465f58;
   font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.75;
-  text-align: left;
+  text-align: center;
 }
 
-#make-difference .difference-heading p:last-child {
+#make-difference .difference-copy p:last-child {
   margin-bottom: 0;
 }
 
@@ -124,9 +133,10 @@
 }
 
 #make-difference .difference-card-content h3 {
+  min-height: 2.7em;
   margin: 0 0 10px;
   color: #183a35;
-  font-size: 18px;
+  font-size: clamp(17px, 1.35vw, 21px);
   font-weight: 750;
   line-height: 1.35;
 }
@@ -149,7 +159,7 @@
     gap: 18px;
   }
 
-  #make-difference .difference-heading p {
+  #make-difference .difference-copy p {
     font-size: 16px;
   }
 }
@@ -180,7 +190,7 @@
     font-size: clamp(32px, 8vw, 42px);
   }
 
-  #make-difference .difference-heading p {
+  #make-difference .difference-copy p {
     margin-bottom: 14px;
     font-size: 14px;
     line-height: 1.7;
@@ -197,6 +207,11 @@
 
   #make-difference .difference-card-content {
     padding: 18px;
+  }
+
+  #make-difference .difference-card-content h3 {
+    min-height: 0;
+    font-size: 19px;
   }
 }
 

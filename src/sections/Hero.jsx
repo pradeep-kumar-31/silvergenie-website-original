@@ -32,9 +32,7 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-container">
         <div className="hero-content">
-          <div className="hero-badge">
-            THE SILVERGENIE MANTRA: TRUSTED ELDER CARE
-          </div>
+          <div className="hero-badge">THE SILVERGENIE MANTRA</div>
 
           <h1>
             We Care for Those
@@ -46,7 +44,7 @@ function Hero() {
           {/* Impact stats: display only, not clickable */}
           <div className="hero-stats" aria-label="SilverGenie impact">
             <div className="hero-stat">
-              <strong>1000+</strong>
+              <strong>1,000+</strong>
               <span>Seniors served directly</span>
             </div>
 
