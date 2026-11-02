@@ -1,7 +1,10 @@
 import { useState } from "react";
-
+import "./ContactSection.css";
 const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbwjAHceJb2lyBk0ecOJLUKP74Zfl5OVQS6_DW3fC3yorQsY_tHU3c1o5PdjwK9DJ_hTyA/exec"
+  "https://script.google.com/macros/s/AKfycbwjAHceJb2lyBk0ecOJLUKP74Zfl5OVQS6_DW3fC3yorQsY_tHU3c1o5PdjwK9DJ_hTyA/exec";
+
+const SERVICES = ["Health Services", "Beyond Health", "Resources"];
+
 function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,22 +13,16 @@ function ContactSection() {
     services: [],
     message: "",
   });
-
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
-    setFormData((previous) => ({
-      ...previous,
-      [name]: value,
-    }));
+    setFormData((previous) => ({ ...previous, [name]: value }));
   };
 
   const handleServiceChange = (event) => {
     const { checked, value } = event.target;
-
     setFormData((previous) => ({
       ...previous,
       services: checked
@@ -44,16 +41,14 @@ function ContactSection() {
     }
 
     if (
-  !GOOGLE_SCRIPT_URL.startsWith("https://script.google.com/") ||
-  !GOOGLE_SCRIPT_URL.endsWith("/exec")
-) {
-  setStatus("Please check your Google Apps Script Web App URL.");
-  return;
-}
+      !GOOGLE_SCRIPT_URL.startsWith("https://script.google.com/") ||
+      !GOOGLE_SCRIPT_URL.endsWith("/exec")
+    ) {
+      setStatus("Please check your Google Apps Script Web App URL.");
+      return;
+    }
 
     setIsSubmitting(true);
-
-    const sourceUrl = window.location.href;
 
     const payload = {
       name: formData.name.trim(),
@@ -61,7 +56,7 @@ function ContactSection() {
       email: formData.email.trim(),
       services: formData.services.join(", "),
       sourcePage: document.title || window.location.pathname,
-      sourceUrl,
+      sourceUrl: window.location.href,
       tourName: "",
       tourUrl: "",
       message: formData.message.trim(),
@@ -71,16 +66,13 @@ function ContactSection() {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8",
-        },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload),
       });
 
       setStatus(
-        "Your enquiry has been submitted. If you do not hear from us, please contact our team."
+        "Your enquiry has been submitted. If you do not hear from us, please contact our team.",
       );
-
       setFormData({
         name: "",
         phone: "",
@@ -91,7 +83,7 @@ function ContactSection() {
     } catch (error) {
       console.error("Enquiry submission error:", error);
       setStatus(
-        "We could not submit your enquiry. Please try again or call 1800 203 0527."
+        "We could not submit your enquiry. Please try again or call 1800 203 0527.",
       );
     } finally {
       setIsSubmitting(false);
@@ -101,40 +93,31 @@ function ContactSection() {
   return (
     <section className="contact-section" id="contact">
       <div className="contact-container">
-        {/* LEFT CONTENT */}
         <div className="contact-info">
           <span className="section-label">ENQUIRE NOW</span>
-
           <h2>
             To know more about our
             <span> products and services</span>
           </h2>
-
           <p>
-            Fill the form below and our team will get back
-            to you at the earliest.
+            Fill the form below and our team will get back to you at the
+            earliest.
           </p>
 
-          {/* PHONE */}
           <div className="contact-phone">
             <span>Call us at</span>
-
             <a href="tel:18002030527">1800 203 0527</a>
           </div>
 
-          {/* EMAIL */}
           <div className="contact-email">
             <span>Email us at</span>
-
             <a href="mailto:info@yoursilvergenie.com">
               info@yoursilvergenie.com
             </a>
           </div>
 
-          {/* INSTAGRAM */}
           <div className="contact-social">
             <span>Follow us on Instagram</span>
-
             <a
               href="https://www.instagram.com/yoursilvergenie/"
               target="_blank"
@@ -145,13 +128,12 @@ function ContactSection() {
           </div>
         </div>
 
-        {/* FORM */}
         <div className="contact-form">
           <form onSubmit={handleSubmit}>
-            {/* NAME */}
             <div className="form-group">
-              <label htmlFor="contact-name">Full Name</label>
-
+              <label htmlFor="contact-name">
+                Full Name<span aria-hidden="true">*</span>
+              </label>
               <input
                 id="contact-name"
                 name="name"
@@ -164,10 +146,10 @@ function ContactSection() {
               />
             </div>
 
-            {/* PHONE */}
             <div className="form-group">
-              <label htmlFor="contact-phone">Phone Number</label>
-
+              <label htmlFor="contact-phone">
+                Phone Number<span aria-hidden="true">*</span>
+              </label>
               <input
                 id="contact-phone"
                 name="phone"
@@ -180,10 +162,10 @@ function ContactSection() {
               />
             </div>
 
-            {/* EMAIL */}
             <div className="form-group">
-              <label htmlFor="contact-email">Email ID</label>
-
+              <label htmlFor="contact-email">
+                Email ID<span aria-hidden="true">*</span>
+              </label>
               <input
                 id="contact-email"
                 name="email"
@@ -192,23 +174,15 @@ function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 autoComplete="email"
+                required
               />
             </div>
 
-            {/* SERVICE */}
-            <div className="form-group">
-              <label>I need more Information On</label>
-
+            <fieldset className="form-group service-fieldset">
+              <legend>I need more information on</legend>
               <div className="checkbox-grid">
-                {[
-                  "Allied Care",
-                  "Corporate Care",
-                  "Elder Care",
-                  "Home Care",
-                  "Emergency Care",
-                  "Wellness Services",
-                ].map((service) => (
-                  <label key={service}>
+                {SERVICES.map((service) => (
+                  <label className="service-option" key={service}>
                     <input
                       type="checkbox"
                       name="services"
@@ -216,42 +190,37 @@ function ContactSection() {
                       checked={formData.services.includes(service)}
                       onChange={handleServiceChange}
                     />
-
                     <span>{service}</span>
                   </label>
                 ))}
               </div>
-            </div>
+            </fieldset>
 
-            {/* MESSAGE */}
             <div className="form-group">
               <label htmlFor="contact-message">Message</label>
-
               <textarea
                 id="contact-message"
                 name="message"
-                rows="4"
-                placeholder="Tell us how we can help you..."
+                rows={4}
+                placeholder="How can we help you? Please tell us"
                 value={formData.message}
                 onChange={handleChange}
               />
             </div>
 
-            {/* STATUS */}
             {status && (
-              <p role="status" aria-live="polite">
+              <p className="form-status" role="status" aria-live="polite">
                 {status}
               </p>
             )}
 
-            {/* BUTTON */}
             <button
               type="submit"
               className="contact-submit"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit Enquiry"}
-              <span>→</span>
+              <span aria-hidden="true">→</span>
             </button>
           </form>
         </div>

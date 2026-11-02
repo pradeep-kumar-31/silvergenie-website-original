@@ -11,11 +11,10 @@
 @import "./styles/Testimonials.css";
 @import "./styles/HomeCare.css";
 @import "./styles/Resources.css";
-@import "./styles/Contact.css";
+@import "./styles/ContactSection.css";
 @import "./styles/FAQ.css";
 
 @import "./styles/ServiceDetail.css";
 @import "./styles/SubscriptionPlans.css";
 @import "./styles/CarePlans.css";
 @import "./styles/TravelWithCare.css";
-@import "./styles/ContactExtras.css";
