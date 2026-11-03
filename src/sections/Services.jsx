@@ -3,10 +3,10 @@ const serviceImages = [
   "home-care.png",
   "diabetes-management.jpeg",
   "wellness-services.png",
-  "five.jpeg",
-  "six.jpeg",
-  "seven.jpeg",
-  "eight.jpeg",
+  "six.jpg",
+  "five.jpg",
+  "eight.jpg",
+  "seven.jpg",
 ];
 
 function Services() {
