@@ -72,6 +72,23 @@ function Recognition() {
       </div>
 
       <style>{`
+        /* Paragraph: fit in 2 lines on desktop */
+        .recognition-section .recognition-heading {
+          max-width: none !important;
+          width: 100% !important;
+        }
+
+        .recognition-section .recognition-heading p {
+          box-sizing: border-box;
+          width: 100% !important;
+          max-width: 1200px !important;
+          margin: 0 auto !important;
+          font-size: 18px !important;
+          line-height: 1.6 !important;
+          text-align: center;
+          text-wrap: balance;
+        }
+
         .recognition-marquee {
           width: 100%;
           overflow: hidden;
@@ -124,6 +141,11 @@ function Recognition() {
         }
 
         @media (max-width: 600px) {
+          .recognition-section .recognition-heading p {
+            font-size: 15px !important;
+            line-height: 1.6 !important;
+          }
+
           .recognition-marquee {
             margin-top: 26px;
           }
