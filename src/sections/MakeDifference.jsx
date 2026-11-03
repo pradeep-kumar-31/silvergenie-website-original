@@ -36,39 +36,24 @@ function MakeDifference() {
     <section className="difference-section" id="make-difference">
       <div className="difference-container">
         <div className="difference-heading">
-          <span className="difference-label">MAKE A DIFFERENCE</span>
+          <span className="difference-label">CARVING OUT A NICHE</span>
 
           <h2>Committed to revolutionising senior care in India</h2>
 
           <div className="difference-copy">
-            <p>
-              SilverGenie is a full-stack, broad-spectrum smart-aging startup
-              committed to revolutionising senior care in India.
-            </p>
-
-            <p>
-              We may be SilverGenie, but we do not claim to have a magic potion
-              for the challenges of old age.
-            </p>
-
-            <p>
-              Our work focuses on helping seniors manage some of their most
-              pressing challenges. We continually train our team to help older
-              adults approach life&apos;s changes with confidence and a smile.
-            </p>
-
-            <p>
-              We understand that one size does not fit all, so we stay flexible
-              as needs evolve. Our services range from companionship to help
-              ease loneliness to clinical care during illness. We shape our
-              technology and travel solutions around seniors&apos; need for
-              dignity and independence.
-            </p>
-
-            <p>
-              Our services and products continue to evolve with time and
-              changing needs.
-            </p>
+            SilverGenie is a full-stack, broad-spectrum smart-aging startup
+            committed to revolutionising senior care in India. We are
+            SilverGenie, but we do not claim to have a magic potion for the
+            challenges of old age. When we talk about revolutionising senior
+            care, we mean helping seniors ease some of their most pressing
+            challenges. We continually train our team to help older adults
+            approach life&apos;s changes with confidence and a smile. We
+            understand that a one-size-fits-all approach will not work. That is
+            why we stay flexible and open to evolving needs. Our services range
+            from companionship to help ease loneliness to clinical care during
+            illness. We shape our technology and travel solutions around
+            seniors&apos; need for dignity and independence. Our services and
+            products must continue to evolve with time and changing trends.
           </div>
         </div>
 

@@ -96,34 +96,34 @@ function ContactSection() {
         <div className="contact-info">
           <span className="section-label">ENQUIRE NOW</span>
           <h2>
-            To know more about our
-            <span> products and services</span>
+            Know More About Our
+            <span> Products and Services</span>
           </h2>
-          <p>
-            Fill the form below and our team will get back to you at the
-            earliest.
+          <p>Want to know us better? Get in touch now!</p>
+
+          <p className="contact-cities">
+            Agartala | Delhi | Faridabad | Gurugram | Kolkata | Noida
           </p>
 
           <div className="contact-phone">
             <span>Call us at</span>
-            <a href="tel:18002030527">1800 203 0527</a>
+            <div className="contact-numbers">
+              <p>
+                <a href="tel:+17789033965">+1 (778) 903-3965</a>
+                <em>(USA/Canada)</em>
+              </p>
+              <p>
+                <a href="tel:18002030527">1800 203 0527</a>,{" "}
+                <a href="tel:+919810545932">+91-9810545932</a>
+                <em>(India)</em>
+              </p>
+            </div>
           </div>
 
           <div className="contact-email">
             <span>Email us at</span>
-            <a href="mailto:info@yoursilvergenie.com">
-              info@yoursilvergenie.com
-            </a>
-          </div>
-
-          <div className="contact-social">
-            <span>Follow us on Instagram</span>
-            <a
-              href="https://www.instagram.com/yoursilvergenie/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @yoursilvergenie
+            <a href="mailto:ceo.office@yoursilvergenie.com">
+              ceo.office@yoursilvergenie.com
             </a>
           </div>
         </div>

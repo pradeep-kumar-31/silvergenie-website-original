@@ -29,7 +29,7 @@ function Recognition() {
     <section className="recognition-section">
       <div className="recognition-container">
         <div className="recognition-heading">
-          <span>RECOGNITION &amp; PARTNERSHIPS</span>
+          <span>CHERISHED &amp; IMPRINTS</span>
 
           <h2>Recognitions for Innovations in Senior Care</h2>
 

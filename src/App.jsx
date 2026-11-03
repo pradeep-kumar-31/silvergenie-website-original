@@ -13,10 +13,8 @@ import Recognition from "./sections/Recognition";
 import Services from "./sections/Services";
 import WhySilverGenie from "./sections/WhySilverGenie";
 import MakeDifference from "./sections/MakeDifference";
-import Stats from "./sections/Stats";
 import Testimonials from "./sections/Testimonials";
 import HomeCare from "./sections/HomeCare";
-import Resources from "./sections/Resources";
 import ContactSection from "./sections/ContactSection";
 import FAQ from "./sections/FAQ";
 
@@ -81,10 +79,8 @@ function Home() {
         <Services />
         <WhySilverGenie />
         <MakeDifference />
-        <Stats />
         <Testimonials />
         <HomeCare />
-        <Resources />
         <FAQ />
         <ContactSection />
       </main>
@@ -283,7 +279,6 @@ function App() {
     <BrowserRouter basename="/silvergenie-website-original">
       <ScrollToTop />
 
-      {/* Global popup: routes ke bahar, isliye har page par available */}
       <WhatsAppCommunityPopup />
 
       <Routes>
@@ -480,6 +475,16 @@ function App() {
         />
 
         {/* SUBSCRIPTION PLANS */}
+        <Route
+          path="/SubscriptionPlans"
+          element={
+            <PageLayout>
+              <SubscriptionPlans />
+            </PageLayout>
+          }
+        />
+
+        {/* Keep the lowercase URL working too */}
         <Route
           path="/subscription-plans"
           element={

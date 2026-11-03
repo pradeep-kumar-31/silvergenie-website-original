@@ -6,10 +6,10 @@
   width: 100vw;
   max-width: 100vw;
   margin-left: -50vw;
-  padding: 72px 4vw 84px;
+  padding: 56px 4vw 68px;
   overflow: hidden;
-  background: linear-gradient(135deg, #eef8f5 0%, #f8fcfa 50%, #eaf6f2 100%);
-  color: #183a35;
+  background: linear-gradient(135deg, #16302c 0%, #1a3834 50%, #152b28 100%);
+  color: #ffffff;
 }
 
 #make-difference .difference-container {
@@ -19,64 +19,44 @@
   margin: 0 auto;
 }
 
-/* Heading and centered copy */
+/* Heading block */
 #make-difference .difference-heading {
+  box-sizing: border-box;
   width: 100%;
   max-width: none;
-  margin: 0 0 48px;
+  margin: 0 0 36px;
   text-align: center;
 }
 
 #make-difference .difference-label {
-  display: inline-block;
-  padding: 9px 16px;
-  border: 1px solid #cce9df;
-  border-radius: 999px;
-  background: #e1f5ee;
-  color: #0d7868;
+  display: block;
+  margin: 0 0 10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #5fd3bc;
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 #make-difference .difference-heading h2 {
   width: 100%;
   max-width: 1100px;
-  margin: 22px auto 26px;
-  color: #123b36;
-  font-size: clamp(36px, 5vw, 62px);
-  font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.045em;
+  margin: 0 auto 26px;
+  color: #ffffff;
+  font-size: clamp(28px, 3.8vw, 48px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
   text-align: center;
   text-wrap: balance;
 }
 
 #make-difference .difference-heading h2 span {
-  color: #159a84;
-}
-
-#make-difference .difference-copy {
-  display: block;
-  width: 100%;
-  max-width: none;
-  margin: 0 auto;
-  text-align: center;
-}
-
-#make-difference .difference-copy p {
-  display: block;
-  width: 100%;
-  max-width: none;
-  margin: 0 auto 16px;
-  color: #465f58;
-  font-size: clamp(15px, 1.2vw, 18px);
-  line-height: 1.75;
-  text-align: center;
-}
-
-#make-difference .difference-copy p:last-child {
-  margin-bottom: 0;
+  color: #5fd3bc;
 }
 
 /* Cards grid */
@@ -90,11 +70,11 @@
 #make-difference .difference-card {
   min-width: 0;
   overflow: hidden;
-  border: 1px solid #d8eae4;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
-  background: #def4f5;
-  color: #183a35;
-  box-shadow: 0 10px 28px rgba(24, 58, 53, 0.08);
+  background: #1f3f3a;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
   animation: differenceFadeUp 0.6s ease both;
   animation-delay: var(--difference-delay, 0s);
   transition:
@@ -105,15 +85,15 @@
 
 #make-difference .difference-card:hover {
   transform: translateY(-5px);
-  border-color: #a8d9cb;
-  box-shadow: 0 18px 38px rgba(24, 58, 53, 0.14);
+  border-color: rgba(95, 211, 188, 0.45);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.32);
 }
 
 #make-difference .difference-image {
   width: 100%;
   height: 190px;
   overflow: hidden;
-  background: #e8f6f1;
+  background: #183430;
 }
 
 #make-difference .difference-image img {
@@ -135,7 +115,7 @@
 #make-difference .difference-card-content h3 {
   min-height: 2.7em;
   margin: 0 0 10px;
-  color: #183a35;
+  color: #ffffff;
   font-size: clamp(17px, 1.35vw, 21px);
   font-weight: 750;
   line-height: 1.35;
@@ -143,7 +123,7 @@
 
 #make-difference .difference-card-content p {
   margin: 0;
-  color: #536b64;
+  color: #c4d9d3;
   font-size: 14px;
   line-height: 1.65;
 }
@@ -151,21 +131,21 @@
 /* Tablet */
 @media (max-width: 1100px) {
   #make-difference.difference-section {
-    padding: 62px 28px 70px;
+    padding: 48px 28px 60px;
   }
 
   #make-difference .difference-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
   }
-
-  #make-difference .difference-copy p {
-    font-size: 16px;
-  }
 }
 
 /* Small tablet */
 @media (max-width: 760px) {
+  #make-difference .difference-label {
+    letter-spacing: 0.3em;
+  }
+
   #make-difference .difference-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -178,22 +158,21 @@
 /* Mobile */
 @media (max-width: 520px) {
   #make-difference.difference-section {
-    padding: 52px 18px 60px;
+    padding: 40px 18px 52px;
   }
 
   #make-difference .difference-heading {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
+  }
+
+  #make-difference .difference-label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
   }
 
   #make-difference .difference-heading h2 {
-    margin: 18px auto;
-    font-size: clamp(32px, 8vw, 42px);
-  }
-
-  #make-difference .difference-copy p {
-    margin-bottom: 14px;
-    font-size: 14px;
-    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: clamp(26px, 7.5vw, 34px);
   }
 
   #make-difference .difference-grid {

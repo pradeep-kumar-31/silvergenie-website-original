@@ -40,7 +40,7 @@ function Navbar() {
 
   const healthLinks = [
     { label: "Home Care", to: "/home-care" },
-    { label: "Elder Care", to: "/elder-care" },
+    { label: "Elder Care", to: "/SubscriptionPlans" },
   ];
 
   const beyondHealthLinks = [
