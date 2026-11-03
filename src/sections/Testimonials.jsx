@@ -24,14 +24,10 @@ function Testimonials() {
     <section className="testimonials-section">
       <div className="testimonials-container">
         <div className="testimonials-heading">
-          <span className="section-label">REVIEWS FROM ALL OVER THE WORLD</span>
-
           <h2>
             We are proud of the
             <span> difference we have been able to make so far.</span>
           </h2>
-
-          <p>This is just the beginning.</p>
         </div>
 
         <div className="testimonials-grid">

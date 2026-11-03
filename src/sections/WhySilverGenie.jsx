@@ -17,9 +17,9 @@ function WhySilverGenie() {
         </div>
 
         <div className="healing-content">
-          <span className="healing-label">
+          {/* <span className="healing-label">
             THE HEALING TOUCH OF SILVERGENIE
-          </span>
+          </span> */}
 
           <h2>
             The Healing Touch of <span>SilverGenie</span>
