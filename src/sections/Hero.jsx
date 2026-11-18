@@ -49,7 +49,7 @@ function Hero() {
             </div>
 
             <div className="hero-stat">
-              <strong>50,000+</strong>
+              <strong>70,000+</strong>
               <span>Senior lives touched</span>
             </div>
 
