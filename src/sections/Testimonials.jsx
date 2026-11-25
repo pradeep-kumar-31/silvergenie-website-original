@@ -26,7 +26,7 @@ function Testimonials() {
         <div className="testimonials-heading">
           <h2>
             We are proud of the
-            <span> difference we have been able to make so far.</span>
+            <span> difference we have been able to made so far.</span>
           </h2>
         </div>
 

@@ -122,10 +122,13 @@ function About() {
         <div className="about-container">
           <span className="section-label">ABOUT SILVERGENIE</span>
           <h1>
-            Personalized Care
-            <span> For Those Who Care For Us</span>
+            Catering to
+            <span>the clinical & Holistic Well-being of Seniors</span>
           </h1>
-          <p>Changing the healthcare landscape for the elderly in India</p>
+          <p>
+            Across all generations -young old,old old & the very old & all needs
+            - active,supported & frail
+          </p>
         </div>
       </section>
 
@@ -134,13 +137,24 @@ function About() {
           <span className="section-label">ABOUT SILVERGENIE</span>
           <h2>A New Era in Elder Care</h2>
           <p>
-            SilverGenie™ is a full-stack, broad-spectrum smart aging startup
-            offering advanced healthcare assistance for seniors.
+            The birth of SilverGenie Private Limited, a startup born in
+            Agartala, Tripura in North East India was prompted by the founder's
+            personal pain point.
           </p>
           <p>
-            As a gender-inclusive service provider, we are reshaping the elderly
-            healthcare landscape in India and positioning ourselves as a leading
-            player in the care economy.
+            Thorough research and landscape analysis went into geriatric care,
+            as it was then called in 2020, before SilverGenie was started in a
+            one-room office in Gurgaon.
+          </p>
+
+          <p>
+            Five years on and with several national and international
+            recognitions, SilverGenie is on its path of growth.
+          </p>
+          <p>
+            Our goals are two-fold, reshaping the health and care landscape for
+            seniors in India and positioning senior care as a cornerstone of the
+            care economy. We dream of a care-first India!
           </p>
         </div>
       </section>

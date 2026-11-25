@@ -20,7 +20,7 @@ const features = [
     ),
   },
   {
-    title: "Skilled Resource Pool of Experts",
+    title: "Skilled Experts Resource Pool",
     icon: (
       <>
         <circle cx="9" cy="8" r="3" />
@@ -47,7 +47,7 @@ const features = [
     ),
   },
   {
-    title: "Hassle-Free Assistance During Emergency",
+    title: "Emergency Assistance,Hassle-Free",
     icon: (
       <>
         <path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10Z" />
