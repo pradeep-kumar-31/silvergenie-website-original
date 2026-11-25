@@ -1,3 +1,4 @@
+
 name: Deploy SilverGenie to GitHub Pages
 
 on:
@@ -10,10 +11,11 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -46,6 +48,28 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
+
+      - name: Wait for GitHub Pages artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in {1..12}; do
+            echo "Checking artifact availability: attempt $i"
+            ARTIFACT=$(gh api \
+              repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts \
+              --jq '.artifacts[] | select(.name == "github-pages") | .id' \
+              | head -n 1)
+
+            if [ -n "$ARTIFACT" ]; then
+              echo "GitHub Pages artifact found: $ARTIFACT"
+              exit 0
+            fi
+
+            sleep 5
+          done
+
+          echo "GitHub Pages artifact was not found."
+          exit 1
 
       - name: Deploy to GitHub Pages
         id: deployment
